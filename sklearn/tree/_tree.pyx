@@ -17,7 +17,7 @@
 # License: BSD 3 clause
 
 from cpython cimport Py_INCREF, PyObject, PyTypeObject
-
+from libc.stdio cimport printf
 from libc.stdlib cimport free
 from libc.math cimport fabs
 from libc.string cimport memcpy
@@ -722,7 +722,7 @@ cdef class Tree:
         Returns (size_t)(-1) on error.
         """
         cdef SIZE_t node_id = self.node_count
-        print('printing node_id',node_id)
+        printf("%zd\n", node_id)
 
         if node_id >= self.capacity:
             if self._resize_c() != 0:
