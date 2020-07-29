@@ -556,6 +556,7 @@ cdef class Tree:
 
     property children_left:
         def __get__(self):
+            print(self._get_node_ndarray())
             return self._get_node_ndarray()['left_child'][:self.node_count]
 
     property children_right:
@@ -569,6 +570,7 @@ cdef class Tree:
                 self.children_right == -1))
 
     property feature:
+
         def __get__(self):
             return self._get_node_ndarray()['feature'][:self.node_count]
 
