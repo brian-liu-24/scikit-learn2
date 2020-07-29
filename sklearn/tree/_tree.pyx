@@ -730,7 +730,7 @@ cdef class Tree:
 
         cdef Node* node = &self.nodes[node_id]
 
-        print('printing node' , node)
+      ]
 
         node.impurity = impurity
         node.n_node_samples = n_node_samples
@@ -739,10 +739,11 @@ cdef class Tree:
         if parent != _TREE_UNDEFINED:
             if is_left:
                 self.nodes[parent].left_child = node_id
+                #self.nodes[node_id].parent = self.nodes[parent].node_id
             else:
                 self.nodes[parent].right_child = node_id
+                #self.nodes[node_id].parent = self.nodes[parent].node_id
 
-        print('printing parents', self.nodes[parents])
 
         if is_leaf:
             node.left_child = _TREE_LEAF
