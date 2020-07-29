@@ -566,6 +566,10 @@ cdef class Tree:
         def __get__(self):
             return self._get_node_ndarray()['parent'][:self.node_count]
 
+    property id:
+        def __get__(self):
+            return self._get_node_ndarray()['id'][:self.node_count]
+
 
 
     property n_leaves:
@@ -739,6 +743,8 @@ cdef class Tree:
         node.impurity = impurity
         node.n_node_samples = n_node_samples
         node.weighted_n_node_samples = weighted_n_node_samples
+
+        self.nodes[node_id] = node_id
 
         if parent != _TREE_UNDEFINED:
             if is_left:
