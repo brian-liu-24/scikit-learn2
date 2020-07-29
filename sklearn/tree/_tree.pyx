@@ -730,8 +730,6 @@ cdef class Tree:
 
         cdef Node* node = &self.nodes[node_id]
 
-      ]
-
         node.impurity = impurity
         node.n_node_samples = n_node_samples
         node.weighted_n_node_samples = weighted_n_node_samples
