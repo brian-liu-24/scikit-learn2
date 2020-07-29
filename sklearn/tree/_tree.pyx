@@ -556,7 +556,6 @@ cdef class Tree:
 
     property children_left:
         def __get__(self):
-            print(self._get_node_ndarray())
             return self._get_node_ndarray()['left_child'][:self.node_count]
 
     property children_right:
@@ -570,7 +569,6 @@ cdef class Tree:
                 self.children_right == -1))
 
     property feature:
-
         def __get__(self):
             return self._get_node_ndarray()['feature'][:self.node_count]
 
@@ -724,12 +722,16 @@ cdef class Tree:
         Returns (size_t)(-1) on error.
         """
         cdef SIZE_t node_id = self.node_count
+        print('printing node_id',node_id)
 
         if node_id >= self.capacity:
             if self._resize_c() != 0:
                 return SIZE_MAX
 
         cdef Node* node = &self.nodes[node_id]
+
+        print('printing node' , node)
+
         node.impurity = impurity
         node.n_node_samples = n_node_samples
         node.weighted_n_node_samples = weighted_n_node_samples
@@ -739,6 +741,8 @@ cdef class Tree:
                 self.nodes[parent].left_child = node_id
             else:
                 self.nodes[parent].right_child = node_id
+
+        print('printing parents', self.nodes[parents])
 
         if is_leaf:
             node.left_child = _TREE_LEAF
