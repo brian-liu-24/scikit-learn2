@@ -749,10 +749,10 @@ cdef class Tree:
         if parent != _TREE_UNDEFINED:
             if is_left:
                 self.nodes[parent].left_child = node_id
-                self.nodes[node_id].parent = self.nodes[parent].node_id
+                self.nodes[node_id].parent = self.nodes[parent].id
             else:
                 self.nodes[parent].right_child = node_id
-                self.nodes[node_id].parent = self.nodes[parent].node_id
+                self.nodes[node_id].parent = self.nodes[parent].id
 
 
         if is_leaf:
