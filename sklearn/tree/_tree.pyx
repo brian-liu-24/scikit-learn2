@@ -722,6 +722,7 @@ cdef class Tree:
         Returns (size_t)(-1) on error.
         """
         cdef SIZE_t node_id = self.node_count
+        print('node_id')
         printf("%zd\n", node_id)
 
         if node_id >= self.capacity:
