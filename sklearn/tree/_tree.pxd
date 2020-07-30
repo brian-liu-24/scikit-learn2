@@ -30,8 +30,8 @@ cdef struct Node:
     SIZE_t left_child                    # id of the left child of the node
     SIZE_t right_child                   # id of the right child of the node
     SIZE_t feature                       # Feature used for splitting the node
-    array ancestor_id               #id of ancestors
-    array ancestor_features            #id of features 
+    np.array ancestor_id               #id of ancestors
+    np.array ancestor_features            #id of features 
 
     #added
     SIZE_t parent                        # id to parent of the node
