@@ -591,6 +591,10 @@ cdef class Tree:
         def __get__(self):
             return self._get_node_ndarray()['ancestor_features'][:self.node_count]
 
+    property ancestor_id:
+        def __get__(self):
+            return self._get_node_ndarray()['ancestor_id'][:self.node_count]
+
     property threshold:
         def __get__(self):
             return self._get_node_ndarray()['threshold'][:self.node_count]
@@ -767,6 +771,7 @@ cdef class Tree:
 
             while counter < limit:
               self.nodes[node_id].ancestor_features[counter] = self.nodes[counter].feature
+              self.nodes[node_id].ancestor_id[counter] = self.nodes[counter].id
               counter = counter+1
 
 
