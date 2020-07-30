@@ -756,7 +756,7 @@ cdef class Tree:
             else:
                 self.nodes[parent].right_child = node_id
                 self.nodes[node_id].parent = self.nodes[parent].id
-            self.nodes[node_id].parent_feature = self.node[parent].feature
+            self.nodes[node_id].parent_feature = self.nodes[parent].feature
 
 
         if is_leaf:
