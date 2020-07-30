@@ -760,7 +760,9 @@ cdef class Tree:
 
 
             cdef int counter = 0
-            while counter < node_id:
+            cdef int limit = self.node_count
+
+            while counter < limit:
               self.nodes[node_id].ancestor_features[counter] = self.nodes[counter].feature
               counter = counter+1
 
