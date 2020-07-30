@@ -744,9 +744,6 @@ cdef class Tree:
         node.n_node_samples = n_node_samples
         node.weighted_n_node_samples = weighted_n_node_samples
 
-        if parent == _TREE_UNDEFINED:
-          self.nodes[node_id].id = -1
-
 
         if parent != _TREE_UNDEFINED:
             self.nodes[node_id].id = node_id
