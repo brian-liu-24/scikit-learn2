@@ -12,8 +12,7 @@
 
 import numpy as np
 cimport numpy as np
-from numpy cimport ndarray
-from numpy cimport array
+
 
 ctypedef np.npy_float32 DTYPE_t          # Type of X
 ctypedef np.npy_float64 DOUBLE_t         # Type of y, sample_weight
