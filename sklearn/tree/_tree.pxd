@@ -31,7 +31,7 @@ cdef struct Node:
 
     #added
     SIZE_t parent                        # id to parent of the node
-
+    SIZE_t parent_feature                # id of the feature the parent node splits on
     DOUBLE_t threshold                   # Threshold value at the node
     DOUBLE_t impurity                    # Impurity of the node (i.e., the value of the criterion)
     SIZE_t n_node_samples                # Number of samples at the node

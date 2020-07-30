@@ -582,6 +582,10 @@ cdef class Tree:
         def __get__(self):
             return self._get_node_ndarray()['feature'][:self.node_count]
 
+    property parent_feature:
+        def __get__(self):
+            return self._get_node_ndarray()['parent_feature'][:self.node_count]
+
     property threshold:
         def __get__(self):
             return self._get_node_ndarray()['threshold'][:self.node_count]
@@ -744,15 +748,15 @@ cdef class Tree:
         node.n_node_samples = n_node_samples
         node.weighted_n_node_samples = weighted_n_node_samples
 
-
+        self.nodes[node_id].id = node_id
         if parent != _TREE_UNDEFINED:
-            self.nodes[node_id].id = node_id
             if is_left:
                 self.nodes[parent].left_child = node_id
                 self.nodes[node_id].parent = self.nodes[parent].id
             else:
                 self.nodes[parent].right_child = node_id
                 self.nodes[node_id].parent = self.nodes[parent].id
+            self.nodes[node_id].parent_feature = self.node[parent].feature
 
 
         if is_leaf:
