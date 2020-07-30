@@ -758,7 +758,7 @@ cdef class Tree:
                 self.nodes[node_id].parent = self.nodes[parent].id
             self.nodes[node_id].parent_feature = self.nodes[parent].feature
 
-
+            print('hello')
             cdef int counter = 0
             cdef int limit = self.node_count
 
