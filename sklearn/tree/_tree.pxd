@@ -13,6 +13,7 @@
 import numpy as np
 cimport numpy as np
 from numpy cimport ndarray
+from numpy cimport array
 
 ctypedef np.npy_float32 DTYPE_t          # Type of X
 ctypedef np.npy_float64 DOUBLE_t         # Type of y, sample_weight
@@ -29,8 +30,8 @@ cdef struct Node:
     SIZE_t left_child                    # id of the left child of the node
     SIZE_t right_child                   # id of the right child of the node
     SIZE_t feature                       # Feature used for splitting the node
-    ndarray ancestor_id               #id of ancestors
-    ndarray ancestor_features            #id of features 
+    array ancestor_id               #id of ancestors
+    array ancestor_features            #id of features 
 
     #added
     SIZE_t parent                        # id to parent of the node
