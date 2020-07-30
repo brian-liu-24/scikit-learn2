@@ -586,6 +586,11 @@ cdef class Tree:
         def __get__(self):
             return self._get_node_ndarray()['parent_feature'][:self.node_count]
 
+
+    property ancestor_features:
+        def __get__(self):
+            return self._get_node_ndarray()['ancestor_features'][:self.node_count]
+
     property threshold:
         def __get__(self):
             return self._get_node_ndarray()['threshold'][:self.node_count]
