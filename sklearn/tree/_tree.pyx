@@ -736,7 +736,7 @@ cdef class Tree:
         Returns (size_t)(-1) on error.
         """
         cdef SIZE_t node_id = self.node_count
-        printf("%zd\n", node_id)
+
 
         if node_id >= self.capacity:
             if self._resize_c() != 0:
@@ -757,6 +757,14 @@ cdef class Tree:
                 self.nodes[parent].right_child = node_id
                 self.nodes[node_id].parent = self.nodes[parent].id
             self.nodes[node_id].parent_feature = self.nodes[parent].feature
+
+
+
+            #counter = 0
+            #while counter < node_id:
+
+
+            #  counter = counter+1
 
 
         if is_leaf:
