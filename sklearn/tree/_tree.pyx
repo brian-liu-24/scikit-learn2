@@ -759,12 +759,10 @@ cdef class Tree:
             self.nodes[node_id].parent_feature = self.nodes[parent].feature
 
 
-
-            #counter = 0
-            #while counter < node_id:
-
-
-            #  counter = counter+1
+            cdef int counter = 0
+            while counter < node_id:
+              self.nodes[node_id].ancestor_features[counter] = self.nodes[counter].feature
+              counter = counter+1
 
 
         if is_leaf:
