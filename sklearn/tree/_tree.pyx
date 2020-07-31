@@ -775,10 +775,8 @@ cdef class Tree:
               #self.nodes[node_id].ancestor_id[counter]
               #self.nodes[node_id].ancestor_features[counter] = self.nodes[counter].feature
               #self.nodes[node_id].ancestor_id[counter] = self.nodes[counter].id
-
-              if counter = 0:
+              if counter == 0:
                 break
-
               counter = self.nodes[counter].parent
 
 
