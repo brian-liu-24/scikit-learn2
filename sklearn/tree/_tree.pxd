@@ -26,13 +26,12 @@ from ._splitter cimport SplitRecord
 cdef struct Node:
     # Base storage structure for the nodes in a Tree object
 
-    #int* arraysize
     SIZE_t id                       #id of current node
     SIZE_t left_child                    # id of the left child of the node
     SIZE_t right_child                   # id of the right child of the node
     SIZE_t feature                       # Feature used for splitting the node
-    SIZE_t ancestor_id[100]               #id of ancestors
-    SIZE_t ancestor_features[100]            #id of features
+    static SIZE_t ancestor_id[100]               #id of ancestors
+    static SIZE_t ancestor_features[100]            #id of features
 
     #added
     SIZE_t parent                        # id to parent of the node
