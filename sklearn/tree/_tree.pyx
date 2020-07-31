@@ -748,6 +748,14 @@ cdef class Tree:
         cdef SIZE_t counter = self.node_count
         cdef int limit = self.node_count
 
+        cdef SIZE_t counter1 = 0
+
+        while counter1 < 100:
+          self.nodes[node_id].ancestor_id[counter] = -1
+          self.nodes[node_id].ancestor_features[counter] = -1
+          counter1 = counter1 + 1
+
+
         if node_id >= self.capacity:
             if self._resize_c() != 0:
                 return SIZE_MAX
@@ -757,6 +765,7 @@ cdef class Tree:
         node.impurity = impurity
         node.n_node_samples = n_node_samples
         node.weighted_n_node_samples = weighted_n_node_samples
+
 
         self.nodes[node_id].id = node_id
         if parent != _TREE_UNDEFINED:
@@ -771,10 +780,7 @@ cdef class Tree:
 
             while counter > -1:
               self.nodes[node_id].ancestor_id[counter] = self.nodes[counter].id
-              self.nodes[node_id].ancestor_id[counter] = self.nodes[counter].feature
-              #self.nodes[node_id].ancestor_id[counter]
-              #self.nodes[node_id].ancestor_features[counter] = self.nodes[counter].feature
-              #self.nodes[node_id].ancestor_id[counter] = self.nodes[counter].id
+              self.nodes[node_id].ancestor_features[counter] = self.nodes[counter].feature
               if counter == 0:
                 break
               counter = self.nodes[counter].parent
