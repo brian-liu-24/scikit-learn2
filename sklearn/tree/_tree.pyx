@@ -747,13 +747,13 @@ cdef class Tree:
         cdef SIZE_t node_id = self.node_count
         cdef SIZE_t counter = self.node_count
         cdef int limit = self.node_count
+        cdef SIZE_t location = 0
+        cdef SIZE_t counter1 = 0
 
-        #cdef SIZE_t counter1 = 0
-
-        #while counter1 < 100:
-        #  self.nodes[node_id].ancestor_id[counter] = -1
-      #    self.nodes[node_id].ancestor_features[counter] = -1
-      #    counter1 = counter1 + 1
+        while counter1 < 100:
+          self.nodes[node_id].ancestor_id[counter1] = -1
+          self.nodes[node_id].ancestor_features[counter1] = -1
+          counter1 = counter1 + 1
 
 
         if node_id >= self.capacity:
@@ -779,11 +779,12 @@ cdef class Tree:
 
 
             while counter > -1:
-              self.nodes[node_id].ancestor_id[counter] = self.nodes[counter].id
-              self.nodes[node_id].ancestor_features[counter] = self.nodes[counter].feature
+              self.nodes[node_id].ancestor_id[location] = self.nodes[counter].id
+              self.nodes[node_id].ancestor_features[location] = self.nodes[counter].feature
               if counter == 0:
                 break
               counter = self.nodes[counter].parent
+              location = location + 1
 
 
 
