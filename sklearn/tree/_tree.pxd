@@ -32,7 +32,7 @@ cdef struct Node:
     SIZE_t feature                       # Feature used for splitting the node
     static SIZE_t ancestor_id[100]               #id of ancestors
     static SIZE_t ancestor_features[100]            #id of features
-
+    SIZE_t helper_depth                   #helper attribute to select relevant array elements
     #added
     SIZE_t parent                        # id to parent of the node
     SIZE_t parent_feature                # id of the feature the parent node splits on

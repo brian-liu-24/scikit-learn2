@@ -566,6 +566,8 @@ cdef class Tree:
         def __get__(self):
             return self._get_node_ndarray()['parent'][:self.node_count]
 
+
+
     property id:
         def __get__(self):
             return self._get_node_ndarray()['id'][:self.node_count]
@@ -594,6 +596,10 @@ cdef class Tree:
     property ancestor_id:
         def __get__(self):
             return self._get_node_ndarray()['ancestor_id'][:self.node_count]
+
+    property helper_depth:
+        def __get__(self):
+            return self._get_node_ndarray()['helper_depth'][:self.node_count]
 
     property threshold:
         def __get__(self):
@@ -786,6 +792,7 @@ cdef class Tree:
               counter = self.nodes[counter].parent
               location = location + 1
 
+       self.nodes[node_id].helper_depth = location
 
 
         if is_leaf:
