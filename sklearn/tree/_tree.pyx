@@ -791,8 +791,7 @@ cdef class Tree:
                 break
               counter = self.nodes[counter].parent
               location = location + 1
-
-       self.nodes[node_id].helper_depth = location
+            self.nodes[node_id].helper_depth = location
 
 
         if is_leaf:
