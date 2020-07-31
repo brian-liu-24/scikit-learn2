@@ -770,8 +770,8 @@ cdef class Tree:
 
 
             while counter > -1:
-              self.nodes[nodes_id].ancestor_id[counter] = self.nodes[counter].id
-              self.nodes[nodes_id].ancestor_id[counter] = self.nodes[counter].feature
+              self.nodes[node_id].ancestor_id[counter] = self.nodes[counter].id
+              self.nodes[node_id].ancestor_id[counter] = self.nodes[counter].feature
               #self.nodes[node_id].ancestor_id[counter]
               #self.nodes[node_id].ancestor_features[counter] = self.nodes[counter].feature
               #self.nodes[node_id].ancestor_id[counter] = self.nodes[counter].id
