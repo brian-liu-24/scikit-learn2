@@ -745,7 +745,7 @@ cdef class Tree:
         Returns (size_t)(-1) on error.
         """
         cdef SIZE_t node_id = self.node_count
-        cdef int counter = 0
+        cdef SIZE_t counter = self.node_count
         cdef int limit = self.node_count
 
         if node_id >= self.capacity:
@@ -769,10 +769,17 @@ cdef class Tree:
             self.nodes[node_id].parent_feature = self.nodes[parent].feature
 
 
-            while counter < limit:
-              self.nodes[node_id].ancestor_features[counter] = self.nodes[counter].feature
-              self.nodes[node_id].ancestor_id[counter] = self.nodes[counter].id
-              counter = counter+1
+            while counter > -1:
+              self.nodes[nodes_id].ancestor_id[counter] = self.nodes[counter].id
+              #self.nodes[node_id].ancestor_id[counter]
+              #self.nodes[node_id].ancestor_features[counter] = self.nodes[counter].feature
+              #self.nodes[node_id].ancestor_id[counter] = self.nodes[counter].id
+
+              if counter = 0:
+                break
+
+              counter = self.nodes[counter].parent
+
 
 
         if is_leaf:
