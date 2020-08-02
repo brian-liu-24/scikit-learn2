@@ -213,7 +213,7 @@ cdef class Splitter:
         return 0
 
     cdef int node_split(self, double impurity, SplitRecord* split,
-                        SIZE_t* n_constant_features) nogil except -1:
+                        SIZE_t* n_constant_features, Tree tree, SIZE_t parent) with gil:
         """Find the best split on node samples[start:end].
 
         This is a placeholder method. The majority of computation will be done
@@ -267,7 +267,7 @@ cdef class BestSplitter(BaseDenseSplitter):
                                self.random_state), self.__getstate__())
 
     cdef int node_split(self, double impurity, SplitRecord* split,
-                        SIZE_t* n_constant_features) nogil except -1:
+                        SIZE_t* n_constant_features, Tree tree, SIZE_t parent) with gil:
         """Find the best split on node samples[start:end]
 
         Returns -1 in case of failure to allocate memory (and raise MemoryError)
@@ -795,7 +795,7 @@ cdef class RandomSplitter(BaseDenseSplitter):
                                  self.random_state), self.__getstate__())
 
     cdef int node_split(self, double impurity, SplitRecord* split,
-                        SIZE_t* n_constant_features) nogil except -1:
+                        SIZE_t* n_constant_features, Tree tree, SIZE_t parent) with gil:
         """Find the best random split on node samples[start:end]
 
         Returns -1 in case of failure to allocate memory (and raise MemoryError)
@@ -1312,7 +1312,7 @@ cdef class BestSparseSplitter(BaseSparseSplitter):
                                      self.random_state), self.__getstate__())
 
     cdef int node_split(self, double impurity, SplitRecord* split,
-                        SIZE_t* n_constant_features) nogil except -1:
+                        SIZE_t* n_constant_features, Tree tree, SIZE_t parent) with gil:
         """Find the best split on node samples[start:end], using sparse features
 
         Returns -1 in case of failure to allocate memory (and raise MemoryError)
@@ -1541,7 +1541,7 @@ cdef class RandomSparseSplitter(BaseSparseSplitter):
                                        self.random_state), self.__getstate__())
 
     cdef int node_split(self, double impurity, SplitRecord* split,
-                        SIZE_t* n_constant_features) nogil except -1:
+                        SIZE_t* n_constant_features, Tree tree, SIZE_t parent) with gil:
         """Find a random split on node samples[start:end], using sparse features
 
         Returns -1 in case of failure to allocate memory (and raise MemoryError)
