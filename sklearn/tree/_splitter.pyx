@@ -467,7 +467,7 @@ cdef class FeatureSparseSplitter(BaseDenseSplitter):
                                self.random_state), self.__getstate__())
 
     cdef int node_split(self, double impurity, SplitRecord* split, 
-                        SIZE_t* n_constant_features, Tree tree, SIZE_t parent) nogil except -1:
+                        SIZE_t* n_constant_features, Tree tree, SIZE_t parent) with gil:
         """Find the best Feature Sparse split on node samples[start:end]
 
         Returns -1 in case of failure to allocate memory (and raise MemoryError)
