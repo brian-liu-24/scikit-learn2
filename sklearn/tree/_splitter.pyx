@@ -33,6 +33,7 @@ from ._utils cimport rand_int
 from ._utils cimport rand_uniform
 from ._utils cimport RAND_R_MAX
 from ._utils cimport safe_realloc
+from ._utils cimport isvaluenotinarray
 from ._tree cimport Tree
 
 cdef double INFINITY = np.inf
@@ -611,15 +612,18 @@ cdef class FeatureSparseSplitter(BaseDenseSplitter):
                             
                             nodes_array = tree.nodes
                             parent_node = nodes_array[parent]
-                            ancestor_array = parent_node.ancestor_features[0:(1+tree.helper_depth[parent])]
+                            array_length = 1 + tree.helper_depth[parent]
+                            ancestor_array = parent_node.ancestor_features[0:array_length]
 
                             parent_feature = parent_node.feature
                             ancestor_array[0] = parent_feature
                         
-                            if current.feature in ancestor_array:
-                                new_feature = 0
-                            else:
-                                new_feature = 1
+                            # if current.feature in ancestor_array:
+                            #     new_feature = 0
+                            # else:
+                            #     new_feature = 1
+
+                            new_feature = isvaluenotinarray(current.feature, ancestor_array, array_length)
 
                             sparsity_penalty = sparse_cost*new_feature
                             current_proxy_improvement = self.criterion.proxy_impurity_improvement() - sparsity_penalty

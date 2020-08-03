@@ -44,6 +44,14 @@ cdef realloc_ptr safe_realloc(realloc_ptr* p, size_t nelems) nogil except *:
     return tmp  # for convenience
 
 
+cdef int isvaluenotinarray(SIZE_t val, SIZE_t* arr, SIZE_t size):
+    cdef SIZE_t i
+    for i in range(size):
+        if arr[i] == val:
+            return 0
+    return 1
+
+
 def _realloc_test():
     # Helper for tests. Tries to allocate <size_t>(-1) / 2 * sizeof(size_t)
     # bytes, which will always overflow.
