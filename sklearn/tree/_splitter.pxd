@@ -89,7 +89,7 @@ cdef class Splitter:
                         double impurity,   # Impurity of the node
                         SplitRecord* split,
                         SIZE_t* n_constant_features,
-                         tree,
+                        Tree tree,
                         SIZE_t parent) with gil # except -1
 
     cdef void node_value(self, double* dest) nogil
