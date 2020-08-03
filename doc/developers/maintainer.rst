@@ -83,7 +83,7 @@ master!) with all the desired changes::
 
 	$ git rebase -i upstream/0.999.2
 
-Do not forget to add a commit updating sklearn.__version__.
+Do not forget to add a commit updating sklearn1.__version__.
 
 It's nice to have a copy of the ``git rebase -i`` log in the PR to help others
 understand what's included.
@@ -114,7 +114,7 @@ Making a release
      page.
 
 2. On the branch for releasing, update the version number in
-   `sklearn/__init__.py`, the ``__version__`` variable by removing ``dev*``
+   `sklearn1/__init__.py`, the ``__version__`` variable by removing ``dev*``
    only when ready to release. On master, increment the version in the same
    place (when branching for release). This means while we're in the release
    candidate period, the latest stable is two versions behind the master
@@ -270,48 +270,48 @@ via the web UI at https://www.travis-ci.org/scikit-learn/scikit-learn/settings.
 Experimental features
 ---------------------
 
-The :mod:`sklearn.experimental` module was introduced in 0.21 and contains
+The :mod:`sklearn1.experimental` module was introduced in 0.21 and contains
 experimental features / estimators that are subject to change without
 deprecation cycle.
 
 To create an experimental module, you can just copy and modify the content of
 `enable_hist_gradient_boosting.py
-<https://github.com/scikit-learn/scikit-learn/blob/master/sklearn/experimental/enable_hist_gradient_boosting.py>`_,
+<https://github.com/scikit-learn/scikit-learn/blob/master/sklearn1/experimental/enable_hist_gradient_boosting.py>`_,
 or
 `enable_iterative_imputer.py
-<https://github.com/scikit-learn/scikit-learn/blob/master/sklearn/experimental/enable_iterative_imputer.py>`_.
+<https://github.com/scikit-learn/scikit-learn/blob/master/sklearn1/experimental/enable_iterative_imputer.py>`_.
 
 Note that the public import path must be to a public subpackage (like
-``sklearn/ensemble`` or ``sklearn/impute``), not just a ``.py`` module.
+``sklearn1/ensemble`` or ``sklearn1/impute``), not just a ``.py`` module.
 Also, the (private) experimental features that are imported must be in a
 submodule/subpackage of the public subpackage, e.g.
-``sklearn/ensemble/_hist_gradient_boosting/`` or
-``sklearn/impute/_iterative.py``. This is needed so that pickles still work
+``sklearn1/ensemble/_hist_gradient_boosting/`` or
+``sklearn1/impute/_iterative.py``. This is needed so that pickles still work
 in the future when the features aren't experimental anymore
 
 To avoid type checker (e.g. mypy) errors a direct import of experimenal
 estimators should be done in the parent module, protected by the
-``if typing.TYPE_CHECKING`` check. See `sklearn/ensemble/__init__.py
-<https://github.com/scikit-learn/scikit-learn/blob/master/sklearn/ensemble/__init__.py>`_,
-or `sklearn/impute/__init__.py
-<https://github.com/scikit-learn/scikit-learn/blob/master/sklearn/impute/__init__.py>`_
+``if typing.TYPE_CHECKING`` check. See `sklearn1/ensemble/__init__.py
+<https://github.com/scikit-learn/scikit-learn/blob/master/sklearn1/ensemble/__init__.py>`_,
+or `sklearn1/impute/__init__.py
+<https://github.com/scikit-learn/scikit-learn/blob/master/sklearn1/impute/__init__.py>`_
 for an example.
 
 Please also write basic tests following those in
 `test_enable_hist_gradient_boosting.py
-<https://github.com/scikit-learn/scikit-learn/blob/master/sklearn/experimental/tests/test_enable_hist_gradient_boosting.py>`_.
+<https://github.com/scikit-learn/scikit-learn/blob/master/sklearn1/experimental/tests/test_enable_hist_gradient_boosting.py>`_.
 
 Make sure every user-facing code you write explicitly mentions that the feature
 is experimental, and add a ``# noqa`` comment to avoid pep8-related warnings::
 
     # To use this experimental feature, we need to explicitly ask for it:
-    from sklearn.experimental import enable_hist_gradient_boosting  # noqa
-    from sklearn.ensemble import HistGradientBoostingRegressor
+    from sklearn1.experimental import enable_hist_gradient_boosting  # noqa
+    from sklearn1.ensemble import HistGradientBoostingRegressor
 
 For the docs to render properly, please also import
 ``enable_my_experimental_feature`` in ``doc/conf.py``, else sphinx won't be
 able to import the corresponding modules. Note that using ``from
-sklearn.experimental import *`` **does not work**.
+sklearn1.experimental import *`` **does not work**.
 
 Note that some experimental classes / functions are not included in the
-:mod:`sklearn.experimental` module: ``sklearn.datasets.fetch_openml``.
+:mod:`sklearn1.experimental` module: ``sklearn1.datasets.fetch_openml``.

@@ -4,7 +4,7 @@
 Novelty and Outlier Detection
 ===================================================
 
-.. currentmodule:: sklearn
+.. currentmodule:: sklearn1
 
 Many applications require being able to decide whether a new observation
 belongs to the same distribution as existing observations (it is an
@@ -261,7 +261,7 @@ This algorithm is illustrated below.
 The :class:`ensemble.IsolationForest` supports ``warm_start=True`` which
 allows you to add more trees to an already fitted model::
 
-  >>> from sklearn.ensemble import IsolationForest
+  >>> from sklearn1.ensemble import IsolationForest
   >>> import numpy as np
   >>> X = np.array([[-1, -1], [-2, -1], [-3, -2], [0, 0], [-20, 50], [3, 5]])
   >>> clf = IsolationForest(n_estimators=10, warm_start=True)

@@ -31,9 +31,9 @@ import skimage
 from skimage.data import coins
 from skimage.transform import rescale
 
-from sklearn.feature_extraction import image
-from sklearn.cluster import spectral_clustering
-from sklearn.utils.fixes import parse_version
+from sklearn1.feature_extraction import image
+from sklearn1.cluster import spectral_clustering
+from sklearn1.utils.fixes import parse_version
 
 # these were introduced in skimage-0.14
 if parse_version(skimage.__version__) >= parse_version('0.14'):

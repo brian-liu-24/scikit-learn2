@@ -18,11 +18,11 @@ the size of the dataset and the stability of the model. See Cawley and Talbot
 
 To avoid this problem, nested CV effectively uses a series of
 train/validation/test set splits. In the inner loop (here executed by
-:class:`GridSearchCV <sklearn.model_selection.GridSearchCV>`), the score is
+:class:`GridSearchCV <sklearn1.model_selection.GridSearchCV>`), the score is
 approximately maximized by fitting a model to each training set, and then
 directly maximized in selecting (hyper)parameters over the validation set. In
 the outer loop (here in :func:`cross_val_score
-<sklearn.model_selection.cross_val_score>`), generalization error is estimated
+<sklearn1.model_selection.cross_val_score>`), generalization error is estimated
 by averaging test set scores over several dataset splits.
 
 The example below uses a support vector classifier with a non-linear kernel to
@@ -43,10 +43,10 @@ between their scores.
      <http://jmlr.csail.mit.edu/papers/volume11/cawley10a/cawley10a.pdf>`_
 
 """
-from sklearn.datasets import load_iris
+from sklearn1.datasets import load_iris
 from matplotlib import pyplot as plt
-from sklearn.svm import SVC
-from sklearn.model_selection import GridSearchCV, cross_val_score, KFold
+from sklearn1.svm import SVC
+from sklearn1.model_selection import GridSearchCV, cross_val_score, KFold
 import numpy as np
 
 print(__doc__)

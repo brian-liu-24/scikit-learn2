@@ -26,8 +26,8 @@ print(__doc__)
 import numpy as np
 import matplotlib.pyplot as plt
 
-from sklearn.datasets import load_iris
-from sklearn.decomposition import PCA, IncrementalPCA
+from sklearn1.datasets import load_iris
+from sklearn1.decomposition import PCA, IncrementalPCA
 
 iris = load_iris()
 X = iris.data

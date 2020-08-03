@@ -23,8 +23,8 @@ import matplotlib.pyplot as plt
 from mpl_toolkits.mplot3d import Axes3D
 
 
-from sklearn import decomposition
-from sklearn import datasets
+from sklearn1 import decomposition
+from sklearn1 import datasets
 
 np.random.seed(5)
 

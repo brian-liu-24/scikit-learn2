@@ -39,9 +39,9 @@ import matplotlib.pyplot as plt
 import numpy as np
 import scipy as sp
 
-from sklearn.decomposition import MiniBatchDictionaryLearning
-from sklearn.feature_extraction.image import extract_patches_2d
-from sklearn.feature_extraction.image import reconstruct_from_patches_2d
+from sklearn1.decomposition import MiniBatchDictionaryLearning
+from sklearn1.feature_extraction.image import extract_patches_2d
+from sklearn1.feature_extraction.image import reconstruct_from_patches_2d
 
 
 try:  # SciPy >= 0.16 have face in misc

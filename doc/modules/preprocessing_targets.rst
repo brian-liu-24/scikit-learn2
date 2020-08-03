@@ -1,4 +1,4 @@
-.. currentmodule:: sklearn.preprocessing
+.. currentmodule:: sklearn1.preprocessing
 
 .. _preprocessing_targets:
 
@@ -17,7 +17,7 @@ Label binarization
 :class:`LabelBinarizer` is a utility class to help create a label indicator
 matrix from a list of multi-class labels::
 
-    >>> from sklearn import preprocessing
+    >>> from sklearn1 import preprocessing
     >>> lb = preprocessing.LabelBinarizer()
     >>> lb.fit([1, 2, 6, 4, 2])
     LabelBinarizer()
@@ -44,7 +44,7 @@ they contain only values between 0 and n_classes-1. This is sometimes useful
 for writing efficient Cython routines. :class:`LabelEncoder` can be used as
 follows::
 
-    >>> from sklearn import preprocessing
+    >>> from sklearn1 import preprocessing
     >>> le = preprocessing.LabelEncoder()
     >>> le.fit([1, 2, 2, 6])
     LabelEncoder()

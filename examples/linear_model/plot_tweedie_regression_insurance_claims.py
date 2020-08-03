@@ -49,17 +49,17 @@ import numpy as np
 import matplotlib.pyplot as plt
 import pandas as pd
 
-from sklearn.datasets import fetch_openml
-from sklearn.compose import ColumnTransformer
-from sklearn.linear_model import PoissonRegressor, GammaRegressor
-from sklearn.linear_model import TweedieRegressor
-from sklearn.metrics import mean_tweedie_deviance
-from sklearn.model_selection import train_test_split
-from sklearn.pipeline import make_pipeline
-from sklearn.preprocessing import FunctionTransformer, OneHotEncoder
-from sklearn.preprocessing import StandardScaler, KBinsDiscretizer
+from sklearn1.datasets import fetch_openml
+from sklearn1.compose import ColumnTransformer
+from sklearn1.linear_model import PoissonRegressor, GammaRegressor
+from sklearn1.linear_model import TweedieRegressor
+from sklearn1.metrics import mean_tweedie_deviance
+from sklearn1.model_selection import train_test_split
+from sklearn1.pipeline import make_pipeline
+from sklearn1.preprocessing import FunctionTransformer, OneHotEncoder
+from sklearn1.preprocessing import StandardScaler, KBinsDiscretizer
 
-from sklearn.metrics import mean_absolute_error, mean_squared_error, auc
+from sklearn1.metrics import mean_absolute_error, mean_squared_error, auc
 
 
 def load_mtpl2(n_samples=100000):
@@ -448,7 +448,7 @@ plt.tight_layout()
 # Poisson-Gamma distribution of the total claim amount. This is equivalent to
 # a Tweedie distribution with a `power` parameter between 1 and 2.
 #
-# The :func:`sklearn.metrics.mean_tweedie_deviance` depends on a `power`
+# The :func:`sklearn1.metrics.mean_tweedie_deviance` depends on a `power`
 # parameter. As we do not know the true value of the `power` parameter, we here
 # compute the mean deviances for a grid of possible values, and compare the
 # models side by side, i.e. we compare them at identical values of `power`.

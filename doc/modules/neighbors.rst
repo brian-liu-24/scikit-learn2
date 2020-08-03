@@ -6,9 +6,9 @@ Nearest Neighbors
 
 .. sectionauthor:: Jake Vanderplas <vanderplas@astro.washington.edu>
 
-.. currentmodule:: sklearn.neighbors
+.. currentmodule:: sklearn1.neighbors
 
-:mod:`sklearn.neighbors` provides functionality for unsupervised and
+:mod:`sklearn1.neighbors` provides functionality for unsupervised and
 supervised neighbors-based learning methods.  Unsupervised nearest neighbors
 is the foundation of many other learning methods,
 notably manifold learning and spectral clustering.  Supervised neighbors-based
@@ -33,7 +33,7 @@ handwritten digits and satellite image scenes. Being a non-parametric method,
 it is often successful in classification situations where the decision
 boundary is very irregular.
 
-The classes in :mod:`sklearn.neighbors` can handle either NumPy arrays or
+The classes in :mod:`sklearn1.neighbors` can handle either NumPy arrays or
 `scipy.sparse` matrices as input.  For dense matrices, a large number of
 possible distance metrics are supported.  For sparse matrices, arbitrary
 Minkowski metrics are supported for searches.
@@ -51,7 +51,7 @@ Unsupervised Nearest Neighbors
 :class:`NearestNeighbors` implements unsupervised nearest neighbors learning.
 It acts as a uniform interface to three different nearest neighbors
 algorithms: :class:`BallTree`, :class:`KDTree`, and a
-brute-force algorithm based on routines in :mod:`sklearn.metrics.pairwise`.
+brute-force algorithm based on routines in :mod:`sklearn1.metrics.pairwise`.
 The choice of neighbors search algorithm is controlled through the keyword
 ``'algorithm'``, which must be one of
 ``['auto', 'ball_tree', 'kd_tree', 'brute']``.  When the default value
@@ -69,10 +69,10 @@ of each option, see `Nearest Neighbor Algorithms`_.
 Finding the Nearest Neighbors
 -----------------------------
 For the simple task of finding the nearest neighbors between two sets of
-data, the unsupervised algorithms within :mod:`sklearn.neighbors` can be
+data, the unsupervised algorithms within :mod:`sklearn1.neighbors` can be
 used:
 
-    >>> from sklearn.neighbors import NearestNeighbors
+    >>> from sklearn1.neighbors import NearestNeighbors
     >>> import numpy as np
     >>> X = np.array([[-1, -1], [-2, -1], [-3, -2], [1, 1], [2, 1], [3, 2]])
     >>> nbrs = NearestNeighbors(n_neighbors=2, algorithm='ball_tree').fit(X)
@@ -110,9 +110,9 @@ The dataset is structured such that points nearby in index order are nearby
 in parameter space, leading to an approximately block-diagonal matrix of
 K-nearest neighbors.  Such a sparse graph is useful in a variety of
 circumstances which make use of spatial relationships between points for
-unsupervised learning: in particular, see :class:`sklearn.manifold.Isomap`,
-:class:`sklearn.manifold.LocallyLinearEmbedding`, and
-:class:`sklearn.cluster.SpectralClustering`.
+unsupervised learning: in particular, see :class:`sklearn1.manifold.Isomap`,
+:class:`sklearn1.manifold.LocallyLinearEmbedding`, and
+:class:`sklearn1.cluster.SpectralClustering`.
 
 KDTree and BallTree Classes
 ---------------------------
@@ -121,7 +121,7 @@ directly to find nearest neighbors.  This is the functionality wrapped by
 the :class:`NearestNeighbors` class used above.  The Ball Tree and KD Tree
 have the same interface; we'll show an example of using the KD Tree here:
 
-    >>> from sklearn.neighbors import KDTree
+    >>> from sklearn1.neighbors import KDTree
     >>> import numpy as np
     >>> X = np.array([[-1, -1], [-2, -1], [-3, -2], [1, 1], [2, 1], [3, 2]])
     >>> kdt = KDTree(X, leaf_size=30, metric='euclidean')
@@ -265,9 +265,9 @@ as :math:`O[D N^2]`.  Efficient brute-force neighbors searches can be very
 competitive for small data samples.
 However, as the number of samples :math:`N` grows, the brute-force
 approach quickly becomes infeasible.  In the classes within
-:mod:`sklearn.neighbors`, brute-force neighbors searches are specified
+:mod:`sklearn1.neighbors`, brute-force neighbors searches are specified
 using the keyword ``algorithm = 'brute'``, and are computed using the
-routines available in :mod:`sklearn.metrics.pairwise`.
+routines available in :mod:`sklearn1.metrics.pairwise`.
 
 .. _kd_tree:
 
@@ -339,7 +339,7 @@ a *KD-tree* in high dimensions, though the actual performance is highly
 dependent on the structure of the training data.
 In scikit-learn, ball-tree-based
 neighbors searches are specified using the keyword ``algorithm = 'ball_tree'``,
-and are computed using the class :class:`sklearn.neighbors.BallTree`.
+and are computed using the class :class:`sklearn1.neighbors.BallTree`.
 Alternatively, the user can work with the :class:`BallTree` class directly.
 
 .. topic:: References:
@@ -471,16 +471,16 @@ Nearest Centroid Classifier
 
 The :class:`NearestCentroid` classifier is a simple algorithm that represents
 each class by the centroid of its members. In effect, this makes it
-similar to the label updating phase of the :class:`sklearn.cluster.KMeans` algorithm.
+similar to the label updating phase of the :class:`sklearn1.cluster.KMeans` algorithm.
 It also has no parameters to choose, making it a good baseline classifier. It
 does, however, suffer on non-convex classes, as well as when classes have
 drastically different variances, as equal variance in all dimensions is
-assumed. See Linear Discriminant Analysis (:class:`sklearn.discriminant_analysis.LinearDiscriminantAnalysis`)
-and Quadratic Discriminant Analysis (:class:`sklearn.discriminant_analysis.QuadraticDiscriminantAnalysis`)
+assumed. See Linear Discriminant Analysis (:class:`sklearn1.discriminant_analysis.LinearDiscriminantAnalysis`)
+and Quadratic Discriminant Analysis (:class:`sklearn1.discriminant_analysis.QuadraticDiscriminantAnalysis`)
 for more complex methods that do not make this assumption. Usage of the default
 :class:`NearestCentroid` is simple:
 
-    >>> from sklearn.neighbors import NearestCentroid
+    >>> from sklearn1.neighbors import NearestCentroid
     >>> import numpy as np
     >>> X = np.array([[-1, -1], [-2, -1], [-3, -2], [1, 1], [2, 1], [3, 2]])
     >>> y = np.array([1, 1, 1, 2, 2, 2])
@@ -528,18 +528,18 @@ Nearest Neighbors Transformer
 Many scikit-learn estimators rely on nearest neighbors: Several classifiers and
 regressors such as :class:`KNeighborsClassifier` and
 :class:`KNeighborsRegressor`, but also some clustering methods such as
-:class:`~sklearn.cluster.DBSCAN` and
-:class:`~sklearn.cluster.SpectralClustering`, and some manifold embeddings such
-as :class:`~sklearn.manifold.TSNE` and :class:`~sklearn.manifold.Isomap`.
+:class:`~sklearn1.cluster.DBSCAN` and
+:class:`~sklearn1.cluster.SpectralClustering`, and some manifold embeddings such
+as :class:`~sklearn1.manifold.TSNE` and :class:`~sklearn1.manifold.Isomap`.
 
 All these estimators can compute internally the nearest neighbors, but most of
 them also accept precomputed nearest neighbors :term:`sparse graph`,
-as given by :func:`~sklearn.neighbors.kneighbors_graph` and
-:func:`~sklearn.neighbors.radius_neighbors_graph`. With mode
+as given by :func:`~sklearn1.neighbors.kneighbors_graph` and
+:func:`~sklearn1.neighbors.radius_neighbors_graph`. With mode
 `mode='connectivity'`, these functions return a binary adjacency sparse graph
-as required, for instance, in :class:`~sklearn.cluster.SpectralClustering`.
+as required, for instance, in :class:`~sklearn1.cluster.SpectralClustering`.
 Whereas with `mode='distance'`, they return a distance sparse graph as required,
-for instance, in :class:`~sklearn.cluster.DBSCAN`. To include these functions in
+for instance, in :class:`~sklearn1.cluster.DBSCAN`. To include these functions in
 a scikit-learn pipeline, one can also use the corresponding classes
 :class:`KNeighborsTransformer` and :class:`RadiusNeighborsTransformer`.
 The benefits of this sparse graph API are multiple.
@@ -548,9 +548,9 @@ First, the precomputed graph can be re-used multiple times, for instance while
 varying a parameter of the estimator. This can be done manually by the user, or
 using the caching properties of the scikit-learn pipeline:
 
-    >>> from sklearn.manifold import Isomap
-    >>> from sklearn.neighbors import KNeighborsTransformer
-    >>> from sklearn.pipeline import make_pipeline
+    >>> from sklearn1.manifold import Isomap
+    >>> from sklearn1.neighbors import KNeighborsTransformer
+    >>> from sklearn1.pipeline import make_pipeline
     >>> estimator = make_pipeline(
     ...     KNeighborsTransformer(n_neighbors=5, mode='distance'),
     ...     Isomap(neighbors_algorithm='precomputed'),
@@ -564,7 +564,7 @@ Finally, the precomputation can be performed by custom estimators to use
 different implementations, such as approximate nearest neighbors methods, or
 implementation with special data types. The precomputed neighbors
 :term:`sparse graph` needs to be formatted as in
-:func:`~sklearn.neighbors.radius_neighbors_graph` output:
+:func:`~sklearn1.neighbors.radius_neighbors_graph` output:
 
 * a CSR matrix (although COO, CSC or LIL will be accepted).
 * only explicitly store nearest neighborhoods of each sample with respect to the
@@ -600,7 +600,7 @@ implementation with special data types. The precomputed neighbors
 
   * :ref:`sphx_glr_auto_examples_neighbors_approximate_nearest_neighbors.py`:
     an example of pipelining :class:`KNeighborsTransformer` and
-    :class:`~sklearn.manifold.TSNE`. Also proposes two custom nearest neighbors
+    :class:`~sklearn1.manifold.TSNE`. Also proposes two custom nearest neighbors
     estimators based on external packages.
 
   * :ref:`sphx_glr_auto_examples_neighbors_plot_caching_nearest_neighbors.py`:
@@ -666,11 +666,11 @@ transformation with a :class:`KNeighborsClassifier` instance that performs the
 classification in the projected space. Here is an example using the two
 classes:
 
-    >>> from sklearn.neighbors import (NeighborhoodComponentsAnalysis,
+    >>> from sklearn1.neighbors import (NeighborhoodComponentsAnalysis,
     ... KNeighborsClassifier)
-    >>> from sklearn.datasets import load_iris
-    >>> from sklearn.model_selection import train_test_split
-    >>> from sklearn.pipeline import Pipeline
+    >>> from sklearn1.datasets import load_iris
+    >>> from sklearn1.model_selection import train_test_split
+    >>> from sklearn1.pipeline import Pipeline
     >>> X, y = load_iris(return_X_y=True)
     >>> X_train, X_test, y_train, y_test = train_test_split(X, y,
     ... stratify=y, test_size=0.7, random_state=42)
@@ -706,8 +706,8 @@ are projected onto a linear subspace consisting of the directions which
 minimize the NCA objective. The desired dimensionality can be set using the
 parameter ``n_components``. For instance, the following figure shows a
 comparison of dimensionality reduction with Principal Component Analysis
-(:class:`sklearn.decomposition.PCA`), Linear Discriminant Analysis
-(:class:`sklearn.discriminant_analysis.LinearDiscriminantAnalysis`) and
+(:class:`sklearn1.decomposition.PCA`), Linear Discriminant Analysis
+(:class:`sklearn1.discriminant_analysis.LinearDiscriminantAnalysis`) and
 Neighborhood Component Analysis (:class:`NeighborhoodComponentsAnalysis`) on
 the Digits dataset, a dataset with size :math:`n_{samples} = 1797` and
 :math:`n_{features} = 64`. The data set is split into a training and a test set

@@ -13,7 +13,7 @@ print(__doc__)
 
 import numpy as np
 import matplotlib.pyplot as plt
-from sklearn import svm
+from sklearn1 import svm
 
 xx, yy = np.meshgrid(np.linspace(-3, 3, 500),
                      np.linspace(-3, 3, 500))

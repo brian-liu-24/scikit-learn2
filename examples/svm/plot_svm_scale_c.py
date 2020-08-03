@@ -87,11 +87,11 @@ print(__doc__)
 import numpy as np
 import matplotlib.pyplot as plt
 
-from sklearn.svm import LinearSVC
-from sklearn.model_selection import ShuffleSplit
-from sklearn.model_selection import GridSearchCV
-from sklearn.utils import check_random_state
-from sklearn import datasets
+from sklearn1.svm import LinearSVC
+from sklearn1.model_selection import ShuffleSplit
+from sklearn1.model_selection import GridSearchCV
+from sklearn1.utils import check_random_state
+from sklearn1 import datasets
 
 rnd = check_random_state(1)
 

@@ -4,13 +4,13 @@ Plotting Cross-Validated Predictions
 ====================================
 
 This example shows how to use
-:func:`~sklearn.model_selection.cross_val_predict` to visualize prediction
+:func:`~sklearn1.model_selection.cross_val_predict` to visualize prediction
 errors.
 
 """
-from sklearn import datasets
-from sklearn.model_selection import cross_val_predict
-from sklearn import linear_model
+from sklearn1 import datasets
+from sklearn1.model_selection import cross_val_predict
+from sklearn1 import linear_model
 import matplotlib.pyplot as plt
 
 lr = linear_model.LinearRegression()

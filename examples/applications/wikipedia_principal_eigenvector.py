@@ -42,7 +42,7 @@ import numpy as np
 
 from scipy import sparse
 
-from sklearn.decomposition import randomized_svd
+from sklearn1.decomposition import randomized_svd
 from urllib.request import urlopen
 
 

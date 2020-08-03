@@ -8,8 +8,8 @@
 *.swo
 .DS_Store
 build
-sklearn/datasets/__config__.py
-sklearn/**/*.html
+sklearn1/datasets/__config__.py
+sklearn1/**/*.html
 
 dist/
 MANIFEST
@@ -76,9 +76,9 @@ _configtest.o.d
 .mypy_cache/
 
 # files generated from a template
-sklearn/utils/_seq_dataset.pyx
-sklearn/utils/_seq_dataset.pxd
-sklearn/linear_model/_sag_fast.pyx
+sklearn1/utils/_seq_dataset.pyx
+sklearn1/utils/_seq_dataset.pxd
+sklearn1/linear_model/_sag_fast.pyx
 *.txt
 scikit_learn_sparse.egg-info/not-zip-safe
 scikit_learn_sparse.egg-info/PKG-INFO

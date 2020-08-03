@@ -11,8 +11,8 @@ print(__doc__)
 
 import numpy as np
 import matplotlib.pyplot as plt
-from sklearn import svm
-from sklearn.datasets import make_blobs
+from sklearn1 import svm
+from sklearn1.datasets import make_blobs
 
 
 # we create 40 separable points

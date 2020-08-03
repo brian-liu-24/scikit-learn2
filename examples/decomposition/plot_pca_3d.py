@@ -18,7 +18,7 @@ print(__doc__)
 #          Kevin Hughes
 # License: BSD 3 clause
 
-from sklearn.decomposition import PCA
+from sklearn1.decomposition import PCA
 
 from mpl_toolkits.mplot3d import Axes3D
 import numpy as np

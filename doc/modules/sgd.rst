@@ -4,7 +4,7 @@
 Stochastic Gradient Descent
 ===========================
 
-.. currentmodule:: sklearn.linear_model
+.. currentmodule:: sklearn1.linear_model
 
 **Stochastic Gradient Descent (SGD)** is a simple yet very efficient
 approach to fitting linear classifiers and regressors under
@@ -27,11 +27,11 @@ correspond to a specific family of machine learning models. It is only a
 :class:`SGDRegressor` will have an equivalent estimator in
 the scikit-learn API, potentially using a different optimization technique.
 For example, using `SGDClassifier(loss='log')` results in logistic regression,
-i.e. a model equivalent to :class:`~sklearn.linear_model.LogisticRegression`
+i.e. a model equivalent to :class:`~sklearn1.linear_model.LogisticRegression`
 which is fitted via SGD instead of being fitted by one of the other solvers
-in :class:`~sklearn.linear_model.LogisticRegression`. Similarly,
+in :class:`~sklearn1.linear_model.LogisticRegression`. Similarly,
 `SGDRegressor(loss='squared_loss', penalty='l2')` and
-:class:`~sklearn.linear_model.Ridge` solve the same optimization problem, via
+:class:`~sklearn1.linear_model.Ridge` solve the same optimization problem, via
 different means.
 
 The advantages of Stochastic Gradient Descent are:
@@ -74,7 +74,7 @@ of shape (n_samples, n_features) holding the training samples, and an
 array y of shape (n_samples,) holding the target values (class labels)
 for the training samples::
 
-    >>> from sklearn.linear_model import SGDClassifier
+    >>> from sklearn1.linear_model import SGDClassifier
     >>> X = [[0., 0.], [1., 1.]]
     >>> y = [0, 1]
     >>> clf = SGDClassifier(loss="hinge", penalty="l2", max_iter=5)
@@ -294,14 +294,14 @@ Tips on Practical Use
     must be applied to the test vector to obtain meaningful
     results. This can be easily done using :class:`StandardScaler`::
 
-      from sklearn.preprocessing import StandardScaler
+      from sklearn1.preprocessing import StandardScaler
       scaler = StandardScaler()
       scaler.fit(X_train)  # Don't cheat - fit only on training data
       X_train = scaler.transform(X_train)
       X_test = scaler.transform(X_test)  # apply same transformation to test data
 
       # Or better yet: use a pipeline!
-      from sklearn.pipeline import make_pipeline
+      from sklearn1.pipeline import make_pipeline
       est = make_pipeline(StandardScaler(), SGDClassifier())
       est.fit(X_train)
       est.predict(X_test)
@@ -311,8 +311,8 @@ Tips on Practical Use
 
   * Finding a reasonable regularization term :math:`\alpha` is
     best done using automatic hyper-parameter search, e.g.
-    :class:`~sklearn.model_selection.GridSearchCV` or
-    :class:`~sklearn.model_selection.RandomizedSearchCV`, usually in the
+    :class:`~sklearn1.model_selection.GridSearchCV` or
+    :class:`~sklearn1.model_selection.RandomizedSearchCV`, usually in the
     range ``10.0**-np.arange(1,7)``.
 
   * Empirically, we found that SGD converges after observing

@@ -39,11 +39,11 @@ print(__doc__)
 # License: BSD 3 clause
 
 import numpy as np
-from sklearn.covariance import EllipticEnvelope
-from sklearn.svm import OneClassSVM
+from sklearn1.covariance import EllipticEnvelope
+from sklearn1.svm import OneClassSVM
 import matplotlib.pyplot as plt
 import matplotlib.font_manager
-from sklearn.datasets import load_wine
+from sklearn1.datasets import load_wine
 
 # Define "classifiers" to be used
 classifiers = {

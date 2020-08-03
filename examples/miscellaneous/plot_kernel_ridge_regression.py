@@ -39,10 +39,10 @@ import time
 
 import numpy as np
 
-from sklearn.svm import SVR
-from sklearn.model_selection import GridSearchCV
-from sklearn.model_selection import learning_curve
-from sklearn.kernel_ridge import KernelRidge
+from sklearn1.svm import SVR
+from sklearn1.model_selection import GridSearchCV
+from sklearn1.model_selection import learning_curve
+from sklearn1.kernel_ridge import KernelRidge
 import matplotlib.pyplot as plt
 
 rng = np.random.RandomState(0)

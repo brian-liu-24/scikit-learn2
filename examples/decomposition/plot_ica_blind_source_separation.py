@@ -19,7 +19,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 from scipy import signal
 
-from sklearn.decomposition import FastICA, PCA
+from sklearn1.decomposition import FastICA, PCA
 
 # #############################################################################
 # Generate sample data

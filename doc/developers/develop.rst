@@ -10,7 +10,7 @@ implementing custom components for your own projects, this chapter
 details how to develop objects that safely interact with scikit-learn 
 Pipelines and model selection tools.
 
-.. currentmodule:: sklearn
+.. currentmodule:: sklearn1
 
 .. _api_overview:
 
@@ -86,7 +86,7 @@ data-independent parameters (overriding previous parameter values passed
 to ``__init__``).
 
 All estimators in the main scikit-learn codebase should inherit from
-``sklearn.base.BaseEstimator``.
+``sklearn1.base.BaseEstimator``.
 
 Instantiation
 ^^^^^^^^^^^^^
@@ -246,13 +246,13 @@ whether it is just for you or for contributing it to scikit-learn, there are
 several internals of scikit-learn that you should be aware of in addition to
 the scikit-learn API outlined above. You can check whether your estimator
 adheres to the scikit-learn interface and standards by running
-:func:`~sklearn.utils.estimator_checks.check_estimator` on an instance. The
-:func:`~sklearn.utils.estimator_checks.parametrize_with_checks` pytest
+:func:`~sklearn1.utils.estimator_checks.check_estimator` on an instance. The
+:func:`~sklearn1.utils.estimator_checks.parametrize_with_checks` pytest
 decorator can also be used (see its docstring for details and possible
 interactions with `pytest`)::
 
-  >>> from sklearn.utils.estimator_checks import check_estimator
-  >>> from sklearn.svm import LinearSVC
+  >>> from sklearn1.utils.estimator_checks import check_estimator
+  >>> from sklearn1.svm import LinearSVC
   >>> check_estimator(LinearSVC())  # passes
 
 The main motivation to make a class compatible to the scikit-learn estimator
@@ -286,16 +286,16 @@ the correct interface more easily.
     However, if a dependency on scikit-learn is acceptable in your code,
     you can prevent a lot of boilerplate code
     by deriving a class from ``BaseEstimator``
-    and optionally the mixin classes in ``sklearn.base``.
+    and optionally the mixin classes in ``sklearn1.base``.
     For example, below is a custom classifier, with more examples included
     in the scikit-learn-contrib
     `project template <https://github.com/scikit-learn-contrib/project-template/blob/master/skltemplate/_template.py>`__.
 
       >>> import numpy as np
-      >>> from sklearn.base import BaseEstimator, ClassifierMixin
-      >>> from sklearn.utils.validation import check_X_y, check_array, check_is_fitted
-      >>> from sklearn.utils.multiclass import unique_labels
-      >>> from sklearn.metrics import euclidean_distances
+      >>> from sklearn1.base import BaseEstimator, ClassifierMixin
+      >>> from sklearn1.utils.validation import check_X_y, check_array, check_is_fitted
+      >>> from sklearn1.utils.multiclass import unique_labels
+      >>> from sklearn1.metrics import euclidean_distances
       >>> class TemplateClassifier(BaseEstimator, ClassifierMixin):
       ...
       ...     def __init__(self, demo_param='demo'):
@@ -345,7 +345,7 @@ the ``set_params`` function is necessary as it is used to set parameters during
 grid searches.
 
 The easiest way to implement these functions, and to get a sensible
-``__repr__`` method, is to inherit from ``sklearn.base.BaseEstimator``. If you
+``__repr__`` method, is to inherit from ``sklearn1.base.BaseEstimator``. If you
 do not want to make your code dependent on scikit-learn, the easiest way to
 implement the interface is::
 
@@ -444,11 +444,11 @@ this can be achieved with::
         return self.classes_[np.argmax(D, axis=1)]
 
 In linear models, coefficients are stored in an array called ``coef_``, and the
-independent term is stored in ``intercept_``.  ``sklearn.linear_model._base``
+independent term is stored in ``intercept_``.  ``sklearn1.linear_model._base``
 contains a few base classes and mixins that implement common linear model
 patterns.
 
-The :mod:`sklearn.utils.multiclass` module contains useful functions
+The :mod:`sklearn1.utils.multiclass` module contains useful functions
 for working with multiclass and multilabel problems.
 
 .. _estimator_tags:
@@ -464,7 +464,7 @@ of estimators that allow programmatic inspection of their capabilities, such as
 sparse matrix support, supported output types and supported methods. The
 estimator tags are a dictionary returned by the method ``_get_tags()``. These
 tags are used by the common tests and the
-:func:`sklearn.utils.estimator_checks.check_estimator` function to decide what
+:func:`sklearn1.utils.estimator_checks.check_estimator` function to decide what
 tests to run and what input data is appropriate. Tags can depend on estimator
 parameters or even system architecture and can in general only be determined at
 runtime. The default values for the estimator tags are defined in the
@@ -501,7 +501,7 @@ poor_score (default=False)
     currently for regression is an R2 of 0.5 on a subset of the boston housing
     dataset, and for classification an accuracy of 0.83 on
     ``make_blobs(n_samples=300, random_state=0)``. These datasets and values
-    are based on current estimators in sklearn and might be replaced by
+    are based on current estimators in sklearn1 and might be replaced by
     something more systematic.
 
 requires_fit (default=True)
@@ -514,7 +514,7 @@ requires_positive_X (default=False)
 requires_y (default=False)
     whether the estimator requires y to be passed to `fit`, `fit_predict` or
     `fit_transform` methods. The tag is True for estimators inheriting from
-    `~sklearn.base.RegressorMixin` and `~sklearn.base.ClassifierMixin`.
+    `~sklearn1.base.RegressorMixin` and `~sklearn1.base.ClassifierMixin`.
 
 requires_positive_y (default=False)
     whether the estimator requires a positive y (only applicable for regression).
@@ -526,9 +526,9 @@ _skip_test (default=False)
 _xfail_checks (default=False)
     dictionary ``{check_name: reason}`` of common checks that will be marked
     as `XFAIL` for pytest, when using
-    :func:`~sklearn.utils.estimator_checks.parametrize_with_checks`. These
+    :func:`~sklearn1.utils.estimator_checks.parametrize_with_checks`. These
     checks will be simply ignored and not run by
-    :func:`~sklearn.utils.estimator_checks.check_estimator`, but a
+    :func:`~sklearn1.utils.estimator_checks.check_estimator`, but a
     `SkipTestWarning` will be raised.
     Don't use this unless there is a *very good* reason for your estimator
     not to pass the check.
@@ -600,9 +600,9 @@ In addition, we add the following guidelines:
 
 * Unit tests are an exception to the previous rule;
   they should use absolute imports, exactly as client code would.
-  A corollary is that, if ``sklearn.foo`` exports a class or function
-  that is implemented in ``sklearn.foo.bar.baz``,
-  the test should import it from ``sklearn.foo``.
+  A corollary is that, if ``sklearn1.foo`` exports a class or function
+  that is implemented in ``sklearn1.foo.bar.baz``,
+  the test should import it from ``sklearn1.foo``.
 
 * **Please don't use** ``import *`` **in any case**. It is considered harmful
   by the `official Python recommendations
@@ -623,9 +623,9 @@ A good example of code that we like can be found `here
 Input validation
 ----------------
 
-.. currentmodule:: sklearn.utils
+.. currentmodule:: sklearn1.utils
 
-The module :mod:`sklearn.utils` contains various functions for doing input
+The module :mod:`sklearn1.utils` contains various functions for doing input
 validation and conversion. Sometimes, ``np.asarray`` suffices for validation;
 do *not* use ``np.asanyarray`` or ``np.atleast_2d``, since those let NumPy's
 ``np.matrix`` through, which has a different API
@@ -646,11 +646,11 @@ If your code depends on a random number generator, do not use
 repeatability in error checking, the routine should accept a keyword
 ``random_state`` and use this to construct a
 ``numpy.random.RandomState`` object.
-See :func:`sklearn.utils.check_random_state` in :ref:`developers-utils`.
+See :func:`sklearn1.utils.check_random_state` in :ref:`developers-utils`.
 
 Here's a simple example of code using some of the above guidelines::
 
-    from sklearn.utils import check_array, check_random_state
+    from sklearn1.utils import check_array, check_random_state
 
     def choose_random_sample(X, random_state=0):
         """

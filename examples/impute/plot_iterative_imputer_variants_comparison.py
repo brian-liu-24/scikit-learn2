@@ -3,7 +3,7 @@
 Imputing missing values with variants of IterativeImputer
 =========================================================
 
-.. currentmodule:: sklearn
+.. currentmodule:: sklearn1
 
 The :class:`~impute.IterativeImputer` class is very flexible - it can be
 used with a variety of estimators to do round-robin regression, treating every
@@ -45,16 +45,16 @@ import matplotlib.pyplot as plt
 import pandas as pd
 
 # To use this experimental feature, we need to explicitly ask for it:
-from sklearn.experimental import enable_iterative_imputer  # noqa
-from sklearn.datasets import fetch_california_housing
-from sklearn.impute import SimpleImputer
-from sklearn.impute import IterativeImputer
-from sklearn.linear_model import BayesianRidge
-from sklearn.tree import DecisionTreeRegressor
-from sklearn.ensemble import ExtraTreesRegressor
-from sklearn.neighbors import KNeighborsRegressor
-from sklearn.pipeline import make_pipeline
-from sklearn.model_selection import cross_val_score
+from sklearn1.experimental import enable_iterative_imputer  # noqa
+from sklearn1.datasets import fetch_california_housing
+from sklearn1.impute import SimpleImputer
+from sklearn1.impute import IterativeImputer
+from sklearn1.linear_model import BayesianRidge
+from sklearn1.tree import DecisionTreeRegressor
+from sklearn1.ensemble import ExtraTreesRegressor
+from sklearn1.neighbors import KNeighborsRegressor
+from sklearn1.pipeline import make_pipeline
+from sklearn1.model_selection import cross_val_score
 
 N_SPLITS = 5
 

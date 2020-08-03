@@ -15,13 +15,13 @@ We will be using two datasets:
       the post is written about.
 
 We will model the complexity influence on three different estimators:
-    - :class:`~sklearn.linear_model.SGDClassifier` (for classification data)
+    - :class:`~sklearn1.linear_model.SGDClassifier` (for classification data)
       which implements stochastic gradient descent learning;
 
-    - :class:`~sklearn.svm.NuSVR` (for regression data) which implements
+    - :class:`~sklearn1.svm.NuSVR` (for regression data) which implements
       Nu support vector regression;
 
-    - :class:`~sklearn.ensemble.GradientBoostingRegressor` (for regression
+    - :class:`~sklearn1.ensemble.GradientBoostingRegressor` (for regression
       data) which builds an additive model in a forward stage-wise fashion.
 
 
@@ -43,13 +43,13 @@ import time
 import numpy as np
 import matplotlib.pyplot as plt
 
-from sklearn import datasets
-from sklearn.utils import shuffle
-from sklearn.metrics import mean_squared_error
-from sklearn.svm import NuSVR
-from sklearn.ensemble import GradientBoostingRegressor
-from sklearn.linear_model import SGDClassifier
-from sklearn.metrics import hamming_loss
+from sklearn1 import datasets
+from sklearn1.utils import shuffle
+from sklearn1.metrics import mean_squared_error
+from sklearn1.svm import NuSVR
+from sklearn1.ensemble import GradientBoostingRegressor
+from sklearn1.linear_model import SGDClassifier
+from sklearn1.metrics import hamming_loss
 
 
 # Initialize random generator
@@ -62,7 +62,7 @@ np.random.seed(0)
 # First we load both datasets.
 #
 # .. note:: We are using
-#    :func:`~sklearn.datasets.fetch_20newsgroups_vectorized` to download 20
+#    :func:`~sklearn1.datasets.fetch_20newsgroups_vectorized` to download 20
 #    newsgroups dataset. It returns ready-to-use features.
 #
 # .. note:: ``X`` of the 20 newsgroups dataset is a sparse matrix while ``X``

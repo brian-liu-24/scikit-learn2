@@ -72,7 +72,7 @@ nth threshold. A pair :math:`(R_k, P_k)` is referred to as an
 *operating point*.
 
 AP and the trapezoidal area under the operating points
-(:func:`sklearn.metrics.auc`) are common ways to summarize a precision-recall
+(:func:`sklearn1.metrics.auc`) are common ways to summarize a precision-recall
 curve that lead to different results. Read more in the
 :ref:`User Guide <precision_recall_f_measure_metrics>`.
 
@@ -85,10 +85,10 @@ matrix as a binary prediction (micro-averaging).
 
 .. note::
 
-    See also :func:`sklearn.metrics.average_precision_score`,
-             :func:`sklearn.metrics.recall_score`,
-             :func:`sklearn.metrics.precision_score`,
-             :func:`sklearn.metrics.f1_score`
+    See also :func:`sklearn1.metrics.average_precision_score`,
+             :func:`sklearn1.metrics.recall_score`,
+             :func:`sklearn1.metrics.precision_score`,
+             :func:`sklearn1.metrics.f1_score`
 """
 # %%
 # In binary classification settings
@@ -98,8 +98,8 @@ matrix as a binary prediction (micro-averaging).
 # ..................
 #
 # Try to differentiate the two first classes of the iris data
-from sklearn import svm, datasets
-from sklearn.model_selection import train_test_split
+from sklearn1 import svm, datasets
+from sklearn1.model_selection import train_test_split
 import numpy as np
 
 iris = datasets.load_iris()
@@ -124,7 +124,7 @@ y_score = classifier.decision_function(X_test)
 # %%
 # Compute the average precision score
 # ...................................
-from sklearn.metrics import average_precision_score
+from sklearn1.metrics import average_precision_score
 average_precision = average_precision_score(y_test, y_score)
 
 print('Average precision-recall score: {0:0.2f}'.format(
@@ -133,8 +133,8 @@ print('Average precision-recall score: {0:0.2f}'.format(
 # %%
 # Plot the Precision-Recall curve
 # ................................
-from sklearn.metrics import precision_recall_curve
-from sklearn.metrics import plot_precision_recall_curve
+from sklearn1.metrics import precision_recall_curve
+from sklearn1.metrics import plot_precision_recall_curve
 import matplotlib.pyplot as plt
 
 disp = plot_precision_recall_curve(classifier, X_test, y_test)
@@ -151,7 +151,7 @@ disp.ax_.set_title('2-class Precision-Recall curve: '
 # We create a multi-label dataset, to illustrate the precision-recall in
 # multi-label settings
 
-from sklearn.preprocessing import label_binarize
+from sklearn1.preprocessing import label_binarize
 
 # Use label_binarize to be multi-label like settings
 Y = label_binarize(y, classes=[0, 1, 2])
@@ -162,7 +162,7 @@ X_train, X_test, Y_train, Y_test = train_test_split(X, Y, test_size=.5,
                                                     random_state=random_state)
 
 # We use OneVsRestClassifier for multi-label prediction
-from sklearn.multiclass import OneVsRestClassifier
+from sklearn1.multiclass import OneVsRestClassifier
 
 # Run classifier
 classifier = OneVsRestClassifier(svm.LinearSVC(random_state=random_state))
@@ -173,8 +173,8 @@ y_score = classifier.decision_function(X_test)
 # %%
 # The average precision score in multi-label settings
 # ....................................................
-from sklearn.metrics import precision_recall_curve
-from sklearn.metrics import average_precision_score
+from sklearn1.metrics import precision_recall_curve
+from sklearn1.metrics import average_precision_score
 
 # For each class
 precision = dict()

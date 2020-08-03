@@ -48,11 +48,11 @@ The tutorial folder should contain the following sub-folders:
 
 
 You can already copy the skeletons into a new folder somewhere
-on your hard-drive named ``sklearn_tut_workspace`` where you
+on your hard-drive named ``sklearn1_tut_workspace`` where you
 will edit your own files for the exercises while keeping
 the original skeletons intact::
 
-    % cp -r skeletons work_directory/sklearn_tut_workspace
+    % cp -r skeletons work_directory/sklearn1_tut_workspace
 
 Machine learning algorithms need data. Go to each ``$TUTORIAL_HOME/data``
 sub-folder and run the ``fetch_data.py`` script from there (after
@@ -83,7 +83,7 @@ description, quoted from the `website
 
 In the following we will use the built-in dataset loader for 20 newsgroups
 from scikit-learn. Alternatively, it is possible to download the dataset
-manually from the website and use the :func:`sklearn.datasets.load_files`
+manually from the website and use the :func:`sklearn1.datasets.load_files`
 function by pointing it to the ``20news-bydate-train`` sub-folder of the
 uncompressed archive folder.
 
@@ -96,7 +96,7 @@ in the dataset::
 
 We can now load the list of files matching those categories as follows::
 
-  >>> from sklearn.datasets import fetch_20newsgroups
+  >>> from sklearn1.datasets import fetch_20newsgroups
   >>> twenty_train = fetch_20newsgroups(subset='train',
   ...     categories=categories, shuffle=True, random_state=42)
 
@@ -167,7 +167,7 @@ Extracting features from text files
 In order to perform machine learning on text documents, we first need to
 turn the text content into numerical feature vectors.
 
-.. currentmodule:: sklearn.feature_extraction.text
+.. currentmodule:: sklearn1.feature_extraction.text
 
 
 Bags of words
@@ -208,7 +208,7 @@ Text preprocessing, tokenizing and filtering of stopwords are all included
 in :class:`CountVectorizer`, which builds a dictionary of features and
 transforms documents to feature vectors::
 
-  >>> from sklearn.feature_extraction.text import CountVectorizer
+  >>> from sklearn1.feature_extraction.text import CountVectorizer
   >>> count_vect = CountVectorizer()
   >>> X_train_counts = count_vect.fit_transform(twenty_train.data)
   >>> X_train_counts.shape
@@ -260,7 +260,7 @@ Inverse Document Frequency".
 Both **tf** and **tf–idf** can be computed as follows using
 :class:`TfidfTransformer`::
 
-  >>> from sklearn.feature_extraction.text import TfidfTransformer
+  >>> from sklearn1.feature_extraction.text import TfidfTransformer
   >>> tf_transformer = TfidfTransformer(use_idf=False).fit(X_train_counts)
   >>> X_train_tf = tf_transformer.transform(X_train_counts)
   >>> X_train_tf.shape
@@ -290,7 +290,7 @@ provides a nice baseline for this task. ``scikit-learn`` includes several
 variants of this classifier; the one most suitable for word counts is the
 multinomial variant::
 
-  >>> from sklearn.naive_bayes import MultinomialNB
+  >>> from sklearn1.naive_bayes import MultinomialNB
   >>> clf = MultinomialNB().fit(X_train_tfidf, twenty_train.target)
 
 To try to predict the outcome on a new document we need to extract
@@ -315,10 +315,10 @@ Building a pipeline
 -------------------
 
 In order to make the vectorizer => transformer => classifier easier
-to work with, ``scikit-learn`` provides a :class:`~sklearn.pipeline.Pipeline` class that behaves
+to work with, ``scikit-learn`` provides a :class:`~sklearn1.pipeline.Pipeline` class that behaves
 like a compound classifier::
 
-  >>> from sklearn.pipeline import Pipeline
+  >>> from sklearn1.pipeline import Pipeline
   >>> text_clf = Pipeline([
   ...     ('vect', CountVectorizer()),
   ...     ('tfidf', TfidfTransformer()),
@@ -354,7 +354,7 @@ the best text classification algorithms (although it's also a bit slower
 than naïve Bayes). We can change the learner by simply plugging a different
 classifier object into our pipeline::
 
-  >>> from sklearn.linear_model import SGDClassifier
+  >>> from sklearn1.linear_model import SGDClassifier
   >>> text_clf = Pipeline([
   ...     ('vect', CountVectorizer()),
   ...     ('tfidf', TfidfTransformer()),
@@ -372,7 +372,7 @@ classifier object into our pipeline::
 We achieved 91.3% accuracy using the SVM. ``scikit-learn`` provides further
 utilities for more detailed performance analysis of the results::
 
-  >>> from sklearn import metrics
+  >>> from sklearn1 import metrics
   >>> print(metrics.classification_report(twenty_test.target, predicted,
   ...     target_names=twenty_test.target_names))
                           precision    recall  f1-score   support
@@ -407,7 +407,7 @@ with computer graphics.
   the classifier model to tune its parameters for the linear Support
   Vector Machine cost function.
 
-  Alternatively we could have used ``sklearn.svm.LinearSVC`` (Linear
+  Alternatively we could have used ``sklearn1.svm.LinearSVC`` (Linear
   Support Vector Machine Classifier) that provides an alternative
   optimizer for the same cost function based on the liblinear_ C++
   library.
@@ -431,7 +431,7 @@ parameters on a grid of possible values. We try out all classifiers
 on either words or bigrams, with or without idf, and with a penalty
 parameter of either 0.01 or 0.001 for the linear SVM::
 
-  >>> from sklearn.model_selection import GridSearchCV
+  >>> from sklearn1.model_selection import GridSearchCV
   >>> parameters = {
   ...     'vect__ngram_range': [(1, 1), (1, 2)],
   ...     'tfidf__use_idf': (True, False),

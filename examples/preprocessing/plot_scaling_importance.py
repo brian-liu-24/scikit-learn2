@@ -24,7 +24,7 @@ height of one meter can be considered much more important than the
 change in weight of one kilogram, this is clearly incorrect.
 
 To illustrate this, PCA is performed comparing the use of data with
-:class:`StandardScaler <sklearn.preprocessing.StandardScaler>` applied,
+:class:`StandardScaler <sklearn1.preprocessing.StandardScaler>` applied,
 to unscaled data. The results are visualized and a clear difference noted.
 The 1st principal component in the unscaled set can be seen. It can be seen
 that feature #13 dominates the direction, being a whole two orders of
@@ -41,14 +41,14 @@ clear difference in prediction accuracies is observed wherein the dataset
 which is scaled before PCA vastly outperforms the unscaled version.
 
 """
-from sklearn.model_selection import train_test_split
-from sklearn.preprocessing import StandardScaler
-from sklearn.decomposition import PCA
-from sklearn.naive_bayes import GaussianNB
-from sklearn import metrics
+from sklearn1.model_selection import train_test_split
+from sklearn1.preprocessing import StandardScaler
+from sklearn1.decomposition import PCA
+from sklearn1.naive_bayes import GaussianNB
+from sklearn1 import metrics
 import matplotlib.pyplot as plt
-from sklearn.datasets import load_wine
-from sklearn.pipeline import make_pipeline
+from sklearn1.datasets import load_wine
+from sklearn1.pipeline import make_pipeline
 print(__doc__)
 
 # Code source: Tyler Lanigan <tylerlanigan@gmail.com>

@@ -1,4 +1,4 @@
-.. currentmodule:: sklearn
+.. currentmodule:: sklearn1
 .. include:: whats_new/_contributors.rst
 
 Release History

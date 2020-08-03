@@ -3,7 +3,7 @@
 Plot the decision boundaries of a VotingClassifier
 ==================================================
 
-.. currentmodule:: sklearn
+.. currentmodule:: sklearn1
 
 Plot the decision boundaries of a :class:`~ensemble.VotingClassifier` for two
 features of the Iris dataset.
@@ -29,11 +29,11 @@ from itertools import product
 import numpy as np
 import matplotlib.pyplot as plt
 
-from sklearn import datasets
-from sklearn.tree import DecisionTreeClassifier
-from sklearn.neighbors import KNeighborsClassifier
-from sklearn.svm import SVC
-from sklearn.ensemble import VotingClassifier
+from sklearn1 import datasets
+from sklearn1.tree import DecisionTreeClassifier
+from sklearn1.neighbors import KNeighborsClassifier
+from sklearn1.svm import SVC
+from sklearn1.ensemble import VotingClassifier
 
 # Loading some example data
 iris = datasets.load_iris()

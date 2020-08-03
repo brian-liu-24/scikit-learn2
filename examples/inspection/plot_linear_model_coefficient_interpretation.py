@@ -44,7 +44,7 @@ import seaborn as sns
 # Note that setting the parameter `as_frame` to True will retrieve the data
 # as a pandas dataframe.
 
-from sklearn.datasets import fetch_openml
+from sklearn1.datasets import fetch_openml
 
 survey = fetch_openml(data_id=534, as_frame=True)
 
@@ -75,7 +75,7 @@ survey.target.head()
 # an unknown target, and we don't want our analysis and decisions to be biased
 # by our knowledge of the test data.
 
-from sklearn.model_selection import train_test_split
+from sklearn1.model_selection import train_test_split
 
 X_train, X_test, y_train, y_test = train_test_split(
     X, y, random_state=42
@@ -128,8 +128,8 @@ survey.data.info()
 # - as a first approach (we will see after how the normalisation of numerical
 #   values will affect our discussion), keep numerical values as they are.
 
-from sklearn.compose import make_column_transformer
-from sklearn.preprocessing import OneHotEncoder
+from sklearn1.compose import make_column_transformer
+from sklearn1.preprocessing import OneHotEncoder
 
 categorical_columns = ['RACE', 'OCCUPATION', 'SECTOR',
                        'MARR', 'UNION', 'SEX', 'SOUTH']
@@ -145,9 +145,9 @@ preprocessor = make_column_transformer(
 # with a very small regularization and to model the logarithm of the WAGE.
 
 
-from sklearn.pipeline import make_pipeline
-from sklearn.linear_model import Ridge
-from sklearn.compose import TransformedTargetRegressor
+from sklearn1.pipeline import make_pipeline
+from sklearn1.linear_model import Ridge
+from sklearn1.compose import TransformedTargetRegressor
 
 model = make_pipeline(
     preprocessor,
@@ -171,7 +171,7 @@ _ = model.fit(X_train, y_train)
 # on the test set and computing,
 # for example, the median absolute error of the model.
 
-from sklearn.metrics import median_absolute_error
+from sklearn1.metrics import median_absolute_error
 
 y_pred = model.predict(X_train)
 
@@ -311,8 +311,8 @@ plt.subplots_adjust(left=.3)
 # their robustness is not guaranteed, and they should probably be interpreted
 # with caution.
 
-from sklearn.model_selection import cross_validate
-from sklearn.model_selection import RepeatedKFold
+from sklearn1.model_selection import cross_validate
+from sklearn1.model_selection import RepeatedKFold
 
 cv_model = cross_validate(
     model, X, y, cv=RepeatedKFold(n_splits=5, n_repeats=5),
@@ -399,7 +399,7 @@ plt.subplots_adjust(left=.3)
 # The preprocessor is redefined in order to subtract the mean and scale
 # variables to unit variance.
 
-from sklearn.preprocessing import StandardScaler
+from sklearn1.preprocessing import StandardScaler
 
 preprocessor = make_column_transformer(
     (OneHotEncoder(drop='if_binary'), categorical_columns),
@@ -490,7 +490,7 @@ plt.subplots_adjust(left=.3)
 # determine which value of the regularization parameter (`alpha`) is best
 # suited for prediction.
 
-from sklearn.linear_model import RidgeCV
+from sklearn1.linear_model import RidgeCV
 
 model = make_pipeline(
     preprocessor,
@@ -591,7 +591,7 @@ _ = plt.title('Co-variations of coefficients for AGE and EXPERIENCE '
 # determine which value of the regularization parameter (`alpha`) is best
 # suited for the model estimation.
 
-from sklearn.linear_model import LassoCV
+from sklearn1.linear_model import LassoCV
 
 model = make_pipeline(
     preprocessor,

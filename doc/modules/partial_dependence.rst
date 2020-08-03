@@ -5,7 +5,7 @@
 Partial Dependence and Individual Conditional Expectation plots
 ===============================================================
 
-.. currentmodule:: sklearn.inspection
+.. currentmodule:: sklearn1.inspection
 
 Partial dependence plots (PDP) and individual conditional expectation (ICE)
 plots can be used to visualize and analyze interaction between the target
@@ -31,7 +31,7 @@ are usually chosen among the most important features.
 
 The figure below shows two one-way and one two-way partial dependence plots for
 the California housing dataset, with a :class:`HistGradientBoostingRegressor
-<sklearn.ensemble.HistGradientBoostingRegressor>`:
+<sklearn1.ensemble.HistGradientBoostingRegressor>`:
 
 .. figure:: ../auto_examples/inspection/images/sphx_glr_plot_partial_dependence_003.png
    :target: ../auto_examples/inspection/plot_partial_dependence.html
@@ -54,15 +54,15 @@ features: for an average occupancy greater than two, the house price is nearly
 independent of the house age, whereas for values less than 2 there is a strong
 dependence on age.
 
-The :mod:`sklearn.inspection` module provides a convenience function
+The :mod:`sklearn1.inspection` module provides a convenience function
 :func:`plot_partial_dependence` to create one-way and two-way partial
 dependence plots. In the below example we show how to create a grid of
 partial dependence plots: two one-way PDPs for the features ``0`` and ``1``
 and a two-way PDP between the two features::
 
-    >>> from sklearn.datasets import make_hastie_10_2
-    >>> from sklearn.ensemble import GradientBoostingClassifier
-    >>> from sklearn.inspection import plot_partial_dependence
+    >>> from sklearn1.datasets import make_hastie_10_2
+    >>> from sklearn1.ensemble import GradientBoostingClassifier
+    >>> from sklearn1.inspection import plot_partial_dependence
 
     >>> X, y = make_hastie_10_2(random_state=0)
     >>> clf = GradientBoostingClassifier(n_estimators=100, learning_rate=1.0,
@@ -76,7 +76,7 @@ and ``plt.gca()``.
 For multi-class classification, you need to set the class label for which
 the PDPs should be created via the ``target`` argument::
 
-    >>> from sklearn.datasets import load_iris
+    >>> from sklearn1.datasets import load_iris
     >>> iris = load_iris()
     >>> mc_clf = GradientBoostingClassifier(n_estimators=10,
     ...     max_depth=1).fit(iris.data, iris.target)
@@ -88,9 +88,9 @@ regression settings.
 
 If you need the raw values of the partial dependence function rather than
 the plots, you can use the
-:func:`sklearn.inspection.partial_dependence` function::
+:func:`sklearn1.inspection.partial_dependence` function::
 
-    >>> from sklearn.inspection import partial_dependence
+    >>> from sklearn1.inspection import partial_dependence
 
     >>> pdp, axes = partial_dependence(clf, X, [0])
     >>> pdp
@@ -101,7 +101,7 @@ the plots, you can use the
 The values at which the partial dependence should be evaluated are directly
 generated from ``X``. For 2-way partial dependence, a 2D-grid of values is
 generated. The ``values`` field returned by
-:func:`sklearn.inspection.partial_dependence` gives the actual values
+:func:`sklearn1.inspection.partial_dependence` gives the actual values
 used in the grid for each input feature of interest. They also correspond to
 the axis of the plots.
 
@@ -118,7 +118,7 @@ supported for ICE plots.
 
 The figures below show four ICE plots for the California housing dataset,
 with a :class:`HistGradientBoostingRegressor
-<sklearn.ensemble.HistGradientBoostingRegressor>`. The second figure plots
+<sklearn1.ensemble.HistGradientBoostingRegressor>`. The second figure plots
 the corresponding PD line overlaid on ICE lines.
 
 .. figure:: ../auto_examples/inspection/images/sphx_glr_plot_partial_dependence_002.png
@@ -134,14 +134,14 @@ and the house price in the PD line. However, the ICE lines show that there
 are some exceptions, where the house price remains constant in some ranges of
 the median income.
 
-The :mod:`sklearn.inspection` module's :func:`plot_partial_dependence`
+The :mod:`sklearn1.inspection` module's :func:`plot_partial_dependence`
 convenience function can be used to create ICE plots by setting
 ``kind='individual'``. In the example below, we show how to create a grid of
 ICE plots:
 
-    >>> from sklearn.datasets import make_hastie_10_2
-    >>> from sklearn.ensemble import GradientBoostingClassifier
-    >>> from sklearn.inspection import plot_partial_dependence
+    >>> from sklearn1.datasets import make_hastie_10_2
+    >>> from sklearn1.ensemble import GradientBoostingClassifier
+    >>> from sklearn1.inspection import plot_partial_dependence
 
     >>> X, y = make_hastie_10_2(random_state=0)
     >>> clf = GradientBoostingClassifier(n_estimators=100, learning_rate=1.0,

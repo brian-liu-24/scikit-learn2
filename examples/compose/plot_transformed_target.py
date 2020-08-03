@@ -7,7 +7,7 @@ Effect of transforming the targets in regression model
 ======================================================
 
 In this example, we give an overview of
-:class:`~sklearn.compose.TransformedTargetRegressor`. We use two examples
+:class:`~sklearn1.compose.TransformedTargetRegressor`. We use two examples
 to illustrate the benefit of transforming the targets before learning a linear
 regression model. The first example uses synthetic data while the second
 example is based on the Ames housing data set.
@@ -20,12 +20,12 @@ import numpy as np
 import matplotlib
 import matplotlib.pyplot as plt
 
-from sklearn.datasets import make_regression
-from sklearn.model_selection import train_test_split
-from sklearn.linear_model import RidgeCV
-from sklearn.compose import TransformedTargetRegressor
-from sklearn.metrics import median_absolute_error, r2_score
-from sklearn.utils.fixes import parse_version
+from sklearn1.datasets import make_regression
+from sklearn1.model_selection import train_test_split
+from sklearn1.linear_model import RidgeCV
+from sklearn1.compose import TransformedTargetRegressor
+from sklearn1.metrics import median_absolute_error, r2_score
+from sklearn1.utils.fixes import parse_version
 
 # %%
 # Synthetic example
@@ -126,8 +126,8 @@ f.tight_layout(rect=[0.05, 0.05, 0.95, 0.95])
 # of transforming the targets before learning a model. In this example, the
 # target to be predicted is the selling price of each house.
 
-from sklearn.datasets import fetch_openml
-from sklearn.preprocessing import QuantileTransformer, quantile_transform
+from sklearn1.datasets import fetch_openml
+from sklearn1.preprocessing import QuantileTransformer, quantile_transform
 
 ames = fetch_openml(name="house_prices", as_frame=True)
 # Keep only numeric columns
@@ -140,9 +140,9 @@ y_trans = quantile_transform(y.to_frame(),
                              output_distribution='normal',
                              copy=True).squeeze()
 # %%
-# A :class:`~sklearn.preprocessing.QuantileTransformer` is used to normalize
+# A :class:`~sklearn1.preprocessing.QuantileTransformer` is used to normalize
 # the target distribution before applying a
-# :class:`~sklearn.linear_model.RidgeCV` model.
+# :class:`~sklearn1.linear_model.RidgeCV` model.
 
 f, (ax0, ax1) = plt.subplots(1, 2)
 

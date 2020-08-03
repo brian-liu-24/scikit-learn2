@@ -22,7 +22,7 @@ print(__doc__)
 
 import numpy as np
 import matplotlib.pyplot as plt
-from sklearn.cross_decomposition import PLSCanonical, PLSRegression, CCA
+from sklearn1.cross_decomposition import PLSCanonical, PLSRegression, CCA
 
 # #############################################################################
 # Dataset based latent variables model

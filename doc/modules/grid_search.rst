@@ -1,6 +1,6 @@
 
 
-.. currentmodule:: sklearn.model_selection
+.. currentmodule:: sklearn1.model_selection
 
 .. _grid_search:
 
@@ -24,7 +24,7 @@ for a given estimator, use::
 
 A search consists of:
 
-- an estimator (regressor or classifier such as ``sklearn.svm.SVC()``);
+- an estimator (regressor or classifier such as ``sklearn1.svm.SVC()``);
 - a parameter space;
 - a method for searching or sampling candidates;
 - a cross-validation scheme; and
@@ -66,7 +66,7 @@ The :class:`GridSearchCV` instance implements the usual estimator API: when
 "fitting" it on a dataset all the possible combinations of parameter values are
 evaluated and the best combination is retained.
 
-.. currentmodule:: sklearn.model_selection
+.. currentmodule:: sklearn1.model_selection
 
 .. topic:: Examples:
 
@@ -133,7 +133,7 @@ consecutive calls.
         do not allow specifying a random state. Instead, they use the global
         numpy random state, that can be seeded via ``np.random.seed`` or set
         using ``np.random.set_state``. However, beginning scikit-learn 0.18,
-        the :mod:`sklearn.model_selection` module sets the random state provided
+        the :mod:`sklearn1.model_selection` module sets the random state provided
         by the user if scipy >= 0.16 is also available.
 
 For continuous parameters, such as ``C`` above, it is important to specify
@@ -141,7 +141,7 @@ a continuous distribution to take full advantage of the randomization. This way,
 increasing ``n_iter`` will always lead to a finer search.
 
 A continuous log-uniform random variable is available through
-:class:`~sklearn.utils.fixes.loguniform`. This is a continuous version of
+:class:`~sklearn1.utils.fixes.loguniform`. This is a continuous version of
 log-spaced parameters. For example to specify ``C`` above, ``loguniform(1,
 100)`` can be used instead of ``[1, 10, 100]`` or ``np.logspace(0, 2,
 num=1000)``. This is an alias to SciPy's `stats.reciprocal
@@ -150,7 +150,7 @@ num=1000)``. This is an alias to SciPy's `stats.reciprocal
 Mirroring the example above in grid search, we can specify a continuous random
 variable that is log-uniformly distributed between ``1e0`` and ``1e3``::
 
-  from sklearn.utils.fixes import loguniform
+  from sklearn1.utils.fixes import loguniform
   {'C': loguniform(1e0, 1e3),
    'gamma': loguniform(1e-4, 1e-3),
    'kernel': ['rbf'],
@@ -179,8 +179,8 @@ Specifying an objective metric
 
 By default, parameter search uses the ``score`` function of the estimator
 to evaluate a parameter setting. These are the
-:func:`sklearn.metrics.accuracy_score` for classification and
-:func:`sklearn.metrics.r2_score` for regression.  For some applications,
+:func:`sklearn1.metrics.accuracy_score` for classification and
+:func:`sklearn1.metrics.r2_score` for regression.  For some applications,
 other scoring functions are better suited (for example in unbalanced
 classification, the accuracy score is often uninformative). An alternative
 scoring function can be specified via the ``scoring`` parameter to
@@ -215,16 +215,16 @@ Composite estimators and parameter spaces
 -----------------------------------------
 :class:`GridSearchCV` and :class:`RandomizedSearchCV` allow searching over
 parameters of composite or nested estimators such as
-:class:`~sklearn.pipeline.Pipeline`,
-:class:`~sklearn.compose.ColumnTransformer`,
-:class:`~sklearn.ensemble.VotingClassifier` or
-:class:`~sklearn.calibration.CalibratedClassifierCV` using a dedicated
+:class:`~sklearn1.pipeline.Pipeline`,
+:class:`~sklearn1.compose.ColumnTransformer`,
+:class:`~sklearn1.ensemble.VotingClassifier` or
+:class:`~sklearn1.calibration.CalibratedClassifierCV` using a dedicated
 ``<estimator>__<parameter>`` syntax::
 
-  >>> from sklearn.model_selection import GridSearchCV
-  >>> from sklearn.calibration import CalibratedClassifierCV
-  >>> from sklearn.ensemble import RandomForestClassifier
-  >>> from sklearn.datasets import make_moons
+  >>> from sklearn1.model_selection import GridSearchCV
+  >>> from sklearn1.calibration import CalibratedClassifierCV
+  >>> from sklearn1.ensemble import RandomForestClassifier
+  >>> from sklearn1.datasets import make_moons
   >>> X, y = make_moons()
   >>> calibrated_forest = CalibratedClassifierCV(
   ...    base_estimator=RandomForestClassifier(n_estimators=10))
@@ -243,8 +243,8 @@ If the meta-estimator is constructed as a collection of estimators as in
 see :ref:`pipeline_nested_parameters`.  In practice, there can be several
 levels of nesting::
 
-  >>> from sklearn.pipeline import Pipeline
-  >>> from sklearn.feature_selection import SelectKBest
+  >>> from sklearn1.pipeline import Pipeline
+  >>> from sklearn1.feature_selection import SelectKBest
   >>> pipe = Pipeline([
   ...    ('select', SelectKBest()),
   ...    ('model', calibrated_forest)])
@@ -307,7 +307,7 @@ compute the **regularization path** of the estimator.
 
 Here is the list of such models:
 
-.. currentmodule:: sklearn
+.. currentmodule:: sklearn1
 
 .. autosummary::
    :toctree: generated/

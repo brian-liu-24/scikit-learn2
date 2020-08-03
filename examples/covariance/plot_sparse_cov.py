@@ -55,8 +55,8 @@ print(__doc__)
 
 import numpy as np
 from scipy import linalg
-from sklearn.datasets import make_sparse_spd_matrix
-from sklearn.covariance import GraphicalLassoCV, ledoit_wolf
+from sklearn1.datasets import make_sparse_spd_matrix
+from sklearn1.covariance import GraphicalLassoCV, ledoit_wolf
 import matplotlib.pyplot as plt
 
 # #############################################################################

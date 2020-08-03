@@ -208,10 +208,10 @@ affected_doc_paths() {
     files=$(git diff --name-only origin/master...$CIRCLE_SHA1)
     echo "$files" | grep ^doc/.*\.rst | sed 's/^doc\/\(.*\)\.rst$/\1.html/'
     echo "$files" | grep ^examples/.*.py | sed 's/^\(.*\)\.py$/auto_\1.html/'
-    sklearn_files=$(echo "$files" | grep '^sklearn/')
-    if [ -n "$sklearn_files" ]
+    sklearn1_files=$(echo "$files" | grep '^sklearn1/')
+    if [ -n "$sklearn1_files" ]
     then
-        grep -hlR -f<(echo "$sklearn_files" | sed 's/^/scikit-learn\/blob\/[a-z0-9]*\//') doc/_build/html/stable/modules/generated | cut -d/ -f5-
+        grep -hlR -f<(echo "$sklearn1_files" | sed 's/^/scikit-learn\/blob\/[a-z0-9]*\//') doc/_build/html/stable/modules/generated | cut -d/ -f5-
     fi
 }
 

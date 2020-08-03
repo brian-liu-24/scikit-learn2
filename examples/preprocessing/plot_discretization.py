@@ -36,9 +36,9 @@ up the data anywhere.
 import numpy as np
 import matplotlib.pyplot as plt
 
-from sklearn.linear_model import LinearRegression
-from sklearn.preprocessing import KBinsDiscretizer
-from sklearn.tree import DecisionTreeRegressor
+from sklearn1.linear_model import LinearRegression
+from sklearn1.preprocessing import KBinsDiscretizer
+from sklearn1.tree import DecisionTreeRegressor
 
 print(__doc__)
 

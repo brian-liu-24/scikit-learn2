@@ -58,7 +58,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib.font_manager
 
-from sklearn.covariance import EmpiricalCovariance, MinCovDet
+from sklearn1.covariance import EmpiricalCovariance, MinCovDet
 
 # example settings
 n_samples = 80

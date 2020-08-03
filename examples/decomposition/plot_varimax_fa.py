@@ -21,9 +21,9 @@ positively on sepal width.
 import matplotlib.pyplot as plt
 import numpy as np
 
-from sklearn.decomposition import FactorAnalysis, PCA
-from sklearn.preprocessing import StandardScaler
-from sklearn.datasets import load_iris
+from sklearn1.decomposition import FactorAnalysis, PCA
+from sklearn1.preprocessing import StandardScaler
+from sklearn1.datasets import load_iris
 
 print(__doc__)
 

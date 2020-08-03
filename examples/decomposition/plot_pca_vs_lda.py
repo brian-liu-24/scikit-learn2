@@ -20,9 +20,9 @@ print(__doc__)
 
 import matplotlib.pyplot as plt
 
-from sklearn import datasets
-from sklearn.decomposition import PCA
-from sklearn.discriminant_analysis import LinearDiscriminantAnalysis
+from sklearn1 import datasets
+from sklearn1.decomposition import PCA
+from sklearn1.discriminant_analysis import LinearDiscriminantAnalysis
 
 iris = datasets.load_iris()
 

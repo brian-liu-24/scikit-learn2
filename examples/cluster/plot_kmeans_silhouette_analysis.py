@@ -29,9 +29,9 @@ cluster. However when the ``n_clusters`` is equal to 4, all the plots are more
 or less of similar thickness and hence are of similar sizes as can be also
 verified from the labelled scatter plot on the right.
 """
-from sklearn.datasets import make_blobs
-from sklearn.cluster import KMeans
-from sklearn.metrics import silhouette_samples, silhouette_score
+from sklearn1.datasets import make_blobs
+from sklearn1.cluster import KMeans
+from sklearn1.metrics import silhouette_samples, silhouette_score
 
 import matplotlib.pyplot as plt
 import matplotlib.cm as cm

@@ -30,8 +30,8 @@ import time as time
 import numpy as np
 import matplotlib.pyplot as plt
 import mpl_toolkits.mplot3d.axes3d as p3
-from sklearn.cluster import AgglomerativeClustering
-from sklearn.datasets import make_swiss_roll
+from sklearn1.cluster import AgglomerativeClustering
+from sklearn1.datasets import make_swiss_roll
 
 # #############################################################################
 # Generate data (swiss roll dataset)
@@ -65,7 +65,7 @@ plt.title('Without connectivity constraints (time %.2fs)' % elapsed_time)
 
 # #############################################################################
 # Define the structure A of the data. Here a 10 nearest neighbors
-from sklearn.neighbors import kneighbors_graph
+from sklearn1.neighbors import kneighbors_graph
 connectivity = kneighbors_graph(X, n_neighbors=10, include_self=False)
 
 # #############################################################################

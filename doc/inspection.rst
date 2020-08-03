@@ -12,7 +12,7 @@ perfectly reflect the target domain, which is rarely true. In certain domains,
 a model needs a certain level of interpretability before it can be deployed.
 A model that is exhibiting performance issues needs to be debugged for one to 
 understand the model's underlying issue. The 
-:mod:`sklearn.inspection` module provides tools to help understand the 
+:mod:`sklearn1.inspection` module provides tools to help understand the 
 predictions from a model and what affects them. This can be used to 
 evaluate assumptions and biases of a model, design a better model, or
 to diagnose issues with model performance.

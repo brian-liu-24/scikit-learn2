@@ -20,11 +20,11 @@ import time
 import matplotlib.pyplot as plt
 import numpy as np
 
-from sklearn.datasets import fetch_openml
-from sklearn.linear_model import LogisticRegression
-from sklearn.model_selection import train_test_split
-from sklearn.preprocessing import StandardScaler
-from sklearn.utils import check_random_state
+from sklearn1.datasets import fetch_openml
+from sklearn1.linear_model import LogisticRegression
+from sklearn1.model_selection import train_test_split
+from sklearn1.preprocessing import StandardScaler
+from sklearn1.utils import check_random_state
 
 print(__doc__)
 

@@ -1,4 +1,4 @@
-.. currentmodule:: sklearn
+.. currentmodule:: sklearn1
 
 .. _model_evaluation:
 
@@ -104,8 +104,8 @@ Scoring                                Function                                 
 
 Usage examples:
 
-    >>> from sklearn import svm, datasets
-    >>> from sklearn.model_selection import cross_val_score
+    >>> from sklearn1 import svm, datasets
+    >>> from sklearn1.model_selection import cross_val_score
     >>> X, y = datasets.load_iris(return_X_y=True)
     >>> clf = svm.SVC(random_state=0)
     >>> cross_val_score(clf, X, y, cv=5, scoring='recall_macro')
@@ -113,23 +113,23 @@ Usage examples:
     >>> model = svm.SVC()
     >>> cross_val_score(model, X, y, cv=5, scoring='wrong_choice')
     Traceback (most recent call last):
-    ValueError: 'wrong_choice' is not a valid scoring value. Use sorted(sklearn.metrics.SCORERS.keys()) to get valid options.
+    ValueError: 'wrong_choice' is not a valid scoring value. Use sorted(sklearn1.metrics.SCORERS.keys()) to get valid options.
 
 .. note::
 
     The values listed by the ValueError exception correspond to the functions measuring
     prediction accuracy described in the following sections.
     The scorer objects for those functions are stored in the dictionary
-    ``sklearn.metrics.SCORERS``.
+    ``sklearn1.metrics.SCORERS``.
 
-.. currentmodule:: sklearn.metrics
+.. currentmodule:: sklearn1.metrics
 
 .. _scoring:
 
 Defining your scoring strategy from metric functions
 -----------------------------------------------------
 
-The module :mod:`sklearn.metrics` also exposes a set of simple functions
+The module :mod:`sklearn1.metrics` also exposes a set of simple functions
 measuring a prediction error given ground truth and prediction:
 
 - functions ending with ``_score`` return a value to
@@ -155,10 +155,10 @@ One typical use case is to wrap an existing metric function from the library
 with non-default values for its parameters, such as the ``beta`` parameter for
 the :func:`fbeta_score` function::
 
-    >>> from sklearn.metrics import fbeta_score, make_scorer
+    >>> from sklearn1.metrics import fbeta_score, make_scorer
     >>> ftwo_scorer = make_scorer(fbeta_score, beta=2)
-    >>> from sklearn.model_selection import GridSearchCV
-    >>> from sklearn.svm import LinearSVC
+    >>> from sklearn1.model_selection import GridSearchCV
+    >>> from sklearn1.svm import LinearSVC
     >>> grid = GridSearchCV(LinearSVC(), param_grid={'C': [1, 10]},
     ...                     scoring=ftwo_scorer, cv=5)
 
@@ -194,7 +194,7 @@ Here is an example of building custom scorers, and of using the
     >>> score = make_scorer(my_custom_loss_func, greater_is_better=False)
     >>> X = [[1], [1]]
     >>> y = [0, 1]
-    >>> from sklearn.dummy import DummyClassifier
+    >>> from sklearn1.dummy import DummyClassifier
     >>> clf = DummyClassifier(strategy='most_frequent', random_state=0)
     >>> clf = clf.fit(X, y)
     >>> my_custom_loss_func(clf.predict(X), y)
@@ -256,8 +256,8 @@ parameter:
       >>> scoring = ['accuracy', 'precision']
 
 - As a ``dict`` mapping the scorer name to the scoring function::
-      >>> from sklearn.metrics import accuracy_score
-      >>> from sklearn.metrics import make_scorer
+      >>> from sklearn1.metrics import accuracy_score
+      >>> from sklearn1.metrics import make_scorer
       >>> scoring = {'accuracy': make_scorer(accuracy_score),
       ...            'prec': 'precision'}
 
@@ -266,8 +266,8 @@ parameter:
 
 - As a callable that returns a dictionary of scores::
 
-    >>> from sklearn.model_selection import cross_validate
-    >>> from sklearn.metrics import confusion_matrix
+    >>> from sklearn1.model_selection import cross_validate
+    >>> from sklearn1.metrics import confusion_matrix
     >>> # A sample toy binary classification dataset
     >>> X, y = datasets.make_classification(n_classes=2, random_state=0)
     >>> svm = LinearSVC(random_state=0)
@@ -290,9 +290,9 @@ parameter:
 Classification metrics
 =======================
 
-.. currentmodule:: sklearn.metrics
+.. currentmodule:: sklearn1.metrics
 
-The :mod:`sklearn.metrics` module implements several loss, score, and utility
+The :mod:`sklearn1.metrics` module implements several loss, score, and utility
 functions to measure classification performance.
 Some metrics might require probability estimates of the positive class,
 confidence values, or binary decisions values.
@@ -422,7 +422,7 @@ where :math:`1(x)` is the `indicator function
 <https://en.wikipedia.org/wiki/Indicator_function>`_.
 
   >>> import numpy as np
-  >>> from sklearn.metrics import accuracy_score
+  >>> from sklearn1.metrics import accuracy_score
   >>> y_pred = [0, 2, 1, 3]
   >>> y_true = [0, 1, 2, 3]
   >>> accuracy_score(y_true, y_pred)
@@ -546,7 +546,7 @@ Kappa scores can be computed for binary or multiclass problems,
 but not for multilabel problems (except by manually computing a per-label score)
 and not for more than two annotators.
 
-  >>> from sklearn.metrics import cohen_kappa_score
+  >>> from sklearn1.metrics import cohen_kappa_score
   >>> y_true = [2, 0, 2, 2, 0, 1]
   >>> y_pred = [0, 0, 2, 2, 0, 2]
   >>> cohen_kappa_score(y_true, y_pred)
@@ -567,7 +567,7 @@ By definition, entry :math:`i, j` in a confusion matrix is
 the number of observations actually in group :math:`i`, but
 predicted to be in group :math:`j`. Here is an example::
 
-  >>> from sklearn.metrics import confusion_matrix
+  >>> from sklearn1.metrics import confusion_matrix
   >>> y_true = [2, 0, 2, 2, 0, 1]
   >>> y_pred = [0, 0, 2, 2, 0, 2]
   >>> confusion_matrix(y_true, y_pred)
@@ -628,7 +628,7 @@ The :func:`classification_report` function builds a text report showing the
 main classification metrics. Here is a small example with custom ``target_names``
 and inferred labels::
 
-   >>> from sklearn.metrics import classification_report
+   >>> from sklearn1.metrics import classification_report
    >>> y_true = [0, 1, 2, 2, 0]
    >>> y_pred = [0, 0, 2, 1, 0]
    >>> target_names = ['class 0', 'class 1', 'class 2']
@@ -679,7 +679,7 @@ Hamming loss :math:`L_{Hamming}` between two samples is defined as:
 where :math:`1(x)` is the `indicator function
 <https://en.wikipedia.org/wiki/Indicator_function>`_. ::
 
-  >>> from sklearn.metrics import hamming_loss
+  >>> from sklearn1.metrics import hamming_loss
   >>> y_pred = [1, 2, 3, 4]
   >>> y_true = [2, 2, 3, 4]
   >>> hamming_loss(y_true, y_pred)
@@ -835,7 +835,7 @@ In this context, we can define the notions of precision, recall and F-measure:
 
 Here are some small examples in binary classification::
 
-  >>> from sklearn import metrics
+  >>> from sklearn1 import metrics
   >>> y_pred = [0, 1, 0, 0]
   >>> y_true = [0, 1, 0, 1]
   >>> metrics.precision_score(y_true, y_pred)
@@ -855,8 +855,8 @@ Here are some small examples in binary classification::
 
 
   >>> import numpy as np
-  >>> from sklearn.metrics import precision_recall_curve
-  >>> from sklearn.metrics import average_precision_score
+  >>> from sklearn1.metrics import precision_recall_curve
+  >>> from sklearn1.metrics import average_precision_score
   >>> y_true = np.array([0, 0, 1, 1])
   >>> y_scores = np.array([0.1, 0.4, 0.35, 0.8])
   >>> precision, recall, threshold = precision_recall_curve(y_true, y_scores)
@@ -919,7 +919,7 @@ Then the metrics are defined as:
 |``None``       | :math:`\langle P(y_l, \hat{y}_l) | l \in L \rangle`                                                              | :math:`\langle R(y_l, \hat{y}_l) | l \in L \rangle`                                                              | :math:`\langle F_\beta(y_l, \hat{y}_l) | l \in L \rangle`                                                            |
 +---------------+------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------+
 
-  >>> from sklearn import metrics
+  >>> from sklearn1 import metrics
   >>> y_true = [0, 1, 2, 0, 1, 2]
   >>> y_pred = [0, 2, 1, 0, 0, 1]
   >>> metrics.precision_score(y_true, y_pred, average='macro')
@@ -969,7 +969,7 @@ apply to multilabel and multiclass through the use of `average` (see
 In the binary case: ::
 
   >>> import numpy as np
-  >>> from sklearn.metrics import jaccard_score
+  >>> from sklearn1.metrics import jaccard_score
   >>> y_true = np.array([[0, 1, 1],
   ...                    [1, 1, 0]])
   >>> y_pred = np.array([[1, 1, 1],
@@ -1034,8 +1034,8 @@ by:
 Here a small example demonstrating the use of the :func:`hinge_loss` function
 with a svm classifier in a binary class problem::
 
-  >>> from sklearn import svm
-  >>> from sklearn.metrics import hinge_loss
+  >>> from sklearn1 import svm
+  >>> from sklearn1.metrics import hinge_loss
   >>> X = [[0], [1]]
   >>> y = [-1, 1]
   >>> est = svm.LinearSVC(random_state=0)
@@ -1105,7 +1105,7 @@ The :func:`log_loss` function computes log loss given a list of ground-truth
 labels and a probability matrix, as returned by an estimator's ``predict_proba``
 method.
 
-    >>> from sklearn.metrics import log_loss
+    >>> from sklearn1.metrics import log_loss
     >>> y_true = [0, 0, 1, 1]
     >>> y_pred = [[.9, .1], [.8, .2], [.3, .7], [.01, .99]]
     >>> log_loss(y_true, y_pred)
@@ -1170,7 +1170,7 @@ value is always +1.
 Here is a small example illustrating the usage of the :func:`matthews_corrcoef`
 function:
 
-    >>> from sklearn.metrics import matthews_corrcoef
+    >>> from sklearn1.metrics import matthews_corrcoef
     >>> y_true = [+1, +1, +1, -1]
     >>> y_pred = [+1, -1, +1, +1]
     >>> matthews_corrcoef(y_true, y_pred)
@@ -1198,7 +1198,7 @@ Here is an example demonstrating the use of the
 :term:`multilabel indicator matrix` input::
 
     >>> import numpy as np
-    >>> from sklearn.metrics import multilabel_confusion_matrix
+    >>> from sklearn1.metrics import multilabel_confusion_matrix
     >>> y_true = np.array([[1, 0, 1],
     ...                    [0, 1, 0]])
     >>> y_pred = np.array([[1, 0, 0],
@@ -1305,7 +1305,7 @@ positive class, confidence values, or binary decisions.
 Here is a small example of how to use the :func:`roc_curve` function::
 
     >>> import numpy as np
-    >>> from sklearn.metrics import roc_curve
+    >>> from sklearn1.metrics import roc_curve
     >>> y = np.array([1, 1, 2, 2])
     >>> scores = np.array([0.1, 0.4, 0.35, 0.8])
     >>> fpr, tpr, thresholds = roc_curve(y, scores, pos_label=2)
@@ -1331,7 +1331,7 @@ For more information see the `Wikipedia article on AUC
 <https://en.wikipedia.org/wiki/Receiver_operating_characteristic#Area_under_the_curve>`_.
 
   >>> import numpy as np
-  >>> from sklearn.metrics import roc_auc_score
+  >>> from sklearn1.metrics import roc_auc_score
   >>> y_true = np.array([0, 0, 1, 1])
   >>> y_scores = np.array([0.1, 0.4, 0.35, 0.8])
   >>> roc_auc_score(y_true, y_scores)
@@ -1466,7 +1466,7 @@ where :math:`1(x)` is the `indicator function
 <https://en.wikipedia.org/wiki/Indicator_function>`_.
 
 
-  >>> from sklearn.metrics import zero_one_loss
+  >>> from sklearn1.metrics import zero_one_loss
   >>> y_pred = [1, 2, 3, 4]
   >>> y_true = [2, 2, 3, 4]
   >>> zero_one_loss(y_true, y_pred)
@@ -1522,7 +1522,7 @@ predicted probability of the actual outcome :math:`o_t`.
 Here is a small example of usage of this function:::
 
     >>> import numpy as np
-    >>> from sklearn.metrics import brier_score_loss
+    >>> from sklearn1.metrics import brier_score_loss
     >>> y_true = np.array([0, 1, 1, 0])
     >>> y_true_categorical = np.array(["spam", "ham", "ham", "spam"])
     >>> y_prob = np.array([0.1, 0.9, 0.8, 0.4])
@@ -1554,7 +1554,7 @@ Here is a small example of usage of this function:::
 Multilabel ranking metrics
 ==========================
 
-.. currentmodule:: sklearn.metrics
+.. currentmodule:: sklearn1.metrics
 
 In multilabel learning, each sample can have any number of ground truth labels
 associated with it. The goal is to give high scores and better rank to
@@ -1594,7 +1594,7 @@ maximal rank that would have been assigned to all tied values.
 Here is a small example of usage of this function::
 
     >>> import numpy as np
-    >>> from sklearn.metrics import coverage_error
+    >>> from sklearn1.metrics import coverage_error
     >>> y_true = np.array([[1, 0, 0], [0, 0, 1]])
     >>> y_score = np.array([[0.75, 0.5, 1], [1, 0.2, 0.1]])
     >>> coverage_error(y_true, y_score)
@@ -1641,7 +1641,7 @@ elements in the set), and :math:`||\cdot||_0` is the :math:`\ell_0` "norm"
 Here is a small example of usage of this function::
 
     >>> import numpy as np
-    >>> from sklearn.metrics import label_ranking_average_precision_score
+    >>> from sklearn1.metrics import label_ranking_average_precision_score
     >>> y_true = np.array([[1, 0, 0], [0, 0, 1]])
     >>> y_score = np.array([[0.75, 0.5, 1], [1, 0.2, 0.1]])
     >>> label_ranking_average_precision_score(y_true, y_score)
@@ -1676,7 +1676,7 @@ elements in the set) and :math:`||\cdot||_0` is the :math:`\ell_0` "norm"
 Here is a small example of usage of this function::
 
     >>> import numpy as np
-    >>> from sklearn.metrics import label_ranking_loss
+    >>> from sklearn1.metrics import label_ranking_loss
     >>> y_true = np.array([[1, 0, 0], [0, 0, 1]])
     >>> y_score = np.array([[0.75, 0.5, 1], [1, 0.2, 0.1]])
     >>> label_ranking_loss(y_true, y_score)
@@ -1698,8 +1698,8 @@ Normalized Discounted Cumulative Gain
 -------------------------------------
 
 Discounted Cumulative Gain (DCG) and Normalized Discounted Cumulative Gain
-(NDCG) are ranking metrics implemented in :func:`~sklearn.metrics.dcg_score`
-and :func:`~sklearn.metrics.ndcg_score` ; they compare a predicted order to
+(NDCG) are ranking metrics implemented in :func:`~sklearn1.metrics.dcg_score`
+and :func:`~sklearn1.metrics.ndcg_score` ; they compare a predicted order to
 ground-truth scores, such as the relevance of answers to a query.
 
 From the Wikipedia page for Discounted Cumulative Gain:
@@ -1759,9 +1759,9 @@ and the NDCG score is the DCG score divided by the DCG score obtained for
 Regression metrics
 ===================
 
-.. currentmodule:: sklearn.metrics
+.. currentmodule:: sklearn1.metrics
 
-The :mod:`sklearn.metrics` module implements several loss, score, and utility
+The :mod:`sklearn1.metrics` module implements several loss, score, and utility
 functions to measure regression performance. Some of those have been enhanced
 to handle the multioutput case: :func:`mean_squared_error`,
 :func:`mean_absolute_error`, :func:`explained_variance_score` and
@@ -1810,7 +1810,7 @@ The best possible score is 1.0, lower values are worse.
 Here is a small example of usage of the :func:`explained_variance_score`
 function::
 
-    >>> from sklearn.metrics import explained_variance_score
+    >>> from sklearn1.metrics import explained_variance_score
     >>> y_true = [3, -0.5, 2, 7]
     >>> y_pred = [2.5, 0.0, 2, 8]
     >>> explained_variance_score(y_true, y_pred)
@@ -1846,7 +1846,7 @@ defined as
 
 Here is a small example of usage of the :func:`max_error` function::
 
-  >>> from sklearn.metrics import max_error
+  >>> from sklearn1.metrics import max_error
   >>> y_true = [3, 2, 7, 1]
   >>> y_pred = [9, 2, 7, 1]
   >>> max_error(y_true, y_pred)
@@ -1874,7 +1874,7 @@ and :math:`y_i` is the corresponding true value, then the mean absolute error
 
 Here is a small example of usage of the :func:`mean_absolute_error` function::
 
-  >>> from sklearn.metrics import mean_absolute_error
+  >>> from sklearn1.metrics import mean_absolute_error
   >>> y_true = [3, -0.5, 2, 7]
   >>> y_pred = [2.5, 0.0, 2, 8]
   >>> mean_absolute_error(y_true, y_pred)
@@ -1909,7 +1909,7 @@ and :math:`y_i` is the corresponding true value, then the mean squared error
 Here is a small example of usage of the :func:`mean_squared_error`
 function::
 
-  >>> from sklearn.metrics import mean_squared_error
+  >>> from sklearn1.metrics import mean_squared_error
   >>> y_true = [3, -0.5, 2, 7]
   >>> y_pred = [2.5, 0.0, 2, 8]
   >>> mean_squared_error(y_true, y_pred)
@@ -1952,7 +1952,7 @@ estimate.
 Here is a small example of usage of the :func:`mean_squared_log_error`
 function::
 
-  >>> from sklearn.metrics import mean_squared_log_error
+  >>> from sklearn1.metrics import mean_squared_log_error
   >>> y_true = [3, 5, 2.5, 7]
   >>> y_pred = [2.5, 5, 4, 8]
   >>> mean_squared_log_error(y_true, y_pred)
@@ -1987,7 +1987,7 @@ The :func:`mean_absolute_percentage_error` function supports multioutput.
 Here is a small example of usage of the :func:`mean_absolute_percentage_error`
 function::
 
-  >>> from sklearn.metrics import mean_absolute_percentage_error
+  >>> from sklearn1.metrics import mean_absolute_percentage_error
   >>> y_true = [1, 10, 1e6]
   >>> y_pred = [0.9, 15, 1.2e6]
   >>> mean_absolute_percentage_error(y_true, y_pred)
@@ -2020,7 +2020,7 @@ The :func:`median_absolute_error` does not support multioutput.
 Here is a small example of usage of the :func:`median_absolute_error`
 function::
 
-  >>> from sklearn.metrics import median_absolute_error
+  >>> from sklearn1.metrics import median_absolute_error
   >>> y_true = [3, -0.5, 2, 7]
   >>> y_pred = [2.5, 0.0, 2, 8]
   >>> median_absolute_error(y_true, y_pred)
@@ -2061,7 +2061,7 @@ bias in sample variance of y.
 
 Here is a small example of usage of the :func:`r2_score` function::
 
-  >>> from sklearn.metrics import r2_score
+  >>> from sklearn1.metrics import r2_score
   >>> y_true = [3, -0.5, 2, 7]
   >>> y_pred = [2.5, 0.0, 2, 8]
   >>> r2_score(y_true, y_pred)
@@ -2135,7 +2135,7 @@ For instance, let's compare the two predictions 1.0 and 100 that are both
 The mean squared error (``power=0``) is very sensitive to the
 prediction difference of the second point,::
 
-    >>> from sklearn.metrics import mean_tweedie_deviance
+    >>> from sklearn1.metrics import mean_tweedie_deviance
     >>> mean_tweedie_deviance([1.0], [1.5], power=0)
     0.25
     >>> mean_tweedie_deviance([100.], [150.], power=0)
@@ -2163,9 +2163,9 @@ sensitive to relative errors.
 Clustering metrics
 ======================
 
-.. currentmodule:: sklearn.metrics
+.. currentmodule:: sklearn1.metrics
 
-The :mod:`sklearn.metrics` module implements several loss, score, and utility
+The :mod:`sklearn1.metrics` module implements several loss, score, and utility
 functions. For more information see the :ref:`clustering_evaluation`
 section for instance clustering, and :ref:`biclustering_evaluation` for
 biclustering.
@@ -2177,7 +2177,7 @@ biclustering.
 Dummy estimators
 =================
 
-.. currentmodule:: sklearn.dummy
+.. currentmodule:: sklearn1.dummy
 
 When doing supervised learning, a simple sanity check consists of comparing
 one's estimator against simple rules of thumb. :class:`DummyClassifier`
@@ -2199,16 +2199,16 @@ the input data!
 To illustrate :class:`DummyClassifier`, first let's create an imbalanced
 dataset::
 
-  >>> from sklearn.datasets import load_iris
-  >>> from sklearn.model_selection import train_test_split
+  >>> from sklearn1.datasets import load_iris
+  >>> from sklearn1.model_selection import train_test_split
   >>> X, y = load_iris(return_X_y=True)
   >>> y[y != 1] = -1
   >>> X_train, X_test, y_train, y_test = train_test_split(X, y, random_state=0)
 
 Next, let's compare the accuracy of ``SVC`` and ``most_frequent``::
 
-  >>> from sklearn.dummy import DummyClassifier
-  >>> from sklearn.svm import SVC
+  >>> from sklearn1.dummy import DummyClassifier
+  >>> from sklearn1.svm import SVC
   >>> clf = SVC(kernel='linear', C=1).fit(X_train, y_train)
   >>> clf.score(X_test, y_test)
   0.63...

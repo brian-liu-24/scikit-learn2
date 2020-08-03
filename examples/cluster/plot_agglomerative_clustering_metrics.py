@@ -38,8 +38,8 @@ thus the clustering puts them in the same cluster.
 import matplotlib.pyplot as plt
 import numpy as np
 
-from sklearn.cluster import AgglomerativeClustering
-from sklearn.metrics import pairwise_distances
+from sklearn1.cluster import AgglomerativeClustering
+from sklearn1.metrics import pairwise_distances
 
 np.random.seed(0)
 

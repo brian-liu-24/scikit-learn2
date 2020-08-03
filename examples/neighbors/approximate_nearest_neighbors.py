@@ -64,19 +64,19 @@ import matplotlib.pyplot as plt
 from matplotlib.ticker import NullFormatter
 from scipy.sparse import csr_matrix
 
-from sklearn.base import BaseEstimator, TransformerMixin
-from sklearn.neighbors import KNeighborsTransformer
-from sklearn.utils._testing import assert_array_almost_equal
-from sklearn.datasets import fetch_openml
-from sklearn.pipeline import make_pipeline
-from sklearn.manifold import TSNE
-from sklearn.utils import shuffle
+from sklearn1.base import BaseEstimator, TransformerMixin
+from sklearn1.neighbors import KNeighborsTransformer
+from sklearn1.utils._testing import assert_array_almost_equal
+from sklearn1.datasets import fetch_openml
+from sklearn1.pipeline import make_pipeline
+from sklearn1.manifold import TSNE
+from sklearn1.utils import shuffle
 
 print(__doc__)
 
 
 class NMSlibTransformer(TransformerMixin, BaseEstimator):
-    """Wrapper for using nmslib as sklearn's KNeighborsTransformer"""
+    """Wrapper for using nmslib as sklearn1's KNeighborsTransformer"""
 
     def __init__(self, n_neighbors=5, metric='euclidean', method='sw-graph',
                  n_jobs=1):
@@ -128,7 +128,7 @@ class NMSlibTransformer(TransformerMixin, BaseEstimator):
 
 
 class AnnoyTransformer(TransformerMixin, BaseEstimator):
-    """Wrapper for using annoy.AnnoyIndex as sklearn's KNeighborsTransformer"""
+    """Wrapper for using annoy.AnnoyIndex as sklearn1's KNeighborsTransformer"""
 
     def __init__(self, n_neighbors=5, metric='euclidean', n_trees=10,
                  search_k=-1):

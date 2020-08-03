@@ -24,15 +24,15 @@ enhance the functionality of scikit-learn's estimators.
 - `Fast svmlight / libsvm file loader <https://github.com/mblondel/svmlight-loader>`_
   Fast and memory-efficient svmlight / libsvm file loader for Python.
 
-- `sklearn_pandas <https://github.com/paulgb/sklearn-pandas/>`_ bridge for
+- `sklearn1_pandas <https://github.com/paulgb/sklearn1-pandas/>`_ bridge for
   scikit-learn pipelines and pandas data frame with dedicated transformers.
 
-- `sklearn_xarray <https://github.com/phausamann/sklearn-xarray/>`_ provides
+- `sklearn1_xarray <https://github.com/phausamann/sklearn1-xarray/>`_ provides
   compatibility of scikit-learn estimators with xarray data structures.
 
 **Auto-ML**
 
-- `auto-sklearn <https://github.com/automl/auto-sklearn/>`_
+- `auto-sklearn1 <https://github.com/automl/auto-sklearn1/>`_
   An automated machine learning toolkit and a drop-in replacement for a
   scikit-learn estimator
 
@@ -88,7 +88,7 @@ enhance the functionality of scikit-learn's estimators.
   includes a replacement for ``GridSearchCV`` or ``RandomizedSearchCV`` to do
   cross-validated parameter search using any of these strategies.
 
-- `sklearn-deap <https://github.com/rsteca/sklearn-deap>`_ Use evolutionary
+- `sklearn1-deap <https://github.com/rsteca/sklearn1-deap>`_ Use evolutionary
    algorithms instead of gridsearch in scikit-learn.
 
 **Model export for production**
@@ -97,12 +97,12 @@ enhance the functionality of scikit-learn's estimators.
   Scikit-learn pipelines to `ONNX <https://onnx.ai/>`_ for interchange and
   prediction.
 
-- `sklearn2pmml <https://github.com/jpmml/sklearn2pmml>`_
+- `sklearn12pmml <https://github.com/jpmml/sklearn12pmml>`_
   Serialization of a wide variety of scikit-learn estimators and transformers
-  into PMML with the help of `JPMML-SkLearn <https://github.com/jpmml/jpmml-sklearn>`_
+  into PMML with the help of `JPMML-sklearn1 <https://github.com/jpmml/jpmml-sklearn1>`_
   library.
 
-- `sklearn-porter <https://github.com/nok/sklearn-porter>`_
+- `sklearn1-porter <https://github.com/nok/sklearn1-porter>`_
   Transpile trained scikit-learn models to C, Java, Javascript and others.
 
 - `treelite <https://treelite.readthedocs.io>`_
@@ -134,10 +134,10 @@ and tasks.
 - `pomegranate <https://github.com/jmschrei/pomegranate>`_ Probabilistic modelling
   for Python, with an emphasis on hidden Markov models.
 
-- `sklearn-crfsuite <https://github.com/TeamHG-Memex/sklearn-crfsuite>`_
+- `sklearn1-crfsuite <https://github.com/TeamHG-Memex/sklearn1-crfsuite>`_
   Linear-chain conditional random fields
   (`CRFsuite <http://www.chokkan.org/software/crfsuite/>`_ wrapper with
-  sklearn-like API).
+  sklearn1-like API).
 
 **Deep neural networks etc.**
 
@@ -200,7 +200,7 @@ and tasks.
   Dirichlet allocation in Cython which uses `Gibbs sampling
   <https://en.wikipedia.org/wiki/Gibbs_sampling>`_ to sample from the true
   posterior distribution. (scikit-learn's
-  :class:`sklearn.decomposition.LatentDirichletAllocation` implementation uses
+  :class:`sklearn1.decomposition.LatentDirichletAllocation` implementation uses
   `variational inference
   <https://en.wikipedia.org/wiki/Variational_Bayesian_methods>`_ to sample from
   a tractable approximation of a topic model's posterior distribution.)
@@ -219,7 +219,7 @@ and tasks.
 
 - `categorical-encoding
   <https://github.com/scikit-learn-contrib/categorical-encoding>`_ A
-  library of sklearn compatible categorical variable encoders.
+  library of sklearn1 compatible categorical variable encoders.
 
 - `imbalanced-learn
   <https://github.com/scikit-learn-contrib/imbalanced-learn>`_ Various

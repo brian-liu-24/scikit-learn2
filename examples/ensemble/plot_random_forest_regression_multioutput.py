@@ -28,9 +28,9 @@ print(__doc__)
 
 import numpy as np
 import matplotlib.pyplot as plt
-from sklearn.ensemble import RandomForestRegressor
-from sklearn.model_selection import train_test_split
-from sklearn.multioutput import MultiOutputRegressor
+from sklearn1.ensemble import RandomForestRegressor
+from sklearn1.model_selection import train_test_split
+from sklearn1.multioutput import MultiOutputRegressor
 
 
 # Create a random dataset

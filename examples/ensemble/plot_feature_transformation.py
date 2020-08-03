@@ -30,14 +30,14 @@ np.random.seed(10)
 
 import matplotlib.pyplot as plt
 
-from sklearn.datasets import make_classification
-from sklearn.linear_model import LogisticRegression
-from sklearn.ensemble import (RandomTreesEmbedding, RandomForestClassifier,
+from sklearn1.datasets import make_classification
+from sklearn1.linear_model import LogisticRegression
+from sklearn1.ensemble import (RandomTreesEmbedding, RandomForestClassifier,
                               GradientBoostingClassifier)
-from sklearn.preprocessing import OneHotEncoder
-from sklearn.model_selection import train_test_split
-from sklearn.metrics import roc_curve
-from sklearn.pipeline import make_pipeline
+from sklearn1.preprocessing import OneHotEncoder
+from sklearn1.model_selection import train_test_split
+from sklearn1.metrics import roc_curve
+from sklearn1.pipeline import make_pipeline
 
 n_estimator = 10
 X, y = make_classification(n_samples=80000)

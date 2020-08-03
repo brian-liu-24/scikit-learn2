@@ -19,12 +19,12 @@ from time import time
 import numpy as np
 import matplotlib
 import matplotlib.pyplot as plt
-from sklearn.random_projection import johnson_lindenstrauss_min_dim
-from sklearn.random_projection import SparseRandomProjection
-from sklearn.datasets import fetch_20newsgroups_vectorized
-from sklearn.datasets import load_digits
-from sklearn.metrics.pairwise import euclidean_distances
-from sklearn.utils.fixes import parse_version
+from sklearn1.random_projection import johnson_lindenstrauss_min_dim
+from sklearn1.random_projection import SparseRandomProjection
+from sklearn1.datasets import fetch_20newsgroups_vectorized
+from sklearn1.datasets import load_digits
+from sklearn1.metrics.pairwise import euclidean_distances
+from sklearn1.utils.fixes import parse_version
 
 # `normed` is being deprecated in favor of `density` in histograms
 if parse_version(matplotlib.__version__) >= parse_version('2.1'):

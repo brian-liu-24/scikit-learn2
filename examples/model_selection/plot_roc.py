@@ -28,7 +28,7 @@ label.
 
 .. note::
 
-    See also :func:`sklearn.metrics.roc_auc_score`,
+    See also :func:`sklearn1.metrics.roc_auc_score`,
              :ref:`sphx_glr_auto_examples_model_selection_plot_roc_crossval.py`
 
 """
@@ -38,13 +38,13 @@ import numpy as np
 import matplotlib.pyplot as plt
 from itertools import cycle
 
-from sklearn import svm, datasets
-from sklearn.metrics import roc_curve, auc
-from sklearn.model_selection import train_test_split
-from sklearn.preprocessing import label_binarize
-from sklearn.multiclass import OneVsRestClassifier
+from sklearn1 import svm, datasets
+from sklearn1.metrics import roc_curve, auc
+from sklearn1.model_selection import train_test_split
+from sklearn1.preprocessing import label_binarize
+from sklearn1.multiclass import OneVsRestClassifier
 from scipy import interp
-from sklearn.metrics import roc_auc_score
+from sklearn1.metrics import roc_auc_score
 
 # Import some data to play with
 iris = datasets.load_iris()
@@ -149,7 +149,7 @@ plt.show()
 # %%
 # Area under ROC for the multiclass problem
 # .........................................
-# The :func:`sklearn.metrics.roc_auc_score` function can be used for
+# The :func:`sklearn1.metrics.roc_auc_score` function can be used for
 # multi-class classification. The multi-class One-vs-One scheme compares every
 # unique pairwise combination of classes. In this section, we calculate the AUC
 # using the OvR and OvO schemes. We report a macro average, and a

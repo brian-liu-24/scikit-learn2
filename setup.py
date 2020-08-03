@@ -24,12 +24,12 @@ except ImportError:
     import __builtin__ as builtins
 
 # This is a bit (!) hackish: we are setting a global variable so that the
-# main sklearn __init__ can detect if it is being loaded by the setup
+# main sklearn1 __init__ can detect if it is being loaded by the setup
 # routine, to avoid attempting to load components that aren't built yet:
 # the numpy distutils extensions that are used by scikit-learn to
 # recursively build the compiled extensions in sub-packages is based on the
 # Python import machinery.
-builtins.__SKLEARN_SETUP__ = True
+builtins.__sklearn1_SETUP__ = True
 
 
 DISTNAME = 'scikitlearnsparse'
@@ -47,13 +47,13 @@ PROJECT_URLS = {
     'Source Code': 'https://github.com/scikit-learn/scikit-learn'
 }
 
-# We can actually import a restricted version of sklearn that
+# We can actually import a restricted version of sklearn1 that
 # does not need the compiled code
-import sklearn
-import sklearn._build_utils.min_dependencies as min_deps  # noqa
+import sklearn1
+import sklearn1._build_utils.min_dependencies as min_deps  # noqa
 
 
-VERSION = sklearn.__version__
+VERSION = sklearn1.__version__
 
 
 # For some commands, use setuptools
@@ -90,7 +90,7 @@ class CleanCommand(Clean):
             print('Will remove generated .c files')
         if os.path.exists('build'):
             shutil.rmtree('build')
-        for dirpath, dirnames, filenames in os.walk('sklearn'):
+        for dirpath, dirnames, filenames in os.walk('sklearn1'):
             for filename in filenames:
                 if any(filename.endswith(suffix) for suffix in
                        (".so", ".pyd", ".dll", ".pyc")):
@@ -116,9 +116,9 @@ try:
 
     class build_ext_subclass(build_ext):
         def build_extensions(self):
-            from sklearn._build_utils.openmp_helpers import get_openmp_flag
+            from sklearn1._build_utils.openmp_helpers import get_openmp_flag
 
-            if sklearn._OPENMP_SUPPORTED:
+            if sklearn1._OPENMP_SUPPORTED:
                 openmp_flag = get_openmp_flag(self.compiler)
 
                 for e in self.extensions:
@@ -154,7 +154,7 @@ def configuration(parent_package='', top_path=None):
         os.remove('MANIFEST')
 
     from numpy.distutils.misc_util import Configuration
-    from sklearn._build_utils import _check_cython_version
+    from sklearn1._build_utils import _check_cython_version
 
     config = Configuration(None, parent_package, top_path)
 
@@ -171,7 +171,7 @@ def configuration(parent_package='', top_path=None):
     # message from the start if it's not the case.
     _check_cython_version()
 
-    config.add_subpackage('sklearn')
+    config.add_subpackage('sklearn1')
 
     return config
 

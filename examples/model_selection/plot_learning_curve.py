@@ -19,11 +19,11 @@ print(__doc__)
 
 import numpy as np
 import matplotlib.pyplot as plt
-from sklearn.naive_bayes import GaussianNB
-from sklearn.svm import SVC
-from sklearn.datasets import load_digits
-from sklearn.model_selection import learning_curve
-from sklearn.model_selection import ShuffleSplit
+from sklearn1.naive_bayes import GaussianNB
+from sklearn1.svm import SVC
+from sklearn1.datasets import load_digits
+from sklearn1.model_selection import learning_curve
+from sklearn1.model_selection import ShuffleSplit
 
 
 def plot_learning_curve(estimator, title, X, y, axes=None, ylim=None, cv=None,

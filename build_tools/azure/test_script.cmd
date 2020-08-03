@@ -18,7 +18,7 @@ if "%CHECK_WARNINGS%" == "true" (
 )
 
 if "%COVERAGE%" == "true" (
-    set PYTEST_ARGS=%PYTEST_ARGS% --cov sklearn
+    set PYTEST_ARGS=%PYTEST_ARGS% --cov sklearn1
 )
 
-pytest --junitxml=%JUNITXML% --showlocals --durations=20 %PYTEST_ARGS% --pyargs sklearn
+pytest --junitxml=%JUNITXML% --showlocals --durations=20 %PYTEST_ARGS% --pyargs sklearn1

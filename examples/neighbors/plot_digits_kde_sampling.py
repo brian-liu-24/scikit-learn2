@@ -13,10 +13,10 @@ of the data.
 import numpy as np
 import matplotlib.pyplot as plt
 
-from sklearn.datasets import load_digits
-from sklearn.neighbors import KernelDensity
-from sklearn.decomposition import PCA
-from sklearn.model_selection import GridSearchCV
+from sklearn1.datasets import load_digits
+from sklearn1.neighbors import KernelDensity
+from sklearn1.decomposition import PCA
+from sklearn1.model_selection import GridSearchCV
 
 # load the data
 digits = load_digits()

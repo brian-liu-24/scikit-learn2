@@ -20,9 +20,9 @@ models, called :term:`estimators`. Each estimator can be fitted to some data
 using its :term:`fit` method.
 
 Here is a simple example where we fit a
-:class:`~sklearn.ensemble.RandomForestClassifier` to some very basic data::
+:class:`~sklearn1.ensemble.RandomForestClassifier` to some very basic data::
 
-  >>> from sklearn.ensemble import RandomForestClassifier
+  >>> from sklearn1.ensemble import RandomForestClassifier
   >>> clf = RandomForestClassifier(random_state=0)
   >>> X = [[ 1,  2,  3],  # 2 samples, 3 features
   ...      [11, 12, 13]]
@@ -66,7 +66,7 @@ the estimator objects (they actually all inherit from the same
 :term:`predict` method but rather a :term:`transform` method that outputs a
 newly transformed sample matrix ``X``::
 
-  >>> from sklearn.preprocessing import StandardScaler
+  >>> from sklearn1.preprocessing import StandardScaler
   >>> X = [[0, 15],
   ...      [1, -10]]
   >>> # scale data according to computed scaling values
@@ -82,7 +82,7 @@ Pipelines: chaining pre-processors and estimators
 --------------------------------------------------
 
 Transformers and estimators (predictors) can be combined together into a
-single unifying object: a :class:`~sklearn.pipeline.Pipeline`. The pipeline
+single unifying object: a :class:`~sklearn1.pipeline.Pipeline`. The pipeline
 offers the same API as a regular estimator: it can be fitted and used for
 prediction with ``fit`` and ``predict``. As we will see later, using a
 pipeline will also prevent you from data leakage, i.e. disclosing some
@@ -92,12 +92,12 @@ In the following example, we :ref:`load the Iris dataset <datasets>`, split it
 into train and test sets, and compute the accuracy score of a pipeline on
 the test data::
 
-  >>> from sklearn.preprocessing import StandardScaler
-  >>> from sklearn.linear_model import LogisticRegression
-  >>> from sklearn.pipeline import make_pipeline
-  >>> from sklearn.datasets import load_iris
-  >>> from sklearn.model_selection import train_test_split
-  >>> from sklearn.metrics import accuracy_score
+  >>> from sklearn1.preprocessing import StandardScaler
+  >>> from sklearn1.linear_model import LogisticRegression
+  >>> from sklearn1.pipeline import make_pipeline
+  >>> from sklearn1.datasets import load_iris
+  >>> from sklearn1.model_selection import train_test_split
+  >>> from sklearn1.metrics import accuracy_score
   ...
   >>> # create a pipeline object
   >>> pipe = make_pipeline(
@@ -122,20 +122,20 @@ Model evaluation
 
 Fitting a model to some data does not entail that it will predict well on
 unseen data. This needs to be directly evaluated. We have just seen the
-:func:`~sklearn.model_selection.train_test_split` helper that splits a
+:func:`~sklearn1.model_selection.train_test_split` helper that splits a
 dataset into train and test sets, but ``scikit-learn`` provides many other
 tools for model evaluation, in particular for :ref:`cross-validation
 <cross_validation>`.
 
 We here briefly show how to perform a 5-fold cross-validation procedure,
-using the :func:`~sklearn.model_selection.cross_validate` helper. Note that
+using the :func:`~sklearn1.model_selection.cross_validate` helper. Note that
 it is also possible to manually iterate over the folds, use different
 data splitting strategies, and use custom scoring functions. Please refer to
 our :ref:`User Guide <cross_validation>` for more details::
 
-  >>> from sklearn.datasets import make_regression
-  >>> from sklearn.linear_model import LinearRegression
-  >>> from sklearn.model_selection import cross_validate
+  >>> from sklearn1.datasets import make_regression
+  >>> from sklearn1.linear_model import LinearRegression
+  >>> from sklearn1.model_selection import cross_validate
   ...
   >>> X, y = make_regression(n_samples=1000, random_state=0)
   >>> lr = LinearRegression()
@@ -150,7 +150,7 @@ Automatic parameter searches
 All estimators have parameters (often called hyper-parameters in the
 literature) that can be tuned. The generalization power of an estimator
 often critically depends on a few parameters. For example a
-:class:`~sklearn.ensemble.RandomForestRegressor` has a ``n_estimators``
+:class:`~sklearn1.ensemble.RandomForestRegressor` has a ``n_estimators``
 parameter that determines the number of trees in the forest, and a
 ``max_depth`` parameter that determines the maximum depth of each tree.
 Quite often, it is not clear what the exact values of these parameters
@@ -159,16 +159,16 @@ should be since they depend on the data at hand.
 ``Scikit-learn`` provides tools to automatically find the best parameter
 combinations (via cross-validation). In the following example, we randomly
 search over the parameter space of a random forest with a
-:class:`~sklearn.model_selection.RandomizedSearchCV` object. When the search
-is over, the :class:`~sklearn.model_selection.RandomizedSearchCV` behaves as
-a :class:`~sklearn.ensemble.RandomForestRegressor` that has been fitted with
+:class:`~sklearn1.model_selection.RandomizedSearchCV` object. When the search
+is over, the :class:`~sklearn1.model_selection.RandomizedSearchCV` behaves as
+a :class:`~sklearn1.ensemble.RandomForestRegressor` that has been fitted with
 the best set of parameters. Read more in the :ref:`User Guide
 <grid_search>`::
 
-  >>> from sklearn.datasets import fetch_california_housing
-  >>> from sklearn.ensemble import RandomForestRegressor
-  >>> from sklearn.model_selection import RandomizedSearchCV
-  >>> from sklearn.model_selection import train_test_split
+  >>> from sklearn1.datasets import fetch_california_housing
+  >>> from sklearn1.ensemble import RandomForestRegressor
+  >>> from sklearn1.model_selection import RandomizedSearchCV
+  >>> from sklearn1.model_selection import train_test_split
   >>> from scipy.stats import randint
   ...
   >>> X, y = fetch_california_housing(return_X_y=True)

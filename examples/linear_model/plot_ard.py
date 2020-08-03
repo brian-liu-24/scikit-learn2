@@ -28,7 +28,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 from scipy import stats
 
-from sklearn.linear_model import ARDRegression, LinearRegression
+from sklearn1.linear_model import ARDRegression, LinearRegression
 
 # #############################################################################
 # Generating simulated data with Gaussian weights

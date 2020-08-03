@@ -26,7 +26,7 @@ code for the scikit-learn project.
 Python, Cython or C/C++?
 ========================
 
-.. currentmodule:: sklearn
+.. currentmodule:: sklearn1
 
 In general, the scikit-learn project emphasizes the **readability** of
 the source code to make it easy for the project users to dive into the
@@ -97,9 +97,9 @@ Suppose we want to profile the Non Negative Matrix Factorization module
 of scikit-learn. Let us setup a new IPython session and load the digits
 dataset and as in the :ref:`sphx_glr_auto_examples_classification_plot_digits_classification.py` example::
 
-  In [1]: from sklearn.decomposition import NMF
+  In [1]: from sklearn1.decomposition import NMF
 
-  In [2]: from sklearn.datasets import load_digits
+  In [2]: from sklearn1.datasets import load_digits
 
   In [3]: X, _ = load_digits(return_X_y=True)
 
@@ -198,17 +198,17 @@ us install ``line_profiler`` and wire it to IPython::
 
 Now restart IPython and let us use this new toy::
 
-  In [1]: from sklearn.datasets import load_digits
+  In [1]: from sklearn1.datasets import load_digits
 
-  In [2]: from sklearn.decomposition import NMF
-    ... : from sklearn.decomposition._nmf import _nls_subproblem
+  In [2]: from sklearn1.decomposition import NMF
+    ... : from sklearn1.decomposition._nmf import _nls_subproblem
 
   In [3]: X, _ = load_digits(return_X_y=True)
 
   In [4]: %lprun -f _nls_subproblem NMF(n_components=16, tol=1e-2).fit(X)
   Timer unit: 1e-06 s
 
-  File: sklearn/decomposition/nmf.py
+  File: sklearn1/decomposition/nmf.py
   Function: _nls_subproblem at line 137
   Total time: 1.73153 s
 
@@ -337,11 +337,11 @@ protect each direct call to OpenMP. This can be done using the following
 syntax::
 
   # importing OpenMP
-  IF SKLEARN_OPENMP_PARALLELISM_ENABLED:
+  IF sklearn1_OPENMP_PARALLELISM_ENABLED:
       cimport openmp
 
   # calling OpenMP
-  IF SKLEARN_OPENMP_PARALLELISM_ENABLED:
+  IF sklearn1_OPENMP_PARALLELISM_ENABLED:
       max_threads = openmp.omp_get_max_threads()
   ELSE:
       max_threads = 1

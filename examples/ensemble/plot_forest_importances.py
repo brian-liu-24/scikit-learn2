@@ -13,7 +13,7 @@ remaining are not.
 
 Warning: impurity-based feature importances can be misleading for high
 cardinality features (many unique values). See
-:func:`sklearn.inspection.permutation_importance` as an alternative.
+:func:`sklearn1.inspection.permutation_importance` as an alternative.
 
 """
 print(__doc__)
@@ -21,8 +21,8 @@ print(__doc__)
 import numpy as np
 import matplotlib.pyplot as plt
 
-from sklearn.datasets import make_classification
-from sklearn.ensemble import ExtraTreesClassifier
+from sklearn1.datasets import make_classification
+from sklearn1.ensemble import ExtraTreesClassifier
 
 # Build a classification task using 3 informative features
 X, y = make_classification(n_samples=1000,

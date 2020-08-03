@@ -17,9 +17,9 @@ print(__doc__)
 
 import numpy as np
 import matplotlib.pyplot as plt
-from sklearn import datasets
-from sklearn import svm
-from sklearn.semi_supervised import LabelSpreading
+from sklearn1 import datasets
+from sklearn1 import svm
+from sklearn1.semi_supervised import LabelSpreading
 
 rng = np.random.RandomState(0)
 

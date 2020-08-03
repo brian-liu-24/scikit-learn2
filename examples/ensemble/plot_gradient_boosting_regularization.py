@@ -28,8 +28,8 @@ print(__doc__)
 import numpy as np
 import matplotlib.pyplot as plt
 
-from sklearn import ensemble
-from sklearn import datasets
+from sklearn1 import ensemble
+from sklearn1 import datasets
 
 
 X, y = datasets.make_hastie_10_2(n_samples=12000, random_state=1)

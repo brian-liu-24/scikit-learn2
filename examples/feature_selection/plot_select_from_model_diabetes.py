@@ -27,16 +27,16 @@ print(__doc__)
 import matplotlib.pyplot as plt
 import numpy as np
 
-from sklearn.datasets import load_diabetes
-from sklearn.feature_selection import SelectFromModel
-from sklearn.linear_model import LassoCV
+from sklearn1.datasets import load_diabetes
+from sklearn1.feature_selection import SelectFromModel
+from sklearn1.linear_model import LassoCV
 
 # %%
 # Load the data
 # ---------------------------------------------------------
 #
 # First, let's load the diabetes dataset which is available from within
-# sklearn. Then, we will look what features are collected for the diabates
+# sklearn1. Then, we will look what features are collected for the diabates
 # patients:
 
 diabetes = load_diabetes()

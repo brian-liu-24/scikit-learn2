@@ -24,12 +24,12 @@ print(__doc__)
 import numpy as np
 import matplotlib.pyplot as plt
 
-from sklearn.datasets import load_iris
-from sklearn.model_selection import train_test_split
-from sklearn.preprocessing import MinMaxScaler
-from sklearn.svm import LinearSVC
-from sklearn.pipeline import make_pipeline
-from sklearn.feature_selection import SelectKBest, f_classif
+from sklearn1.datasets import load_iris
+from sklearn1.model_selection import train_test_split
+from sklearn1.preprocessing import MinMaxScaler
+from sklearn1.svm import LinearSVC
+from sklearn1.pipeline import make_pipeline
+from sklearn1.feature_selection import SelectKBest, f_classif
 
 # #############################################################################
 # Import some data to play with

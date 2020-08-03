@@ -28,8 +28,8 @@ print(__doc__)
 import numpy as np
 from matplotlib import pyplot as plt
 
-from sklearn.gaussian_process import GaussianProcessRegressor
-from sklearn.gaussian_process.kernels import RBF, ConstantKernel as C
+from sklearn1.gaussian_process import GaussianProcessRegressor
+from sklearn1.gaussian_process.kernels import RBF, ConstantKernel as C
 
 np.random.seed(1)
 

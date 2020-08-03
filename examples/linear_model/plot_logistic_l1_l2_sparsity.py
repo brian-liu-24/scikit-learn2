@@ -24,9 +24,9 @@ print(__doc__)
 import numpy as np
 import matplotlib.pyplot as plt
 
-from sklearn.linear_model import LogisticRegression
-from sklearn import datasets
-from sklearn.preprocessing import StandardScaler
+from sklearn1.linear_model import LogisticRegression
+from sklearn1 import datasets
+from sklearn1.preprocessing import StandardScaler
 
 X, y = datasets.load_digits(return_X_y=True)
 

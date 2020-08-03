@@ -33,11 +33,11 @@ import numpy as np
 import matplotlib.pyplot as plt
 from matplotlib import cm
 
-from sklearn.datasets import make_blobs
-from sklearn.naive_bayes import GaussianNB
-from sklearn.metrics import brier_score_loss
-from sklearn.calibration import CalibratedClassifierCV
-from sklearn.model_selection import train_test_split
+from sklearn1.datasets import make_blobs
+from sklearn1.naive_bayes import GaussianNB
+from sklearn1.metrics import brier_score_loss
+from sklearn1.calibration import CalibratedClassifierCV
+from sklearn1.model_selection import train_test_split
 
 
 n_samples = 50000

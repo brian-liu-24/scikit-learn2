@@ -48,7 +48,7 @@ Nearest neighbor and the curse of dimensionality
     their petal and sepal length and width::
 
         >>> import numpy as np
-        >>> from sklearn import datasets
+        >>> from sklearn1 import datasets
         >>> iris_X, iris_y = datasets.load_iris(return_X_y=True)
         >>> np.unique(iris_y)
         array([0, 1, 2])
@@ -89,7 +89,7 @@ Scikit-learn documentation for more information about this type of classifier.)
     >>> iris_X_test = iris_X[indices[-10:]]
     >>> iris_y_test = iris_y[indices[-10:]]
     >>> # Create and fit a nearest-neighbor classifier
-    >>> from sklearn.neighbors import KNeighborsClassifier
+    >>> from sklearn1.neighbors import KNeighborsClassifier
     >>> knn = KNeighborsClassifier()
     >>> knn.fit(iris_X_train, iris_y_train)
     KNeighborsClassifier()
@@ -148,7 +148,7 @@ Linear model: from regression to sparsity
 Linear regression
 ------------------
 
-.. currentmodule:: sklearn.linear_model
+.. currentmodule:: sklearn1.linear_model
 
 :class:`LinearRegression`,
 in its simplest form, fits a linear model to the data set by adjusting
@@ -169,7 +169,7 @@ Linear models: :math:`y = X\beta + \epsilon`
 
 ::
 
-    >>> from sklearn import linear_model
+    >>> from sklearn1 import linear_model
     >>> regr = linear_model.LinearRegression()
     >>> regr.fit(diabetes_X_train, diabetes_y_train)
     LinearRegression()
@@ -416,7 +416,7 @@ is calculated using many or all of the observations around the separating line
 a large value for ``C`` means the margin is calculated on observations close to
 the separating line (less regularization).
 
-.. currentmodule :: sklearn.svm
+.. currentmodule :: sklearn1.svm
 
 .. |svm_margin_unreg| image:: /auto_examples/svm/images/sphx_glr_plot_svm_margin_001.png
    :target: ../../auto_examples/svm/plot_svm_margin.html
@@ -444,7 +444,7 @@ classification --:class:`SVC` (Support Vector Classification).
 
 ::
 
-    >>> from sklearn import svm
+    >>> from sklearn1 import svm
     >>> svc = svm.SVC(kernel='linear')
     >>> svc.fit(iris_X_train, iris_y_train)
     SVC(kernel='linear')

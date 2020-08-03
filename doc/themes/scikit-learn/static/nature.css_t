@@ -1077,7 +1077,7 @@ div#examples_carousel .carousel-control.right {
     right: 2px;
 }
 
-div#intro_to_sklearn_p li {
+div#intro_to_sklearn1_p li {
     line-height: 22px;
 }
 

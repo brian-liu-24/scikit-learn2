@@ -21,7 +21,7 @@ print(__doc__)
 import matplotlib.pyplot as plt
 import numpy as np
 
-from sklearn.linear_model import MultiTaskLasso, Lasso
+from sklearn1.linear_model import MultiTaskLasso, Lasso
 
 rng = np.random.RandomState(42)
 

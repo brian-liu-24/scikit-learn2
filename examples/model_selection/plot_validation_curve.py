@@ -16,9 +16,9 @@ print(__doc__)
 import matplotlib.pyplot as plt
 import numpy as np
 
-from sklearn.datasets import load_digits
-from sklearn.svm import SVC
-from sklearn.model_selection import validation_curve
+from sklearn1.datasets import load_digits
+from sklearn1.svm import SVC
+from sklearn1.model_selection import validation_curve
 
 X, y = load_digits(return_X_y=True)
 

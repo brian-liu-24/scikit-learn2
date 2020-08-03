@@ -4,9 +4,9 @@
 Preprocessing data
 ==================
 
-.. currentmodule:: sklearn.preprocessing
+.. currentmodule:: sklearn1.preprocessing
 
-The ``sklearn.preprocessing`` package provides several common
+The ``sklearn1.preprocessing`` package provides several common
 utility functions and transformer classes to change raw feature vectors
 into a representation that is more suitable for the downstream estimators.
 
@@ -44,7 +44,7 @@ estimator unable to learn from other features correctly as expected.
 The function :func:`scale` provides a quick and easy way to perform this
 operation on a single array-like dataset::
 
-  >>> from sklearn import preprocessing
+  >>> from sklearn1 import preprocessing
   >>> import numpy as np
   >>> X_train = np.array([[ 1., -1.,  2.],
   ...                     [ 2.,  0.,  0.],
@@ -76,7 +76,7 @@ The ``preprocessing`` module further provides a utility class
 the mean and standard deviation on a training set so as to be
 able to later reapply the same transformation on the testing set.
 This class is hence suitable for use in the early steps of a
-:class:`sklearn.pipeline.Pipeline`::
+:class:`sklearn1.pipeline.Pipeline`::
 
   >>> scaler = preprocessing.StandardScaler().fit(X_train)
   >>> scaler
@@ -235,7 +235,7 @@ data.
   independently, since a downstream model can further make some assumption
   on the linear independence of the features.
 
-  To address this issue you can use :class:`sklearn.decomposition.PCA` with
+  To address this issue you can use :class:`sklearn1.decomposition.PCA` with
   ``whiten=True`` to further remove the linear correlation across features.
 
 .. topic:: Scaling a 1D array
@@ -288,8 +288,8 @@ Mapping to a Uniform distribution
 non-parametric transformation to map the data to a uniform distribution
 with values between 0 and 1::
 
-  >>> from sklearn.datasets import load_iris
-  >>> from sklearn.model_selection import train_test_split
+  >>> from sklearn1.datasets import load_iris
+  >>> from sklearn1.model_selection import train_test_split
   >>> X, y = load_iris(return_X_y=True)
   >>> X_train, X_test, y_train, y_test = train_test_split(X, y, random_state=0)
   >>> quantile_transformer = preprocessing.QuantileTransformer(random_state=0)
@@ -433,7 +433,7 @@ The ``preprocessing`` module further provides a utility class
 the class is stateless as this operation treats samples independently).
 
 This class is hence suitable for use in the early steps of a
-:class:`sklearn.pipeline.Pipeline`::
+:class:`sklearn1.pipeline.Pipeline`::
 
   >>> normalizer = preprocessing.Normalizer().fit(X)  # fit does nothing
   >>> normalizer
@@ -558,7 +558,7 @@ instead of ``n_categories`` columns by using the ``drop`` parameter. This
 parameter allows the user to specify a category for each feature to be dropped.
 This is useful to avoid co-linearity in the input matrix in some classifiers.
 Such functionality is useful, for example, when using non-regularized
-regression (:class:`LinearRegression <sklearn.linear_model.LinearRegression>`),
+regression (:class:`LinearRegression <sklearn1.linear_model.LinearRegression>`),
 since co-linearity would cause the covariance matrix to be non-invertible.
 When this parameter is not None, ``handle_unknown`` must be set to
 ``error``::
@@ -637,7 +637,7 @@ Based on these bin intervals, ``X`` is transformed as follows::
          [ 2., 0., 0.]])
 
 The resulting dataset contains ordinal attributes which can be further used
-in a :class:`sklearn.pipeline.Pipeline`.
+in a :class:`sklearn1.pipeline.Pipeline`.
 
 Discretization is similar to constructing histograms for continuous data.
 However, histograms focus on counting features which fall into particular
@@ -665,7 +665,7 @@ features to get boolean values**. This can be useful for downstream
 probabilistic estimators that make assumption that the input data
 is distributed according to a multi-variate `Bernoulli distribution
 <https://en.wikipedia.org/wiki/Bernoulli_distribution>`_. For instance,
-this is the case for the :class:`sklearn.neural_network.BernoulliRBM`.
+this is the case for the :class:`sklearn1.neural_network.BernoulliRBM`.
 
 It is also common among the text processing community to use binary
 feature values (probably to simplify the probabilistic reasoning) even
@@ -674,7 +674,7 @@ often perform slightly better in practice.
 
 As for the :class:`Normalizer`, the utility class
 :class:`Binarizer` is meant to be used in the early stages of
-:class:`sklearn.pipeline.Pipeline`. The ``fit`` method does nothing
+:class:`sklearn1.pipeline.Pipeline`. The ``fit`` method does nothing
 as each sample is treated independently of others::
 
   >>> X = [[ 1., -1.,  2.],
@@ -730,7 +730,7 @@ Generating polynomial features
 Often it's useful to add complexity to the model by considering nonlinear features of the input data. A simple and common method to use is polynomial features, which can get features' high-order and interaction terms. It is implemented in :class:`PolynomialFeatures`::
 
     >>> import numpy as np
-    >>> from sklearn.preprocessing import PolynomialFeatures
+    >>> from sklearn1.preprocessing import PolynomialFeatures
     >>> X = np.arange(6).reshape(3, 2)
     >>> X
     array([[0, 1],
@@ -759,7 +759,7 @@ In some cases, only interaction terms among features are required, and it can be
 
 The features of X have been transformed from :math:`(X_1, X_2, X_3)` to :math:`(1, X_1, X_2, X_3, X_1X_2, X_1X_3, X_2X_3, X_1X_2X_3)`.
 
-Note that polynomial features are used implicitly in `kernel methods <https://en.wikipedia.org/wiki/Kernel_method>`_ (e.g., :class:`sklearn.svm.SVC`, :class:`sklearn.decomposition.KernelPCA`) when using polynomial :ref:`svm_kernels`.
+Note that polynomial features are used implicitly in `kernel methods <https://en.wikipedia.org/wiki/Kernel_method>`_ (e.g., :class:`sklearn1.svm.SVC`, :class:`sklearn1.decomposition.KernelPCA`) when using polynomial :ref:`svm_kernels`.
 
 See :ref:`sphx_glr_auto_examples_linear_model_plot_polynomial_interpolation.py` for Ridge regression using created polynomial features.
 
@@ -774,7 +774,7 @@ an arbitrary function with :class:`FunctionTransformer`. For example, to build
 a transformer that applies a log transformation in a pipeline, do::
 
     >>> import numpy as np
-    >>> from sklearn.preprocessing import FunctionTransformer
+    >>> from sklearn1.preprocessing import FunctionTransformer
     >>> transformer = FunctionTransformer(np.log1p, validate=True)
     >>> X = np.array([[0, 1], [2, 3]])
     >>> transformer.transform(X)

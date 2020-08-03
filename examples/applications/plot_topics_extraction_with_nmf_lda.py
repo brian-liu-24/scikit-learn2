@@ -3,8 +3,8 @@
 Topic extraction with Non-negative Matrix Factorization and Latent Dirichlet Allocation
 =======================================================================================
 
-This is an example of applying :class:`~sklearn.decomposition.NMF` and
-:class:`~sklearn.decomposition.LatentDirichletAllocation` on a corpus
+This is an example of applying :class:`~sklearn1.decomposition.NMF` and
+:class:`~sklearn1.decomposition.LatentDirichletAllocation` on a corpus
 of documents and extract additive models of the topic structure of the
 corpus.  The output is a plot of topics, each represented as bar plot
 using top few words based on weights.
@@ -29,9 +29,9 @@ proportional to (n_samples * iterations).
 from time import time
 import matplotlib.pyplot as plt
 
-from sklearn.feature_extraction.text import TfidfVectorizer, CountVectorizer
-from sklearn.decomposition import NMF, LatentDirichletAllocation
-from sklearn.datasets import fetch_20newsgroups
+from sklearn1.feature_extraction.text import TfidfVectorizer, CountVectorizer
+from sklearn1.decomposition import NMF, LatentDirichletAllocation
+from sklearn1.datasets import fetch_20newsgroups
 
 n_samples = 2000
 n_features = 1000

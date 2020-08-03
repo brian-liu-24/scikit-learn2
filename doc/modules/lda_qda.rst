@@ -4,7 +4,7 @@
 Linear and Quadratic Discriminant Analysis
 ==========================================
 
-.. currentmodule:: sklearn
+.. currentmodule:: sklearn1
 
 Linear Discriminant Analysis
 (:class:`~discriminant_analysis.LinearDiscriminantAnalysis`) and Quadratic
@@ -202,9 +202,9 @@ class priors :math:`P(y=k)`, the class means :math:`\mu_k`, and the
 covariance matrices.
 
 The 'svd' solver is the default solver used for
-:class:`~sklearn.discriminant_analysis.LinearDiscriminantAnalysis`, and it is
+:class:`~sklearn1.discriminant_analysis.LinearDiscriminantAnalysis`, and it is
 the only available solver for
-:class:`~sklearn.discriminant_analysis.QuadraticDiscriminantAnalysis`.
+:class:`~sklearn1.discriminant_analysis.QuadraticDiscriminantAnalysis`.
 It can perform both classification and transform (for LDA).
 As it does not rely on the calculation of the covariance matrix, the 'svd'
 solver may be preferable in situations where the number of features is large.

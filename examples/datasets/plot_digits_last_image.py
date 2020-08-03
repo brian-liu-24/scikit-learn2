@@ -22,7 +22,7 @@ print(__doc__)
 # Modified for documentation by Jaques Grobler
 # License: BSD 3 clause
 
-from sklearn import datasets
+from sklearn1 import datasets
 
 import matplotlib.pyplot as plt
 

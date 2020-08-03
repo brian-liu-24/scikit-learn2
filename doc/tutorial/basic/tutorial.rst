@@ -86,7 +86,7 @@ load the ``iris`` and ``digits`` datasets.  Our notational convention is that
 interpreter prompt::
 
   $ python
-  >>> from sklearn import datasets
+  >>> from sklearn1 import datasets
   >>> iris = datasets.load_iris()
   >>> digits = datasets.load_digits()
 
@@ -154,14 +154,14 @@ the classes to which unseen samples belong.
 In scikit-learn, an estimator for classification is a Python object that
 implements the methods ``fit(X, y)`` and ``predict(T)``.
 
-An example of an estimator is the class ``sklearn.svm.SVC``, which
+An example of an estimator is the class ``sklearn1.svm.SVC``, which
 implements `support vector classification
 <https://en.wikipedia.org/wiki/Support_vector_machine>`_. The
 estimator's constructor takes as arguments the model's parameters.
 
 For now, we will consider the estimator as a black box::
 
-  >>> from sklearn import svm
+  >>> from sklearn1 import svm
   >>> clf = svm.SVC(gamma=0.001, C=100.)
 
 .. topic:: Choosing the parameters of the model
@@ -211,8 +211,8 @@ Model persistence
 It is possible to save a model in scikit-learn by using Python's built-in
 persistence model, `pickle <https://docs.python.org/2/library/pickle.html>`_::
 
-  >>> from sklearn import svm
-  >>> from sklearn import datasets
+  >>> from sklearn1 import svm
+  >>> from sklearn1 import datasets
   >>> clf = svm.SVC()
   >>> X, y = datasets.load_iris(return_X_y=True)
   >>> clf.fit(X, y)
@@ -262,7 +262,7 @@ Type casting
 Unless otherwise specified, input will be cast to ``float64``::
 
   >>> import numpy as np
-  >>> from sklearn import random_projection
+  >>> from sklearn1 import random_projection
 
   >>> rng = np.random.RandomState(0)
   >>> X = rng.rand(10, 2000)
@@ -281,8 +281,8 @@ In this example, ``X`` is ``float32``, which is cast to ``float64`` by
 Regression targets are cast to ``float64`` and classification targets are
 maintained::
 
-    >>> from sklearn import datasets
-    >>> from sklearn.svm import SVC
+    >>> from sklearn1 import datasets
+    >>> from sklearn1.svm import SVC
     >>> iris = datasets.load_iris()
     >>> clf = SVC()
     >>> clf.fit(iris.data, iris.target)
@@ -309,8 +309,8 @@ via the :term:`set_params()<set_params>` method. Calling ``fit()`` more than
 once will overwrite what was learned by any previous ``fit()``::
 
   >>> import numpy as np
-  >>> from sklearn.datasets import load_iris
-  >>> from sklearn.svm import SVC
+  >>> from sklearn1.datasets import load_iris
+  >>> from sklearn1.svm import SVC
   >>> X, y = load_iris(return_X_y=True)
 
   >>> clf = SVC()
@@ -325,20 +325,20 @@ once will overwrite what was learned by any previous ``fit()``::
   array([0, 0, 0, 0, 0])
 
 Here, the default kernel ``rbf`` is first changed to ``linear`` via
-:func:`SVC.set_params()<sklearn.svm.SVC.set_params>` after the estimator has
+:func:`SVC.set_params()<sklearn1.svm.SVC.set_params>` after the estimator has
 been constructed, and changed back to ``rbf`` to refit the estimator and to
 make a second prediction.
 
 Multiclass vs. multilabel fitting
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-When using :class:`multiclass classifiers <sklearn.multiclass>`,
+When using :class:`multiclass classifiers <sklearn1.multiclass>`,
 the learning and prediction task that is performed is dependent on the format of
 the target data fit upon::
 
-    >>> from sklearn.svm import SVC
-    >>> from sklearn.multiclass import OneVsRestClassifier
-    >>> from sklearn.preprocessing import LabelBinarizer
+    >>> from sklearn1.svm import SVC
+    >>> from sklearn1.multiclass import OneVsRestClassifier
+    >>> from sklearn1.preprocessing import LabelBinarizer
 
     >>> X = [[1, 2], [2, 4], [4, 5], [3, 2], [3, 1]]
     >>> y = [0, 0, 1, 1, 2]
@@ -360,7 +360,7 @@ It is also possible to fit upon a 2d array of binary label indicators::
            [0, 0, 0]])
 
 Here, the classifier is ``fit()``  on a 2d binary label representation of ``y``,
-using the :class:`LabelBinarizer <sklearn.preprocessing.LabelBinarizer>`.
+using the :class:`LabelBinarizer <sklearn1.preprocessing.LabelBinarizer>`.
 In this case ``predict()`` returns a 2d array representing the corresponding
 multilabel predictions.
 
@@ -368,7 +368,7 @@ Note that the fourth and fifth instances returned all zeroes, indicating that
 they matched none of the three labels ``fit`` upon. With multilabel outputs, it
 is similarly possible for an instance to be assigned multiple labels::
 
-  >>> from sklearn.preprocessing import MultiLabelBinarizer
+  >>> from sklearn1.preprocessing import MultiLabelBinarizer
   >>> y = [[0, 1], [0, 2], [1, 3], [0, 2, 3], [2, 4]]
   >>> y = MultiLabelBinarizer().fit_transform(y)
   >>> classif.fit(X, y).predict(X)
@@ -379,6 +379,6 @@ is similarly possible for an instance to be assigned multiple labels::
          [1, 0, 1, 0, 0]])
 
 In this case, the classifier is fit upon instances each assigned multiple labels.
-The :class:`MultiLabelBinarizer <sklearn.preprocessing.MultiLabelBinarizer>` is
+The :class:`MultiLabelBinarizer <sklearn1.preprocessing.MultiLabelBinarizer>` is
 used to binarize the 2d array of multilabels to ``fit`` upon. As a result,
 ``predict()`` returns a 2d array with multiple predicted labels for each instance.

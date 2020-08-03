@@ -24,11 +24,11 @@ import numpy as np
 
 from time import time
 import scipy.stats as stats
-from sklearn.utils.fixes import loguniform
+from sklearn1.utils.fixes import loguniform
 
-from sklearn.model_selection import GridSearchCV, RandomizedSearchCV
-from sklearn.datasets import load_digits
-from sklearn.linear_model import SGDClassifier
+from sklearn1.model_selection import GridSearchCV, RandomizedSearchCV
+from sklearn1.datasets import load_digits
+from sklearn1.linear_model import SGDClassifier
 
 # get some data
 X, y = load_digits(return_X_y=True)

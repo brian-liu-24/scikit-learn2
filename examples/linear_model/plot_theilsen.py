@@ -40,8 +40,8 @@ it then works on a random subset.
 import time
 import numpy as np
 import matplotlib.pyplot as plt
-from sklearn.linear_model import LinearRegression, TheilSenRegressor
-from sklearn.linear_model import RANSACRegressor
+from sklearn1.linear_model import LinearRegression, TheilSenRegressor
+from sklearn1.linear_model import RANSACRegressor
 
 print(__doc__)
 

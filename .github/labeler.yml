@@ -1,80 +1,80 @@
 module:cluster:
-- sklearn/cluster/**/*
+- sklearn1/cluster/**/*
 
 module:common:
-- sklearn/common/**/*
+- sklearn1/common/**/*
 
 module:compose:
-- sklearn/compose/**/*
+- sklearn1/compose/**/*
 
 module:covariance:
-- sklearn/covariance/**/*
+- sklearn1/covariance/**/*
 
 module:cross_decomposition:
-- sklearn/cross_decomposition/**/*
+- sklearn1/cross_decomposition/**/*
 
 module:datasets:
-- sklearn/datasets/**/*
+- sklearn1/datasets/**/*
 
 module:decomposition:
-- sklearn/decomposition/**/*
+- sklearn1/decomposition/**/*
 
 module:ensemble:
-- sklearn/ensemble/**/*
+- sklearn1/ensemble/**/*
 
 module:feature_extraction:
-- sklearn/feature_extraction/**/*
+- sklearn1/feature_extraction/**/*
 
 module:feature_selection:
-- sklearn/feature_selection/**/*
+- sklearn1/feature_selection/**/*
 
 module:gaussian_process:
-- sklearn/gaussian_process/**/*
+- sklearn1/gaussian_process/**/*
 
 module:impute:
-- sklearn/impute/**/*
+- sklearn1/impute/**/*
 
 module:inspection:
-- sklearn/inspection/**/*
+- sklearn1/inspection/**/*
 
 module:linear_model:
-- sklearn/linear_model/**/*
+- sklearn1/linear_model/**/*
 
 module:manifold:
-- sklearn/manifold/**/*
+- sklearn1/manifold/**/*
 
 module:metrics:
-- sklearn/metrics/**/*
+- sklearn1/metrics/**/*
 
 module:mixture:
-- sklearn/mixture/**/*
+- sklearn1/mixture/**/*
 
 module:model_selection:
-- sklearn/model_selection/**/*
+- sklearn1/model_selection/**/*
 
 module:naive_bayes:
-- sklearn/naive_bayes.py
+- sklearn1/naive_bayes.py
 
 module:neighbors:
-- sklearn/neighbors/**/*
+- sklearn1/neighbors/**/*
 
 module:neural_network:
-- sklearn/neural_network/**/*
+- sklearn1/neural_network/**/*
 
 module:pipeline:
-- sklearn/pipeline.py
+- sklearn1/pipeline.py
 
 module:preprocessing:
-- sklearn/preprocessing/**/*
+- sklearn1/preprocessing/**/*
 
 module:semi_supervised:
-- sklearn/semi_supervised/**/*
+- sklearn1/semi_supervised/**/*
 
 module:svm:
-- sklearn/svm/**/*
+- sklearn1/svm/**/*
 
 module:tree:
-- sklearn/tree/**/*
+- sklearn1/tree/**/*
 
 module:utils:
-- sklearn/utils/**/*
+- sklearn1/utils/**/*

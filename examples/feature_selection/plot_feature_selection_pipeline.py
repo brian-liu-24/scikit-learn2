@@ -9,12 +9,12 @@ feature selection with anova and then a SVM of the selected features.
 Using a sub-pipeline, the fitted coefficients can be mapped back into
 the original feature space.
 """
-from sklearn import svm
-from sklearn.datasets import make_classification
-from sklearn.feature_selection import SelectKBest, f_classif
-from sklearn.pipeline import make_pipeline
-from sklearn.model_selection import train_test_split
-from sklearn.metrics import classification_report
+from sklearn1 import svm
+from sklearn1.datasets import make_classification
+from sklearn1.feature_selection import SelectKBest, f_classif
+from sklearn1.pipeline import make_pipeline
+from sklearn1.model_selection import train_test_split
+from sklearn1.metrics import classification_report
 
 print(__doc__)
 

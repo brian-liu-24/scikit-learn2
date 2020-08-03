@@ -5,14 +5,14 @@
 Multiclass and multilabel algorithms
 ====================================
 
-.. currentmodule:: sklearn.multiclass
+.. currentmodule:: sklearn1.multiclass
 
 .. warning::
     All classifiers in scikit-learn do multiclass classification
-    out-of-the-box. You don't need to use the :mod:`sklearn.multiclass` module
+    out-of-the-box. You don't need to use the :mod:`sklearn1.multiclass` module
     unless you want to experiment with different multiclass strategies.
 
-The :mod:`sklearn.multiclass` module implements *meta-estimators* to solve
+The :mod:`sklearn1.multiclass` module implements *meta-estimators* to solve
 ``multiclass`` and ``multilabel`` classification problems
 by decomposing such problems into binary classification problems. ``multioutput``
 regression is also supported.
@@ -60,7 +60,7 @@ regression is also supported.
   to each class, for every sample. Positive classes are indicated with 1 and
   negative classes with 0 or -1. It is thus comparable to running ``n_classes``
   binary classification tasks, for example with
-  :class:`sklearn.multioutput.MultiOutputClassifier`. This approach treats
+  :class:`sklearn1.multioutput.MultiOutputClassifier`. This approach treats
   each label independently whereas multilabel classifiers *may* treat the
   multiple classes simultaneously, accounting for correlated behavior among
   them.
@@ -148,7 +148,7 @@ regression is also supported.
 
 
 All scikit-learn classifiers are capable of multiclass classification,
-but the meta-estimators offered by :mod:`sklearn.multiclass`
+but the meta-estimators offered by :mod:`sklearn1.multiclass`
 permit changing the way they handle more than two classes
 because this may have an effect on classifier performance
 (either in terms of generalization error or required computational resources).
@@ -179,71 +179,71 @@ if you're using one of these, unless you want custom multiclass behavior:
 
 - **Inherently multiclass:**
 
-  - :class:`sklearn.naive_bayes.BernoulliNB`
-  - :class:`sklearn.tree.DecisionTreeClassifier`
-  - :class:`sklearn.tree.ExtraTreeClassifier`
-  - :class:`sklearn.ensemble.ExtraTreesClassifier`
-  - :class:`sklearn.naive_bayes.GaussianNB`
-  - :class:`sklearn.neighbors.KNeighborsClassifier`
-  - :class:`sklearn.semi_supervised.LabelPropagation`
-  - :class:`sklearn.semi_supervised.LabelSpreading`
-  - :class:`sklearn.discriminant_analysis.LinearDiscriminantAnalysis`
-  - :class:`sklearn.svm.LinearSVC` (setting multi_class="crammer_singer")
-  - :class:`sklearn.linear_model.LogisticRegression` (setting multi_class="multinomial")
-  - :class:`sklearn.linear_model.LogisticRegressionCV` (setting multi_class="multinomial")
-  - :class:`sklearn.neural_network.MLPClassifier`
-  - :class:`sklearn.neighbors.NearestCentroid`
-  - :class:`sklearn.discriminant_analysis.QuadraticDiscriminantAnalysis`
-  - :class:`sklearn.neighbors.RadiusNeighborsClassifier`
-  - :class:`sklearn.ensemble.RandomForestClassifier`
-  - :class:`sklearn.linear_model.RidgeClassifier`
-  - :class:`sklearn.linear_model.RidgeClassifierCV`
+  - :class:`sklearn1.naive_bayes.BernoulliNB`
+  - :class:`sklearn1.tree.DecisionTreeClassifier`
+  - :class:`sklearn1.tree.ExtraTreeClassifier`
+  - :class:`sklearn1.ensemble.ExtraTreesClassifier`
+  - :class:`sklearn1.naive_bayes.GaussianNB`
+  - :class:`sklearn1.neighbors.KNeighborsClassifier`
+  - :class:`sklearn1.semi_supervised.LabelPropagation`
+  - :class:`sklearn1.semi_supervised.LabelSpreading`
+  - :class:`sklearn1.discriminant_analysis.LinearDiscriminantAnalysis`
+  - :class:`sklearn1.svm.LinearSVC` (setting multi_class="crammer_singer")
+  - :class:`sklearn1.linear_model.LogisticRegression` (setting multi_class="multinomial")
+  - :class:`sklearn1.linear_model.LogisticRegressionCV` (setting multi_class="multinomial")
+  - :class:`sklearn1.neural_network.MLPClassifier`
+  - :class:`sklearn1.neighbors.NearestCentroid`
+  - :class:`sklearn1.discriminant_analysis.QuadraticDiscriminantAnalysis`
+  - :class:`sklearn1.neighbors.RadiusNeighborsClassifier`
+  - :class:`sklearn1.ensemble.RandomForestClassifier`
+  - :class:`sklearn1.linear_model.RidgeClassifier`
+  - :class:`sklearn1.linear_model.RidgeClassifierCV`
 
 
 - **Multiclass as One-Vs-One:**
 
-  - :class:`sklearn.svm.NuSVC`
-  - :class:`sklearn.svm.SVC`.
-  - :class:`sklearn.gaussian_process.GaussianProcessClassifier` (setting multi_class = "one_vs_one")
+  - :class:`sklearn1.svm.NuSVC`
+  - :class:`sklearn1.svm.SVC`.
+  - :class:`sklearn1.gaussian_process.GaussianProcessClassifier` (setting multi_class = "one_vs_one")
 
 
 - **Multiclass as One-Vs-The-Rest:**
 
-  - :class:`sklearn.ensemble.GradientBoostingClassifier`
-  - :class:`sklearn.gaussian_process.GaussianProcessClassifier` (setting multi_class = "one_vs_rest")
-  - :class:`sklearn.svm.LinearSVC` (setting multi_class="ovr")
-  - :class:`sklearn.linear_model.LogisticRegression` (setting multi_class="ovr")
-  - :class:`sklearn.linear_model.LogisticRegressionCV` (setting multi_class="ovr")
-  - :class:`sklearn.linear_model.SGDClassifier`
-  - :class:`sklearn.linear_model.Perceptron`
-  - :class:`sklearn.linear_model.PassiveAggressiveClassifier`
+  - :class:`sklearn1.ensemble.GradientBoostingClassifier`
+  - :class:`sklearn1.gaussian_process.GaussianProcessClassifier` (setting multi_class = "one_vs_rest")
+  - :class:`sklearn1.svm.LinearSVC` (setting multi_class="ovr")
+  - :class:`sklearn1.linear_model.LogisticRegression` (setting multi_class="ovr")
+  - :class:`sklearn1.linear_model.LogisticRegressionCV` (setting multi_class="ovr")
+  - :class:`sklearn1.linear_model.SGDClassifier`
+  - :class:`sklearn1.linear_model.Perceptron`
+  - :class:`sklearn1.linear_model.PassiveAggressiveClassifier`
 
 
 - **Support multilabel:**
 
-  - :class:`sklearn.tree.DecisionTreeClassifier`
-  - :class:`sklearn.tree.ExtraTreeClassifier`
-  - :class:`sklearn.ensemble.ExtraTreesClassifier`
-  - :class:`sklearn.neighbors.KNeighborsClassifier`
-  - :class:`sklearn.neural_network.MLPClassifier`
-  - :class:`sklearn.neighbors.RadiusNeighborsClassifier`
-  - :class:`sklearn.ensemble.RandomForestClassifier`
-  - :class:`sklearn.linear_model.RidgeClassifierCV`
+  - :class:`sklearn1.tree.DecisionTreeClassifier`
+  - :class:`sklearn1.tree.ExtraTreeClassifier`
+  - :class:`sklearn1.ensemble.ExtraTreesClassifier`
+  - :class:`sklearn1.neighbors.KNeighborsClassifier`
+  - :class:`sklearn1.neural_network.MLPClassifier`
+  - :class:`sklearn1.neighbors.RadiusNeighborsClassifier`
+  - :class:`sklearn1.ensemble.RandomForestClassifier`
+  - :class:`sklearn1.linear_model.RidgeClassifierCV`
 
 
 - **Support multiclass-multioutput:**
 
-  - :class:`sklearn.tree.DecisionTreeClassifier`
-  - :class:`sklearn.tree.ExtraTreeClassifier`
-  - :class:`sklearn.ensemble.ExtraTreesClassifier`
-  - :class:`sklearn.neighbors.KNeighborsClassifier`
-  - :class:`sklearn.neighbors.RadiusNeighborsClassifier`
-  - :class:`sklearn.ensemble.RandomForestClassifier`
+  - :class:`sklearn1.tree.DecisionTreeClassifier`
+  - :class:`sklearn1.tree.ExtraTreeClassifier`
+  - :class:`sklearn1.ensemble.ExtraTreesClassifier`
+  - :class:`sklearn1.neighbors.KNeighborsClassifier`
+  - :class:`sklearn1.neighbors.RadiusNeighborsClassifier`
+  - :class:`sklearn1.ensemble.RandomForestClassifier`
 
 
 .. warning::
 
-    At present, no metric in :mod:`sklearn.metrics`
+    At present, no metric in :mod:`sklearn1.metrics`
     supports the multioutput-multiclass classification task.
 
 Multilabel classification format
@@ -257,11 +257,11 @@ zero elements, corresponds to the subset of labels. An array such as
 sample, labels 1 and 2 in the second sample, and no labels in the third sample.
 
 Producing multilabel data as a list of sets of labels may be more intuitive.
-The :class:`MultiLabelBinarizer <sklearn.preprocessing.MultiLabelBinarizer>`
+The :class:`MultiLabelBinarizer <sklearn1.preprocessing.MultiLabelBinarizer>`
 transformer can be used to convert between a collection of collections of
 labels and the indicator format.
 
-  >>> from sklearn.preprocessing import MultiLabelBinarizer
+  >>> from sklearn1.preprocessing import MultiLabelBinarizer
   >>> y = [[2, 3, 4], [2], [0, 1, 3], [0, 1, 2, 3, 4], [0, 1, 2]]
   >>> MultiLabelBinarizer().fit_transform(y)
   array([[0, 0, 1, 1, 1],
@@ -290,9 +290,9 @@ Multiclass learning
 
 Below is an example of multiclass learning using OvR::
 
-  >>> from sklearn import datasets
-  >>> from sklearn.multiclass import OneVsRestClassifier
-  >>> from sklearn.svm import LinearSVC
+  >>> from sklearn1 import datasets
+  >>> from sklearn1.multiclass import OneVsRestClassifier
+  >>> from sklearn1.svm import LinearSVC
   >>> X, y = datasets.load_iris(return_X_y=True)
   >>> OneVsRestClassifier(LinearSVC(random_state=0)).fit(X, y).predict(X)
   array([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
@@ -347,9 +347,9 @@ Multiclass learning
 
 Below is an example of multiclass learning using OvO::
 
-  >>> from sklearn import datasets
-  >>> from sklearn.multiclass import OneVsOneClassifier
-  >>> from sklearn.svm import LinearSVC
+  >>> from sklearn1 import datasets
+  >>> from sklearn1.multiclass import OneVsOneClassifier
+  >>> from sklearn1.svm import LinearSVC
   >>> X, y = datasets.load_iris(return_X_y=True)
   >>> OneVsOneClassifier(LinearSVC(random_state=0)).fit(X, y).predict(X)
   array([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
@@ -409,9 +409,9 @@ Multiclass learning
 
 Below is an example of multiclass learning using Output-Codes::
 
-  >>> from sklearn import datasets
-  >>> from sklearn.multiclass import OutputCodeClassifier
-  >>> from sklearn.svm import LinearSVC
+  >>> from sklearn1 import datasets
+  >>> from sklearn1.multiclass import OutputCodeClassifier
+  >>> from sklearn1.svm import LinearSVC
   >>> X, y = datasets.load_iris(return_X_y=True)
   >>> clf = OutputCodeClassifier(LinearSVC(random_state=0),
   ...                            code_size=2, random_state=0)
@@ -453,9 +453,9 @@ take advantage of correlations between targets.
 
 Below is an example of multioutput regression:
 
-  >>> from sklearn.datasets import make_regression
-  >>> from sklearn.multioutput import MultiOutputRegressor
-  >>> from sklearn.ensemble import GradientBoostingRegressor
+  >>> from sklearn1.datasets import make_regression
+  >>> from sklearn1.multioutput import MultiOutputRegressor
+  >>> from sklearn1.ensemble import GradientBoostingRegressor
   >>> X, y = make_regression(n_samples=10, n_targets=3, random_state=1)
   >>> MultiOutputRegressor(GradientBoostingRegressor(random_state=0)).fit(X, y).predict(X)
   array([[-154.75474165, -147.03498585,  -50.03812219],
@@ -482,10 +482,10 @@ of responses (y1,y2,y3...,yn).
 
 Below is an example of multioutput classification:
 
-    >>> from sklearn.datasets import make_classification
-    >>> from sklearn.multioutput import MultiOutputClassifier
-    >>> from sklearn.ensemble import RandomForestClassifier
-    >>> from sklearn.utils import shuffle
+    >>> from sklearn1.datasets import make_classification
+    >>> from sklearn1.multioutput import MultiOutputClassifier
+    >>> from sklearn1.ensemble import RandomForestClassifier
+    >>> from sklearn1.utils import shuffle
     >>> import numpy as np
     >>> X, y1 = make_classification(n_samples=10, n_features=100, n_informative=30, n_classes=3, random_state=1)
     >>> y2 = shuffle(y1, random_state=1)

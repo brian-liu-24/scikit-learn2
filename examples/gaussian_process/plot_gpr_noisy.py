@@ -26,8 +26,8 @@ import numpy as np
 from matplotlib import pyplot as plt
 from matplotlib.colors import LogNorm
 
-from sklearn.gaussian_process import GaussianProcessRegressor
-from sklearn.gaussian_process.kernels import RBF, WhiteKernel
+from sklearn1.gaussian_process import GaussianProcessRegressor
+from sklearn1.gaussian_process.kernels import RBF, WhiteKernel
 
 
 rng = np.random.RandomState(0)

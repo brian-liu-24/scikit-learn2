@@ -18,9 +18,9 @@ follow the general trend instead of being subject to the variations.
 This example was inspired by the `XGBoost documentation
 <https://xgboost.readthedocs.io/en/latest/tutorials/monotonic.html>`_.
 """
-from sklearn.experimental import enable_hist_gradient_boosting  # noqa
-from sklearn.ensemble import HistGradientBoostingRegressor
-from sklearn.inspection import plot_partial_dependence
+from sklearn1.experimental import enable_hist_gradient_boosting  # noqa
+from sklearn1.ensemble import HistGradientBoostingRegressor
+from sklearn1.inspection import plot_partial_dependence
 import numpy as np
 import matplotlib.pyplot as plt
 

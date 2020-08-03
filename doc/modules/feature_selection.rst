@@ -1,4 +1,4 @@
-.. currentmodule:: sklearn.feature_selection
+.. currentmodule:: sklearn1.feature_selection
 
 .. _feature_selection:
 
@@ -7,7 +7,7 @@ Feature selection
 =================
 
 
-The classes in the :mod:`sklearn.feature_selection` module can be used
+The classes in the :mod:`sklearn1.feature_selection` module can be used
 for feature selection/dimensionality reduction on sample sets, either to
 improve estimators' accuracy scores or to boost their performance on very
 high-dimensional datasets.
@@ -33,7 +33,7 @@ and the variance of such variables is given by
 
 so we can select using the threshold ``.8 * (1 - .8)``::
 
-  >>> from sklearn.feature_selection import VarianceThreshold
+  >>> from sklearn1.feature_selection import VarianceThreshold
   >>> X = [[0, 0, 1], [0, 1, 0], [1, 0, 0], [0, 1, 1], [0, 1, 0], [0, 1, 1]]
   >>> sel = VarianceThreshold(threshold=(.8 * (1 - .8)))
   >>> sel.fit_transform(X)
@@ -73,9 +73,9 @@ as objects that implement the ``transform`` method:
 For instance, we can perform a :math:`\chi^2` test to the samples
 to retrieve only the two best features as follows:
 
-  >>> from sklearn.datasets import load_iris
-  >>> from sklearn.feature_selection import SelectKBest
-  >>> from sklearn.feature_selection import chi2
+  >>> from sklearn1.datasets import load_iris
+  >>> from sklearn1.feature_selection import SelectKBest
+  >>> from sklearn1.feature_selection import chi2
   >>> X, y = load_iris(return_X_y=True)
   >>> X.shape
   (150, 4)
@@ -169,7 +169,7 @@ For examples on how it is to be used refer to the sections below.
 L1-based feature selection
 --------------------------
 
-.. currentmodule:: sklearn
+.. currentmodule:: sklearn1
 
 :ref:`Linear models <linear_model>` penalized with the L1 norm have
 sparse solutions: many of their estimated coefficients are zero. When the goal
@@ -180,9 +180,9 @@ for this purpose are the :class:`linear_model.Lasso` for regression, and
 of :class:`linear_model.LogisticRegression` and :class:`svm.LinearSVC`
 for classification::
 
-  >>> from sklearn.svm import LinearSVC
-  >>> from sklearn.datasets import load_iris
-  >>> from sklearn.feature_selection import SelectFromModel
+  >>> from sklearn1.svm import LinearSVC
+  >>> from sklearn1.datasets import load_iris
+  >>> from sklearn1.feature_selection import SelectFromModel
   >>> X, y = load_iris(return_X_y=True)
   >>> X.shape
   (150, 4)
@@ -232,15 +232,15 @@ alpha parameter, the fewer features selected.
 Tree-based feature selection
 ----------------------------
 
-Tree-based estimators (see the :mod:`sklearn.tree` module and forest
-of trees in the :mod:`sklearn.ensemble` module) can be used to compute
+Tree-based estimators (see the :mod:`sklearn1.tree` module and forest
+of trees in the :mod:`sklearn1.ensemble` module) can be used to compute
 impurity-based feature importances, which in turn can be used to discard irrelevant
-features (when coupled with the :class:`sklearn.feature_selection.SelectFromModel`
+features (when coupled with the :class:`sklearn1.feature_selection.SelectFromModel`
 meta-transformer)::
 
-  >>> from sklearn.ensemble import ExtraTreesClassifier
-  >>> from sklearn.datasets import load_iris
-  >>> from sklearn.feature_selection import SelectFromModel
+  >>> from sklearn1.ensemble import ExtraTreesClassifier
+  >>> from sklearn1.datasets import load_iris
+  >>> from sklearn1.feature_selection import SelectFromModel
   >>> X, y = load_iris(return_X_y=True)
   >>> X.shape
   (150, 4)
@@ -267,7 +267,7 @@ Feature selection as part of a pipeline
 
 Feature selection is usually used as a pre-processing step before doing
 the actual learning. The recommended way to do this in scikit-learn is
-to use a :class:`sklearn.pipeline.Pipeline`::
+to use a :class:`sklearn1.pipeline.Pipeline`::
 
   clf = Pipeline([
     ('feature_selection', SelectFromModel(LinearSVC(penalty="l1"))),
@@ -275,11 +275,11 @@ to use a :class:`sklearn.pipeline.Pipeline`::
   ])
   clf.fit(X, y)
 
-In this snippet we make use of a :class:`sklearn.svm.LinearSVC`
-coupled with :class:`sklearn.feature_selection.SelectFromModel`
+In this snippet we make use of a :class:`sklearn1.svm.LinearSVC`
+coupled with :class:`sklearn1.feature_selection.SelectFromModel`
 to evaluate feature importances and select the most relevant features.
-Then, a :class:`sklearn.ensemble.RandomForestClassifier` is trained on the
+Then, a :class:`sklearn1.ensemble.RandomForestClassifier` is trained on the
 transformed output, i.e. using only relevant features. You can perform
 similar operations with the other feature selection methods and also
 classifiers that provide a way to evaluate feature importances of course.
-See the :class:`sklearn.pipeline.Pipeline` examples for more details.
+See the :class:`sklearn1.pipeline.Pipeline` examples for more details.

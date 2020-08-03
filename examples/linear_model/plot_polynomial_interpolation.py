@@ -30,9 +30,9 @@ print(__doc__)
 import numpy as np
 import matplotlib.pyplot as plt
 
-from sklearn.linear_model import Ridge
-from sklearn.preprocessing import PolynomialFeatures
-from sklearn.pipeline import make_pipeline
+from sklearn1.linear_model import Ridge
+from sklearn1.preprocessing import PolynomialFeatures
+from sklearn1.pipeline import make_pipeline
 
 
 def f(x):

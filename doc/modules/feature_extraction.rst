@@ -4,9 +4,9 @@
 Feature extraction
 ==================
 
-.. currentmodule:: sklearn.feature_extraction
+.. currentmodule:: sklearn1.feature_extraction
 
-The :mod:`sklearn.feature_extraction` module can be used to extract
+The :mod:`sklearn1.feature_extraction` module can be used to extract
 features in a format supported by machine learning algorithms from datasets
 consisting of formats such as text and image.
 
@@ -45,7 +45,7 @@ is a traditional numerical feature::
   ...     {'city': 'San Francisco', 'temperature': 18.},
   ... ]
 
-  >>> from sklearn.feature_extraction import DictVectorizer
+  >>> from sklearn1.feature_extraction import DictVectorizer
   >>> vec = DictVectorizer()
 
   >>> vec.fit_transform(measurements).toarray()
@@ -106,7 +106,7 @@ default instead of a ``numpy.ndarray``.
 Feature hashing
 ===============
 
-.. currentmodule:: sklearn.feature_extraction
+.. currentmodule:: sklearn1.feature_extraction
 
 The class :class:`FeatureHasher` is a high-speed, low-memory vectorizer that
 uses a technique known as
@@ -129,8 +129,8 @@ and the expected mean of any output feature's value is zero. This mechanism
 is enabled by default with ``alternate_sign=True`` and is particularly useful
 for small hash table sizes (``n_features < 10000``). For large hash table
 sizes, it can be disabled, to allow the output to be passed to estimators like
-:class:`sklearn.naive_bayes.MultinomialNB` or
-:class:`sklearn.feature_selection.chi2`
+:class:`sklearn1.naive_bayes.MultinomialNB` or
+:class:`sklearn1.feature_selection.chi2`
 feature selectors that expect non-negative inputs.
 
 :class:`FeatureHasher` accepts either mappings
@@ -217,7 +217,7 @@ otherwise the features will not be mapped evenly to the columns.
 Text feature extraction
 =======================
 
-.. currentmodule:: sklearn.feature_extraction.text
+.. currentmodule:: sklearn1.feature_extraction.text
 
 
 The Bag of Words representation
@@ -282,7 +282,7 @@ Common Vectorizer usage
 :class:`CountVectorizer` implements both tokenization and occurrence
 counting in a single class::
 
-  >>> from sklearn.feature_extraction.text import CountVectorizer
+  >>> from sklearn1.feature_extraction.text import CountVectorizer
 
 This model has many parameters, however the default values are quite
 reasonable (please see  the :ref:`reference documentation
@@ -462,7 +462,7 @@ with ``smooth_idf=False``, the
 This normalization is implemented by the :class:`TfidfTransformer`
 class::
 
-  >>> from sklearn.feature_extraction.text import TfidfTransformer
+  >>> from sklearn1.feature_extraction.text import TfidfTransformer
   >>> transformer = TfidfTransformer(smooth_idf=False)
   >>> transformer
   TfidfTransformer(smooth_idf=False)
@@ -569,7 +569,7 @@ As tf–idf is very often used for text features, there is also another
 class called :class:`TfidfVectorizer` that combines all the options of
 :class:`CountVectorizer` and :class:`TfidfTransformer` in a single model::
 
-  >>> from sklearn.feature_extraction.text import TfidfVectorizer
+  >>> from sklearn1.feature_extraction.text import TfidfVectorizer
   >>> vectorizer = TfidfVectorizer()
   >>> vectorizer.fit_transform(corpus)
   <4x9 sparse matrix of type '<... 'numpy.float64'>'
@@ -800,7 +800,7 @@ datasets**:
 
 It is possible to overcome those limitations by combining the "hashing trick"
 (:ref:`Feature_hashing`) implemented by the
-:class:`sklearn.feature_extraction.FeatureHasher` class and the text
+:class:`sklearn1.feature_extraction.FeatureHasher` class and the text
 preprocessing and tokenization features of the :class:`CountVectorizer`.
 
 This combination is implementing in :class:`HashingVectorizer`,
@@ -808,7 +808,7 @@ a transformer class that is mostly API compatible with :class:`CountVectorizer`.
 :class:`HashingVectorizer` is stateless,
 meaning that you don't have to call ``fit`` on it::
 
-  >>> from sklearn.feature_extraction.text import HashingVectorizer
+  >>> from sklearn1.feature_extraction.text import HashingVectorizer
   >>> hv = HashingVectorizer(n_features=10)
   >>> hv.transform(corpus)
   <4x10 sparse matrix of type '<... 'numpy.float64'>'
@@ -970,7 +970,7 @@ that do not use an explicit word separator such as whitespace.
 Image feature extraction
 ========================
 
-.. currentmodule:: sklearn.feature_extraction.image
+.. currentmodule:: sklearn1.feature_extraction.image
 
 Patch extraction
 ----------------
@@ -982,7 +982,7 @@ the third axis. For rebuilding an image from all its patches, use
 picture with 3 color channels (e.g. in RGB format)::
 
     >>> import numpy as np
-    >>> from sklearn.feature_extraction import image
+    >>> from sklearn1.feature_extraction import image
 
     >>> one_image = np.arange(4 * 4 * 3).reshape((4, 4, 3))
     >>> one_image[:, :, 0]  # R channel of a fake RGB picture

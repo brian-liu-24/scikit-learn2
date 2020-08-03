@@ -13,10 +13,10 @@ ROC curve for a fitted support vector machine:
 
 .. code-block:: python
 
-    from sklearn.model_selection import train_test_split
-    from sklearn.svm import SVC
-    from sklearn.metrics import plot_roc_curve
-    from sklearn.datasets import load_wine
+    from sklearn1.model_selection import train_test_split
+    from sklearn1.svm import SVC
+    from sklearn1.metrics import plot_roc_curve
+    from sklearn1.datasets import load_wine
 
     X_train, X_test, y_train, y_test = train_test_split(X, y, random_state=42)
     svc = SVC(random_state=42)
@@ -31,7 +31,7 @@ ROC curve for a fitted support vector machine:
 
 The returned `svc_disp` object allows us to continue using the already computed
 ROC curve for SVC in future plots. In this case, the `svc_disp` is a
-:class:`~sklearn.metrics.RocCurveDisplay` that stores the computed values as
+:class:`~sklearn1.metrics.RocCurveDisplay` that stores the computed values as
 attributes called `roc_auc`, `fpr`, and `tpr`. Next, we train a random forest
 classifier and plot the previously computed roc curve again by using the `plot`
 method of the `Display` object.
@@ -39,7 +39,7 @@ method of the `Display` object.
 .. code-block:: python
 
     import matplotlib.pyplot as plt
-    from sklearn.ensemble import RandomForestClassifier
+    from sklearn1.ensemble import RandomForestClassifier
 
     rfc = RandomForestClassifier(random_state=42)
     rfc.fit(X_train, y_train)
@@ -68,7 +68,7 @@ Available Plotting Utilities
 Functions
 ---------
 
-.. currentmodule:: sklearn
+.. currentmodule:: sklearn1
 
 .. autosummary::
 
@@ -81,7 +81,7 @@ Functions
 Display Objects
 ---------------
 
-.. currentmodule:: sklearn
+.. currentmodule:: sklearn1
 
 .. autosummary::
 

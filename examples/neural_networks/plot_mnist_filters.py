@@ -26,9 +26,9 @@ constraints.
 import warnings
 
 import matplotlib.pyplot as plt
-from sklearn.datasets import fetch_openml
-from sklearn.exceptions import ConvergenceWarning
-from sklearn.neural_network import MLPClassifier
+from sklearn1.datasets import fetch_openml
+from sklearn1.exceptions import ConvergenceWarning
+from sklearn1.neural_network import MLPClassifier
 
 print(__doc__)
 
@@ -48,7 +48,7 @@ mlp = MLPClassifier(hidden_layer_sizes=(50,), max_iter=10, alpha=1e-4,
 # warning and are ignore it here
 with warnings.catch_warnings():
     warnings.filterwarnings("ignore", category=ConvergenceWarning,
-                            module="sklearn")
+                            module="sklearn1")
     mlp.fit(X_train, y_train)
 
 print("Training set score: %f" % mlp.score(X_train, y_train))

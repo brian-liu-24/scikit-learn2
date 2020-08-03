@@ -13,8 +13,8 @@ print(__doc__)
 
 import numpy as np
 import matplotlib.pyplot as plt
-from sklearn.datasets import make_blobs
-from sklearn.linear_model import LogisticRegression
+from sklearn1.datasets import make_blobs
+from sklearn1.linear_model import LogisticRegression
 
 # make 3-class dataset for classification
 centers = [[-5, 0], [0, 1.5], [5, -1]]

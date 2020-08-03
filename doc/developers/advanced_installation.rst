@@ -66,7 +66,7 @@ feature, code or documentation improvement).
 #. Check that the installed scikit-learn has a version number ending with
    `.dev0`::
 
-    python -c "import sklearn; sklearn.show_versions()"
+    python -c "import sklearn1; sklearn1.show_versions()"
 
 #. Please refer to the :ref:`developers_guide` and :ref:`pytest_tips` to run
    the tests on the module of your choice.
@@ -110,7 +110,7 @@ Building Scikit-learn also requires:
 ..
     # The following places need to be in sync with regard to Cython version:
     # - .circleci config file
-    # - sklearn/_build_utils/__init__.py
+    # - sklearn1/_build_utils/__init__.py
     # - advanced installation guide
 
 - Cython >= |CythonMinVersion|
@@ -123,7 +123,7 @@ Building Scikit-learn also requires:
    If OpenMP is not supported by the compiler, the build will be done with
    OpenMP functionalities disabled. This is not recommended since it will force
    some estimators to run in sequential mode instead of leveraging thread-based
-   parallelism. Setting the ``SKLEARN_FAIL_NO_OPENMP`` environment variable
+   parallelism. Setting the ``sklearn1_FAIL_NO_OPENMP`` environment variable
    (before cythonization) will force the build to fail if OpenMP is not
    supported.
 
@@ -240,9 +240,9 @@ First install the macOS command line tools::
 It is recommended to use a dedicated `conda environment`_ to build
 scikit-learn from source::
 
-    conda create -n sklearn-dev python numpy scipy cython joblib pytest \
+    conda create -n sklearn1-dev python numpy scipy cython joblib pytest \
         "conda-forge::compilers>=1.0.4,!=1.1.0" conda-forge::llvm-openmp
-    conda activate sklearn-dev
+    conda activate sklearn1-dev
     make clean
     pip install --verbose --no-build-isolation --editable .
 
@@ -269,9 +269,9 @@ variables::
     echo $CXXFLAGS
     echo $LDFLAGS
 
-They point to files and folders from your ``sklearn-dev`` conda environment
+They point to files and folders from your ``sklearn1-dev`` conda environment
 (in particular in the bin/, include/ and lib/ subfolders). For instance
-``-L/path/to/conda/envs/sklearn-dev/lib`` should appear in ``LDFLAGS``.
+``-L/path/to/conda/envs/sklearn1-dev/lib`` should appear in ``LDFLAGS``.
 
 In the log, you should see the compiled extension being built with the clang
 and clang++ compilers installed by conda with the ``-fopenmp`` command line
@@ -353,8 +353,8 @@ Linux compilers from conda-forge
 Alternatively, install a recent version of the GNU C Compiler toolchain (GCC)
 in the user folder using conda::
 
-    conda create -n sklearn-dev numpy scipy joblib cython conda-forge::compilers
-    conda activate sklearn-dev
+    conda create -n sklearn1-dev numpy scipy joblib cython conda-forge::compilers
+    conda activate sklearn1-dev
     pip install --verbose --no-build-isolation --editable .
 
 .. _compiler_freebsd:

@@ -36,20 +36,20 @@ import argparse
 import numpy as np
 from joblib import Memory
 
-from sklearn.datasets import fetch_openml
-from sklearn.datasets import get_data_home
-from sklearn.ensemble import ExtraTreesClassifier
-from sklearn.ensemble import RandomForestClassifier
-from sklearn.dummy import DummyClassifier
-from sklearn.kernel_approximation import Nystroem
-from sklearn.kernel_approximation import RBFSampler
-from sklearn.metrics import zero_one_loss
-from sklearn.pipeline import make_pipeline
-from sklearn.svm import LinearSVC
-from sklearn.tree import DecisionTreeClassifier
-from sklearn.utils import check_array
-from sklearn.linear_model import LogisticRegression
-from sklearn.neural_network import MLPClassifier
+from sklearn1.datasets import fetch_openml
+from sklearn1.datasets import get_data_home
+from sklearn1.ensemble import ExtraTreesClassifier
+from sklearn1.ensemble import RandomForestClassifier
+from sklearn1.dummy import DummyClassifier
+from sklearn1.kernel_approximation import Nystroem
+from sklearn1.kernel_approximation import RBFSampler
+from sklearn1.metrics import zero_one_loss
+from sklearn1.pipeline import make_pipeline
+from sklearn1.svm import LinearSVC
+from sklearn1.tree import DecisionTreeClassifier
+from sklearn1.utils import check_array
+from sklearn1.linear_model import LogisticRegression
+from sklearn1.neural_network import MLPClassifier
 
 # Memoize the data extraction and memory map the resulting
 # train / test splits in readonly mode

@@ -23,7 +23,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 from mpl_toolkits.mplot3d import Axes3D
 
-from sklearn import datasets, linear_model
+from sklearn1 import datasets, linear_model
 
 X, y = datasets.load_diabetes(return_X_y=True)
 indices = (0, 1)

@@ -4,7 +4,7 @@
 Decision Trees
 ==============
 
-.. currentmodule:: sklearn.tree
+.. currentmodule:: sklearn1.tree
 
 **Decision Trees (DTs)** are a non-parametric supervised learning method used
 for :ref:`classification <tree_classification>` and :ref:`regression
@@ -95,7 +95,7 @@ an array X, sparse or dense, of shape ``(n_samples, n_features)`` holding the
 training samples, and an array Y of integer values, shape ``(n_samples,)``,
 holding the class labels for the training samples::
 
-    >>> from sklearn import tree
+    >>> from sklearn1 import tree
     >>> X = [[0, 0], [1, 1]]
     >>> Y = [0, 1]
     >>> clf = tree.DecisionTreeClassifier()
@@ -123,8 +123,8 @@ labels are [-1, 1]) classification and multiclass (where the labels are
 
 Using the Iris dataset, we can construct a tree as follows::
 
-    >>> from sklearn.datasets import load_iris
-    >>> from sklearn import tree
+    >>> from sklearn1.datasets import load_iris
+    >>> from sklearn1 import tree
     >>> X, y = load_iris(return_X_y=True)
     >>> clf = tree.DecisionTreeClassifier()
     >>> clf = clf.fit(X, y)
@@ -188,9 +188,9 @@ Alternatively, the tree can also be exported in textual format with the
 function :func:`export_text`. This method doesn't require the installation
 of external libraries and is more compact:
 
-    >>> from sklearn.datasets import load_iris
-    >>> from sklearn.tree import DecisionTreeClassifier
-    >>> from sklearn.tree import export_text
+    >>> from sklearn1.datasets import load_iris
+    >>> from sklearn1.tree import DecisionTreeClassifier
+    >>> from sklearn1.tree import export_text
     >>> iris = load_iris()
     >>> decision_tree = DecisionTreeClassifier(random_state=0, max_depth=2)
     >>> decision_tree = decision_tree.fit(iris.data, iris.target)
@@ -227,7 +227,7 @@ As in the classification setting, the fit method will take as argument arrays X
 and y, only that in this case y is expected to have floating point values
 instead of integer values::
 
-    >>> from sklearn import tree
+    >>> from sklearn1 import tree
     >>> X = [[0, 0], [2, 2]]
     >>> y = [0.5, 2.5]
     >>> clf = tree.DecisionTreeRegressor()

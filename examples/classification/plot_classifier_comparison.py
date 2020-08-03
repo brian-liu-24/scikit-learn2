@@ -31,18 +31,18 @@ print(__doc__)
 import numpy as np
 import matplotlib.pyplot as plt
 from matplotlib.colors import ListedColormap
-from sklearn.model_selection import train_test_split
-from sklearn.preprocessing import StandardScaler
-from sklearn.datasets import make_moons, make_circles, make_classification
-from sklearn.neural_network import MLPClassifier
-from sklearn.neighbors import KNeighborsClassifier
-from sklearn.svm import SVC
-from sklearn.gaussian_process import GaussianProcessClassifier
-from sklearn.gaussian_process.kernels import RBF
-from sklearn.tree import DecisionTreeClassifier
-from sklearn.ensemble import RandomForestClassifier, AdaBoostClassifier
-from sklearn.naive_bayes import GaussianNB
-from sklearn.discriminant_analysis import QuadraticDiscriminantAnalysis
+from sklearn1.model_selection import train_test_split
+from sklearn1.preprocessing import StandardScaler
+from sklearn1.datasets import make_moons, make_circles, make_classification
+from sklearn1.neural_network import MLPClassifier
+from sklearn1.neighbors import KNeighborsClassifier
+from sklearn1.svm import SVC
+from sklearn1.gaussian_process import GaussianProcessClassifier
+from sklearn1.gaussian_process.kernels import RBF
+from sklearn1.tree import DecisionTreeClassifier
+from sklearn1.ensemble import RandomForestClassifier, AdaBoostClassifier
+from sklearn1.naive_bayes import GaussianNB
+from sklearn1.discriminant_analysis import QuadraticDiscriminantAnalysis
 
 h = .02  # step size in the mesh
 

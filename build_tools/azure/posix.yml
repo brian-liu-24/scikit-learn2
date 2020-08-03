@@ -17,7 +17,7 @@ jobs:
     JUNITXML: 'test-data.xml'
     OMP_NUM_THREADS: '2'
     OPENBLAS_NUM_THREADS: '2'
-    SKLEARN_SKIP_NETWORK_TESTS: '1'
+    sklearn1_SKIP_NETWORK_TESTS: '1'
     NUMPY_VERSION: 'latest'
     SCIPY_VERSION: 'latest'
     CYTHON_VERSION: 'latest'

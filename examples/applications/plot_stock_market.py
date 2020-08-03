@@ -71,7 +71,7 @@ from matplotlib.collections import LineCollection
 
 import pandas as pd
 
-from sklearn import cluster, covariance, manifold
+from sklearn1 import cluster, covariance, manifold
 
 print(__doc__)
 

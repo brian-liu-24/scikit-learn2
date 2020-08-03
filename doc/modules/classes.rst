@@ -11,16 +11,16 @@ uses.
 For reference on concepts repeated across the API, see :ref:`glossary`.
 
 
-:mod:`sklearn.base`: Base classes and utility functions
+:mod:`sklearn1.base`: Base classes and utility functions
 =======================================================
 
-.. automodule:: sklearn.base
+.. automodule:: sklearn1.base
     :no-members:
     :no-inherited-members:
 
 Base classes
 ------------
-.. currentmodule:: sklearn
+.. currentmodule:: sklearn1
 
 .. autosummary::
    :toctree: generated/
@@ -37,7 +37,7 @@ Base classes
 
 Functions
 ---------
-.. currentmodule:: sklearn
+.. currentmodule:: sklearn1
 
 .. autosummary::
    :toctree: generated/
@@ -53,16 +53,16 @@ Functions
 
 .. _calibration_ref:
 
-:mod:`sklearn.calibration`: Probability Calibration
+:mod:`sklearn1.calibration`: Probability Calibration
 ===================================================
 
-.. automodule:: sklearn.calibration
+.. automodule:: sklearn1.calibration
    :no-members:
    :no-inherited-members:
 
 **User guide:** See the :ref:`calibration` section for further details.
 
-.. currentmodule:: sklearn
+.. currentmodule:: sklearn1
 
 .. autosummary::
    :toctree: generated/
@@ -79,10 +79,10 @@ Functions
 
 .. _cluster_ref:
 
-:mod:`sklearn.cluster`: Clustering
+:mod:`sklearn1.cluster`: Clustering
 ==================================
 
-.. automodule:: sklearn.cluster
+.. automodule:: sklearn1.cluster
    :no-members:
    :no-inherited-members:
 
@@ -91,7 +91,7 @@ further details.
 
 Classes
 -------
-.. currentmodule:: sklearn
+.. currentmodule:: sklearn1
 
 .. autosummary::
    :toctree: generated/
@@ -129,17 +129,17 @@ Functions
 
 .. _compose_ref:
 
-:mod:`sklearn.compose`: Composite Estimators
+:mod:`sklearn1.compose`: Composite Estimators
 ============================================
 
-.. automodule:: sklearn.compose
+.. automodule:: sklearn1.compose
    :no-members:
    :no-inherited-members:
 
 **User guide:** See the :ref:`combining_estimators` section for further
 details.
 
-.. currentmodule:: sklearn
+.. currentmodule:: sklearn1
 
 .. autosummary::
     :toctree: generated
@@ -157,16 +157,16 @@ details.
 
 .. _covariance_ref:
 
-:mod:`sklearn.covariance`: Covariance Estimators
+:mod:`sklearn1.covariance`: Covariance Estimators
 ================================================
 
-.. automodule:: sklearn.covariance
+.. automodule:: sklearn1.covariance
    :no-members:
    :no-inherited-members:
 
 **User guide:** See the :ref:`covariance` section for further details.
 
-.. currentmodule:: sklearn
+.. currentmodule:: sklearn1
 
 .. autosummary::
    :toctree: generated/
@@ -193,16 +193,16 @@ details.
 
 .. _cross_decomposition_ref:
 
-:mod:`sklearn.cross_decomposition`: Cross decomposition
+:mod:`sklearn1.cross_decomposition`: Cross decomposition
 =======================================================
 
-.. automodule:: sklearn.cross_decomposition
+.. automodule:: sklearn1.cross_decomposition
    :no-members:
    :no-inherited-members:
 
 **User guide:** See the :ref:`cross_decomposition` section for further details.
 
-.. currentmodule:: sklearn
+.. currentmodule:: sklearn1
 
 .. autosummary::
    :toctree: generated/
@@ -215,10 +215,10 @@ details.
 
 .. _datasets_ref:
 
-:mod:`sklearn.datasets`: Datasets
+:mod:`sklearn1.datasets`: Datasets
 =================================
 
-.. automodule:: sklearn.datasets
+.. automodule:: sklearn1.datasets
    :no-members:
    :no-inherited-members:
 
@@ -227,7 +227,7 @@ details.
 Loaders
 -------
 
-.. currentmodule:: sklearn
+.. currentmodule:: sklearn1
 
 .. autosummary::
    :toctree: generated/
@@ -263,7 +263,7 @@ Loaders
 Samples generator
 -----------------
 
-.. currentmodule:: sklearn
+.. currentmodule:: sklearn1
 
 .. autosummary::
    :toctree: generated/
@@ -293,16 +293,16 @@ Samples generator
 
 .. _decomposition_ref:
 
-:mod:`sklearn.decomposition`: Matrix Decomposition
+:mod:`sklearn1.decomposition`: Matrix Decomposition
 ==================================================
 
-.. automodule:: sklearn.decomposition
+.. automodule:: sklearn1.decomposition
    :no-members:
    :no-inherited-members:
 
 **User guide:** See the :ref:`decompositions` section for further details.
 
-.. currentmodule:: sklearn
+.. currentmodule:: sklearn1
 
 .. autosummary::
    :toctree: generated/
@@ -334,16 +334,16 @@ Samples generator
 
 .. _lda_ref:
 
-:mod:`sklearn.discriminant_analysis`: Discriminant Analysis
+:mod:`sklearn1.discriminant_analysis`: Discriminant Analysis
 ===========================================================
 
-.. automodule:: sklearn.discriminant_analysis
+.. automodule:: sklearn1.discriminant_analysis
    :no-members:
    :no-inherited-members:
 
 **User guide:** See the :ref:`lda_qda` section for further details.
 
-.. currentmodule:: sklearn
+.. currentmodule:: sklearn1
 
 .. autosummary::
    :toctree: generated
@@ -354,16 +354,16 @@ Samples generator
 
 .. _dummy_ref:
 
-:mod:`sklearn.dummy`: Dummy estimators
+:mod:`sklearn1.dummy`: Dummy estimators
 ======================================
 
-.. automodule:: sklearn.dummy
+.. automodule:: sklearn1.dummy
    :no-members:
    :no-inherited-members:
 
 **User guide:** See the :ref:`model_evaluation` section for further details.
 
-.. currentmodule:: sklearn
+.. currentmodule:: sklearn1
 
 .. autosummary::
    :toctree: generated/
@@ -378,16 +378,16 @@ Samples generator
 
 .. _ensemble_ref:
 
-:mod:`sklearn.ensemble`: Ensemble Methods
+:mod:`sklearn1.ensemble`: Ensemble Methods
 =========================================
 
-.. automodule:: sklearn.ensemble
+.. automodule:: sklearn1.ensemble
    :no-members:
    :no-inherited-members:
 
 **User guide:** See the :ref:`ensemble` section for further details.
 
-.. currentmodule:: sklearn
+.. currentmodule:: sklearn1
 
 .. autosummary::
    :toctree: generated/
@@ -420,14 +420,14 @@ Samples generator
 
 .. _exceptions_ref:
 
-:mod:`sklearn.exceptions`: Exceptions and warnings
+:mod:`sklearn1.exceptions`: Exceptions and warnings
 ==================================================
 
-.. automodule:: sklearn.exceptions
+.. automodule:: sklearn1.exceptions
    :no-members:
    :no-inherited-members:
 
-.. currentmodule:: sklearn
+.. currentmodule:: sklearn1
 
 .. autosummary::
    :toctree: generated/
@@ -442,14 +442,14 @@ Samples generator
    exceptions.UndefinedMetricWarning
 
 
-:mod:`sklearn.experimental`: Experimental
+:mod:`sklearn1.experimental`: Experimental
 =========================================
 
-.. automodule:: sklearn.experimental
+.. automodule:: sklearn1.experimental
    :no-members:
    :no-inherited-members:
 
-.. currentmodule:: sklearn
+.. currentmodule:: sklearn1
 
 .. autosummary::
    :toctree: generated/
@@ -460,16 +460,16 @@ Samples generator
 
 .. _feature_extraction_ref:
 
-:mod:`sklearn.feature_extraction`: Feature Extraction
+:mod:`sklearn1.feature_extraction`: Feature Extraction
 =====================================================
 
-.. automodule:: sklearn.feature_extraction
+.. automodule:: sklearn1.feature_extraction
    :no-members:
    :no-inherited-members:
 
 **User guide:** See the :ref:`feature_extraction` section for further details.
 
-.. currentmodule:: sklearn
+.. currentmodule:: sklearn1
 
 .. autosummary::
    :toctree: generated/
@@ -481,11 +481,11 @@ Samples generator
 From images
 -----------
 
-.. automodule:: sklearn.feature_extraction.image
+.. automodule:: sklearn1.feature_extraction.image
    :no-members:
    :no-inherited-members:
 
-.. currentmodule:: sklearn
+.. currentmodule:: sklearn1
 
 .. autosummary::
    :toctree: generated/
@@ -505,11 +505,11 @@ From images
 From text
 ---------
 
-.. automodule:: sklearn.feature_extraction.text
+.. automodule:: sklearn1.feature_extraction.text
    :no-members:
    :no-inherited-members:
 
-.. currentmodule:: sklearn
+.. currentmodule:: sklearn1
 
 .. autosummary::
    :toctree: generated/
@@ -523,16 +523,16 @@ From text
 
 .. _feature_selection_ref:
 
-:mod:`sklearn.feature_selection`: Feature Selection
+:mod:`sklearn1.feature_selection`: Feature Selection
 ===================================================
 
-.. automodule:: sklearn.feature_selection
+.. automodule:: sklearn1.feature_selection
    :no-members:
    :no-inherited-members:
 
 **User guide:** See the :ref:`feature_selection` section for further details.
 
-.. currentmodule:: sklearn
+.. currentmodule:: sklearn1
 
 .. autosummary::
    :toctree: generated/
@@ -562,16 +562,16 @@ From text
 
 .. _gaussian_process_ref:
 
-:mod:`sklearn.gaussian_process`: Gaussian Processes
+:mod:`sklearn1.gaussian_process`: Gaussian Processes
 ===================================================
 
-.. automodule:: sklearn.gaussian_process
+.. automodule:: sklearn1.gaussian_process
    :no-members:
    :no-inherited-members:
 
 **User guide:** See the :ref:`gaussian_process` section for further details.
 
-.. currentmodule:: sklearn
+.. currentmodule:: sklearn1
 
 .. autosummary::
   :toctree: generated/
@@ -604,16 +604,16 @@ Kernels:
 
 .. _impute_ref:
 
-:mod:`sklearn.impute`: Impute
+:mod:`sklearn1.impute`: Impute
 =============================
 
-.. automodule:: sklearn.impute
+.. automodule:: sklearn1.impute
    :no-members:
    :no-inherited-members:
 
 **User guide:** See the :ref:`Impute` section for further details.
 
-.. currentmodule:: sklearn
+.. currentmodule:: sklearn1
 
 .. autosummary::
    :toctree: generated/
@@ -627,14 +627,14 @@ Kernels:
 
 .. _inspection_ref:
 
-:mod:`sklearn.inspection`: inspection
+:mod:`sklearn1.inspection`: inspection
 =====================================
 
-.. automodule:: sklearn.inspection
+.. automodule:: sklearn1.inspection
    :no-members:
    :no-inherited-members:
 
-.. currentmodule:: sklearn
+.. currentmodule:: sklearn1
 
 .. autosummary::
    :toctree: generated/
@@ -646,7 +646,7 @@ Kernels:
 Plotting
 --------
 
-.. currentmodule:: sklearn
+.. currentmodule:: sklearn1
 
 .. autosummary::
    :toctree: generated/
@@ -662,16 +662,16 @@ Plotting
 
 .. _isotonic_ref:
 
-:mod:`sklearn.isotonic`: Isotonic regression
+:mod:`sklearn1.isotonic`: Isotonic regression
 ============================================
 
-.. automodule:: sklearn.isotonic
+.. automodule:: sklearn1.isotonic
    :no-members:
    :no-inherited-members:
 
 **User guide:** See the :ref:`isotonic` section for further details.
 
-.. currentmodule:: sklearn
+.. currentmodule:: sklearn1
 
 .. autosummary::
    :toctree: generated/
@@ -689,16 +689,16 @@ Plotting
 
 .. _kernel_approximation_ref:
 
-:mod:`sklearn.kernel_approximation` Kernel Approximation
+:mod:`sklearn1.kernel_approximation` Kernel Approximation
 ========================================================
 
-.. automodule:: sklearn.kernel_approximation
+.. automodule:: sklearn1.kernel_approximation
    :no-members:
    :no-inherited-members:
 
 **User guide:** See the :ref:`kernel_approximation` section for further details.
 
-.. currentmodule:: sklearn
+.. currentmodule:: sklearn1
 
 .. autosummary::
    :toctree: generated/
@@ -711,16 +711,16 @@ Plotting
 
 .. _kernel_ridge_ref:
 
-:mod:`sklearn.kernel_ridge` Kernel Ridge Regression
+:mod:`sklearn1.kernel_ridge` Kernel Ridge Regression
 ========================================================
 
-.. automodule:: sklearn.kernel_ridge
+.. automodule:: sklearn1.kernel_ridge
    :no-members:
    :no-inherited-members:
 
 **User guide:** See the :ref:`kernel_ridge` section for further details.
 
-.. currentmodule:: sklearn
+.. currentmodule:: sklearn1
 
 .. autosummary::
    :toctree: generated/
@@ -730,10 +730,10 @@ Plotting
 
 .. _linear_model_ref:
 
-:mod:`sklearn.linear_model`: Linear Models
+:mod:`sklearn1.linear_model`: Linear Models
 ==========================================
 
-.. automodule:: sklearn.linear_model
+.. automodule:: sklearn1.linear_model
    :no-members:
    :no-inherited-members:
 
@@ -742,7 +742,7 @@ Plotting
 The following subsections are only rough guidelines: the same estimator can
 fall into multiple categories, depending on its parameters.
 
-.. currentmodule:: sklearn
+.. currentmodule:: sklearn1
 
 Linear classifiers
 ------------------
@@ -776,7 +776,7 @@ Regressors with variable selection
 The following estimators have built-in variable selection fitting
 procedures, but any estimator using a L1 or elastic-net penalty also
 performs variable selection: typically :class:`~linear_model.SGDRegressor`
-or :class:`~sklearn.linear_model.SGDClassifier` with an appropriate penalty.
+or :class:`~sklearn1.linear_model.SGDClassifier` with an appropriate penalty.
 
 .. autosummary::
    :toctree: generated/
@@ -869,16 +869,16 @@ Miscellaneous
 
 .. _manifold_ref:
 
-:mod:`sklearn.manifold`: Manifold Learning
+:mod:`sklearn1.manifold`: Manifold Learning
 ==========================================
 
-.. automodule:: sklearn.manifold
+.. automodule:: sklearn1.manifold
    :no-members:
    :no-inherited-members:
 
 **User guide:** See the :ref:`manifold` section for further details.
 
-.. currentmodule:: sklearn
+.. currentmodule:: sklearn1
 
 .. autosummary::
     :toctree: generated
@@ -902,17 +902,17 @@ Miscellaneous
 
 .. _metrics_ref:
 
-:mod:`sklearn.metrics`: Metrics
+:mod:`sklearn1.metrics`: Metrics
 ===============================
 
 See the :ref:`model_evaluation` section and the :ref:`metrics` section of the
 user guide for further details.
 
-.. automodule:: sklearn.metrics
+.. automodule:: sklearn1.metrics
    :no-members:
    :no-inherited-members:
 
-.. currentmodule:: sklearn
+.. currentmodule:: sklearn1
 
 Model Selection Interface
 -------------------------
@@ -1005,11 +1005,11 @@ Clustering metrics
 See the :ref:`clustering_evaluation` section of the user guide for further
 details.
 
-.. automodule:: sklearn.metrics.cluster
+.. automodule:: sklearn1.metrics.cluster
    :no-members:
    :no-inherited-members:
 
-.. currentmodule:: sklearn
+.. currentmodule:: sklearn1
 
 .. autosummary::
    :toctree: generated/
@@ -1036,7 +1036,7 @@ Biclustering metrics
 See the :ref:`biclustering_evaluation` section of the user guide for
 further details.
 
-.. currentmodule:: sklearn
+.. currentmodule:: sklearn1
 
 .. autosummary::
    :toctree: generated/
@@ -1050,11 +1050,11 @@ Pairwise metrics
 
 See the :ref:`metrics` section of the user guide for further details.
 
-.. automodule:: sklearn.metrics.pairwise
+.. automodule:: sklearn1.metrics.pairwise
    :no-members:
    :no-inherited-members:
 
-.. currentmodule:: sklearn
+.. currentmodule:: sklearn1
 
 .. autosummary::
    :toctree: generated/
@@ -1091,7 +1091,7 @@ Plotting
 
 See the :ref:`visualizations` section of the user guide for further details.
 
-.. currentmodule:: sklearn
+.. currentmodule:: sklearn1
 
 .. autosummary::
    :toctree: generated/
@@ -1112,16 +1112,16 @@ See the :ref:`visualizations` section of the user guide for further details.
 
 .. _mixture_ref:
 
-:mod:`sklearn.mixture`: Gaussian Mixture Models
+:mod:`sklearn1.mixture`: Gaussian Mixture Models
 ===============================================
 
-.. automodule:: sklearn.mixture
+.. automodule:: sklearn1.mixture
    :no-members:
    :no-inherited-members:
 
 **User guide:** See the :ref:`mixture` section for further details.
 
-.. currentmodule:: sklearn
+.. currentmodule:: sklearn1
 
 .. autosummary::
    :toctree: generated/
@@ -1132,10 +1132,10 @@ See the :ref:`visualizations` section of the user guide for further details.
 
 .. _modelselection_ref:
 
-:mod:`sklearn.model_selection`: Model Selection
+:mod:`sklearn1.model_selection`: Model Selection
 ===============================================
 
-.. automodule:: sklearn.model_selection
+.. automodule:: sklearn1.model_selection
    :no-members:
    :no-inherited-members:
 
@@ -1145,7 +1145,7 @@ See the :ref:`visualizations` section of the user guide for further details.
 Splitter Classes
 ----------------
 
-.. currentmodule:: sklearn
+.. currentmodule:: sklearn1
 
 .. autosummary::
    :toctree: generated/
@@ -1169,7 +1169,7 @@ Splitter Classes
 Splitter Functions
 ------------------
 
-.. currentmodule:: sklearn
+.. currentmodule:: sklearn1
 
 .. autosummary::
    :toctree: generated/
@@ -1181,7 +1181,7 @@ Splitter Functions
 Hyper-parameter optimizers
 --------------------------
 
-.. currentmodule:: sklearn
+.. currentmodule:: sklearn1
 
 .. autosummary::
    :toctree: generated/
@@ -1196,7 +1196,7 @@ Hyper-parameter optimizers
 Model validation
 ----------------
 
-.. currentmodule:: sklearn
+.. currentmodule:: sklearn1
 
 .. autosummary::
    :toctree: generated/
@@ -1211,16 +1211,16 @@ Model validation
 
 .. _multiclass_ref:
 
-:mod:`sklearn.multiclass`: Multiclass and multilabel classification
+:mod:`sklearn1.multiclass`: Multiclass and multilabel classification
 ===================================================================
 
-.. automodule:: sklearn.multiclass
+.. automodule:: sklearn1.multiclass
    :no-members:
    :no-inherited-members:
 
 **User guide:** See the :ref:`multiclass` section for further details.
 
-.. currentmodule:: sklearn
+.. currentmodule:: sklearn1
 
 .. autosummary::
     :toctree: generated
@@ -1232,16 +1232,16 @@ Model validation
 
 .. _multioutput_ref:
 
-:mod:`sklearn.multioutput`: Multioutput regression and classification
+:mod:`sklearn1.multioutput`: Multioutput regression and classification
 =====================================================================
 
-.. automodule:: sklearn.multioutput
+.. automodule:: sklearn1.multioutput
    :no-members:
    :no-inherited-members:
 
 **User guide:** See the :ref:`multiclass` section for further details.
 
-.. currentmodule:: sklearn
+.. currentmodule:: sklearn1
 
 .. autosummary::
     :toctree: generated
@@ -1254,16 +1254,16 @@ Model validation
 
 .. _naive_bayes_ref:
 
-:mod:`sklearn.naive_bayes`: Naive Bayes
+:mod:`sklearn1.naive_bayes`: Naive Bayes
 =======================================
 
-.. automodule:: sklearn.naive_bayes
+.. automodule:: sklearn1.naive_bayes
    :no-members:
    :no-inherited-members:
 
 **User guide:** See the :ref:`naive_bayes` section for further details.
 
-.. currentmodule:: sklearn
+.. currentmodule:: sklearn1
 
 .. autosummary::
    :toctree: generated/
@@ -1278,16 +1278,16 @@ Model validation
 
 .. _neighbors_ref:
 
-:mod:`sklearn.neighbors`: Nearest Neighbors
+:mod:`sklearn1.neighbors`: Nearest Neighbors
 ===========================================
 
-.. automodule:: sklearn.neighbors
+.. automodule:: sklearn1.neighbors
    :no-members:
    :no-inherited-members:
 
 **User guide:** See the :ref:`neighbors` section for further details.
 
-.. currentmodule:: sklearn
+.. currentmodule:: sklearn1
 
 .. autosummary::
    :toctree: generated/
@@ -1317,16 +1317,16 @@ Model validation
 
 .. _neural_network_ref:
 
-:mod:`sklearn.neural_network`: Neural network models
+:mod:`sklearn1.neural_network`: Neural network models
 =====================================================
 
-.. automodule:: sklearn.neural_network
+.. automodule:: sklearn1.neural_network
    :no-members:
    :no-inherited-members:
 
 **User guide:** See the :ref:`neural_networks_supervised` and :ref:`neural_networks_unsupervised` sections for further details.
 
-.. currentmodule:: sklearn
+.. currentmodule:: sklearn1
 
 .. autosummary::
    :toctree: generated/
@@ -1338,17 +1338,17 @@ Model validation
 
 .. _pipeline_ref:
 
-:mod:`sklearn.pipeline`: Pipeline
+:mod:`sklearn1.pipeline`: Pipeline
 =================================
 
-.. automodule:: sklearn.pipeline
+.. automodule:: sklearn1.pipeline
    :no-members:
    :no-inherited-members:
 
 **User guide:** See the :ref:`combining_estimators` section for further
 details.
 
-.. currentmodule:: sklearn
+.. currentmodule:: sklearn1
 
 .. autosummary::
    :toctree: generated/
@@ -1366,16 +1366,16 @@ details.
 
 .. _preprocessing_ref:
 
-:mod:`sklearn.preprocessing`: Preprocessing and Normalization
+:mod:`sklearn1.preprocessing`: Preprocessing and Normalization
 =============================================================
 
-.. automodule:: sklearn.preprocessing
+.. automodule:: sklearn1.preprocessing
    :no-members:
    :no-inherited-members:
 
 **User guide:** See the :ref:`preprocessing` section for further details.
 
-.. currentmodule:: sklearn
+.. currentmodule:: sklearn1
 
 .. autosummary::
    :toctree: generated/
@@ -1417,16 +1417,16 @@ details.
 
 .. _random_projection_ref:
 
-:mod:`sklearn.random_projection`: Random projection
+:mod:`sklearn1.random_projection`: Random projection
 ===================================================
 
-.. automodule:: sklearn.random_projection
+.. automodule:: sklearn1.random_projection
    :no-members:
    :no-inherited-members:
 
 **User guide:** See the :ref:`random_projection` section for further details.
 
-.. currentmodule:: sklearn
+.. currentmodule:: sklearn1
 
 .. autosummary::
    :toctree: generated/
@@ -1444,16 +1444,16 @@ details.
 
 .. _semi_supervised_ref:
 
-:mod:`sklearn.semi_supervised` Semi-Supervised Learning
+:mod:`sklearn1.semi_supervised` Semi-Supervised Learning
 ========================================================
 
-.. automodule:: sklearn.semi_supervised
+.. automodule:: sklearn1.semi_supervised
    :no-members:
    :no-inherited-members:
 
 **User guide:** See the :ref:`semi_supervised` section for further details.
 
-.. currentmodule:: sklearn
+.. currentmodule:: sklearn1
 
 .. autosummary::
    :toctree: generated/
@@ -1465,10 +1465,10 @@ details.
 
 .. _svm_ref:
 
-:mod:`sklearn.svm`: Support Vector Machines
+:mod:`sklearn1.svm`: Support Vector Machines
 ===========================================
 
-.. automodule:: sklearn.svm
+.. automodule:: sklearn1.svm
    :no-members:
    :no-inherited-members:
 
@@ -1477,7 +1477,7 @@ details.
 Estimators
 ----------
 
-.. currentmodule:: sklearn
+.. currentmodule:: sklearn1
 
 .. autosummary::
    :toctree: generated/
@@ -1499,16 +1499,16 @@ Estimators
 
 .. _tree_ref:
 
-:mod:`sklearn.tree`: Decision Trees
+:mod:`sklearn1.tree`: Decision Trees
 ===================================
 
-.. automodule:: sklearn.tree
+.. automodule:: sklearn1.tree
    :no-members:
    :no-inherited-members:
 
 **User guide:** See the :ref:`tree` section for further details.
 
-.. currentmodule:: sklearn
+.. currentmodule:: sklearn1
 
 .. autosummary::
    :toctree: generated/
@@ -1529,7 +1529,7 @@ Estimators
 Plotting
 --------
 
-.. currentmodule:: sklearn
+.. currentmodule:: sklearn1
 
 .. autosummary::
    :toctree: generated/
@@ -1539,16 +1539,16 @@ Plotting
 
 .. _utils_ref:
 
-:mod:`sklearn.utils`: Utilities
+:mod:`sklearn1.utils`: Utilities
 ===============================
 
-.. automodule:: sklearn.utils
+.. automodule:: sklearn1.utils
    :no-members:
    :no-inherited-members:
 
 **Developer guide:** See the :ref:`developers-utils` page for further details.
 
-.. currentmodule:: sklearn
+.. currentmodule:: sklearn1
 
 .. autosummary::
    :toctree: generated/

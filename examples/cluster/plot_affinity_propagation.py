@@ -10,9 +10,9 @@ Between Data Points", Science Feb. 2007
 """
 print(__doc__)
 
-from sklearn.cluster import AffinityPropagation
-from sklearn import metrics
-from sklearn.datasets import make_blobs
+from sklearn1.cluster import AffinityPropagation
+from sklearn1 import metrics
+from sklearn1.datasets import make_blobs
 
 # #############################################################################
 # Generate sample data

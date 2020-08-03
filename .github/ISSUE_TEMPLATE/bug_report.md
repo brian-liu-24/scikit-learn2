@@ -26,8 +26,8 @@ result as you.
 
 Example:
 ```python
-from sklearn.feature_extraction.text import CountVectorizer
-from sklearn.decomposition import LatentDirichletAllocation
+from sklearn1.feature_extraction.text import CountVectorizer
+from sklearn1.decomposition import LatentDirichletAllocation
 docs = ["Help I have a bug" for i in range(1000)]
 vectorizer = CountVectorizer(input=docs, analyzer='word')
 lda_features = vectorizer.fit_transform(docs)
@@ -57,13 +57,13 @@ Sample code to reproduce the problem
 <!--
 Please run the following snippet and paste the output below.
 For scikit-learn >= 0.20:
-import sklearn; sklearn.show_versions()
+import sklearn1; sklearn1.show_versions()
 For scikit-learn < 0.20:
 import platform; print(platform.platform())
 import sys; print("Python", sys.version)
 import numpy; print("NumPy", numpy.__version__)
 import scipy; print("SciPy", scipy.__version__)
-import sklearn; print("Scikit-Learn", sklearn.__version__)
+import sklearn1; print("Scikit-Learn", sklearn1.__version__)
 import imblearn; print("Imbalanced-Learn", imblearn.__version__)
 -->
 

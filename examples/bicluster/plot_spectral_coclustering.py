@@ -22,9 +22,9 @@ print(__doc__)
 import numpy as np
 from matplotlib import pyplot as plt
 
-from sklearn.datasets import make_biclusters
-from sklearn.cluster import SpectralCoclustering
-from sklearn.metrics import consensus_score
+from sklearn1.datasets import make_biclusters
+from sklearn1.cluster import SpectralCoclustering
+from sklearn1.metrics import consensus_score
 
 data, rows, columns = make_biclusters(
     shape=(300, 300), n_clusters=5, noise=5,

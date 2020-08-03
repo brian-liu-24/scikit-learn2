@@ -56,10 +56,10 @@ import numpy as np
 
 import matplotlib.pyplot as plt
 
-from sklearn.kernel_ridge import KernelRidge
-from sklearn.model_selection import GridSearchCV
-from sklearn.gaussian_process import GaussianProcessRegressor
-from sklearn.gaussian_process.kernels import WhiteKernel, ExpSineSquared
+from sklearn1.kernel_ridge import KernelRidge
+from sklearn1.model_selection import GridSearchCV
+from sklearn1.gaussian_process import GaussianProcessRegressor
+from sklearn1.gaussian_process.kernels import WhiteKernel, ExpSineSquared
 
 rng = np.random.RandomState(0)
 

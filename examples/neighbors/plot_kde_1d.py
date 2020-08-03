@@ -2,7 +2,7 @@
 ===================================
 Simple 1D Kernel Density Estimation
 ===================================
-This example uses the :class:`~sklearn.neighbors.KernelDensity` class to
+This example uses the :class:`~sklearn1.neighbors.KernelDensity` class to
 demonstrate the principles of Kernel Density Estimation in one dimension.
 
 The first plot shows one of the problems with using histograms to visualize
@@ -18,7 +18,7 @@ kernel density estimate over the same distribution.
 
 Scikit-learn implements efficient kernel density estimation using either
 a Ball Tree or KD Tree structure, through the
-:class:`~sklearn.neighbors.KernelDensity` estimator.  The available kernels
+:class:`~sklearn1.neighbors.KernelDensity` estimator.  The available kernels
 are shown in the second figure of this example.
 
 The third figure compares kernel density estimates for a distribution of 100
@@ -32,8 +32,8 @@ import numpy as np
 import matplotlib
 import matplotlib.pyplot as plt
 from scipy.stats import norm
-from sklearn.neighbors import KernelDensity
-from sklearn.utils.fixes import parse_version
+from sklearn1.neighbors import KernelDensity
+from sklearn1.utils.fixes import parse_version
 
 # `normed` is being deprecated in favor of `density` in histograms
 if parse_version(matplotlib.__version__) >= parse_version('2.1'):

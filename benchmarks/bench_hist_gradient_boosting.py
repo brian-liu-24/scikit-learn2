@@ -3,14 +3,14 @@ import argparse
 
 import matplotlib.pyplot as plt
 import numpy as np
-from sklearn.model_selection import train_test_split
+from sklearn1.model_selection import train_test_split
 # To use this experimental feature, we need to explicitly ask for it:
-from sklearn.experimental import enable_hist_gradient_boosting  # noqa
-from sklearn.ensemble import HistGradientBoostingRegressor
-from sklearn.ensemble import HistGradientBoostingClassifier
-from sklearn.datasets import make_classification
-from sklearn.datasets import make_regression
-from sklearn.ensemble._hist_gradient_boosting.utils import (
+from sklearn1.experimental import enable_hist_gradient_boosting  # noqa
+from sklearn1.ensemble import HistGradientBoostingRegressor
+from sklearn1.ensemble import HistGradientBoostingClassifier
+from sklearn1.datasets import make_classification
+from sklearn1.datasets import make_regression
+from sklearn1.ensemble._hist_gradient_boosting.utils import (
     get_equivalent_estimator)
 
 
@@ -92,7 +92,7 @@ def one_run(n_samples):
     assert X_test.shape[0] == n_samples
     print("Data size: %d samples train, %d samples test."
           % (n_samples, n_samples))
-    print("Fitting a sklearn model...")
+    print("Fitting a sklearn1 model...")
     tic = time()
     est = Estimator(learning_rate=lr,
                     max_iter=n_trees,
@@ -113,13 +113,13 @@ def one_run(n_samples):
             loss = 'least_squares'
     est.set_params(loss=loss)
     est.fit(X_train, y_train, sample_weight=sample_weight_train)
-    sklearn_fit_duration = time() - tic
+    sklearn1_fit_duration = time() - tic
     tic = time()
-    sklearn_score = est.score(X_test, y_test)
-    sklearn_score_duration = time() - tic
-    print("score: {:.4f}".format(sklearn_score))
-    print("fit duration: {:.3f}s,".format(sklearn_fit_duration))
-    print("score duration: {:.3f}s,".format(sklearn_score_duration))
+    sklearn1_score = est.score(X_test, y_test)
+    sklearn1_score_duration = time() - tic
+    print("score: {:.4f}".format(sklearn1_score))
+    print("fit duration: {:.3f}s,".format(sklearn1_fit_duration))
+    print("score duration: {:.3f}s,".format(sklearn1_score_duration))
 
     lightgbm_score = None
     lightgbm_fit_duration = None
@@ -172,7 +172,7 @@ def one_run(n_samples):
         print("fit duration: {:.3f}s,".format(cat_fit_duration))
         print("score duration: {:.3f}s,".format(cat_score_duration))
 
-    return (sklearn_score, sklearn_fit_duration, sklearn_score_duration,
+    return (sklearn1_score, sklearn1_fit_duration, sklearn1_score_duration,
             lightgbm_score, lightgbm_fit_duration, lightgbm_score_duration,
             xgb_score, xgb_fit_duration, xgb_score_duration,
             cat_score, cat_fit_duration, cat_score_duration)
@@ -182,9 +182,9 @@ n_samples_list = [1000, 10000, 100000, 500000, 1000000, 5000000, 10000000]
 n_samples_list = [n_samples for n_samples in n_samples_list
                   if n_samples <= args.n_samples_max]
 
-sklearn_scores = []
-sklearn_fit_durations = []
-sklearn_score_durations = []
+sklearn1_scores = []
+sklearn1_fit_durations = []
+sklearn1_score_durations = []
 lightgbm_scores = []
 lightgbm_fit_durations = []
 lightgbm_score_durations = []
@@ -196,9 +196,9 @@ cat_fit_durations = []
 cat_score_durations = []
 
 for n_samples in n_samples_list:
-    (sklearn_score,
-     sklearn_fit_duration,
-     sklearn_score_duration,
+    (sklearn1_score,
+     sklearn1_fit_duration,
+     sklearn1_score_duration,
      lightgbm_score,
      lightgbm_fit_duration,
      lightgbm_score_duration,
@@ -210,9 +210,9 @@ for n_samples in n_samples_list:
      cat_score_duration) = one_run(n_samples)
 
     for scores, score in (
-            (sklearn_scores, sklearn_score),
-            (sklearn_fit_durations, sklearn_fit_duration),
-            (sklearn_score_durations, sklearn_score_duration),
+            (sklearn1_scores, sklearn1_score),
+            (sklearn1_fit_durations, sklearn1_fit_duration),
+            (sklearn1_score_durations, sklearn1_score_duration),
             (lightgbm_scores, lightgbm_score),
             (lightgbm_fit_durations, lightgbm_fit_duration),
             (lightgbm_score_durations, lightgbm_score_duration),
@@ -226,9 +226,9 @@ for n_samples in n_samples_list:
 
 fig, axs = plt.subplots(3, sharex=True)
 
-axs[0].plot(n_samples_list, sklearn_scores, label='sklearn')
-axs[1].plot(n_samples_list, sklearn_fit_durations, label='sklearn')
-axs[2].plot(n_samples_list, sklearn_score_durations, label='sklearn')
+axs[0].plot(n_samples_list, sklearn1_scores, label='sklearn1')
+axs[1].plot(n_samples_list, sklearn1_fit_durations, label='sklearn1')
+axs[2].plot(n_samples_list, sklearn1_score_durations, label='sklearn1')
 
 if args.lightgbm:
     axs[0].plot(n_samples_list, lightgbm_scores, label='lightgbm')

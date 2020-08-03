@@ -5,7 +5,7 @@ Manifold learning on handwritten digits: Locally Linear Embedding, Isomap...
 
 An illustration of various embeddings on the digits dataset.
 
-The RandomTreesEmbedding, from the :mod:`sklearn.ensemble` module, is not
+The RandomTreesEmbedding, from the :mod:`sklearn1.ensemble` module, is not
 technically a manifold embedding method, as it learn a high-dimensional
 representation on which we apply a dimensionality reduction method.
 However, it is often useful to cast a dataset into a representation in
@@ -16,8 +16,8 @@ this example, which is not the default setting. It ensures global stability
 of the embedding, i.e., the embedding does not depend on random
 initialization.
 
-Linear Discriminant Analysis, from the :mod:`sklearn.discriminant_analysis`
-module, and Neighborhood Components Analysis, from the :mod:`sklearn.neighbors`
+Linear Discriminant Analysis, from the :mod:`sklearn1.discriminant_analysis`
+module, and Neighborhood Components Analysis, from the :mod:`sklearn1.neighbors`
 module, are supervised dimensionality reduction method, i.e. they make use of
 the provided labels, contrary to other methods.
 """
@@ -32,7 +32,7 @@ from time import time
 import numpy as np
 import matplotlib.pyplot as plt
 from matplotlib import offsetbox
-from sklearn import (manifold, datasets, decomposition, ensemble,
+from sklearn1 import (manifold, datasets, decomposition, ensemble,
                      discriminant_analysis, random_projection, neighbors)
 print(__doc__)
 

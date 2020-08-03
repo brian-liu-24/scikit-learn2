@@ -4,9 +4,9 @@ Permutation Importance vs Random Forest Feature Importance (MDI)
 ================================================================
 
 In this example, we will compare the impurity-based feature importance of
-:class:`~sklearn.ensemble.RandomForestClassifier` with the
+:class:`~sklearn1.ensemble.RandomForestClassifier` with the
 permutation importance on the titanic dataset using
-:func:`~sklearn.inspection.permutation_importance`. We will show that the
+:func:`~sklearn1.inspection.permutation_importance`. We will show that the
 impurity-based feature importance can inflate the importance of numerical
 features.
 
@@ -27,14 +27,14 @@ print(__doc__)
 import matplotlib.pyplot as plt
 import numpy as np
 
-from sklearn.datasets import fetch_openml
-from sklearn.ensemble import RandomForestClassifier
-from sklearn.impute import SimpleImputer
-from sklearn.inspection import permutation_importance
-from sklearn.compose import ColumnTransformer
-from sklearn.model_selection import train_test_split
-from sklearn.pipeline import Pipeline
-from sklearn.preprocessing import OneHotEncoder
+from sklearn1.datasets import fetch_openml
+from sklearn1.ensemble import RandomForestClassifier
+from sklearn1.impute import SimpleImputer
+from sklearn1.inspection import permutation_importance
+from sklearn1.compose import ColumnTransformer
+from sklearn1.model_selection import train_test_split
+from sklearn1.pipeline import Pipeline
+from sklearn1.preprocessing import OneHotEncoder
 
 
 # %%

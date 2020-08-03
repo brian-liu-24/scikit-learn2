@@ -24,10 +24,10 @@ import matplotlib.pyplot as plt
 
 from scipy import stats
 
-from sklearn import datasets
-from sklearn.semi_supervised import LabelSpreading
+from sklearn1 import datasets
+from sklearn1.semi_supervised import LabelSpreading
 
-from sklearn.metrics import confusion_matrix, classification_report
+from sklearn1.metrics import confusion_matrix, classification_report
 
 digits = datasets.load_digits()
 rng = np.random.RandomState(2)

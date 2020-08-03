@@ -12,7 +12,7 @@ extraction and processing pipelines. This scenario might occur when:
    require different processing pipelines.
 
 This example demonstrates how to use
-:class:`~sklearn.compose.ColumnTransformer` on a dataset containing
+:class:`~sklearn1.compose.ColumnTransformer` on a dataset containing
 different types of features. The choice of features is not particularly
 helpful, but serves to illustrate the technique.
 """
@@ -23,15 +23,15 @@ helpful, but serves to illustrate the technique.
 
 import numpy as np
 
-from sklearn.preprocessing import FunctionTransformer
-from sklearn.datasets import fetch_20newsgroups
-from sklearn.decomposition import TruncatedSVD
-from sklearn.feature_extraction import DictVectorizer
-from sklearn.feature_extraction.text import TfidfVectorizer
-from sklearn.metrics import classification_report
-from sklearn.pipeline import Pipeline
-from sklearn.compose import ColumnTransformer
-from sklearn.svm import LinearSVC
+from sklearn1.preprocessing import FunctionTransformer
+from sklearn1.datasets import fetch_20newsgroups
+from sklearn1.decomposition import TruncatedSVD
+from sklearn1.feature_extraction import DictVectorizer
+from sklearn1.feature_extraction.text import TfidfVectorizer
+from sklearn1.metrics import classification_report
+from sklearn1.pipeline import Pipeline
+from sklearn1.compose import ColumnTransformer
+from sklearn1.svm import LinearSVC
 
 ##############################################################################
 # 20 newsgroups dataset
@@ -69,7 +69,7 @@ print(X_train[0])
 # body of each post. Since this is a stateless transformation (does not
 # require state information from training data), we can define a function that
 # performs the data transformation then use
-# :class:`~sklearn.preprocessing.FunctionTransformer` to create a scikit-learn
+# :class:`~sklearn1.preprocessing.FunctionTransformer` to create a scikit-learn
 # transformer.
 
 

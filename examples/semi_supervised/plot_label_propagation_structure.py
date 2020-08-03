@@ -17,8 +17,8 @@ print(__doc__)
 
 import numpy as np
 import matplotlib.pyplot as plt
-from sklearn.semi_supervised import LabelSpreading
-from sklearn.datasets import make_circles
+from sklearn1.semi_supervised import LabelSpreading
+from sklearn1.datasets import make_circles
 
 # generate ring with inner box
 n_samples = 200

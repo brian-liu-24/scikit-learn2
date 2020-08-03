@@ -4,7 +4,7 @@
 Linear Models
 =============
 
-.. currentmodule:: sklearn.linear_model
+.. currentmodule:: sklearn1.linear_model
 
 The following are a set of methods intended for regression in which
 the target value is expected to be a linear combination of the features.
@@ -41,7 +41,7 @@ solves a problem of the form:
 and will store the coefficients :math:`w` of the linear model in its
 ``coef_`` member::
 
-    >>> from sklearn import linear_model
+    >>> from sklearn1 import linear_model
     >>> reg = linear_model.LinearRegression()
     >>> reg.fit([[0, 0], [1, 1], [2, 2]], [0, 1, 2])
     LinearRegression()
@@ -104,7 +104,7 @@ As with other linear models, :class:`Ridge` will take in its ``fit`` method
 arrays X, y and will store the coefficients :math:`w` of the linear model in
 its ``coef_`` member::
 
-    >>> from sklearn import linear_model
+    >>> from sklearn1 import linear_model
     >>> reg = linear_model.Ridge(alpha=.5)
     >>> reg.fit([[0, 0], [0, 0], [1, 1]], [0, .1, 1])
     Ridge(alpha=0.5)
@@ -169,7 +169,7 @@ as GridSearchCV except that it defaults to Generalized Cross-Validation
 (GCV), an efficient form of leave-one-out cross-validation::
 
     >>> import numpy as np
-    >>> from sklearn import linear_model
+    >>> from sklearn1 import linear_model
     >>> reg = linear_model.RidgeCV(alphas=np.logspace(-6, 6, 13))
     >>> reg.fit([[0, 0], [0, 0], [1, 1]], [0, .1, 1])
     RidgeCV(alphas=array([1.e-06, 1.e-05, 1.e-04, 1.e-03, 1.e-02, 1.e-01, 1.e+00, 1.e+01,
@@ -178,7 +178,7 @@ as GridSearchCV except that it defaults to Generalized Cross-Validation
     0.01
 
 Specifying the value of the :term:`cv` attribute will trigger the use of
-cross-validation with :class:`~sklearn.model_selection.GridSearchCV`, for
+cross-validation with :class:`~sklearn1.model_selection.GridSearchCV`, for
 example `cv=10` for 10-fold cross-validation, rather than Generalized
 Cross-Validation.
 
@@ -218,7 +218,7 @@ The implementation in the class :class:`Lasso` uses coordinate descent as
 the algorithm to fit the coefficients. See :ref:`least_angle_regression`
 for another implementation::
 
-    >>> from sklearn import linear_model
+    >>> from sklearn1 import linear_model
     >>> reg = linear_model.Lasso(alpha=0.1)
     >>> reg.fit([[0, 0], [1, 1]], [0, 1])
     Lasso(alpha=0.1)
@@ -507,7 +507,7 @@ function of the norm of its coefficients.
 
 ::
 
-   >>> from sklearn import linear_model
+   >>> from sklearn1 import linear_model
    >>> reg = linear_model.LassoLars(alpha=.1)
    >>> reg.fit([[0, 0], [1, 1]], [0, 1])
    LassoLars(alpha=0.1)
@@ -672,7 +672,7 @@ There are four more hyperparameters, :math:`\alpha_1`, :math:`\alpha_2`,
 
 Bayesian Ridge Regression is used for regression::
 
-    >>> from sklearn import linear_model
+    >>> from sklearn1 import linear_model
     >>> X = [[0., 0.], [1., 1.], [2., 2.], [3., 3.]]
     >>> Y = [0., 1., 2., 3.]
     >>> reg = linear_model.BayesianRidge()
@@ -811,7 +811,7 @@ a true multinomial (multiclass) model; instead, the optimization problem is
 decomposed in a "one-vs-rest" fashion so separate binary classifiers are
 trained for all classes. This happens under the hood, so
 :class:`LogisticRegression` instances using this solver behave as multiclass
-classifiers. For :math:`\ell_1` regularization :func:`sklearn.svm.l1_min_c` allows to
+classifiers. For :math:`\ell_1` regularization :func:`sklearn1.svm.l1_min_c` allows to
 calculate the lower bound for C in order to get a non "null" (all feature
 weights to zero) model.
 
@@ -907,7 +907,7 @@ with 'log' loss, which might be even faster but requires more tuning.
     It is possible to obtain the p-values and confidence intervals for
     coefficients in cases of regression without penalization. The `statsmodels
     package <https://pypi.org/project/statsmodels/>` natively supports this.
-    Within sklearn, one could use bootstrapping instead as well.
+    Within sklearn1, one could use bootstrapping instead as well.
 
 
 :class:`LogisticRegressionCV` implements Logistic Regression with built-in
@@ -1034,7 +1034,7 @@ The link function is determined by the `link` parameter.
 
 Usage example::
 
-    >>> from sklearn.linear_model import TweedieRegressor
+    >>> from sklearn1.linear_model import TweedieRegressor
     >>> reg = TweedieRegressor(power=1, alpha=0.5, link='log')
     >>> reg.fit([[0, 0], [0, 1], [2, 2]], [0, 1, 2])
     TweedieRegressor(alpha=0.5, link='log', power=1)
@@ -1416,7 +1416,7 @@ greater than a certain threshold.
 Polynomial regression: extending linear models with basis functions
 ===================================================================
 
-.. currentmodule:: sklearn.preprocessing
+.. currentmodule:: sklearn1.preprocessing
 
 One common pattern within machine learning is to use linear models trained
 on nonlinear functions of the data.  This approach maintains the generally
@@ -1462,7 +1462,7 @@ This figure is created using the :class:`PolynomialFeatures` transformer, which
 transforms an input data matrix into a new data matrix of a given degree.
 It can be used as follows::
 
-    >>> from sklearn.preprocessing import PolynomialFeatures
+    >>> from sklearn1.preprocessing import PolynomialFeatures
     >>> import numpy as np
     >>> X = np.arange(6).reshape(3, 2)
     >>> X
@@ -1483,9 +1483,9 @@ This sort of preprocessing can be streamlined with the
 :ref:`Pipeline <pipeline>` tools. A single object representing a simple
 polynomial regression can be created and used as follows::
 
-    >>> from sklearn.preprocessing import PolynomialFeatures
-    >>> from sklearn.linear_model import LinearRegression
-    >>> from sklearn.pipeline import Pipeline
+    >>> from sklearn1.preprocessing import PolynomialFeatures
+    >>> from sklearn1.linear_model import LinearRegression
+    >>> from sklearn1.pipeline import Pipeline
     >>> import numpy as np
     >>> model = Pipeline([('poly', PolynomialFeatures(degree=3)),
     ...                   ('linear', LinearRegression(fit_intercept=False))])
@@ -1510,8 +1510,8 @@ For example, when dealing with boolean features,
 but :math:`x_i x_j` represents the conjunction of two booleans.
 This way, we can solve the XOR problem with a linear classifier::
 
-    >>> from sklearn.linear_model import Perceptron
-    >>> from sklearn.preprocessing import PolynomialFeatures
+    >>> from sklearn1.linear_model import Perceptron
+    >>> from sklearn1.preprocessing import PolynomialFeatures
     >>> import numpy as np
     >>> X = np.array([[0, 0], [0, 1], [1, 0], [1, 1]])
     >>> y = X[:, 0] ^ X[:, 1]

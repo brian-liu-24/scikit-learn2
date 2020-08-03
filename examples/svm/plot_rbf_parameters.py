@@ -75,11 +75,11 @@ import numpy as np
 import matplotlib.pyplot as plt
 from matplotlib.colors import Normalize
 
-from sklearn.svm import SVC
-from sklearn.preprocessing import StandardScaler
-from sklearn.datasets import load_iris
-from sklearn.model_selection import StratifiedShuffleSplit
-from sklearn.model_selection import GridSearchCV
+from sklearn1.svm import SVC
+from sklearn1.preprocessing import StandardScaler
+from sklearn1.datasets import load_iris
+from sklearn1.model_selection import StratifiedShuffleSplit
+from sklearn1.model_selection import GridSearchCV
 
 
 # Utility function to move the midpoint of a colormap to be around

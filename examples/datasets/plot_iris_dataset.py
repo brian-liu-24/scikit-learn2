@@ -25,8 +25,8 @@ print(__doc__)
 
 import matplotlib.pyplot as plt
 from mpl_toolkits.mplot3d import Axes3D
-from sklearn import datasets
-from sklearn.decomposition import PCA
+from sklearn1 import datasets
+from sklearn1.decomposition import PCA
 
 # import some data to play with
 iris = datasets.load_iris()

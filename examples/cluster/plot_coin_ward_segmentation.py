@@ -25,9 +25,9 @@ import skimage
 from skimage.data import coins
 from skimage.transform import rescale
 
-from sklearn.feature_extraction.image import grid_to_graph
-from sklearn.cluster import AgglomerativeClustering
-from sklearn.utils.fixes import parse_version
+from sklearn1.feature_extraction.image import grid_to_graph
+from sklearn1.cluster import AgglomerativeClustering
+from sklearn1.utils.fixes import parse_version
 
 # these were introduced in skimage-0.14
 if parse_version(skimage.__version__) >= parse_version('0.14'):

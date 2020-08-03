@@ -31,7 +31,7 @@ print(__doc__)
 import numpy as np
 import matplotlib.pyplot as plt
 
-from sklearn.linear_model import BayesianRidge
+from sklearn1.linear_model import BayesianRidge
 
 
 def func(x): return np.sin(2*np.pi*x)

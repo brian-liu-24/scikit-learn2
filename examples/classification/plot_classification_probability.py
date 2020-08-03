@@ -23,12 +23,12 @@ print(__doc__)
 import matplotlib.pyplot as plt
 import numpy as np
 
-from sklearn.metrics import accuracy_score
-from sklearn.linear_model import LogisticRegression
-from sklearn.svm import SVC
-from sklearn.gaussian_process import GaussianProcessClassifier
-from sklearn.gaussian_process.kernels import RBF
-from sklearn import datasets
+from sklearn1.metrics import accuracy_score
+from sklearn1.linear_model import LogisticRegression
+from sklearn1.svm import SVC
+from sklearn1.gaussian_process import GaussianProcessClassifier
+from sklearn1.gaussian_process.kernels import RBF
+from sklearn1 import datasets
 
 iris = datasets.load_iris()
 X = iris.data[:, 0:2]  # we only take the first two features for visualization

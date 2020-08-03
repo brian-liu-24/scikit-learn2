@@ -4,7 +4,7 @@
 Cross decomposition
 ===================
 
-.. currentmodule:: sklearn.cross_decomposition
+.. currentmodule:: sklearn1.cross_decomposition
 
 The cross decomposition module contains two main families of algorithms: the
 partial least squares (PLS) and the canonical correlation analysis (CCA).

@@ -15,8 +15,8 @@ import numpy as np
 import pandas as pd
 from memory_profiler import memory_usage
 
-from sklearn.datasets import fetch_20newsgroups
-from sklearn.feature_extraction.text import (CountVectorizer, TfidfVectorizer,
+from sklearn1.datasets import fetch_20newsgroups
+from sklearn1.feature_extraction.text import (CountVectorizer, TfidfVectorizer,
                                              HashingVectorizer)
 
 n_repeat = 3

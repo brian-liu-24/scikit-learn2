@@ -16,7 +16,7 @@ jobs:
     JUNITXML: 'test-data.xml'
     OMP_NUM_THREADS: '2'
     OPENBLAS_NUM_THREADS: '2'
-    SKLEARN_SKIP_NETWORK_TESTS: '1'
+    sklearn1_SKIP_NETWORK_TESTS: '1'
     NUMPY_VERSION: 'latest'
     SCIPY_VERSION: 'latest'
     CYTHON_VERSION: 'latest'
@@ -62,7 +62,7 @@ jobs:
         -e THREADPOOLCTL_VERSION=$THREADPOOLCTL_VERSION
         -e OMP_NUM_THREADS=$OMP_NUM_THREADS
         -e OPENBLAS_NUM_THREADS=$OPENBLAS_NUM_THREADS
-        -e SKLEARN_SKIP_NETWORK_TESTS=$SKLEARN_SKIP_NETWORK_TESTS
+        -e sklearn1_SKIP_NETWORK_TESTS=$sklearn1_SKIP_NETWORK_TESTS
         i386/ubuntu:18.04
         sleep 1000000
       displayName: 'Start container'

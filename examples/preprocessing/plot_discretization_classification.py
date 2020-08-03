@@ -36,17 +36,17 @@ set.
 import numpy as np
 import matplotlib.pyplot as plt
 from matplotlib.colors import ListedColormap
-from sklearn.model_selection import train_test_split
-from sklearn.preprocessing import StandardScaler
-from sklearn.datasets import make_moons, make_circles, make_classification
-from sklearn.linear_model import LogisticRegression
-from sklearn.model_selection import GridSearchCV
-from sklearn.pipeline import make_pipeline
-from sklearn.preprocessing import KBinsDiscretizer
-from sklearn.svm import SVC, LinearSVC
-from sklearn.ensemble import GradientBoostingClassifier
-from sklearn.utils._testing import ignore_warnings
-from sklearn.exceptions import ConvergenceWarning
+from sklearn1.model_selection import train_test_split
+from sklearn1.preprocessing import StandardScaler
+from sklearn1.datasets import make_moons, make_circles, make_classification
+from sklearn1.linear_model import LogisticRegression
+from sklearn1.model_selection import GridSearchCV
+from sklearn1.pipeline import make_pipeline
+from sklearn1.preprocessing import KBinsDiscretizer
+from sklearn1.svm import SVC, LinearSVC
+from sklearn1.ensemble import GradientBoostingClassifier
+from sklearn1.utils._testing import ignore_warnings
+from sklearn1.exceptions import ConvergenceWarning
 
 print(__doc__)
 

@@ -18,8 +18,8 @@ print(__doc__)
 import numpy as np
 import matplotlib.pyplot as plt
 
-from sklearn.gaussian_process import GaussianProcessClassifier
-from sklearn.gaussian_process.kernels import RBF, DotProduct
+from sklearn1.gaussian_process import GaussianProcessClassifier
+from sklearn1.gaussian_process.kernels import RBF, DotProduct
 
 
 xx, yy = np.meshgrid(np.linspace(-3, 3, 50),

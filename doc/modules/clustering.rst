@@ -5,7 +5,7 @@ Clustering
 ==========
 
 `Clustering <https://en.wikipedia.org/wiki/Cluster_analysis>`__ of
-unlabeled data can be performed with the module :mod:`sklearn.cluster`.
+unlabeled data can be performed with the module :mod:`sklearn1.cluster`.
 
 Each clustering algorithm comes in two variants: a class, that implements
 the ``fit`` method to learn the clusters on train data, and a function,
@@ -13,18 +13,18 @@ that, given train data, returns an array of integer labels corresponding
 to the different clusters. For the class, the labels over the training
 data can be found in the ``labels_`` attribute.
 
-.. currentmodule:: sklearn.cluster
+.. currentmodule:: sklearn1.cluster
 
 .. topic:: Input data
 
     One important thing to note is that the algorithms implemented in
     this module can take different kinds of matrix as input. All the
     methods accept standard data matrices of shape ``[n_samples, n_features]``.
-    These can be obtained from the classes in the :mod:`sklearn.feature_extraction`
+    These can be obtained from the classes in the :mod:`sklearn1.feature_extraction`
     module. For :class:`AffinityPropagation`, :class:`SpectralClustering`
     and :class:`DBSCAN` one can also input similarity matrices of shape
     ``[n_samples, n_samples]``. These can be obtained from the functions
-    in the :mod:`sklearn.metrics.pairwise` module.
+    in the :mod:`sklearn1.metrics.pairwise` module.
 
 Overview of clustering methods
 ===============================
@@ -511,7 +511,7 @@ Spectral Clustering can also be used to partition graphs via their spectral
 embeddings.  In this case, the affinity matrix is the adjacency matrix of the
 graph, and SpectralClustering is initialized with `affinity='precomputed'`::
 
-    >>> from sklearn.cluster import SpectralClustering
+    >>> from sklearn1.cluster import SpectralClustering
     >>> sc = SpectralClustering(3, affinity='precomputed', n_init=100,
     ...                         assign_labels='discretize')
     >>> sc.fit_predict(adjacency_matrix)  # doctest: +SKIP
@@ -648,10 +648,10 @@ and a column with indices of the dataset that should be connected. This
 matrix can be constructed from a-priori information: for instance, you
 may wish to cluster web pages by only merging pages with a link pointing
 from one to another. It can also be learned from the data, for instance
-using :func:`sklearn.neighbors.kneighbors_graph` to restrict
+using :func:`sklearn1.neighbors.kneighbors_graph` to restrict
 merging to nearest neighbors as in :ref:`this example
 <sphx_glr_auto_examples_cluster_plot_agglomerative_clustering.py>`, or
-using :func:`sklearn.feature_extraction.image.grid_to_graph` to
+using :func:`sklearn1.feature_extraction.image.grid_to_graph` to
 enable only merging of neighboring pixels on an image, as in the
 :ref:`coin <sphx_glr_auto_examples_cluster_plot_coin_ward_segmentation.py>` example.
 
@@ -675,7 +675,7 @@ enable only merging of neighboring pixels on an image, as in the
     Connectivity constraints and single, complete or average linkage can enhance
     the 'rich getting richer' aspect of agglomerative clustering,
     particularly so if they are built with
-    :func:`sklearn.neighbors.kneighbors_graph`. In the limit of a small
+    :func:`sklearn1.neighbors.kneighbors_graph`. In the limit of a small
     number of clusters, they tend to give a few macroscopically occupied
     clusters and almost empty ones. (see the discussion in
     :ref:`sphx_glr_auto_examples_cluster_plot_agglomerative_clustering.py`).
@@ -832,7 +832,7 @@ by black points below.
     - A sparse radius neighborhood graph (where missing entries are presumed to
       be out of eps) can be precomputed in a memory-efficient way and dbscan
       can be run over this with ``metric='precomputed'``.  See
-      :meth:`sklearn.neighbors.NearestNeighbors.radius_neighbors_graph`.
+      :meth:`sklearn1.neighbors.NearestNeighbors.radius_neighbors_graph`.
 
     - The dataset can be compressed, either by removing exact duplicates if
       these occur in your data, or by using BIRCH. Then you only have a
@@ -1041,7 +1041,7 @@ truth set of classes or satisfying some assumption such that members
 belong to the same class are more similar than members of different
 classes according to some similarity metric.
 
-.. currentmodule:: sklearn.metrics
+.. currentmodule:: sklearn1.metrics
 
 .. _adjusted_rand_score:
 
@@ -1054,7 +1054,7 @@ and our clustering algorithm assignments of the same samples
 the **similarity** of the two assignments, ignoring permutations and **with
 chance normalization**::
 
-  >>> from sklearn import metrics
+  >>> from sklearn1 import metrics
   >>> labels_true = [0, 0, 0, 1, 1, 1]
   >>> labels_pred = [0, 0, 1, 1, 2, 2]
 
@@ -1175,7 +1175,7 @@ measure are available, **Normalized Mutual Information (NMI)** and **Adjusted
 Mutual Information (AMI)**. NMI is often used in the literature, while AMI was
 proposed more recently and is **normalized against chance**::
 
-  >>> from sklearn import metrics
+  >>> from sklearn1 import metrics
   >>> labels_true = [0, 0, 0, 1, 1, 1]
   >>> labels_pred = [0, 0, 1, 1, 2, 2]
 
@@ -1368,7 +1368,7 @@ We can turn those concept as scores :func:`homogeneity_score` and
 :func:`completeness_score`. Both are bounded below by 0.0 and above by
 1.0 (higher is better)::
 
-  >>> from sklearn import metrics
+  >>> from sklearn1 import metrics
   >>> labels_true = [0, 0, 0, 1, 1, 1]
   >>> labels_pred = [0, 0, 1, 1, 2, 2]
 
@@ -1521,7 +1521,7 @@ mean of homogeneity and completeness**:
 Fowlkes-Mallows scores
 ----------------------
 
-The Fowlkes-Mallows index (:func:`sklearn.metrics.fowlkes_mallows_score`) can be
+The Fowlkes-Mallows index (:func:`sklearn1.metrics.fowlkes_mallows_score`) can be
 used when the ground truth class assignments of the samples is known. The
 Fowlkes-Mallows score FMI is defined as the geometric mean of the
 pairwise precision and recall:
@@ -1539,7 +1539,7 @@ labels and not in the true labels).
 The score ranges from 0 to 1. A high value indicates a good similarity
 between two clusters.
 
-  >>> from sklearn import metrics
+  >>> from sklearn1 import metrics
   >>> labels_true = [0, 0, 0, 1, 1, 1]
   >>> labels_pred = [0, 0, 1, 1, 2, 2]
 
@@ -1610,7 +1610,7 @@ Silhouette Coefficient
 
 If the ground truth labels are not known, evaluation must be performed using
 the model itself. The Silhouette Coefficient
-(:func:`sklearn.metrics.silhouette_score`)
+(:func:`sklearn1.metrics.silhouette_score`)
 is an example of such an evaluation, where a
 higher Silhouette Coefficient score relates to a model with better defined
 clusters. The Silhouette Coefficient is defined for each sample and is composed
@@ -1630,16 +1630,16 @@ The Silhouette Coefficient for a set of samples is given as the mean of the
 Silhouette Coefficient for each sample.
 
 
-  >>> from sklearn import metrics
-  >>> from sklearn.metrics import pairwise_distances
-  >>> from sklearn import datasets
+  >>> from sklearn1 import metrics
+  >>> from sklearn1.metrics import pairwise_distances
+  >>> from sklearn1 import datasets
   >>> X, y = datasets.load_iris(return_X_y=True)
 
 In normal usage, the Silhouette Coefficient is applied to the results of a
 cluster analysis.
 
   >>> import numpy as np
-  >>> from sklearn.cluster import KMeans
+  >>> from sklearn1.cluster import KMeans
   >>> kmeans_model = KMeans(n_clusters=3, random_state=1).fit(X)
   >>> labels = kmeans_model.labels_
   >>> metrics.silhouette_score(X, labels, metric='euclidean')
@@ -1683,7 +1683,7 @@ Calinski-Harabasz Index
 
 
 If the ground truth labels are not known, the Calinski-Harabasz index
-(:func:`sklearn.metrics.calinski_harabasz_score`) - also known as the Variance 
+(:func:`sklearn1.metrics.calinski_harabasz_score`) - also known as the Variance 
 Ratio Criterion - can be used to evaluate the model, where a higher 
 Calinski-Harabasz score relates to a model with better defined clusters.
 
@@ -1691,16 +1691,16 @@ The index is the ratio of the sum of between-clusters dispersion and of
 inter-cluster dispersion for all clusters (where dispersion is defined as the
 sum of distances squared):
 
-  >>> from sklearn import metrics
-  >>> from sklearn.metrics import pairwise_distances
-  >>> from sklearn import datasets
+  >>> from sklearn1 import metrics
+  >>> from sklearn1.metrics import pairwise_distances
+  >>> from sklearn1 import datasets
   >>> X, y = datasets.load_iris(return_X_y=True)
 
 In normal usage, the Calinski-Harabasz index is applied to the results of a
 cluster analysis:
 
   >>> import numpy as np
-  >>> from sklearn.cluster import KMeans
+  >>> from sklearn1.cluster import KMeans
   >>> kmeans_model = KMeans(n_clusters=3, random_state=1).fit(X)
   >>> labels = kmeans_model.labels_
   >>> metrics.calinski_harabasz_score(X, labels)
@@ -1759,7 +1759,7 @@ Davies-Bouldin Index
 --------------------
 
 If the ground truth labels are not known, the Davies-Bouldin index
-(:func:`sklearn.metrics.davies_bouldin_score`) can be used to evaluate the
+(:func:`sklearn1.metrics.davies_bouldin_score`) can be used to evaluate the
 model, where a lower Davies-Bouldin index relates to a model with better
 separation between the clusters.
 
@@ -1773,11 +1773,11 @@ partition.
 In normal usage, the Davies-Bouldin index is applied to the results of a
 cluster analysis as follows:
 
-  >>> from sklearn import datasets
+  >>> from sklearn1 import datasets
   >>> iris = datasets.load_iris()
   >>> X = iris.data
-  >>> from sklearn.cluster import KMeans
-  >>> from sklearn.metrics import davies_bouldin_score
+  >>> from sklearn1.cluster import KMeans
+  >>> from sklearn1.metrics import davies_bouldin_score
   >>> kmeans = KMeans(n_clusters=3, random_state=1).fit(X)
   >>> labels = kmeans.labels_
   >>> davies_bouldin_score(X, labels)
@@ -1843,7 +1843,7 @@ Then the Davies-Bouldin index is defined as:
 Contingency Matrix
 ------------------
 
-Contingency matrix (:func:`sklearn.metrics.cluster.contingency_matrix`)
+Contingency matrix (:func:`sklearn1.metrics.cluster.contingency_matrix`)
 reports the intersection cardinality for every true/predicted cluster pair.
 The contingency matrix provides sufficient statistics for all clustering
 metrics where the samples are independent and identically distributed and
@@ -1851,7 +1851,7 @@ one doesn't need to account for some instances not being clustered.
 
 Here is an example::
 
-   >>> from sklearn.metrics.cluster import contingency_matrix
+   >>> from sklearn1.metrics.cluster import contingency_matrix
    >>> x = ["a", "a", "a", "b", "b", "b"]
    >>> y = [0, 0, 1, 1, 2, 2]
    >>> contingency_matrix(x, y)

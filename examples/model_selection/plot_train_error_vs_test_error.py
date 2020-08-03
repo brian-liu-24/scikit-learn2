@@ -17,7 +17,7 @@ print(__doc__)
 # License: BSD 3 clause
 
 import numpy as np
-from sklearn import linear_model
+from sklearn1 import linear_model
 
 # #############################################################################
 # Generate sample data

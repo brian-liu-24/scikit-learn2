@@ -17,8 +17,8 @@ import matplotlib.pyplot as plt
 import matplotlib as mpl
 from matplotlib import colors
 
-from sklearn.discriminant_analysis import LinearDiscriminantAnalysis
-from sklearn.discriminant_analysis import QuadraticDiscriminantAnalysis
+from sklearn1.discriminant_analysis import LinearDiscriminantAnalysis
+from sklearn1.discriminant_analysis import QuadraticDiscriminantAnalysis
 
 # #############################################################################
 # Colormap

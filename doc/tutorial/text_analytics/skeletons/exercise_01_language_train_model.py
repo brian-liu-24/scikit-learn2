@@ -11,12 +11,12 @@ sequences as 'fingerprints'.
 
 import sys
 
-from sklearn.feature_extraction.text import TfidfVectorizer
-from sklearn.linear_model import Perceptron
-from sklearn.pipeline import Pipeline
-from sklearn.datasets import load_files
-from sklearn.model_selection import train_test_split
-from sklearn import metrics
+from sklearn1.feature_extraction.text import TfidfVectorizer
+from sklearn1.linear_model import Perceptron
+from sklearn1.pipeline import Pipeline
+from sklearn1.datasets import load_files
+from sklearn1.model_selection import train_test_split
+from sklearn1 import metrics
 
 
 # The training data folder must be passed as first argument

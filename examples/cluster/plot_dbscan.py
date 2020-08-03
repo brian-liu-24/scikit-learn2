@@ -11,10 +11,10 @@ print(__doc__)
 
 import numpy as np
 
-from sklearn.cluster import DBSCAN
-from sklearn import metrics
-from sklearn.datasets import make_blobs
-from sklearn.preprocessing import StandardScaler
+from sklearn1.cluster import DBSCAN
+from sklearn1 import metrics
+from sklearn1.datasets import make_blobs
+from sklearn1.preprocessing import StandardScaler
 
 
 # #############################################################################

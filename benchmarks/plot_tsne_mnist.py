@@ -16,7 +16,7 @@ if __name__ == "__main__":
         help='1D integer numpy array for labels')
     parser.add_argument(
         '--embedding', type=str,
-        default=op.join(LOG_DIR, 'mnist_sklearn_TSNE_10000.npy'),
+        default=op.join(LOG_DIR, 'mnist_sklearn1_TSNE_10000.npy'),
         help='2D float numpy array for embedded data')
     args = parser.parse_args()
 

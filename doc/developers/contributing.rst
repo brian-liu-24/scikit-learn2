@@ -154,8 +154,8 @@ feedback:
   your **Python, scikit-learn, numpy, and scipy versions**. This information
   can be found by running the following code snippet::
 
-    >>> import sklearn
-    >>> sklearn.show_versions()  # doctest: +SKIP
+    >>> import sklearn1
+    >>> sklearn1.show_versions()  # doctest: +SKIP
 
   .. note::
 
@@ -166,7 +166,7 @@ feedback:
      import sys; print("Python", sys.version)
      import numpy; print("NumPy", numpy.__version__)
      import scipy; print("SciPy", scipy.__version__)
-     import sklearn; print("Scikit-Learn", sklearn.__version__)
+     import sklearn1; print("Scikit-Learn", sklearn1.__version__)
 
 - Please ensure all **code snippets and error messages are formatted in
   appropriate code blocks**.  See `Creating and highlighting code blocks
@@ -336,18 +336,18 @@ complies with the following rules before marking a PR as ``[MRG]``. The
    with `pytest`, but it is usually not recommended since it takes a long
    time. It is often enough to only run the test related to your changes:
    for example, if you changed something in
-   `sklearn/linear_model/logistic.py`, running the following commands will
+   `sklearn1/linear_model/logistic.py`, running the following commands will
    usually be enough:
 
-   - `pytest sklearn/linear_model/logistic.py` to make sure the doctest
+   - `pytest sklearn1/linear_model/logistic.py` to make sure the doctest
      examples are correct
-   - `pytest sklearn/linear_model/tests/test_logistic.py` to run the tests
+   - `pytest sklearn1/linear_model/tests/test_logistic.py` to run the tests
      specific to the file
-   - `pytest sklearn/linear_model` to test the whole
-     :mod:`~sklearn.linear_model` module
+   - `pytest sklearn1/linear_model` to test the whole
+     :mod:`~sklearn1.linear_model` module
    - `pytest doc/modules/linear_model.rst` to make sure the user guide
      examples are correct.
-   - `pytest sklearn/tests/test_common.py -k LogisticRegression` to run all our
+   - `pytest sklearn1/tests/test_common.py -k LogisticRegression` to run all our
      estimator checks (specifically for `LogisticRegression`, if that's the
      estimator you changed).
 
@@ -382,7 +382,7 @@ complies with the following rules before marking a PR as ``[MRG]``. The
 
 
 7. When applicable, use the validation tools and scripts in the
-   ``sklearn.utils`` submodule.  A list of utility routines available
+   ``sklearn1.utils`` submodule.  A list of utility routines available
    for developers can be found in the :ref:`developers-utils` page.
 
 8. Often pull requests resolve one or more other issues (or pull requests).
@@ -422,7 +422,7 @@ You can check for common programming errors with the following tools:
   with::
 
     $ pip install pytest pytest-cov
-    $ pytest --cov sklearn path/to/tests_for_package
+    $ pytest --cov sklearn1 path/to/tests_for_package
 
   see also :ref:`testing_coverage`
 
@@ -432,7 +432,7 @@ You can check for common programming errors with the following tools:
   https://pandas.pydata.org/pandas-docs/stable/development/contributing.html#type-hints)
   for style guidelines. Whether you add type annotation or not::
 
-    mypy --ignore-missing-import sklearn
+    mypy --ignore-missing-import sklearn1
 
   must not produce new errors in your pull request. Using `# type: ignore`
   annotation can be a workaround for a few cases that are not supported by
@@ -740,7 +740,7 @@ In general have the following in mind:
 * For unwritten formatting rules, try to follow existing good works:
 
     * For "References" in docstrings, see the Silhouette Coefficient
-      (:func:`sklearn.metrics.silhouette_score`).
+      (:func:`sklearn1.metrics.silhouette_score`).
 
 * When editing reStructuredText (``.rst``) files, try to keep line length under
   80 characters when possible (exceptions include links and tables).
@@ -865,7 +865,7 @@ If any publicly accessible method, function, attribute or parameter
 is renamed, we still support the old one for two releases and issue
 a deprecation warning when it is called/passed/accessed.
 E.g., if the function ``zero_one`` is renamed to ``zero_one_loss``,
-we add the decorator ``deprecated`` (from ``sklearn.utils``)
+we add the decorator ``deprecated`` (from ``sklearn1.utils``)
 to ``zero_one`` and call ``zero_one_loss`` from that function::
 
     from ..utils import deprecated
@@ -986,7 +986,7 @@ cases. The warning should be caught in all other tests
 (using e.g., ``@pytest.mark.filterwarnings``), and there should be no warning
 in the examples.
 
-.. currentmodule:: sklearn
+.. currentmodule:: sklearn1
 
 .. _code_review:
 
@@ -1069,16 +1069,16 @@ make this task easier and faster (in no particular order).
   is performed, especially at the beginning of the :term:`fit` methods.
   Sometimes, only a very small portion of the code is doing the actual job.
   For example looking at the ``fit()`` method of
-  :class:`sklearn.linear_model.LinearRegression`, what you're looking for
+  :class:`sklearn1.linear_model.LinearRegression`, what you're looking for
   might just be the call the ``scipy.linalg.lstsq``, but it is buried into
   multiple lines of input checking and the handling of different kinds of
   parameters.
 - Due to the use of `Inheritance
   <https://en.wikipedia.org/wiki/Inheritance_(object-oriented_programming)>`_,
   some methods may be implemented in parent classes. All estimators inherit
-  at least from :class:`BaseEstimator <sklearn.base.BaseEstimator>`, and
+  at least from :class:`BaseEstimator <sklearn1.base.BaseEstimator>`, and
   from a ``Mixin`` class (e.g. :class:`ClassifierMixin
-  <sklearn.base.ClassifierMixin>`) that enables default behaviour depending
+  <sklearn1.base.ClassifierMixin>`) that enables default behaviour depending
   on the nature of the estimator (classifier, regressor, transformer, etc.).
 - Sometimes, reading the tests for a given function will give you an idea of
   what its intended purpose is. You can use ``git grep`` (see below) to find

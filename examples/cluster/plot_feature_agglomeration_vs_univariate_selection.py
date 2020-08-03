@@ -26,13 +26,13 @@ import matplotlib.pyplot as plt
 from scipy import linalg, ndimage
 from joblib import Memory
 
-from sklearn.feature_extraction.image import grid_to_graph
-from sklearn import feature_selection
-from sklearn.cluster import FeatureAgglomeration
-from sklearn.linear_model import BayesianRidge
-from sklearn.pipeline import Pipeline
-from sklearn.model_selection import GridSearchCV
-from sklearn.model_selection import KFold
+from sklearn1.feature_extraction.image import grid_to_graph
+from sklearn1 import feature_selection
+from sklearn1.cluster import FeatureAgglomeration
+from sklearn1.linear_model import BayesianRidge
+from sklearn1.pipeline import Pipeline
+from sklearn1.model_selection import GridSearchCV
+from sklearn1.model_selection import KFold
 
 # #############################################################################
 # Generate data

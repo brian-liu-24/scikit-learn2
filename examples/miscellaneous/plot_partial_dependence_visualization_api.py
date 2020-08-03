@@ -2,8 +2,8 @@
 =========================================
 Advanced Plotting With Partial Dependence
 =========================================
-The :func:`~sklearn.inspection.plot_partial_dependence` function returns a
-:class:`~sklearn.inspection.PartialDependenceDisplay` object that can be used
+The :func:`~sklearn1.inspection.plot_partial_dependence` function returns a
+:class:`~sklearn1.inspection.PartialDependenceDisplay` object that can be used
 for plotting without needing to recalculate the partial dependence. In this
 example, we show how to plot partial dependence plots and how to quickly
 customize the plot with the visualization API.
@@ -17,12 +17,12 @@ print(__doc__)
 
 import pandas as pd
 import matplotlib.pyplot as plt
-from sklearn.datasets import load_diabetes
-from sklearn.neural_network import MLPRegressor
-from sklearn.preprocessing import StandardScaler
-from sklearn.pipeline import make_pipeline
-from sklearn.tree import DecisionTreeRegressor
-from sklearn.inspection import plot_partial_dependence
+from sklearn1.datasets import load_diabetes
+from sklearn1.neural_network import MLPRegressor
+from sklearn1.preprocessing import StandardScaler
+from sklearn1.pipeline import make_pipeline
+from sklearn1.tree import DecisionTreeRegressor
+from sklearn1.inspection import plot_partial_dependence
 
 
 # %%
@@ -49,7 +49,7 @@ mlp.fit(X, y)
 #
 # We plot partial dependence curves for features "age" and "bmi" (body mass
 # index) for the decision tree. With two features,
-# :func:`~sklearn.inspection.plot_partial_dependence` expects to plot two
+# :func:`~sklearn1.inspection.plot_partial_dependence` expects to plot two
 # curves. Here the plot function place a grid of two plots using the space
 # defined by `ax` .
 fig, ax = plt.subplots(figsize=(12, 6))
@@ -59,7 +59,7 @@ tree_disp = plot_partial_dependence(tree, X, ["age", "bmi"], ax=ax)
 # %%
 # The partial depdendence curves can be plotted for the multi-layer perceptron.
 # In this case, `line_kw` is passed to
-# :func:`~sklearn.inspection.plot_partial_dependence` to change the color of
+# :func:`~sklearn1.inspection.plot_partial_dependence` to change the color of
 # the curve.
 fig, ax = plt.subplots(figsize=(12, 6))
 ax.set_title("Multi-layer Perceptron")
@@ -71,7 +71,7 @@ mlp_disp = plot_partial_dependence(mlp, X, ["age", "bmi"], ax=ax,
 # ======================================================
 #
 # The `tree_disp` and `mlp_disp`
-# :class:`~sklearn.inspection.PartialDependenceDisplay` objects contain all the
+# :class:`~sklearn1.inspection.PartialDependenceDisplay` objects contain all the
 # computed information needed to recreate the partial dependence curves. This
 # means we can easily create additional plots without needing to recompute the
 # curves.
@@ -79,7 +79,7 @@ mlp_disp = plot_partial_dependence(mlp, X, ["age", "bmi"], ax=ax,
 # One way to plot the curves is to place them in the same figure, with the
 # curves of each model on each row. First, we create a figure with two axes
 # within two rows and one column. The two axes are passed to the
-# :func:`~sklearn.inspection.PartialDependenceDisplay.plot` functions of
+# :func:`~sklearn1.inspection.PartialDependenceDisplay.plot` functions of
 # `tree_disp` and `mlp_disp`. The given axes will be used by the plotting
 # function to draw the partial dependence. The resulting plot places the
 # decision tree partial dependence curves in the first row of the
@@ -94,7 +94,7 @@ ax2.set_title("Multi-layer Perceptron")
 # %%
 # Another way to compare the curves is to plot them on top of each other. Here,
 # we create a figure with one row and two columns. The axes are passed into the
-# :func:`~sklearn.inspection.PartialDependenceDisplay.plot` function as a list,
+# :func:`~sklearn1.inspection.PartialDependenceDisplay.plot` function as a list,
 # which will plot the partial dependence curves of each model on the same axes.
 # The length of the axes list must be equal to the number of plots drawn.
 

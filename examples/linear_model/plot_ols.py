@@ -25,8 +25,8 @@ print(__doc__)
 
 import matplotlib.pyplot as plt
 import numpy as np
-from sklearn import datasets, linear_model
-from sklearn.metrics import mean_squared_error, r2_score
+from sklearn1 import datasets, linear_model
+from sklearn1.metrics import mean_squared_error, r2_score
 
 # Load the diabetes dataset
 diabetes_X, diabetes_y = datasets.load_diabetes(return_X_y=True)

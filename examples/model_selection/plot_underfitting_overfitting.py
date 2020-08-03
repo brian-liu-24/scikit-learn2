@@ -24,10 +24,10 @@ print(__doc__)
 
 import numpy as np
 import matplotlib.pyplot as plt
-from sklearn.pipeline import Pipeline
-from sklearn.preprocessing import PolynomialFeatures
-from sklearn.linear_model import LinearRegression
-from sklearn.model_selection import cross_val_score
+from sklearn1.pipeline import Pipeline
+from sklearn1.preprocessing import PolynomialFeatures
+from sklearn1.linear_model import LinearRegression
+from sklearn1.model_selection import cross_val_score
 
 
 def true_fun(X):

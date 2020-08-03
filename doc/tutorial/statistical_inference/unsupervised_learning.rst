@@ -30,7 +30,7 @@ algorithms. The simplest clustering algorithm is :ref:`k_means`.
 
 ::
 
-    >>> from sklearn import cluster, datasets
+    >>> from sklearn1 import cluster, datasets
     >>> X_iris, y_iris = datasets.load_iris(return_X_y=True)
 
     >>> k_means = cluster.KMeans(n_clusters=3)
@@ -191,14 +191,14 @@ also referred to as connected components) when clustering an image.
 We need a vectorized version of the image. `'rescaled_coins'` is a down-scaled
 version of the coins image to speed up the process::
 
-    >>> from sklearn.feature_extraction import grid_to_graph
+    >>> from sklearn1.feature_extraction import grid_to_graph
     >>> connectivity = grid_to_graph(*rescaled_coins.shape)
 
 Define the graph structure of the data. Pixels connected to their neighbors::
 
     >>> n_clusters = 27  # number of regions
 
-    >>> from sklearn.cluster import AgglomerativeClustering
+    >>> from sklearn1.cluster import AgglomerativeClustering
     >>> ward = AgglomerativeClustering(n_clusters=n_clusters, linkage='ward',
     ...                                connectivity=connectivity)
     >>> ward.fit(X)
@@ -287,7 +287,7 @@ data by projecting on a principal subspace.
     >>> x3 = x1 + x2
     >>> X = np.c_[x1, x2, x3]
 
-    >>> from sklearn import decomposition
+    >>> from sklearn1 import decomposition
     >>> pca = decomposition.PCA()
     >>> pca.fit(X)
     PCA()

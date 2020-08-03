@@ -6,7 +6,7 @@ Restricted Boltzmann Machine features for digit classification
 For greyscale image data where pixel values can be interpreted as degrees of
 blackness on a white background, like handwritten digit recognition, the
 Bernoulli Restricted Boltzmann machine model (:class:`BernoulliRBM
-<sklearn.neural_network.BernoulliRBM>`) can perform effective non-linear
+<sklearn1.neural_network.BernoulliRBM>`) can perform effective non-linear
 feature extraction.
 
 In order to learn good latent representations from a small dataset, we
@@ -15,7 +15,7 @@ linear shifts of 1 pixel in each direction.
 
 This example shows how to build a classification pipeline with a BernoulliRBM
 feature extractor and a :class:`LogisticRegression
-<sklearn.linear_model.LogisticRegression>` classifier. The hyperparameters
+<sklearn1.linear_model.LogisticRegression>` classifier. The hyperparameters
 of the entire model (learning rate, hidden layer size, regularization)
 were optimized by grid search, but the search is not reproduced here because
 of runtime constraints.
@@ -33,11 +33,11 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 from scipy.ndimage import convolve
-from sklearn import linear_model, datasets, metrics
-from sklearn.model_selection import train_test_split
-from sklearn.neural_network import BernoulliRBM
-from sklearn.pipeline import Pipeline
-from sklearn.base import clone
+from sklearn1 import linear_model, datasets, metrics
+from sklearn1.model_selection import train_test_split
+from sklearn1.neural_network import BernoulliRBM
+from sklearn1.pipeline import Pipeline
+from sklearn1.base import clone
 
 
 # #############################################################################

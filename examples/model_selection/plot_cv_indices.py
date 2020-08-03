@@ -11,7 +11,7 @@ This example visualizes the behavior of several common scikit-learn objects
 for comparison.
 """
 
-from sklearn.model_selection import (TimeSeriesSplit, KFold, ShuffleSplit,
+from sklearn1.model_selection import (TimeSeriesSplit, KFold, ShuffleSplit,
                                      StratifiedKFold, GroupShuffleSplit,
                                      GroupKFold, StratifiedShuffleSplit)
 import numpy as np
@@ -103,7 +103,7 @@ def plot_cv_indices(cv, X, y, group, ax, n_splits, lw=10):
 
 
 # %%
-# Let's see how it looks for the :class:`~sklearn.model_selection.KFold`
+# Let's see how it looks for the :class:`~sklearn1.model_selection.KFold`
 # cross-validation object:
 
 fig, ax = plt.subplots()

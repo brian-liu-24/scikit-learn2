@@ -8,9 +8,9 @@ import gc
 
 from time import time
 
-from sklearn.linear_model import Ridge, SGDRegressor, ElasticNet
-from sklearn.metrics import mean_squared_error
-from sklearn.datasets import make_regression
+from sklearn1.linear_model import Ridge, SGDRegressor, ElasticNet
+from sklearn1.metrics import mean_squared_error
+from sklearn1.datasets import make_regression
 
 """
 Benchmark for SGD regression

@@ -57,13 +57,13 @@ it is possibly to select a subset of tests using pytest selectors.
 In particular, one can run a `single test based on its node ID
 <https://docs.pytest.org/en/latest/example/markers.html#selecting-tests-based-on-their-node-id>`_::
 
-  pytest -v sklearn/linear_model/tests/test_logistic.py::test_sparsify
+  pytest -v sklearn1/linear_model/tests/test_logistic.py::test_sparsify
 
 or use the `-k pytest parameter
 <https://docs.pytest.org/en/latest/example/markers.html#using-k-expr-to-select-tests-based-on-their-name>`_
 to select tests based on their name. For instance,::
 
-  pytest sklearn/tests/test_common.py -v -k LogisticRegression
+  pytest sklearn1/tests/test_common.py -v -k LogisticRegression
 
 will run all :term:`common tests` for the ``LogisticRegression`` estimator.
 
@@ -127,7 +127,7 @@ Issue: Software versions
 
         To help diagnose your issue, please paste the output of:
         ```py
-        import sklearn; sklearn.show_versions()
+        import sklearn1; sklearn1.show_versions()
         ```
         Thanks.
 

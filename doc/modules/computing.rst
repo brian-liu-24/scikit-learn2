@@ -44,9 +44,9 @@ vectorizer if making multiple passes over the data is reasonable from an
 application point of view. Otherwise, one can turn up the difficulty by using
 a stateless feature extractor. Currently the preferred way to do this is to
 use the so-called :ref:`hashing trick<feature_hashing>` as implemented by
-:class:`sklearn.feature_extraction.FeatureHasher` for datasets with categorical
+:class:`sklearn1.feature_extraction.FeatureHasher` for datasets with categorical
 variables represented as list of Python dicts or
-:class:`sklearn.feature_extraction.text.HashingVectorizer` for text documents.
+:class:`sklearn1.feature_extraction.text.HashingVectorizer` for text documents.
 
 Incremental learning
 .....................
@@ -63,27 +63,27 @@ balances relevancy and memory footprint could involve some tuning [1]_.
 Here is a list of incremental estimators for different tasks:
 
   - Classification
-      + :class:`sklearn.naive_bayes.MultinomialNB`
-      + :class:`sklearn.naive_bayes.BernoulliNB`
-      + :class:`sklearn.linear_model.Perceptron`
-      + :class:`sklearn.linear_model.SGDClassifier`
-      + :class:`sklearn.linear_model.PassiveAggressiveClassifier`
-      + :class:`sklearn.neural_network.MLPClassifier`
+      + :class:`sklearn1.naive_bayes.MultinomialNB`
+      + :class:`sklearn1.naive_bayes.BernoulliNB`
+      + :class:`sklearn1.linear_model.Perceptron`
+      + :class:`sklearn1.linear_model.SGDClassifier`
+      + :class:`sklearn1.linear_model.PassiveAggressiveClassifier`
+      + :class:`sklearn1.neural_network.MLPClassifier`
   - Regression
-      + :class:`sklearn.linear_model.SGDRegressor`
-      + :class:`sklearn.linear_model.PassiveAggressiveRegressor`
-      + :class:`sklearn.neural_network.MLPRegressor`
+      + :class:`sklearn1.linear_model.SGDRegressor`
+      + :class:`sklearn1.linear_model.PassiveAggressiveRegressor`
+      + :class:`sklearn1.neural_network.MLPRegressor`
   - Clustering
-      + :class:`sklearn.cluster.MiniBatchKMeans`
-      + :class:`sklearn.cluster.Birch`
+      + :class:`sklearn1.cluster.MiniBatchKMeans`
+      + :class:`sklearn1.cluster.Birch`
   - Decomposition / feature Extraction
-      + :class:`sklearn.decomposition.MiniBatchDictionaryLearning`
-      + :class:`sklearn.decomposition.IncrementalPCA`
-      + :class:`sklearn.decomposition.LatentDirichletAllocation`
+      + :class:`sklearn1.decomposition.MiniBatchDictionaryLearning`
+      + :class:`sklearn1.decomposition.IncrementalPCA`
+      + :class:`sklearn1.decomposition.LatentDirichletAllocation`
   - Preprocessing
-      + :class:`sklearn.preprocessing.StandardScaler`
-      + :class:`sklearn.preprocessing.MinMaxScaler`
-      + :class:`sklearn.preprocessing.MaxAbsScaler`
+      + :class:`sklearn1.preprocessing.StandardScaler`
+      + :class:`sklearn1.preprocessing.MinMaxScaler`
+      + :class:`sklearn1.preprocessing.MaxAbsScaler`
 
 For classification, a somewhat important thing to note is that although a
 stateless feature extraction routine may be able to cope with new/unseen
@@ -215,17 +215,17 @@ call to ``predict`` and similar functions. In particular, checking that
 features are finite (not NaN or infinite) involves a full pass over the
 data. If you ensure that your data is acceptable, you may suppress
 checking for finiteness by setting the environment variable
-``SKLEARN_ASSUME_FINITE`` to a non-empty string before importing
-scikit-learn, or configure it in Python with :func:`sklearn.set_config`.
+``sklearn1_ASSUME_FINITE`` to a non-empty string before importing
+scikit-learn, or configure it in Python with :func:`sklearn1.set_config`.
 For more control than these global settings, a :func:`config_context`
 allows you to set this configuration within a specified context::
 
-  >>> import sklearn
-  >>> with sklearn.config_context(assume_finite=True):
+  >>> import sklearn1
+  >>> with sklearn1.config_context(assume_finite=True):
   ...     pass  # do learning/prediction here with reduced validation
 
 Note that this will affect all uses of
-:func:`sklearn.utils.assert_all_finite` within the context.
+:func:`sklearn1.utils.assert_all_finite` within the context.
 
 Influence of the Number of Features
 ....................................
@@ -290,14 +290,14 @@ interesting, but for many applications we would better not increase
 prediction latency too much. We will now review this idea for different
 families of supervised models.
 
-For :mod:`sklearn.linear_model` (e.g. Lasso, ElasticNet,
+For :mod:`sklearn1.linear_model` (e.g. Lasso, ElasticNet,
 SGDClassifier/Regressor, Ridge & RidgeClassifier,
 PassiveAggressiveClassifier/Regressor, LinearSVC, LogisticRegression...) the
 decision function that is applied at prediction time is the same (a dot product)
 , so latency should be equivalent.
 
 Here is an example using
-:class:`sklearn.linear_model.SGDClassifier` with the
+:class:`sklearn1.linear_model.SGDClassifier` with the
 ``elasticnet`` penalty. The regularization strength is globally controlled by
 the ``alpha`` parameter. With a sufficiently high ``alpha``,
 one can then increase the ``l1_ratio`` parameter of ``elasticnet`` to
@@ -313,13 +313,13 @@ non-zero coefficients.
 
 .. centered:: |en_model_complexity|
 
-For the :mod:`sklearn.svm` family of algorithms with a non-linear kernel,
+For the :mod:`sklearn1.svm` family of algorithms with a non-linear kernel,
 the latency is tied to the number of support vectors (the fewer the faster).
 Latency and throughput should (asymptotically) grow linearly with the number
 of support vectors in a SVC or SVR model. The kernel will also influence the
 latency as it is used to compute the projection of the input vector once per
 support vector. In the following graph the ``nu`` parameter of
-:class:`sklearn.svm.NuSVR` was used to influence the number of
+:class:`sklearn1.svm.NuSVR` was used to influence the number of
 support vectors.
 
 .. |nusvr_model_complexity| image::  ../auto_examples/applications/images/sphx_glr_plot_model_complexity_influence_002.png
@@ -328,11 +328,11 @@ support vectors.
 
 .. centered:: |nusvr_model_complexity|
 
-For :mod:`sklearn.ensemble` of trees (e.g. RandomForest, GBT,
+For :mod:`sklearn1.ensemble` of trees (e.g. RandomForest, GBT,
 ExtraTrees etc) the number of trees and their depth play the most
 important role. Latency and throughput should scale linearly with the number
 of trees. In this case we used directly the ``n_estimators`` parameter of
-:class:`sklearn.ensemble.gradient_boosting.GradientBoostingRegressor`.
+:class:`sklearn1.ensemble.gradient_boosting.GradientBoostingRegressor`.
 
 .. |gbt_model_complexity| image::  ../auto_examples/applications/images/sphx_glr_plot_model_complexity_influence_003.png
     :target: ../auto_examples/applications/plot_model_complexity_influence.html
@@ -439,12 +439,12 @@ Some calculations when implemented using standard numpy vectorized operations
 involve using a large amount of temporary memory.  This may potentially exhaust
 system memory.  Where computations can be performed in fixed-memory chunks, we
 attempt to do so, and allow the user to hint at the maximum size of this
-working memory (defaulting to 1GB) using :func:`sklearn.set_config` or
+working memory (defaulting to 1GB) using :func:`sklearn1.set_config` or
 :func:`config_context`.  The following suggests to limit temporary working
 memory to 128 MiB::
 
-  >>> import sklearn
-  >>> with sklearn.config_context(working_memory=128):
+  >>> import sklearn1
+  >>> with sklearn1.config_context(working_memory=128):
   ...     pass  # do chunked work here
 
 An example of a chunked operation adhering to this setting is
@@ -657,7 +657,7 @@ Configuration switches
 Python runtime
 ..............
 
-:func:`sklearn.set_config` controls the following behaviors:
+:func:`sklearn1.set_config` controls the following behaviors:
 
 :assume_finite:
 
@@ -675,7 +675,7 @@ Environment variables
 
 These environment variables should be set before importing scikit-learn.
 
-:SKLEARN_SITE_JOBLIB:
+:sklearn1_SITE_JOBLIB:
 
     When this environment variable is set to a non zero value,
     scikit-learn uses the site joblib rather than its vendored version.
@@ -690,22 +690,22 @@ These environment variables should be set before importing scikit-learn.
        As of version 0.21 this parameter has no effect, vendored joblib was
        removed and site joblib is always used.
 
-:SKLEARN_ASSUME_FINITE:
+:sklearn1_ASSUME_FINITE:
 
     Sets the default value for the `assume_finite` argument of
-    :func:`sklearn.set_config`.
+    :func:`sklearn1.set_config`.
 
-:SKLEARN_WORKING_MEMORY:
+:sklearn1_WORKING_MEMORY:
 
     Sets the default value for the `working_memory` argument of
-    :func:`sklearn.set_config`.
+    :func:`sklearn1.set_config`.
 
-:SKLEARN_SEED:
+:sklearn1_SEED:
 
     Sets the seed of the global random generator when running the tests,
     for reproducibility.
 
-:SKLEARN_SKIP_NETWORK_TESTS:
+:sklearn1_SKIP_NETWORK_TESTS:
 
     When this environment variable is set to a non zero value, the tests
     that need network access are skipped.

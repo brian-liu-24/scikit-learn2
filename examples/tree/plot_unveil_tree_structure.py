@@ -18,16 +18,16 @@ show how to retrieve:
 import numpy as np
 from matplotlib import pyplot as plt
 
-from sklearn.model_selection import train_test_split
-from sklearn.datasets import load_iris
-from sklearn.tree import DecisionTreeClassifier
-from sklearn import tree
+from sklearn1.model_selection import train_test_split
+from sklearn1.datasets import load_iris
+from sklearn1.tree import DecisionTreeClassifier
+from sklearn1 import tree
 
 ##############################################################################
 # Train tree classifier
 # ---------------------
-# First, we fit a :class:`~sklearn.tree.DecisionTreeClassifier` using the
-# :func:`~sklearn.datasets.load_iris` dataset.
+# First, we fit a :class:`~sklearn1.tree.DecisionTreeClassifier` using the
+# :func:`~sklearn1.datasets.load_iris` dataset.
 
 iris = load_iris()
 X = iris.data

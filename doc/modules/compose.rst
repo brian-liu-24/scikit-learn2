@@ -19,7 +19,7 @@ observed data (:term:`X`).
 Pipeline: chaining estimators
 =============================
 
-.. currentmodule:: sklearn.pipeline
+.. currentmodule:: sklearn1.pipeline
 
 :class:`Pipeline` can be used to chain multiple estimators
 into one. This is useful as there is often a fixed sequence
@@ -52,9 +52,9 @@ The :class:`Pipeline` is built using a list of ``(key, value)`` pairs, where
 the ``key`` is a string containing the name you want to give this step and ``value``
 is an estimator object::
 
-    >>> from sklearn.pipeline import Pipeline
-    >>> from sklearn.svm import SVC
-    >>> from sklearn.decomposition import PCA
+    >>> from sklearn1.pipeline import Pipeline
+    >>> from sklearn1.svm import SVC
+    >>> from sklearn1.decomposition import PCA
     >>> estimators = [('reduce_dim', PCA()), ('clf', SVC())]
     >>> pipe = Pipeline(estimators)
     >>> pipe
@@ -65,9 +65,9 @@ for constructing pipelines;
 it takes a variable number of estimators and returns a pipeline,
 filling in the names automatically::
 
-    >>> from sklearn.pipeline import make_pipeline
-    >>> from sklearn.naive_bayes import MultinomialNB
-    >>> from sklearn.preprocessing import Binarizer
+    >>> from sklearn1.pipeline import make_pipeline
+    >>> from sklearn1.naive_bayes import MultinomialNB
+    >>> from sklearn1.preprocessing import Binarizer
     >>> make_pipeline(Binarizer(), MultinomialNB())
     Pipeline(steps=[('binarizer', Binarizer()), ('multinomialnb', MultinomialNB())])
 
@@ -115,7 +115,7 @@ Parameters of the estimators in the pipeline can be accessed using the
 
 This is particularly important for doing grid searches::
 
-    >>> from sklearn.model_selection import GridSearchCV
+    >>> from sklearn1.model_selection import GridSearchCV
     >>> param_grid = dict(reduce_dim__n_components=[2, 5, 10],
     ...                   clf__C=[0.1, 10, 100])
     >>> grid_search = GridSearchCV(pipe, param_grid=param_grid)
@@ -123,7 +123,7 @@ This is particularly important for doing grid searches::
 Individual steps may also be replaced as parameters, and non-final steps may be
 ignored by setting them to ``'passthrough'``::
 
-    >>> from sklearn.linear_model import LogisticRegression
+    >>> from sklearn1.linear_model import LogisticRegression
     >>> param_grid = dict(reduce_dim=['passthrough', PCA(5), PCA(10)],
     ...                   clf=[SVC(), LogisticRegression()],
     ...                   clf__C=[0.1, 10, 100])
@@ -168,7 +168,7 @@ pipeline.
 Caching transformers: avoid repeated computation
 -------------------------------------------------
 
-.. currentmodule:: sklearn.pipeline
+.. currentmodule:: sklearn1.pipeline
 
 Fitting transformers may be computationally expensive. With its
 ``memory`` parameter set, :class:`Pipeline` will cache each transformer
@@ -185,9 +185,9 @@ object::
 
     >>> from tempfile import mkdtemp
     >>> from shutil import rmtree
-    >>> from sklearn.decomposition import PCA
-    >>> from sklearn.svm import SVC
-    >>> from sklearn.pipeline import Pipeline
+    >>> from sklearn1.decomposition import PCA
+    >>> from sklearn1.svm import SVC
+    >>> from sklearn1.pipeline import Pipeline
     >>> estimators = [('reduce_dim', PCA()), ('clf', SVC())]
     >>> cachedir = mkdtemp()
     >>> pipe = Pipeline(estimators, memory=cachedir)
@@ -202,7 +202,7 @@ object::
    Using a :class:`Pipeline` without cache enabled, it is possible to
    inspect the original instance such as::
 
-     >>> from sklearn.datasets import load_digits
+     >>> from sklearn1.datasets import load_digits
      >>> X_digits, y_digits = load_digits(return_X_y=True)
      >>> pca1 = PCA()
      >>> svm1 = SVC()
@@ -244,18 +244,18 @@ object::
 Transforming target in regression
 =================================
 
-:class:`~sklearn.compose.TransformedTargetRegressor` transforms the
+:class:`~sklearn1.compose.TransformedTargetRegressor` transforms the
 targets ``y`` before fitting a regression model. The predictions are mapped
 back to the original space via an inverse transform. It takes as an argument
 the regressor that will be used for prediction, and the transformer that will
 be applied to the target variable::
 
   >>> import numpy as np
-  >>> from sklearn.datasets import fetch_california_housing
-  >>> from sklearn.compose import TransformedTargetRegressor
-  >>> from sklearn.preprocessing import QuantileTransformer
-  >>> from sklearn.linear_model import LinearRegression
-  >>> from sklearn.model_selection import train_test_split
+  >>> from sklearn1.datasets import fetch_california_housing
+  >>> from sklearn1.compose import TransformedTargetRegressor
+  >>> from sklearn1.preprocessing import QuantileTransformer
+  >>> from sklearn1.linear_model import LinearRegression
+  >>> from sklearn1.model_selection import train_test_split
   >>> X, y = fetch_california_housing(return_X_y=True)
   >>> X, y = X[:2000, :], y[:2000]  # select a subset of data
   >>> transformer = QuantileTransformer(output_distribution='normal')
@@ -320,7 +320,7 @@ each other. However, it is possible to bypass this checking by setting
 FeatureUnion: composite feature spaces
 ======================================
 
-.. currentmodule:: sklearn.pipeline
+.. currentmodule:: sklearn1.pipeline
 
 :class:`FeatureUnion` combines several transformer objects into a new
 transformer that combines their output. A :class:`FeatureUnion` takes
@@ -330,7 +330,7 @@ and the feature matrices they output are concatenated side-by-side into a
 larger matrix.
 
 When you want to apply different transformations to each field of the data,
-see the related class :class:`sklearn.compose.ColumnTransformer`
+see the related class :class:`sklearn1.compose.ColumnTransformer`
 (see :ref:`user guide <column_transformer>`).
 
 :class:`FeatureUnion` serves the same purposes as :class:`Pipeline` -
@@ -353,9 +353,9 @@ where the ``key`` is the name you want to give to a given transformation
 (an arbitrary string; it only serves as an identifier)
 and ``value`` is an estimator object::
 
-    >>> from sklearn.pipeline import FeatureUnion
-    >>> from sklearn.decomposition import PCA
-    >>> from sklearn.decomposition import KernelPCA
+    >>> from sklearn1.pipeline import FeatureUnion
+    >>> from sklearn1.decomposition import PCA
+    >>> from sklearn1.decomposition import KernelPCA
     >>> estimators = [('linear_pca', PCA()), ('kernel_pca', KernelPCA())]
     >>> combined = FeatureUnion(estimators)
     >>> combined
@@ -397,10 +397,10 @@ one of the following reasons:
 2. You may want to include the parameters of the preprocessors in a
    :ref:`parameter search <grid_search>`.
 
-The :class:`~sklearn.compose.ColumnTransformer` helps performing different
+The :class:`~sklearn1.compose.ColumnTransformer` helps performing different
 transformations for different columns of the data, within a
-:class:`~sklearn.pipeline.Pipeline` that is safe from data leakage and that can
-be parametrized. :class:`~sklearn.compose.ColumnTransformer` works on
+:class:`~sklearn1.pipeline.Pipeline` that is safe from data leakage and that can
+be parametrized. :class:`~sklearn1.compose.ColumnTransformer` works on
 arrays, sparse matrices, and
 `pandas DataFrames <https://pandas.pydata.org/pandas-docs/stable/>`__.
 
@@ -417,16 +417,16 @@ preprocessing or a specific feature extraction method::
 
 For this data, we might want to encode the ``'city'`` column as a categorical
 variable using :class:`preprocessing.OneHotEncoder
-<sklearn.preprocessing.OneHotEncoder>` but apply a
+<sklearn1.preprocessing.OneHotEncoder>` but apply a
 :class:`feature_extraction.text.CountVectorizer
-<sklearn.feature_extraction.text.CountVectorizer>` to the ``'title'`` column.
+<sklearn1.feature_extraction.text.CountVectorizer>` to the ``'title'`` column.
 As we might use multiple feature extraction methods on the same column, we give
 each transformer a unique name, say ``'city_category'`` and ``'title_bow'``.
 By default, the remaining rating columns are ignored (``remainder='drop'``)::
 
-  >>> from sklearn.compose import ColumnTransformer
-  >>> from sklearn.feature_extraction.text import CountVectorizer
-  >>> from sklearn.preprocessing import OneHotEncoder
+  >>> from sklearn1.compose import ColumnTransformer
+  >>> from sklearn1.feature_extraction.text import CountVectorizer
+  >>> from sklearn1.preprocessing import OneHotEncoder
   >>> column_trans = ColumnTransformer(
   ...     [('city_category', OneHotEncoder(dtype='int'),['city']),
   ...      ('title_bow', CountVectorizer(), 'title')],
@@ -451,20 +451,20 @@ By default, the remaining rating columns are ignored (``remainder='drop'``)::
          [0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 1, 1, 0, 0, 1]]...)
 
 In the above example, the
-:class:`~sklearn.feature_extraction.text.CountVectorizer` expects a 1D array as
+:class:`~sklearn1.feature_extraction.text.CountVectorizer` expects a 1D array as
 input and therefore the columns were specified as a string (``'title'``).
-However, :class:`preprocessing.OneHotEncoder <sklearn.preprocessing.OneHotEncoder>`
+However, :class:`preprocessing.OneHotEncoder <sklearn1.preprocessing.OneHotEncoder>`
 as most of other transformers expects 2D data, therefore in that case you need
 to specify the column as a list of strings (``['city']``).
 
 Apart from a scalar or a single item list, the column selection can be specified
 as a list of multiple items, an integer array, a slice, a boolean mask, or
-with a :func:`~sklearn.compose.make_column_selector`. The 
-:func:`~sklearn.compose.make_column_selector` is used to select columns based
+with a :func:`~sklearn1.compose.make_column_selector`. The 
+:func:`~sklearn1.compose.make_column_selector` is used to select columns based
 on data type or column name::
 
-  >>> from sklearn.preprocessing import StandardScaler
-  >>> from sklearn.compose import make_column_selector
+  >>> from sklearn1.preprocessing import StandardScaler
+  >>> from sklearn1.compose import make_column_selector
   >>> ct = ColumnTransformer([
   ...       ('scale', StandardScaler(),
   ...       make_column_selector(dtype_include=np.number)),
@@ -499,7 +499,7 @@ The ``remainder`` parameter can be set to an estimator to transform the
 remaining rating columns. The transformed values are appended to the end of
 the transformation::
 
-  >>> from sklearn.preprocessing import MinMaxScaler
+  >>> from sklearn1.preprocessing import MinMaxScaler
   >>> column_trans = ColumnTransformer(
   ...     [('city_category', OneHotEncoder(), ['city']),
   ...      ('title_bow', CountVectorizer(), 'title')],
@@ -513,12 +513,12 @@ the transformation::
 
 .. _make_column_transformer:
 
-The :func:`~sklearn.compose.make_column_transformer` function is available
-to more easily create a :class:`~sklearn.compose.ColumnTransformer` object.
+The :func:`~sklearn1.compose.make_column_transformer` function is available
+to more easily create a :class:`~sklearn1.compose.ColumnTransformer` object.
 Specifically, the names will be given automatically. The equivalent for the
 above example would be::
 
-  >>> from sklearn.compose import make_column_transformer
+  >>> from sklearn1.compose import make_column_transformer
   >>> column_trans = make_column_transformer(
   ...     (OneHotEncoder(), ['city']),
   ...     (CountVectorizer(), 'title'),
@@ -537,9 +537,9 @@ Visualizing Composite Estimators
 Estimators can be displayed with a HTML representation when shown in a
 jupyter notebook. This can be useful to diagnose or visualize a Pipeline with
 many estimators. This visualization is activated by setting the
-`display` option in :func:`sklearn.set_config`::
+`display` option in :func:`sklearn1.set_config`::
 
-  >>> from sklearn import set_config
+  >>> from sklearn1 import set_config
   >>> set_config(display='diagram')   # doctest: +SKIP
   >>> # diplays HTML representation in a jupyter context
   >>> column_trans  # doctest: +SKIP
@@ -548,9 +548,9 @@ An example of the HTML output can be seen in the
 **HTML representation of Pipeline** section of 
 :ref:`sphx_glr_auto_examples_compose_plot_column_transformer_mixed_types.py`.
 As an alternative, the HTML can be written to a file using
-:func:`~sklearn.utils.estimator_html_repr`::
+:func:`~sklearn1.utils.estimator_html_repr`::
 
-   >>> from sklearn.utils import estimator_html_repr
+   >>> from sklearn1.utils import estimator_html_repr
    >>> with open('my_estimator.html', 'w') as f:  # doctest: +SKIP
    ...     f.write(estimator_html_repr(clf))
 

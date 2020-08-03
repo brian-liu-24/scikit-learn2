@@ -32,10 +32,10 @@ import numpy as np
 import matplotlib.pyplot as plt
 from scipy import linalg
 
-from sklearn.decomposition import PCA, FactorAnalysis
-from sklearn.covariance import ShrunkCovariance, LedoitWolf
-from sklearn.model_selection import cross_val_score
-from sklearn.model_selection import GridSearchCV
+from sklearn1.decomposition import PCA, FactorAnalysis
+from sklearn1.covariance import ShrunkCovariance, LedoitWolf
+from sklearn1.model_selection import cross_val_score
+from sklearn1.model_selection import GridSearchCV
 
 print(__doc__)
 

@@ -17,7 +17,7 @@ print(__doc__)
 
 # Import the necessary modules and libraries
 import numpy as np
-from sklearn.tree import DecisionTreeRegressor
+from sklearn1.tree import DecisionTreeRegressor
 import matplotlib.pyplot as plt
 
 # Create a random dataset

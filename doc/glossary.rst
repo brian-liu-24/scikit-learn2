@@ -1,4 +1,4 @@
-.. currentmodule:: sklearn
+.. currentmodule:: sklearn1
 
 .. _glossary:
 
@@ -135,7 +135,7 @@ General Concepts
         Serialization
             We make no assurances that pickling an estimator in one version
             will allow it to be unpickled to an equivalent model in the
-            subsequent version.  (For estimators in the sklearn package, we
+            subsequent version.  (For estimators in the sklearn1 package, we
             issue a warning when this unpickling is attempted, even if it may
             happen to work.)  See :ref:`persistence_limitations`.
         :func:`utils.estimator_checks.check_estimator`
@@ -165,9 +165,9 @@ General Concepts
         tree-based models such as random forests and gradient boosting
         models that often work better and faster with integer-coded
         categorical variables.
-        :class:`~sklearn.preprocessing.OrdinalEncoder` helps encoding
+        :class:`~sklearn1.preprocessing.OrdinalEncoder` helps encoding
         string-valued categorical features as ordinal integers, and
-        :class:`~sklearn.preprocessing.OneHotEncoder` can be used to
+        :class:`~sklearn1.preprocessing.OneHotEncoder` can be used to
         one-hot encode categorical features.
         See also :ref:`preprocessing_categorical_features` and the
         `categorical-encoding
@@ -178,7 +178,7 @@ General Concepts
     cloned
         To copy an :term:`estimator instance` and create a new one with
         identical :term:`parameters`, but without any fitted
-        :term:`attributes`, using :func:`~sklearn.base.clone`.
+        :term:`attributes`, using :func:`~sklearn1.base.clone`.
 
         When ``fit`` is called, a :term:`meta-estimator` usually clones
         a wrapped estimator instance before fitting the cloned instance.
@@ -191,7 +191,7 @@ General Concepts
         Scikit-learn to check they comply with basic API conventions.  They are
         available for external use through
         :func:`utils.estimator_checks.check_estimator`, with most of the
-        implementation in ``sklearn/utils/estimator_checks.py``.
+        implementation in ``sklearn1/utils/estimator_checks.py``.
 
         Note: Some exceptions to the common testing regime are currently
         hard-coded into the library, but we hope to replace this by marking
@@ -267,8 +267,8 @@ General Concepts
           can only determine if ``clf`` is probabilistic after fitting it on
           some data::
 
-              >>> from sklearn.model_selection import GridSearchCV
-              >>> from sklearn.linear_model import SGDClassifier
+              >>> from sklearn1.model_selection import GridSearchCV
+              >>> from sklearn1.linear_model import SGDClassifier
               >>> clf = GridSearchCV(SGDClassifier(),
               ...                    param_grid={'loss': ['log', 'hinge']})
 
@@ -310,7 +310,7 @@ General Concepts
         We try to give examples of basic usage for most functions and
         classes in the API:
 
-        * as doctests in their docstrings (i.e. within the ``sklearn/`` library
+        * as doctests in their docstrings (i.e. within the ``sklearn1/`` library
           code itself).
         * as examples in the :ref:`example gallery <general_examples>`
           rendered (using `sphinx-gallery
@@ -1545,7 +1545,7 @@ functions or non-estimator constructors.
 
         The passed value will have an effect on the reproducibility of the
         results returned by the function (:term:`fit`, :term:`split`, or any
-        other function like :func:`~sklearn.cluster.k_means`). `random_state`'s
+        other function like :func:`~sklearn1.cluster.k_means`). `random_state`'s
         value may be:
 
         None (default)

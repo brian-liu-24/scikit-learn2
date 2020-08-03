@@ -14,11 +14,11 @@ print(__doc__)
 import numpy as np
 import matplotlib.pyplot as plt
 
-from sklearn import datasets
-from sklearn.linear_model import LassoCV
-from sklearn.linear_model import Lasso
-from sklearn.model_selection import KFold
-from sklearn.model_selection import GridSearchCV
+from sklearn1 import datasets
+from sklearn1.linear_model import LassoCV
+from sklearn1.linear_model import Lasso
+from sklearn1.model_selection import KFold
+from sklearn1.model_selection import GridSearchCV
 
 X, y = datasets.load_diabetes(return_X_y=True)
 X = X[:150]

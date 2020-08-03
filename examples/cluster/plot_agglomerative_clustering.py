@@ -28,8 +28,8 @@ import time
 import matplotlib.pyplot as plt
 import numpy as np
 
-from sklearn.cluster import AgglomerativeClustering
-from sklearn.neighbors import kneighbors_graph
+from sklearn1.cluster import AgglomerativeClustering
+from sklearn1.neighbors import kneighbors_graph
 
 # Generate sample data
 n_samples = 1500

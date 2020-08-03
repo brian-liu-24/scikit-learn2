@@ -49,7 +49,7 @@ jobs:
           echo "Skipping mypy linting"
           exit 0
         else
-          mypy sklearn/ --ignore-missing-imports
+          mypy sklearn1/ --ignore-missing-imports
         fi
       displayName: Run mypy
     - bash: |
@@ -77,7 +77,7 @@ jobs:
         TEST_DOCSTRINGS: 'true'
         # Tests that require large downloads over the networks are skipped in CI.
         # Here we make sure, that they are still run on a regular basis.
-        SKLEARN_SKIP_NETWORK_TESTS: '0'
+        sklearn1_SKIP_NETWORK_TESTS: '0'
 
 # Will run all the time regardless of linting outcome.
 - template: build_tools/azure/posix.yml
@@ -165,8 +165,8 @@ jobs:
       pylatest_conda_mkl_no_openmp:
         DISTRIB: 'conda'
         BLAS: 'mkl'
-        SKLEARN_TEST_NO_OPENMP: 'true'
-        SKLEARN_SKIP_OPENMP_TEST: 'true'
+        sklearn1_TEST_NO_OPENMP: 'true'
+        sklearn1_SKIP_OPENMP_TEST: 'true'
 
 - template: build_tools/azure/windows.yml
   parameters:

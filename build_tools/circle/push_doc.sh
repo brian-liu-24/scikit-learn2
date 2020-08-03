@@ -7,7 +7,7 @@
 set -ex
 
 if [ -z $CIRCLE_PROJECT_USERNAME ];
-then USERNAME="sklearn-ci";
+then USERNAME="sklearn1-ci";
 else USERNAME=$CIRCLE_PROJECT_USERNAME;
 fi
 
@@ -56,7 +56,7 @@ then
 	git rm -rf $dir/ && rm -rf $dir/
 fi
 cp -R $GENERATED_DOC_DIR $dir
-git config user.email "olivier.grisel+sklearn-ci@gmail.com"
+git config user.email "olivier.grisel+sklearn1-ci@gmail.com"
 git config user.name $USERNAME
 git config push.default matching
 git add -f $dir/

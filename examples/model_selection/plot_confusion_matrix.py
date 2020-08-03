@@ -29,9 +29,9 @@ print(__doc__)
 import numpy as np
 import matplotlib.pyplot as plt
 
-from sklearn import svm, datasets
-from sklearn.model_selection import train_test_split
-from sklearn.metrics import plot_confusion_matrix
+from sklearn1 import svm, datasets
+from sklearn1.model_selection import train_test_split
+from sklearn1.metrics import plot_confusion_matrix
 
 # import some data to play with
 iris = datasets.load_iris()

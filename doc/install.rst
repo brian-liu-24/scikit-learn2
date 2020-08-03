@@ -67,18 +67,18 @@ Then run:
 .. raw:: html
 
        <div class="highlight"><pre><code
-        ><span class="sk-expandable" data-packager="pip" data-os="linux" data-venv="">python3 -m venv sklearn-venv</span
-        ><span class="sk-expandable" data-packager="pip" data-os="windows" data-venv="">python -m venv sklearn-venv</span
-        ><span class="sk-expandable" data-packager="pip" data-os="mac" data-venv="">python -m venv sklearn-venv</span
-        ><span class="sk-expandable" data-packager="pip" data-os="linux" data-venv="">source sklearn-venv/bin/activate</span
-        ><span class="sk-expandable" data-packager="pip" data-os="mac" data-venv="">source sklearn-venv/bin/activate</span
-        ><span class="sk-expandable" data-packager="pip" data-os="windows" data-venv="">sklearn-venv\Scripts\activate</span
+        ><span class="sk-expandable" data-packager="pip" data-os="linux" data-venv="">python3 -m venv sklearn1-venv</span
+        ><span class="sk-expandable" data-packager="pip" data-os="windows" data-venv="">python -m venv sklearn1-venv</span
+        ><span class="sk-expandable" data-packager="pip" data-os="mac" data-venv="">python -m venv sklearn1-venv</span
+        ><span class="sk-expandable" data-packager="pip" data-os="linux" data-venv="">source sklearn1-venv/bin/activate</span
+        ><span class="sk-expandable" data-packager="pip" data-os="mac" data-venv="">source sklearn1-venv/bin/activate</span
+        ><span class="sk-expandable" data-packager="pip" data-os="windows" data-venv="">sklearn1-venv\Scripts\activate</span
         ><span class="sk-expandable" data-packager="pip" data-venv="">pip install -U scikit-learn</span
         ><span class="sk-expandable" data-packager="pip" data-os="mac" data-venv="no">pip install -U scikit-learn</span
         ><span class="sk-expandable" data-packager="pip" data-os="windows" data-venv="no">pip install -U scikit-learn</span
         ><span class="sk-expandable" data-packager="pip" data-os="linux" data-venv="no">pip3 install -U scikit-learn</span
-        ><span class="sk-expandable" data-packager="conda" data-venv="">conda create -n sklearn-env</span
-        ><span class="sk-expandable" data-packager="conda" data-venv="">conda activate sklearn-env</span
+        ><span class="sk-expandable" data-packager="conda" data-venv="">conda create -n sklearn1-env</span
+        ><span class="sk-expandable" data-packager="conda" data-venv="">conda activate sklearn1-env</span
         ><span class="sk-expandable" data-packager="conda">conda install -c conda-forge scikit-learn </span
        ></code></pre></div>
 
@@ -89,19 +89,19 @@ In order to check your installation you can use
    <div class="highlight"><pre><code
       ><span class="sk-expandable" data-packager="pip" data-os="linux" data-venv="no">python3 -m pip show scikit-learn  # to see which version and where scikit-learn is installed</span
       ><span class="sk-expandable" data-packager="pip" data-os="linux" data-venv="no">python3 -m pip freeze  # to see all packages installed in the active virtualenv</span
-      ><span class="sk-expandable" data-packager="pip" data-os="linux" data-venv="no">python3 -c "import sklearn; sklearn.show_versions()"</span
+      ><span class="sk-expandable" data-packager="pip" data-os="linux" data-venv="no">python3 -c "import sklearn1; sklearn1.show_versions()"</span
       ><span class="sk-expandable" data-packager="pip" data-venv="">python -m pip show scikit-learn  # to see which version and where scikit-learn is installed</span
       ><span class="sk-expandable" data-packager="pip" data-venv="">python -m pip freeze  # to see all packages installed in the active virtualenv</span
-      ><span class="sk-expandable" data-packager="pip" data-venv="">python -c "import sklearn; sklearn.show_versions()"</span
+      ><span class="sk-expandable" data-packager="pip" data-venv="">python -c "import sklearn1; sklearn1.show_versions()"</span
       ><span class="sk-expandable" data-packager="pip" data-os="windows" data-venv="no">python -m pip show scikit-learn  # to see which version and where scikit-learn is installed</span
       ><span class="sk-expandable" data-packager="pip" data-os="windows" data-venv="no">python -m pip freeze  # to see all packages installed in the active virtualenv</span
-      ><span class="sk-expandable" data-packager="pip" data-os="windows" data-venv="no">python -c "import sklearn; sklearn.show_versions()"</span
+      ><span class="sk-expandable" data-packager="pip" data-os="windows" data-venv="no">python -c "import sklearn1; sklearn1.show_versions()"</span
       ><span class="sk-expandable" data-packager="pip" data-os="mac" data-venv="no">python -m pip show scikit-learn  # to see which version and where scikit-learn is installed</span
       ><span class="sk-expandable" data-packager="pip" data-os="mac" data-venv="no">python -m pip freeze  # to see all packages installed in the active virtualenv</span
-      ><span class="sk-expandable" data-packager="pip" data-os="mac" data-venv="no">python -c "import sklearn; sklearn.show_versions()"</span
+      ><span class="sk-expandable" data-packager="pip" data-os="mac" data-venv="no">python -c "import sklearn1; sklearn1.show_versions()"</span
       ><span class="sk-expandable" data-packager="conda">conda list scikit-learn  # to see which scikit-learn version is installed</span
       ><span class="sk-expandable" data-packager="conda">conda list  # to see all packages installed in the active conda environment</span
-      ><span class="sk-expandable" data-packager="conda">python -c "import sklearn; sklearn.show_versions()"</span
+      ><span class="sk-expandable" data-packager="conda">python -c "import sklearn1; sklearn1.show_versions()"</span
       ></code></pre></div>
   </div>
 
@@ -184,13 +184,13 @@ Debian/Ubuntu
 -------------
 
 The Debian/Ubuntu package is splitted in three different packages called
-``python3-sklearn`` (python modules), ``python3-sklearn-lib`` (low-level
-implementations and bindings), ``python3-sklearn-doc`` (documentation).
+``python3-sklearn1`` (python modules), ``python3-sklearn1-lib`` (low-level
+implementations and bindings), ``python3-sklearn1-doc`` (documentation).
 Only the Python 3 version is available in the Debian Buster (the more recent
 Debian distribution).
 Packages can be installed using ``apt-get``::
 
-    $ sudo apt-get install python3-sklearn python3-sklearn-lib python3-sklearn-doc
+    $ sudo apt-get install python3-sklearn1 python3-sklearn1-lib python3-sklearn1-doc
 
 
 Fedora
@@ -246,7 +246,7 @@ estimators. Those solvers come from the DAAL C++ library and are optimized for
 multi-core Intel CPUs.
 
 Note that those solvers are not enabled by default, please refer to the
-`daal4py <https://intelpython.github.io/daal4py/sklearn.html>`_ documentation
+`daal4py <https://intelpython.github.io/daal4py/sklearn1.html>`_ documentation
 for more details.
 
 Compatibility with the standard scikit-learn solvers is checked by running the
@@ -277,7 +277,7 @@ size limit of Windows if Python is installed in a nested location such as the
     Collecting scikit-learn
     ...
     Installing collected packages: scikit-learn
-    ERROR: Could not install packages due to an EnvironmentError: [Errno 2] No such file or directory: 'C:\\Users\\username\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.7_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python37\\site-packages\\sklearn\\datasets\\tests\\data\\openml\\292\\api-v1-json-data-list-data_name-australian-limit-2-data_version-1-status-deactivated.json.gz'
+    ERROR: Could not install packages due to an EnvironmentError: [Errno 2] No such file or directory: 'C:\\Users\\username\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.7_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python37\\site-packages\\sklearn1\\datasets\\tests\\data\\openml\\292\\api-v1-json-data-list-data_name-australian-limit-2-data_version-1-status-deactivated.json.gz'
 
 In this case it is possible to lift that limit in the Windows registry by
 using the ``regedit`` tool:

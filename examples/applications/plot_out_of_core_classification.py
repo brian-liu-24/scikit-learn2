@@ -31,12 +31,12 @@ from matplotlib import rcParams
 
 from html.parser import HTMLParser
 from urllib.request import urlretrieve
-from sklearn.datasets import get_data_home
-from sklearn.feature_extraction.text import HashingVectorizer
-from sklearn.linear_model import SGDClassifier
-from sklearn.linear_model import PassiveAggressiveClassifier
-from sklearn.linear_model import Perceptron
-from sklearn.naive_bayes import MultinomialNB
+from sklearn1.datasets import get_data_home
+from sklearn1.feature_extraction.text import HashingVectorizer
+from sklearn1.linear_model import SGDClassifier
+from sklearn1.linear_model import PassiveAggressiveClassifier
+from sklearn1.linear_model import Perceptron
+from sklearn1.naive_bayes import MultinomialNB
 
 
 def _not_in_sphinx():

@@ -20,7 +20,7 @@ print(__doc__)
 # Generate sample data
 import numpy as np
 import matplotlib.pyplot as plt
-from sklearn import neighbors
+from sklearn1 import neighbors
 
 np.random.seed(0)
 X = np.sort(5 * np.random.rand(40, 1), axis=0)

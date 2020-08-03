@@ -35,7 +35,7 @@ import matplotlib as mpl
 import matplotlib.pyplot as plt
 import matplotlib.gridspec as gridspec
 
-from sklearn.mixture import BayesianGaussianMixture
+from sklearn1.mixture import BayesianGaussianMixture
 
 print(__doc__)
 

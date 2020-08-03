@@ -28,10 +28,10 @@ if [[ "$DISTRIB" == "conda" ]]; then
     TO_INSTALL="$TO_INSTALL $(get_dep matplotlib $MATPLOTLIB_VERSION)"
 
     if [[ "$UNAMESTR" == "Darwin" ]]; then
-        if [[ "$SKLEARN_TEST_NO_OPENMP" != "true" ]]; then
+        if [[ "$sklearn1_TEST_NO_OPENMP" != "true" ]]; then
             # on macOS, install an OpenMP-enabled clang/llvm from conda-forge.
             # TODO: Remove !=1.1.0 when the following is fixed:
-            # sklearn/svm/_libsvm.cpython-38-darwin.so,
+            # sklearn1/svm/_libsvm.cpython-38-darwin.so,
             # 2): Symbol not found: _svm_check_parameter error
             TO_INSTALL="$TO_INSTALL conda-forge::compilers>=1.0.4,!=1.1.0 \
                         conda-forge::llvm-openmp"

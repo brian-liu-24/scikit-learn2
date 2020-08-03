@@ -7,12 +7,12 @@ import argparse
 import numpy as np
 import pandas as pd
 from joblib import Memory
-from sklearn.model_selection import train_test_split
-from sklearn.metrics import accuracy_score, roc_auc_score
+from sklearn1.model_selection import train_test_split
+from sklearn1.metrics import accuracy_score, roc_auc_score
 # To use this experimental feature, we need to explicitly ask for it:
-from sklearn.experimental import enable_hist_gradient_boosting  # noqa
-from sklearn.ensemble import HistGradientBoostingClassifier
-from sklearn.ensemble._hist_gradient_boosting.utils import (
+from sklearn1.experimental import enable_hist_gradient_boosting  # noqa
+from sklearn1.ensemble import HistGradientBoostingClassifier
+from sklearn1.ensemble._hist_gradient_boosting.utils import (
     get_equivalent_estimator)
 
 
@@ -99,7 +99,7 @@ est = HistGradientBoostingClassifier(loss='binary_crossentropy',
                                      early_stopping=False,
                                      random_state=0,
                                      verbose=1)
-fit(est, data_train, target_train, 'sklearn')
+fit(est, data_train, target_train, 'sklearn1')
 predict(est, data_test, target_test)
 
 if args.lightgbm:

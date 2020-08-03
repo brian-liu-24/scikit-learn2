@@ -1,8 +1,8 @@
 # Even if empty this file is useful so that when running from the root folder
-# ./sklearn is added to sys.path by pytest. See
+# ./sklearn1 is added to sys.path by pytest. See
 # https://docs.pytest.org/en/latest/pythonpath.html for more details.  For
 # example, this allows to build extensions in place and run pytest
-# doc/modules/clustering.rst and use sklearn from the local folder rather than
+# doc/modules/clustering.rst and use sklearn1 from the local folder rather than
 # the one from site-packages.
 
 import platform
@@ -11,10 +11,10 @@ import sys
 import pytest
 from _pytest.doctest import DoctestItem
 
-from sklearn.utils import _IS_32BIT
-from sklearn.externals import _pilutil
-from sklearn._build_utils.min_dependencies import PYTEST_MIN_VERSION
-from sklearn.utils.fixes import np_version, parse_version
+from sklearn1.utils import _IS_32BIT
+from sklearn1.externals import _pilutil
+from sklearn1._build_utils.min_dependencies import PYTEST_MIN_VERSION
+from sklearn1.utils.fixes import np_version, parse_version
 
 
 if parse_version(pytest.__version__) < parse_version(PYTEST_MIN_VERSION):
@@ -75,8 +75,8 @@ def pytest_collection_modifyitems(config, items):
         skip_marker = pytest.mark.skip(reason="pillow (or PIL) not installed!")
         for item in items:
             if item.name in [
-                    "sklearn.feature_extraction.image.PatchExtractor",
-                    "sklearn.feature_extraction.image.extract_patches_2d"]:
+                    "sklearn1.feature_extraction.image.PatchExtractor",
+                    "sklearn1.feature_extraction.image.extract_patches_2d"]:
                 item.add_marker(skip_marker)
 
 

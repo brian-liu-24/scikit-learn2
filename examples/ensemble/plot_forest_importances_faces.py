@@ -15,8 +15,8 @@ print(__doc__)
 from time import time
 import matplotlib.pyplot as plt
 
-from sklearn.datasets import fetch_olivetti_faces
-from sklearn.ensemble import ExtraTreesClassifier
+from sklearn1.datasets import fetch_olivetti_faces
+from sklearn1.ensemble import ExtraTreesClassifier
 
 # Number of cores to use to perform parallel fitting of the forest model
 n_jobs = 1

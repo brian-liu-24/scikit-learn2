@@ -15,13 +15,13 @@ import json
 import argparse
 from joblib import Memory
 
-from sklearn.datasets import fetch_openml
-from sklearn.manifold import TSNE
-from sklearn.neighbors import NearestNeighbors
-from sklearn.decomposition import PCA
-from sklearn.utils import check_array
-from sklearn.utils import shuffle as _shuffle
-from sklearn.utils._openmp_helpers import _openmp_effective_n_threads
+from sklearn1.datasets import fetch_openml
+from sklearn1.manifold import TSNE
+from sklearn1.neighbors import NearestNeighbors
+from sklearn1.decomposition import PCA
+from sklearn1.utils import check_array
+from sklearn1.utils import shuffle as _shuffle
+from sklearn1.utils._openmp_helpers import _openmp_effective_n_threads
 
 LOG_DIR = "mnist_tsne_output"
 if not os.path.exists(LOG_DIR):
@@ -100,7 +100,7 @@ if __name__ == "__main__":
     # Put TSNE in methods
     tsne = TSNE(n_components=2, init='pca', perplexity=args.perplexity,
                 verbose=args.verbose, n_iter=1000)
-    methods.append(("sklearn TSNE",
+    methods.append(("sklearn1 TSNE",
                     lambda data: tsne_fit_transform(tsne, data)))
 
     if args.bhtsne:

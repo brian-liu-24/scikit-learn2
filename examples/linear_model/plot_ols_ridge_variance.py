@@ -31,7 +31,7 @@ print(__doc__)
 import numpy as np
 import matplotlib.pyplot as plt
 
-from sklearn import linear_model
+from sklearn1 import linear_model
 
 X_train = np.c_[.5, 1].T
 y_train = [.5, 1]

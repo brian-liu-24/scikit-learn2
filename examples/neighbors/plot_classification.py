@@ -11,7 +11,7 @@ print(__doc__)
 import numpy as np
 import matplotlib.pyplot as plt
 from matplotlib.colors import ListedColormap
-from sklearn import neighbors, datasets
+from sklearn1 import neighbors, datasets
 
 n_neighbors = 15
 

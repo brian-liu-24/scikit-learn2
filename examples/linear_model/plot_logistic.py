@@ -21,7 +21,7 @@ print(__doc__)
 import numpy as np
 import matplotlib.pyplot as plt
 
-from sklearn import linear_model
+from sklearn1 import linear_model
 from scipy.special import expit
 
 # General a toy dataset:s it's just a straight line with some Gaussian noise:

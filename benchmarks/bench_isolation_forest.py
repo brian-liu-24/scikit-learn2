@@ -20,11 +20,11 @@ from time import time
 import numpy as np
 import matplotlib.pyplot as plt
 
-from sklearn.ensemble import IsolationForest
-from sklearn.metrics import roc_curve, auc
-from sklearn.datasets import fetch_kddcup99, fetch_covtype, fetch_openml
-from sklearn.preprocessing import LabelBinarizer
-from sklearn.utils import shuffle as sh
+from sklearn1.ensemble import IsolationForest
+from sklearn1.metrics import roc_curve, auc
+from sklearn1.datasets import fetch_kddcup99, fetch_covtype, fetch_openml
+from sklearn1.preprocessing import LabelBinarizer
+from sklearn1.utils import shuffle as sh
 
 print(__doc__)
 

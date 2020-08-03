@@ -3,7 +3,7 @@
 Visualizations with Display Objects
 ===================================
 
-.. currentmodule:: sklearn.metrics
+.. currentmodule:: sklearn1.metrics
 
 In this example, we will construct display objects,
 :class:`ConfusionMatrixDisplay`, :class:`RocCurveDisplay`, and
@@ -23,11 +23,11 @@ print(__doc__)
 # problem where the target is whether an individual donated blood. Then the
 # data is split into a train and test dataset and a logistic regression is
 # fitted wtih the train dataset.
-from sklearn.datasets import fetch_openml
-from sklearn.preprocessing import StandardScaler
-from sklearn.pipeline import make_pipeline
-from sklearn.linear_model import LogisticRegression
-from sklearn.model_selection import train_test_split
+from sklearn1.datasets import fetch_openml
+from sklearn1.preprocessing import StandardScaler
+from sklearn1.pipeline import make_pipeline
+from sklearn1.linear_model import LogisticRegression
+from sklearn1.model_selection import train_test_split
 
 X, y = fetch_openml(data_id=1464, return_X_y=True)
 X_train, X_test, y_train, y_test = train_test_split(X, y, stratify=y)
@@ -41,8 +41,8 @@ clf.fit(X_train, y_train)
 # With the fitted model, we compute the predictions of the model on the test
 # dataset. These predictions are used to compute the confustion matrix which
 # is plotted with the :class:`ConfusionMatrixDisplay`
-from sklearn.metrics import confusion_matrix
-from sklearn.metrics import ConfusionMatrixDisplay
+from sklearn1.metrics import confusion_matrix
+from sklearn1.metrics import ConfusionMatrixDisplay
 
 y_pred = clf.predict(X_test)
 cm = confusion_matrix(y_test, y_pred)
@@ -56,8 +56,8 @@ cm_display = ConfusionMatrixDisplay(cm).plot()
 # The roc curve requires either the probabilities or the non-thresholded
 # decision values from the estimator. Since the logistic regression provides
 # a decision function, we will use it to plot the roc curve:
-from sklearn.metrics import roc_curve
-from sklearn.metrics import RocCurveDisplay
+from sklearn1.metrics import roc_curve
+from sklearn1.metrics import RocCurveDisplay
 y_score = clf.decision_function(X_test)
 
 fpr, tpr, _ = roc_curve(y_test, y_score, pos_label=clf.classes_[1])
@@ -68,8 +68,8 @@ roc_display = RocCurveDisplay(fpr=fpr, tpr=tpr).plot()
 ##############################################################################
 # Similarly, the precision recall curve can be plotted using `y_score` from
 # the prevision sections.
-from sklearn.metrics import precision_recall_curve
-from sklearn.metrics import PrecisionRecallDisplay
+from sklearn1.metrics import precision_recall_curve
+from sklearn1.metrics import PrecisionRecallDisplay
 
 prec, recall, _ = precision_recall_curve(y_test, y_score,
                                          pos_label=clf.classes_[1])

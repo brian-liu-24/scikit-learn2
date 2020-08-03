@@ -3,9 +3,9 @@
 ==================
 Random Projection
 ==================
-.. currentmodule:: sklearn.random_projection
+.. currentmodule:: sklearn1.random_projection
 
-The :mod:`sklearn.random_projection` module implements a simple and
+The :mod:`sklearn1.random_projection` module implements a simple and
 computationally efficient way to reduce the dimensionality of the data by
 trading a controlled amount of accuracy (as additional variance) for faster
 processing times and smaller model sizes. This module implements two types of
@@ -52,11 +52,11 @@ The main theoretical result behind the efficiency of random projection is the
   and can even be taken to be an orthogonal projection.
 
 Knowing only the number of samples, the
-:func:`sklearn.random_projection.johnson_lindenstrauss_min_dim` estimates
+:func:`sklearn1.random_projection.johnson_lindenstrauss_min_dim` estimates
 conservatively the minimal size of the random subspace to guarantee a
 bounded distortion introduced by the random projection::
 
-  >>> from sklearn.random_projection import johnson_lindenstrauss_min_dim
+  >>> from sklearn1.random_projection import johnson_lindenstrauss_min_dim
   >>> johnson_lindenstrauss_min_dim(n_samples=1e6, eps=0.5)
   663
   >>> johnson_lindenstrauss_min_dim(n_samples=1e6, eps=[0.5, 0.1, 0.01])
@@ -90,7 +90,7 @@ bounded distortion introduced by the random projection::
 
 Gaussian random projection
 ==========================
-The :class:`sklearn.random_projection.GaussianRandomProjection` reduces the
+The :class:`sklearn1.random_projection.GaussianRandomProjection` reduces the
 dimensionality by projecting the original input space on a randomly generated
 matrix where components are drawn from the following distribution
 :math:`N(0, \frac{1}{n_{components}})`.
@@ -99,7 +99,7 @@ Here a small excerpt which illustrates how to use the Gaussian random
 projection transformer::
 
   >>> import numpy as np
-  >>> from sklearn import random_projection
+  >>> from sklearn1 import random_projection
   >>> X = np.random.rand(100, 10000)
   >>> transformer = random_projection.GaussianRandomProjection()
   >>> X_new = transformer.fit_transform(X)
@@ -111,7 +111,7 @@ projection transformer::
 
 Sparse random projection
 ========================
-The :class:`sklearn.random_projection.SparseRandomProjection` reduces the
+The :class:`sklearn1.random_projection.SparseRandomProjection` reduces the
 dimensionality by projecting the original input space using a sparse
 random matrix.
 
@@ -140,7 +140,7 @@ Here a small excerpt which illustrates how to use the sparse random
 projection transformer::
 
   >>> import numpy as np
-  >>> from sklearn import random_projection
+  >>> from sklearn1 import random_projection
   >>> X = np.random.rand(100, 10000)
   >>> transformer = random_projection.SparseRandomProjection()
   >>> X_new = transformer.fit_transform(X)

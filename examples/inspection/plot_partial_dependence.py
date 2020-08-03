@@ -17,8 +17,8 @@ feature for each :term:`sample` separately, with one line per sample.
 Only one feature of interest is supported for ICE plots.
 
 This example shows how to obtain partial dependence and ICE plots from a
-:class:`~sklearn.neural_network.MLPRegressor` and a
-:class:`~sklearn.ensemble.HistGradientBoostingRegressor` trained on the
+:class:`~sklearn1.neural_network.MLPRegressor` and a
+:class:`~sklearn1.ensemble.HistGradientBoostingRegressor` trained on the
 California housing dataset. The example is taken from [1]_.
 
 .. [1] T. Hastie, R. Tibshirani and J. Friedman, "Elements of Statistical
@@ -44,8 +44,8 @@ print(__doc__)
 # (here the average target, by default).
 
 import pandas as pd
-from sklearn.datasets import fetch_california_housing
-from sklearn.model_selection import train_test_split
+from sklearn1.datasets import fetch_california_housing
+from sklearn1.model_selection import train_test_split
 
 cal_housing = fetch_california_housing()
 X = pd.DataFrame(cal_housing.data, columns=cal_housing.feature_names)
@@ -70,13 +70,13 @@ X_train, X_test, y_train, y_test = train_test_split(
 # Multi-layer perceptron
 # ......................
 #
-# Let's fit a :class:`sklearn.neural_network.MLPRegressor` and compute
+# Let's fit a :class:`sklearn1.neural_network.MLPRegressor` and compute
 # single-variable partial dependence plots.
 
 from time import time
-from sklearn.pipeline import make_pipeline
-from sklearn.preprocessing import QuantileTransformer
-from sklearn.neural_network import MLPRegressor
+from sklearn1.pipeline import make_pipeline
+from sklearn1.preprocessing import QuantileTransformer
+from sklearn1.neural_network import MLPRegressor
 
 print("Training MLPRegressor...")
 tic = time()
@@ -110,8 +110,8 @@ print(f"Test R2 score: {est.score(X_test, y_test):.2f}")
 # (PDP). We limit to only 50 ICE curves to not overcrowd the plot.
 
 import matplotlib.pyplot as plt
-from sklearn.inspection import partial_dependence
-from sklearn.inspection import plot_partial_dependence
+from sklearn1.inspection import partial_dependence
+from sklearn1.inspection import plot_partial_dependence
 
 print('Computing partial dependence plots...')
 tic = time()
@@ -131,11 +131,11 @@ display.figure_.subplots_adjust(hspace=0.3)
 # Gradient boosting
 # .................
 #
-# Let's now fit a :class:`sklearn.ensemble.HistGradientBoostingRegressor` and
+# Let's now fit a :class:`sklearn1.ensemble.HistGradientBoostingRegressor` and
 # compute the partial dependence on the same features.
 
-from sklearn.experimental import enable_hist_gradient_boosting  # noqa
-from sklearn.ensemble import HistGradientBoostingRegressor
+from sklearn1.experimental import enable_hist_gradient_boosting  # noqa
+from sklearn1.ensemble import HistGradientBoostingRegressor
 
 print("Training HistGradientBoostingRegressor...")
 tic = time()
@@ -193,9 +193,9 @@ display.figure_.subplots_adjust(wspace=0.4, hspace=0.3)
 # In all plots, the tick marks on the x-axis represent the deciles of the
 # feature values in the training data.
 #
-# We also observe that :class:`~sklearn.neural_network.MLPRegressor` has much
+# We also observe that :class:`~sklearn1.neural_network.MLPRegressor` has much
 # smoother predictions than
-# :class:`~sklearn.ensemble.HistGradientBoostingRegressor`.
+# :class:`~sklearn1.ensemble.HistGradientBoostingRegressor`.
 #
 # However, it is worth noting that we are creating potential meaningless
 # synthetic samples if features are correlated.

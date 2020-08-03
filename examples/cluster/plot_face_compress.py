@@ -22,7 +22,7 @@ import numpy as np
 import scipy as sp
 import matplotlib.pyplot as plt
 
-from sklearn import cluster
+from sklearn1 import cluster
 
 
 try:  # SciPy >= 0.16 have face in misc

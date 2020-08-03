@@ -25,23 +25,23 @@ import sys
 from time import time
 import matplotlib.pyplot as plt
 
-from sklearn.datasets import fetch_20newsgroups
-from sklearn.feature_extraction.text import TfidfVectorizer
-from sklearn.feature_extraction.text import HashingVectorizer
-from sklearn.feature_selection import SelectFromModel
-from sklearn.feature_selection import SelectKBest, chi2
-from sklearn.linear_model import RidgeClassifier
-from sklearn.pipeline import Pipeline
-from sklearn.svm import LinearSVC
-from sklearn.linear_model import SGDClassifier
-from sklearn.linear_model import Perceptron
-from sklearn.linear_model import PassiveAggressiveClassifier
-from sklearn.naive_bayes import BernoulliNB, ComplementNB, MultinomialNB
-from sklearn.neighbors import KNeighborsClassifier
-from sklearn.neighbors import NearestCentroid
-from sklearn.ensemble import RandomForestClassifier
-from sklearn.utils.extmath import density
-from sklearn import metrics
+from sklearn1.datasets import fetch_20newsgroups
+from sklearn1.feature_extraction.text import TfidfVectorizer
+from sklearn1.feature_extraction.text import HashingVectorizer
+from sklearn1.feature_selection import SelectFromModel
+from sklearn1.feature_selection import SelectKBest, chi2
+from sklearn1.linear_model import RidgeClassifier
+from sklearn1.pipeline import Pipeline
+from sklearn1.svm import LinearSVC
+from sklearn1.linear_model import SGDClassifier
+from sklearn1.linear_model import Perceptron
+from sklearn1.linear_model import PassiveAggressiveClassifier
+from sklearn1.naive_bayes import BernoulliNB, ComplementNB, MultinomialNB
+from sklearn1.neighbors import KNeighborsClassifier
+from sklearn1.neighbors import NearestCentroid
+from sklearn1.ensemble import RandomForestClassifier
+from sklearn1.utils.extmath import density
+from sklearn1 import metrics
 
 
 # Display progress logs on stdout

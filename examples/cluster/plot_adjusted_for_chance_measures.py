@@ -28,7 +28,7 @@ print(__doc__)
 import numpy as np
 import matplotlib.pyplot as plt
 from time import time
-from sklearn import metrics
+from sklearn1 import metrics
 
 def uniform_labelings_scores(score_func, n_samples, n_clusters_range,
                              fixed_n_classes=None, n_runs=5, seed=42):

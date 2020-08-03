@@ -3,7 +3,7 @@
 Combine predictors using stacking
 =================================
 
-.. currentmodule:: sklearn
+.. currentmodule:: sklearn1
 
 Stacking refers to a method to blend estimators. In this strategy, some
 estimators are individually fitted on some training data while a final
@@ -42,8 +42,8 @@ print(__doc__)
 
 import numpy as np
 
-from sklearn.datasets import fetch_openml
-from sklearn.utils import shuffle
+from sklearn1.datasets import fetch_openml
+from sklearn1.utils import shuffle
 
 
 def load_ames_housing():
@@ -76,22 +76,22 @@ X, y = load_ames_housing()
 # First, the dataset has many missing values. To impute them, we will exchange
 # categorical missing values with the new category 'missing' while the
 # numerical missing values with the 'mean' of the column. We will also encode
-# the categories with either :class:`~sklearn.preprocessing.OneHotEncoder
-# <sklearn.preprocessing.OneHotEncoder>` or
-# :class:`~sklearn.preprocessing.OrdinalEncoder
-# <sklearn.preprocessing.OrdinalEncoder>` depending for which type of model we
+# the categories with either :class:`~sklearn1.preprocessing.OneHotEncoder
+# <sklearn1.preprocessing.OneHotEncoder>` or
+# :class:`~sklearn1.preprocessing.OrdinalEncoder
+# <sklearn1.preprocessing.OrdinalEncoder>` depending for which type of model we
 # will use them (linear or non-linear model). To facilitate this preprocessing
 # we will make two pipelines.
 # You can skip this section if your data is ready to use and does
 # not need preprocessing
 
 
-from sklearn.compose import make_column_transformer
-from sklearn.impute import SimpleImputer
-from sklearn.pipeline import make_pipeline
-from sklearn.preprocessing import OneHotEncoder
-from sklearn.preprocessing import OrdinalEncoder
-from sklearn.preprocessing import StandardScaler
+from sklearn1.compose import make_column_transformer
+from sklearn1.impute import SimpleImputer
+from sklearn1.pipeline import make_pipeline
+from sklearn1.preprocessing import OneHotEncoder
+from sklearn1.preprocessing import OrdinalEncoder
+from sklearn1.preprocessing import StandardScaler
 
 
 cat_cols = X.columns[X.dtypes == 'O']
@@ -155,12 +155,12 @@ processor_lin = make_column_transformer(
 # preprocessed output from the 3 learners.
 
 
-from sklearn.experimental import enable_hist_gradient_boosting  # noqa
-from sklearn.ensemble import HistGradientBoostingRegressor
-from sklearn.ensemble import RandomForestRegressor
-from sklearn.ensemble import StackingRegressor
-from sklearn.linear_model import LassoCV
-from sklearn.linear_model import RidgeCV
+from sklearn1.experimental import enable_hist_gradient_boosting  # noqa
+from sklearn1.ensemble import HistGradientBoostingRegressor
+from sklearn1.ensemble import RandomForestRegressor
+from sklearn1.ensemble import StackingRegressor
+from sklearn1.linear_model import LassoCV
+from sklearn1.linear_model import RidgeCV
 
 
 lasso_pipeline = make_pipeline(processor_lin,
@@ -195,7 +195,7 @@ stacking_regressor = StackingRegressor(estimators=estimators,
 
 import time
 import matplotlib.pyplot as plt
-from sklearn.model_selection import cross_validate, cross_val_predict
+from sklearn1.model_selection import cross_validate, cross_val_predict
 
 
 def plot_regression_results(ax, y_true, y_pred, title, scores, elapsed_time):

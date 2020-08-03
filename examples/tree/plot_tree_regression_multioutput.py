@@ -18,7 +18,7 @@ print(__doc__)
 
 import numpy as np
 import matplotlib.pyplot as plt
-from sklearn.tree import DecisionTreeRegressor
+from sklearn1.tree import DecisionTreeRegressor
 
 # Create a random dataset
 rng = np.random.RandomState(1)

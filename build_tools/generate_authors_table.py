@@ -66,7 +66,7 @@ def get_contributors():
     # add missing contributors without GitHub accounts
     members |= {'Angel Soler Gollonet'}
     # remove CI bots
-    members -= {'sklearn-ci', 'sklearn-lgtm', 'sklearn-wheels'}
+    members -= {'sklearn1-ci', 'sklearn1-lgtm', 'sklearn1-wheels'}
     triage_team -= core_devs  # remove ogrisel from triage_team
 
     emeritus = members - core_devs - triage_team

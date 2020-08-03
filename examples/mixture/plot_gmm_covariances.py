@@ -35,9 +35,9 @@ import matplotlib.pyplot as plt
 
 import numpy as np
 
-from sklearn import datasets
-from sklearn.mixture import GaussianMixture
-from sklearn.model_selection import StratifiedKFold
+from sklearn1 import datasets
+from sklearn1.mixture import GaussianMixture
+from sklearn1.model_selection import StratifiedKFold
 
 print(__doc__)
 

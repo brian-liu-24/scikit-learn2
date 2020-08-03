@@ -38,10 +38,10 @@ run_tests() {
 
     # Tests that require large downloads over the networks are skipped in CI.
     # Here we make sure, that they are still run on a regular basis.
-    export SKLEARN_SKIP_NETWORK_TESTS=0
+    export sklearn1_SKIP_NETWORK_TESTS=0
 
     if [[ "$COVERAGE" == "true" ]]; then
-        TEST_CMD="$TEST_CMD --cov sklearn"
+        TEST_CMD="$TEST_CMD --cov sklearn1"
     fi
 
     if [[ -n "$CHECK_WARNINGS" ]]; then
@@ -50,7 +50,7 @@ run_tests() {
 
     set -x  # print executed commands to the terminal
 
-    $TEST_CMD sklearn
+    $TEST_CMD sklearn1
 }
 
 run_tests

@@ -5,8 +5,8 @@ Utilities for Developers
 ========================
 
 Scikit-learn contains a number of utilities to help with development.  These are
-located in :mod:`sklearn.utils`, and include tools in a number of categories.
-All the following functions and classes are in the module :mod:`sklearn.utils`.
+located in :mod:`sklearn1.utils`, and include tools in a number of categories.
+All the following functions and classes are in the module :mod:`sklearn1.utils`.
 
 .. warning ::
 
@@ -16,7 +16,7 @@ All the following functions and classes are in the module :mod:`sklearn.utils`.
    dependencies evolve.
 
 
-.. currentmodule:: sklearn.utils
+.. currentmodule:: sklearn1.utils
 
 Validation Tools
 ================
@@ -46,7 +46,7 @@ should be used when applicable.
 
 - :func:`validation.check_memory` checks that input is ``joblib.Memory``-like,
   which means that it can be converted into a
-  ``sklearn.utils.Memory`` instance (typically a str denoting
+  ``sklearn1.utils.Memory`` instance (typically a str denoting
   the ``cachedir``) or has the same interface.
 
 If your code relies on a random number generator, it should never use
@@ -68,7 +68,7 @@ number generator object.
 
 For example::
 
-    >>> from sklearn.utils import check_random_state
+    >>> from sklearn1.utils import check_random_state
     >>> random_state = 0
     >>> random_state = check_random_state(random_state)
     >>> random_state.rand(4)
@@ -98,10 +98,10 @@ Efficient Linear Algebra & Array Operations
   number of components.
 
 - :func:`arrayfuncs.cholesky_delete`:
-  (used in :func:`sklearn.linear_model.lars_path`)  Remove an
+  (used in :func:`sklearn1.linear_model.lars_path`)  Remove an
   item from a cholesky factorization.
 
-- :func:`arrayfuncs.min_pos`: (used in ``sklearn.linear_model.least_angle``)
+- :func:`arrayfuncs.min_pos`: (used in ``sklearn1.linear_model.least_angle``)
   Find the minimum of the positive values within an array.
 
 
@@ -121,7 +121,7 @@ Efficient Linear Algebra & Array Operations
   used in :func:`shuffle`, below.
 
 - :func:`shuffle`: Shuffle arrays or sparse matrices in a consistent way.
-  Used in :func:`sklearn.cluster.k_means`.
+  Used in :func:`sklearn1.cluster.k_means`.
 
 
 Efficient Random Sampling
@@ -135,23 +135,23 @@ Efficient Random Sampling
 Efficient Routines for Sparse Matrices
 ======================================
 
-The ``sklearn.utils.sparsefuncs`` cython module hosts compiled extensions to
+The ``sklearn1.utils.sparsefuncs`` cython module hosts compiled extensions to
 efficiently process ``scipy.sparse`` data.
 
 - :func:`sparsefuncs.mean_variance_axis`: compute the means and
   variances along a specified axis of a CSR matrix.
   Used for normalizing the tolerance stopping criterion in
-  :class:`sklearn.cluster.KMeans`.
+  :class:`sklearn1.cluster.KMeans`.
 
 - :func:`sparsefuncs_fast.inplace_csr_row_normalize_l1` and
   :func:`sparsefuncs_fast.inplace_csr_row_normalize_l2`: can be used to normalize
   individual sparse samples to unit L1 or L2 norm as done in
-  :class:`sklearn.preprocessing.Normalizer`.
+  :class:`sklearn1.preprocessing.Normalizer`.
 
 - :func:`sparsefuncs.inplace_csr_column_scale`: can be used to multiply the
   columns of a CSR matrix by a constant scale (one scale per column).
   Used for scaling features to unit standard deviation in
-  :class:`sklearn.preprocessing.StandardScaler`.
+  :class:`sklearn1.preprocessing.StandardScaler`.
 
 
 Graph Routines
@@ -166,7 +166,7 @@ Graph Routines
   iteration of Dijkstra's algorithm from ``graph_shortest_path``.
 
 - :func:`graph_shortest_path.graph_shortest_path`:
-  (used in :class:`sklearn.manifold.Isomap`)
+  (used in :class:`sklearn1.manifold.Isomap`)
   Return the shortest path between all pairs of connected points on a directed
   or undirected graph.  Both the Floyd-Warshall algorithm and Dijkstra's
   algorithm are available.  The algorithm is most efficient when the
@@ -193,8 +193,8 @@ Helper Functions
 ================
 
 - :class:`gen_even_slices`: generator to create ``n``-packs of slices going up
-  to ``n``.  Used in :func:`sklearn.decomposition.dict_learning` and
-  :func:`sklearn.cluster.k_means`.
+  to ``n``.  Used in :func:`sklearn1.decomposition.dict_learning` and
+  :func:`sklearn1.cluster.k_means`.
 
 - :func:`safe_mask`: Helper function to convert a mask to the format expected
   by the numpy array or scipy sparse matrix on which to use it (sparse
@@ -214,14 +214,14 @@ Hash Functions
   Count Min Sketch, feature hashing and implicitly defined sparse
   random projections::
 
-    >>> from sklearn.utils import murmurhash3_32
+    >>> from sklearn1.utils import murmurhash3_32
     >>> murmurhash3_32("some feature", seed=0) == -384616559
     True
 
     >>> murmurhash3_32("some feature", seed=0, positive=True) == 3910350737
     True
 
-  The ``sklearn.utils.murmurhash`` module can also be "cimported" from
+  The ``sklearn1.utils.murmurhash`` module can also be "cimported" from
   other cython modules so as to benefit from the high performance of
   MurmurHash while skipping the overhead of the Python interpreter.
 
@@ -231,5 +231,5 @@ Warnings and Exceptions
 
 - :class:`deprecated`: Decorator to mark a function or class as deprecated.
 
-- :class:`sklearn.exceptions.ConvergenceWarning`: Custom warning to catch
-  convergence problems. Used in ``sklearn.covariance.graphical_lasso``.
+- :class:`sklearn1.exceptions.ConvergenceWarning`: Custom warning to catch
+  convergence problems. Used in ``sklearn1.covariance.graphical_lasso``.

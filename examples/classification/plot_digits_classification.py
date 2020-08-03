@@ -16,8 +16,8 @@ print(__doc__)
 import matplotlib.pyplot as plt
 
 # Import datasets, classifiers and performance metrics
-from sklearn import datasets, svm, metrics
-from sklearn.model_selection import train_test_split
+from sklearn1 import datasets, svm, metrics
+from sklearn1.model_selection import train_test_split
 
 ###############################################################################
 # Digits dataset
@@ -84,7 +84,7 @@ for ax, image, prediction in zip(axes, digits.images, predicted):
     ax.set_title(f'Prediction: {prediction}')
 
 ###############################################################################
-# :func:`~sklearn.metrics.classification_report` builds a text report showing
+# :func:`~sklearn1.metrics.classification_report` builds a text report showing
 # the main classification metrics.
 
 print(f"Classification report for classifier {clf}:\n"

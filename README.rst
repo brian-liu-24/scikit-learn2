@@ -120,13 +120,13 @@ Testing
 After installation, you can launch the test suite from outside the
 source directory (you will need to have ``pytest`` >= 5.0.1 installed)::
 
-    pytest sklearn
+    pytest sklearn1
 
 See the web page https://scikit-learn.org/dev/developers/advanced_installation.html#testing
 for more information.
 
     Random number generation can be controlled during testing by setting
-    the ``SKLEARN_SEED`` environment variable.
+    the ``sklearn1_SEED`` environment variable.
 
 Submitting a Pull Request
 ~~~~~~~~~~~~~~~~~~~~~~~~~

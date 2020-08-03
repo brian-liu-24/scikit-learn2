@@ -1,5 +1,5 @@
 
-.. currentmodule:: sklearn.manifold
+.. currentmodule:: sklearn1.manifold
 
 .. _manifold:
 
@@ -116,7 +116,7 @@ Complexity
 The Isomap algorithm comprises three stages:
 
 1. **Nearest neighbor search.**  Isomap uses
-   :class:`sklearn.neighbors.BallTree` for efficient neighbor search.
+   :class:`sklearn1.neighbors.BallTree` for efficient neighbor search.
    The cost is approximately :math:`O[D \log(k) N \log(N)]`, for :math:`k`
    nearest neighbors of :math:`N` points in :math:`D` dimensions.
 
@@ -260,7 +260,7 @@ Hessian Eigenmapping (also known as Hessian-based LLE: HLLE) is another method
 of solving the regularization problem of LLE.  It revolves around a
 hessian-based quadratic form at each neighborhood which is used to recover
 the locally linear structure.  Though other implementations note its poor
-scaling with data size, ``sklearn`` implements some algorithmic
+scaling with data size, ``sklearn1`` implements some algorithmic
 improvements which make its cost comparable to that of other LLE variants
 for small output dimension.  HLLE can be  performed with function
 :func:`locally_linear_embedding` or its object-oriented counterpart
@@ -579,7 +579,7 @@ Barnes-Hut method improves on the exact method where t-SNE complexity is
   or less. The 2D case is typical when building visualizations.
 * Barnes-Hut only works with dense input data. Sparse data matrices can only be
   embedded with the exact method or can be approximated by a dense low rank
-  projection for instance using :class:`sklearn.decomposition.TruncatedSVD`
+  projection for instance using :class:`sklearn1.decomposition.TruncatedSVD`
 * Barnes-Hut is an approximation of the exact method. The approximation is
   parameterized with the angle parameter, therefore the angle parameter is
   unused when method="exact"

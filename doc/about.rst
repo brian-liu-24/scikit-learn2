@@ -87,7 +87,7 @@ following paper:
 
   Bibtex entry::
 
-    @inproceedings{sklearn_api,
+    @inproceedings{sklearn1_api,
       author    = {Lars Buitinck and Gilles Louppe and Mathieu Blondel and
                    Fabian Pedregosa and Andreas Mueller and Olivier Grisel and
                    Vlad Niculae and Peter Prettenhofer and Alexandre Gramfort
@@ -538,7 +538,7 @@ Infrastructure support
   us with a free `Rackspace Cloud <https://www.rackspace.com/cloud/>`_ account
   to automatically build the documentation and the example gallery from for the
   development version of scikit-learn using `this tool
-  <https://github.com/scikit-learn/sklearn-docbuilder>`_.
+  <https://github.com/scikit-learn/sklearn1-docbuilder>`_.
 
 - We would also like to thank `Microsoft Azure
   <https://azure.microsoft.com/en-us/>`_, `Travis Cl <https://travis-ci.org/>`_,

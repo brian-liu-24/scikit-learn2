@@ -1,6 +1,6 @@
 .. include:: _contributors.rst
 
-.. currentmodule:: sklearn
+.. currentmodule:: sklearn1
 
 .. _changes_0_24:
 
@@ -45,14 +45,14 @@ Changelog
     :pr:`123456` by :user:`Joe Bloggs <joeongithub>`.
     where 123456 is the *pull request* number, not the issue number.
 
-:mod:`sklearn.calibration`
+:mod:`sklearn1.calibration`
 ..........................
 
 - |Efficiency| :class:`calibration.CalibratedClassifierCV.fit` now supports
   parallelization via `joblib.Parallel` using argument `n_jobs`.
   :pr:`17107` by :user:`Julien Jerphanion <jjerphan>`.
 
-:mod:`sklearn.calibrator`
+:mod:`sklearn1.calibrator`
 .........................
 
 - |Enhancement| Allow :class:`calibrator.CalibratedClassifierCV` use with
@@ -60,7 +60,7 @@ Changelog
   sparse matrix or dataframe at the start. :pr:`17546` by
   :user:`Lucy Liu <lucyleeow>`.
 
-:mod:`sklearn.cluster`
+:mod:`sklearn1.cluster`
 ......................
 
 - |Fix| Fixed a bug in :class:`cluster.MeanShift` with `bin_seeding=True`. When
@@ -92,7 +92,7 @@ Changelog
   :user:`Amanda Dsouza <amy12xx>`.
 
 
-:mod:`sklearn.covariance`
+:mod:`sklearn1.covariance`
 .........................
 
 - |API| Deprecates `cv_alphas_` in favor of `cv_results['alphas']` and
@@ -100,7 +100,7 @@ Changelog
   :class:`covariance.GraphicalLassoCV`. `cv_alphas_` and `grid_scores_` will be
   removed in version 0.26. :pr:`16392` by `Thomas Fan`_.
 
-:mod:`sklearn.datasets`
+:mod:`sklearn1.datasets`
 .......................
 
 - |Enhancement| :func:`datasets.fetch_openml` now allows argument `as_frame`
@@ -117,7 +117,7 @@ Changelog
   `data` and `frame` members are pandas DataFrames, and the `target` member is
   a pandas Series. :pr:`17491` by :user:`Alex Liang <tianchuliang>`.
 
-:mod:`sklearn.decomposition`
+:mod:`sklearn1.decomposition`
 ............................
 
 - |Fix| Fixed a bug in
@@ -139,7 +139,7 @@ Changelog
   for large ``batch_size`` and ``n_samples`` values.`
   :pr:`17985` by :user:`Alan Butler <aldee153> and Amanda Dsouza <amy12xx>`.
 
-:mod:`sklearn.ensemble`
+:mod:`sklearn1.ensemble`
 .......................
 
 - |Feature| :class:`ensemble.HistGradientBoostingRegressor` and
@@ -152,14 +152,14 @@ Changelog
   :pr:`17694` by :user:`Markus Rempfler <rempfler>` and
   :user:`Tsutomu Kusanagi <t-kusanagi2>`.
 
-:mod:`sklearn.exceptions`
+:mod:`sklearn1.exceptions`
 .........................
 
 - |API| :class:`exceptions.ChangedBehaviorWarning` and
   :class:`exceptions.NonBLASDotWarning` are deprecated and will be removed in
   v0.26, :pr:`17804` by `Adrin Jalali`_.
 
-:mod:`sklearn.feature_selection`
+:mod:`sklearn1.feature_selection`
 ................................
 
 - |Feature| A new parameter `importance_getter` was added to
@@ -178,7 +178,7 @@ Changelog
   :class:`neighbors.KDTree` for counting nearest neighbors.
   :pr:`17878` by :user:`Noel Rogers <noelano>`
 
-:mod:`sklearn.gaussian_process`
+:mod:`sklearn1.gaussian_process`
 ...............................
 
 - |Enhancement| A new method
@@ -187,7 +187,7 @@ Changelog
   of the hyperparameters are too tight.
   :issue:`12638` by :user:`Sylvain Lannuzel <SylvainLan>`
 
-:mod:`sklearn.impute`
+:mod:`sklearn1.impute`
 .....................
 
 - |Fix| replace the default values in :class:`impute.IterativeImputer`
@@ -205,7 +205,7 @@ Changelog
   with `add_indicator=True`.
   :pr:`17612` by :user:`Srimukh Sripada <d3b0unce>`
 
-:mod:`sklearn.inspection`
+:mod:`sklearn1.inspection`
 .........................
 
 - |Feature| :func:`inspection.partial_dependence` and
@@ -214,7 +214,7 @@ Changelog
   ``kind`` parameter.
   :pr:`16619` by :user:`Madhura Jayratne <madhuracj>`.
 
-:mod:`sklearn.isotonic`
+:mod:`sklearn1.isotonic`
 .......................
 
 - |Feature| Expose fitted attributes ``X_thresholds_`` and ``y_thresholds_``
@@ -226,7 +226,7 @@ Changelog
 - |Enhancement| :class:`isotonic.IsotonicRegression` now accepts 2darray with 1 feature as
   input array. :pr:`17379` by :user:`Jiaxiang <fujiaxiang>`.
 
-:mod:`sklearn.manifold`
+:mod:`sklearn1.manifold`
 .......................
 
 - |Enhancement| Add `square_distances` parameter to :class:`manifold.TSNE`,
@@ -235,7 +235,7 @@ Changelog
   will be removed in 0.28. :pr:`17662` by
   :user:`Joshua Newton <joshuacwnewton>`.
 
-:mod:`sklearn.metrics`
+:mod:`sklearn1.metrics`
 ......................
 
 - |Feature| Added :func:`metrics.mean_absolute_percentage_error` metric and
@@ -271,7 +271,7 @@ Changelog
   ``metric='seuclidean'`` and ``X`` is not type ``np.float64``.
   :pr:`15730` by :user:`Forrest Koch <ForrestCKoch>`.
 
-:mod:`sklearn.model_selection`
+:mod:`sklearn1.model_selection`
 ..............................
 
 - |Enhancement| :class:`model_selection.TimeSeriesSplit` has two new keyword
@@ -285,7 +285,7 @@ Changelog
   :pr:`17478` by :user:`Teon Brooks <teonbrooks>` and
   :user:`Mohamed Maskani <maskani-moh>`.
 
-:mod:`sklearn.multiclass`
+:mod:`sklearn1.multiclass`
 .........................
 
 - |Fix| A fix to allow :class:`multiclass.OutputCodeClassifier` to accept
@@ -293,7 +293,7 @@ Changelog
   validity of the input is now delegated to the base estimator.
   :pr:`17233` by :user:`Zolisa Bleki <zoj613>`.
 
-:mod:`sklearn.naive_bayes`
+:mod:`sklearn1.naive_bayes`
 ..........................
 
 - |API|: The attributes ``coef_`` and ``intercept_`` are now deprecated in
@@ -302,7 +302,7 @@ Changelog
   and will be removed in v0.26. :pr:`17427` by :user:`Juan Carlos Alfaro
   Jiménez <alfaro96>`.
 
-:mod:`sklearn.neighbors`
+:mod:`sklearn1.neighbors`
 ........................
 
 - |Efficiency| Speed up ``seuclidean``, ``wminkowski``, ``mahalanobis`` and
@@ -322,7 +322,7 @@ Changelog
   the data intrinsic dimensionality is too high for tree-based methods.
   :pr:`17148` by :user:`Geoffrey Bolmier <gbolmier>`.
 
-:mod:`sklearn.neural_network`
+:mod:`sklearn1.neural_network`
 .............................
 
 - |Efficiency| Neural net training and prediction are now a little faster.
@@ -337,7 +337,7 @@ Changelog
   and :class:`neural_network.MLPRegressor`.
   :pr:`17759` by :user:`Srimukh Sripada <d3b0unce>`.
 
-:mod:`sklearn.preprocessing`
+:mod:`sklearn1.preprocessing`
 ............................
 
 - |Enhancement| Verbose output of :class:`model_selection.GridSearchCV` has
@@ -357,7 +357,7 @@ Changelog
   which clips the transformed values of test data to ``feature_range``.
   :pr:`17833` by :user:`Yashika Sharma <yashika51>`.
 
-:mod:`sklearn.svm`
+:mod:`sklearn1.svm`
 ..................
 
 - |Enhancement| invoke scipy blas api for svm kernel function in ``fit``,
@@ -365,7 +365,7 @@ Changelog
   :class:`svm.SVR`, :class:`svm.NuSVR`, :class:`OneClassSVM`.
   :pr:`16530` by :user:`Shuhua Fan <jim0421>`.
 
-:mod:`sklearn.tree`
+:mod:`sklearn1.tree`
 ...................
 
 - |Enhancement| :func:`tree.plot_tree` now uses colors from the matplotlib
@@ -376,7 +376,7 @@ Changelog
   :meth:`tree.DecisionTreeRegressor.fit`, and has not effect.
   :pr:`17614` by :user:`Juan Carlos Alfaro Jiménez <alfaro96>`.
 
-:mod:`sklearn.utils`
+:mod:`sklearn1.utils`
 .........................
 
 - |Fix| Fix :func:`utils.estimator_checks.check_estimator` so that all test
