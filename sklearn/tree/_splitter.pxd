@@ -19,6 +19,8 @@ from ._tree cimport DOUBLE_t         # Type of y, sample_weight
 from ._tree cimport SIZE_t           # Type for indices and counters
 from ._tree cimport INT32_t          # Signed 32 bit integer
 from ._tree cimport UINT32_t         # Unsigned 32 bit integer
+from ._tree cimport Tree
+
 
 cdef struct SplitRecord:
     # Data to track sample split
@@ -86,8 +88,8 @@ cdef class Splitter:
     cdef int node_split(self,
                         double impurity,   # Impurity of the node
                         SplitRecord* split,
-                        SIZE_t* n_constant_features, 
-                        Tree tree, 
+                        SIZE_t* n_constant_features,
+                         tree,
                         SIZE_t parent) with gil # except -1
 
     cdef void node_value(self, double* dest) nogil
