@@ -609,21 +609,25 @@ cdef class FeatureSparseSplitter(BaseDenseSplitter):
                                 continue
 
                         ## Find the list of ancestors:
-                            
-                            nodes_array = tree.nodes
-                            parent_node = nodes_array[parent]
-                            array_length = 1 + tree.helper_depth[parent]
-                            # ancestor_array = parent_node.ancestor_features[0:array_length]
-                            ancestor_array = parent_node.ancestor_features
-                            parent_feature = parent_node.feature
-                            ancestor_array[0] = parent_feature
+                                                       
+                            if parent >= 0:
+                                nodes_array = tree.nodes
+                                parent_node = nodes_array[parent]
+                                array_length = 1 + tree.helper_depth[parent]
+                                # ancestor_array = parent_node.ancestor_features[0:array_length]
+                                ancestor_array = parent_node.ancestor_features
+                                parent_feature = parent_node.feature
+                                ancestor_array[0] = parent_feature
+                                new_feature = isvaluenotinarray(current.feature, ancestor_array, array_length)
+
+                            else:
+                                new_feature = 0
                         
                             # if current.feature in ancestor_array:
                             #     new_feature = 0
                             # else:
                             #     new_feature = 1
 
-                            new_feature = isvaluenotinarray(current.feature, ancestor_array, array_length)
 
                             sparsity_penalty = sparse_cost*new_feature
                             current_proxy_improvement = self.criterion.proxy_impurity_improvement() - sparsity_penalty
