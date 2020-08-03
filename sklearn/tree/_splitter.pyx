@@ -613,8 +613,8 @@ cdef class FeatureSparseSplitter(BaseDenseSplitter):
                             nodes_array = tree.nodes
                             parent_node = nodes_array[parent]
                             array_length = 1 + tree.helper_depth[parent]
-                            ancestor_array = parent_node.ancestor_features[0:array_length]
-
+                            # ancestor_array = parent_node.ancestor_features[0:array_length]
+                            ancestor_array = parent_node.ancestor_features
                             parent_feature = parent_node.feature
                             ancestor_array[0] = parent_feature
                         
