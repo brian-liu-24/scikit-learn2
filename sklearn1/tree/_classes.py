@@ -555,7 +555,7 @@ class BaseDecisionTree(MultiOutputMixin, BaseEstimator, metaclass=ABCMeta):
 
         Returns
         -------
-        ccp_path : :class:`~sklearn1.utils.Bunch`
+        ccp_path : :class:`~sklearn.utils.Bunch`
             Dictionary-like object, with the following attributes.
 
             ccp_alphas : ndarray
@@ -579,7 +579,7 @@ class BaseDecisionTree(MultiOutputMixin, BaseEstimator, metaclass=ABCMeta):
 
         Warning: impurity-based feature importances can be misleading for
         high cardinality features (many unique values). See
-        :func:`sklearn1.inspection.permutation_importance` as an alternative.
+        :func:`sklearn.inspection.permutation_importance` as an alternative.
 
         Returns
         -------
@@ -753,7 +753,7 @@ class DecisionTreeClassifier(ClassifierMixin, BaseDecisionTree):
 
         Warning: impurity-based feature importances can be misleading for
         high cardinality features (many unique values). See
-        :func:`sklearn1.inspection.permutation_importance` as an alternative.
+        :func:`sklearn.inspection.permutation_importance` as an alternative.
 
     max_features_ : int
         The inferred value of max_features.
@@ -771,7 +771,7 @@ class DecisionTreeClassifier(ClassifierMixin, BaseDecisionTree):
 
     tree_ : Tree
         The underlying Tree object. Please refer to
-        ``help(sklearn1.tree._tree.Tree)`` for attributes of Tree object and
+        ``help(sklearn.tree._tree.Tree)`` for attributes of Tree object and
         :ref:`sphx_glr_auto_examples_tree_plot_unveil_tree_structure.py`
         for basic usage of these attributes.
 
@@ -808,9 +808,9 @@ class DecisionTreeClassifier(ClassifierMixin, BaseDecisionTree):
 
     Examples
     --------
-    >>> from sklearn1.datasets import load_iris
-    >>> from sklearn1.model_selection import cross_val_score
-    >>> from sklearn1.tree import DecisionTreeClassifier
+    >>> from sklearn.datasets import load_iris
+    >>> from sklearn.model_selection import cross_val_score
+    >>> from sklearn.tree import DecisionTreeClassifier
     >>> clf = DecisionTreeClassifier(random_state=0)
     >>> iris = load_iris()
     >>> cross_val_score(clf, iris.data, iris.target, cv=10)
@@ -833,7 +833,8 @@ class DecisionTreeClassifier(ClassifierMixin, BaseDecisionTree):
                  min_impurity_decrease=0.,
                  min_impurity_split=None,
                  class_weight=None,
-                 ccp_alpha=0.0):
+                 ccp_alpha=0.0,
+                 feature_sparse_penalty=0.0):
         super().__init__(
             criterion=criterion,
             splitter=splitter,
@@ -847,7 +848,8 @@ class DecisionTreeClassifier(ClassifierMixin, BaseDecisionTree):
             random_state=random_state,
             min_impurity_decrease=min_impurity_decrease,
             min_impurity_split=min_impurity_split,
-            ccp_alpha=ccp_alpha)
+            ccp_alpha=ccp_alpha,
+            feature_sparse_penalty=feature_sparse_penalty)
 
     def fit(self, X, y, sample_weight=None, check_input=True,
             X_idx_sorted="deprecated"):
@@ -1110,7 +1112,7 @@ class DecisionTreeRegressor(RegressorMixin, BaseDecisionTree):
 
         Warning: impurity-based feature importances can be misleading for
         high cardinality features (many unique values). See
-        :func:`sklearn1.inspection.permutation_importance` as an alternative.
+        :func:`sklearn.inspection.permutation_importance` as an alternative.
 
     max_features_ : int
         The inferred value of max_features.
@@ -1123,7 +1125,7 @@ class DecisionTreeRegressor(RegressorMixin, BaseDecisionTree):
 
     tree_ : Tree
         The underlying Tree object. Please refer to
-        ``help(sklearn1.tree._tree.Tree)`` for attributes of Tree object and
+        ``help(sklearn.tree._tree.Tree)`` for attributes of Tree object and
         :ref:`sphx_glr_auto_examples_tree_plot_unveil_tree_structure.py`
         for basic usage of these attributes.
 
@@ -1155,9 +1157,9 @@ class DecisionTreeRegressor(RegressorMixin, BaseDecisionTree):
 
     Examples
     --------
-    >>> from sklearn1.datasets import load_diabetes
-    >>> from sklearn1.model_selection import cross_val_score
-    >>> from sklearn1.tree import DecisionTreeRegressor
+    >>> from sklearn.datasets import load_diabetes
+    >>> from sklearn.model_selection import cross_val_score
+    >>> from sklearn.tree import DecisionTreeRegressor
     >>> X, y = load_diabetes(return_X_y=True)
     >>> regressor = DecisionTreeRegressor(random_state=0)
     >>> cross_val_score(regressor, X, y, cv=10)
@@ -1179,7 +1181,8 @@ class DecisionTreeRegressor(RegressorMixin, BaseDecisionTree):
                  max_leaf_nodes=None,
                  min_impurity_decrease=0.,
                  min_impurity_split=None,
-                 ccp_alpha=0.0):
+                 ccp_alpha=0.0,
+                 feature_sparse_penalty=0.0):
         super().__init__(
             criterion=criterion,
             splitter=splitter,
@@ -1192,7 +1195,8 @@ class DecisionTreeRegressor(RegressorMixin, BaseDecisionTree):
             random_state=random_state,
             min_impurity_decrease=min_impurity_decrease,
             min_impurity_split=min_impurity_split,
-            ccp_alpha=ccp_alpha)
+            ccp_alpha=ccp_alpha,
+            feature_sparse_penalty = feature_sparse_penalty)
 
     def fit(self, X, y, sample_weight=None, check_input=True,
             X_idx_sorted="deprecated"):
@@ -1429,7 +1433,7 @@ class ExtraTreeClassifier(DecisionTreeClassifier):
 
         Warning: impurity-based feature importances can be misleading for
         high cardinality features (many unique values). See
-        :func:`sklearn1.inspection.permutation_importance` as an alternative.
+        :func:`sklearn.inspection.permutation_importance` as an alternative.
 
     n_features_ : int
         The number of features when ``fit`` is performed.
@@ -1439,15 +1443,15 @@ class ExtraTreeClassifier(DecisionTreeClassifier):
 
     tree_ : Tree
         The underlying Tree object. Please refer to
-        ``help(sklearn1.tree._tree.Tree)`` for attributes of Tree object and
+        ``help(sklearn.tree._tree.Tree)`` for attributes of Tree object and
         :ref:`sphx_glr_auto_examples_tree_plot_unveil_tree_structure.py`
         for basic usage of these attributes.
 
     See Also
     --------
     ExtraTreeRegressor : An extremely randomized tree regressor.
-    sklearn1.ensemble.ExtraTreesClassifier : An extra-trees classifier.
-    sklearn1.ensemble.ExtraTreesRegressor : An extra-trees regressor.
+    sklearn.ensemble.ExtraTreesClassifier : An extra-trees classifier.
+    sklearn.ensemble.ExtraTreesRegressor : An extra-trees regressor.
 
     Notes
     -----
@@ -1465,10 +1469,10 @@ class ExtraTreeClassifier(DecisionTreeClassifier):
 
     Examples
     --------
-    >>> from sklearn1.datasets import load_iris
-    >>> from sklearn1.model_selection import train_test_split
-    >>> from sklearn1.ensemble import BaggingClassifier
-    >>> from sklearn1.tree import ExtraTreeClassifier
+    >>> from sklearn.datasets import load_iris
+    >>> from sklearn.model_selection import train_test_split
+    >>> from sklearn.ensemble import BaggingClassifier
+    >>> from sklearn.tree import ExtraTreeClassifier
     >>> X, y = load_iris(return_X_y=True)
     >>> X_train, X_test, y_train, y_test = train_test_split(
     ...    X, y, random_state=0)
@@ -1492,7 +1496,8 @@ class ExtraTreeClassifier(DecisionTreeClassifier):
                  min_impurity_decrease=0.,
                  min_impurity_split=None,
                  class_weight=None,
-                 ccp_alpha=0.0):
+                 ccp_alpha=0.0,
+                 feature_sparse_penalty=0.0):
         super().__init__(
             criterion=criterion,
             splitter=splitter,
@@ -1506,7 +1511,8 @@ class ExtraTreeClassifier(DecisionTreeClassifier):
             min_impurity_decrease=min_impurity_decrease,
             min_impurity_split=min_impurity_split,
             random_state=random_state,
-            ccp_alpha=ccp_alpha)
+            ccp_alpha=ccp_alpha,
+            feature_sparse_penalty=feature_sparse_penalty)
 
 
 class ExtraTreeRegressor(DecisionTreeRegressor):
@@ -1650,22 +1656,22 @@ class ExtraTreeRegressor(DecisionTreeRegressor):
 
         Warning: impurity-based feature importances can be misleading for
         high cardinality features (many unique values). See
-        :func:`sklearn1.inspection.permutation_importance` as an alternative.
+        :func:`sklearn.inspection.permutation_importance` as an alternative.
 
     n_outputs_ : int
         The number of outputs when ``fit`` is performed.
 
     tree_ : Tree
         The underlying Tree object. Please refer to
-        ``help(sklearn1.tree._tree.Tree)`` for attributes of Tree object and
+        ``help(sklearn.tree._tree.Tree)`` for attributes of Tree object and
         :ref:`sphx_glr_auto_examples_tree_plot_unveil_tree_structure.py`
         for basic usage of these attributes.
 
     See Also
     --------
     ExtraTreeClassifier : An extremely randomized tree classifier.
-    sklearn1.ensemble.ExtraTreesClassifier : An extra-trees classifier.
-    sklearn1.ensemble.ExtraTreesRegressor : An extra-trees regressor.
+    sklearn.ensemble.ExtraTreesClassifier : An extra-trees classifier.
+    sklearn.ensemble.ExtraTreesRegressor : An extra-trees regressor.
 
     Notes
     -----
@@ -1683,10 +1689,10 @@ class ExtraTreeRegressor(DecisionTreeRegressor):
 
     Examples
     --------
-    >>> from sklearn1.datasets import load_diabetes
-    >>> from sklearn1.model_selection import train_test_split
-    >>> from sklearn1.ensemble import BaggingRegressor
-    >>> from sklearn1.tree import ExtraTreeRegressor
+    >>> from sklearn.datasets import load_diabetes
+    >>> from sklearn.model_selection import train_test_split
+    >>> from sklearn.ensemble import BaggingRegressor
+    >>> from sklearn.tree import ExtraTreeRegressor
     >>> X, y = load_diabetes(return_X_y=True)
     >>> X_train, X_test, y_train, y_test = train_test_split(
     ...     X, y, random_state=0)
@@ -1709,7 +1715,8 @@ class ExtraTreeRegressor(DecisionTreeRegressor):
                  min_impurity_decrease=0.,
                  min_impurity_split=None,
                  max_leaf_nodes=None,
-                 ccp_alpha=0.0):
+                 ccp_alpha=0.0,
+                 feature_sparse_penalty=0.0):
         super().__init__(
             criterion=criterion,
             splitter=splitter,
@@ -1722,4 +1729,5 @@ class ExtraTreeRegressor(DecisionTreeRegressor):
             min_impurity_decrease=min_impurity_decrease,
             min_impurity_split=min_impurity_split,
             random_state=random_state,
-            ccp_alpha=ccp_alpha)
+            ccp_alpha=ccp_alpha,
+            feature_sparse_penalty=feature_sparse_penalty)
