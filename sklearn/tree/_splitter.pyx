@@ -60,9 +60,8 @@ cdef class Splitter:
     """
 
     def __cinit__(self, Criterion criterion, SIZE_t max_features,
-                  SIZE_t min_samples_leaf, double min_weight_leaf,
-                  double min_weight_leaf, double feature_sparse_penalty,
-                  object random_state):
+                  SIZE_t min_samples_leaf, double min_weight_leaf, 
+                  double feature_sparse_penalty, object random_state):
         """
         Parameters
         ----------
@@ -996,7 +995,7 @@ cdef class BaseSparseSplitter(Splitter):
 
     def __cinit__(self, Criterion criterion, SIZE_t max_features,
                   SIZE_t min_samples_leaf, double min_weight_leaf,
-                  object random_state):
+                  double feature_sparse_penalty, object random_state):
         # Parent __cinit__ is automatically called
 
         self.X_data = NULL
