@@ -33,6 +33,7 @@ from ._utils cimport rand_int
 from ._utils cimport rand_uniform
 from ._utils cimport RAND_R_MAX
 from ._utils cimport safe_realloc
+from ._tree cimport Tree
 
 cdef double INFINITY = np.inf
 
