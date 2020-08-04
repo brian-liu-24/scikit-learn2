@@ -47,6 +47,7 @@ cdef realloc_ptr safe_realloc(realloc_ptr* p, size_t nelems) nogil except *:
 cdef int isvaluenotinarray(SIZE_t val, SIZE_t* arr, SIZE_t size):
     cdef SIZE_t i
     for i in range(size):
+        print("array item ",i," is ",arr[i])
         if arr[i] == val:
             return 0
     return 1

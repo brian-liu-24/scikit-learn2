@@ -618,7 +618,7 @@ cdef class FeatureSparseSplitter(BaseDenseSplitter):
                                 ancestor_array = parent_node.ancestor_features
                                 parent_feature = parent_node.feature
                                 ancestor_array[0] = parent_feature
-                                print("parent_feature",parent_feature, "array_length",array_length, "current.feature", current.feature, "ancestor_array",ancestor_array)
+                                print("parent_feature",parent_feature, "array_length",array_length, "current.feature", current.feature)
                                 new_feature = isvaluenotinarray(current.feature, ancestor_array, array_length)
 
                             else:
