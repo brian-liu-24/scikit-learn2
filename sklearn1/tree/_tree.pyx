@@ -795,7 +795,7 @@ cdef class Tree:
 
         if parent == 0:
           self.nodes[node_id].helper_depth = 1
-        if node_id = 0:
+        if node_id == 0:
           self.nodes[node_id].helper_depth = 0
 
         if is_leaf:
