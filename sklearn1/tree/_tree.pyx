@@ -793,8 +793,6 @@ cdef class Tree:
               location = location + 1
             self.nodes[node_id].helper_depth = location
 
-        if parent == 0:
-          self.nodes[node_id].helper_depth = 1
         if node_id = 0:
           self.nodes[node_id].helper_depth = 0
 
