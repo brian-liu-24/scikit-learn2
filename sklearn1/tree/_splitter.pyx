@@ -618,9 +618,11 @@ cdef class FeatureSparseSplitter(BaseDenseSplitter):
                                 ancestor_array = parent_node.ancestor_features
                                 parent_feature = parent_node.feature
                                 ancestor_array[0] = parent_feature
+                                print("parent_feature",parent_feature, "array_length",array_length, "current.feature", current.feature, "ancestor_array",ancestor_array)
                                 new_feature = isvaluenotinarray(current.feature, ancestor_array, array_length)
 
                             else:
+                                print("parent",parent)
                                 new_feature = 0
                         
                             # if current.feature in ancestor_array:
@@ -632,7 +634,7 @@ cdef class FeatureSparseSplitter(BaseDenseSplitter):
                             sparsity_penalty = sparse_cost*new_feature
 
                             current_proxy_improvement = self.criterion.proxy_impurity_improvement() - sparsity_penalty
-                            print("new_feature",new_feature,"sparsity_penalty",sparsity_penalty,"current_proxy_improvement",current_proxy_improvement,)
+                            print("parent id",parent,"current feature",current.feature,"new_feature",new_feature,"sparsity_penalty",sparsity_penalty,"current_proxy_improvement",current_proxy_improvement)
                             if current_proxy_improvement > best_proxy_improvement:
                                 print("a better split with improvement", current_proxy_improvement,"current feature",current.feature)
                                 best_proxy_improvement = current_proxy_improvement
