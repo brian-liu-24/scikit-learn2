@@ -618,11 +618,11 @@ cdef class FeatureSparseSplitter(BaseDenseSplitter):
                                 ancestor_array = parent_node.ancestor_features
                                 parent_feature = parent_node.feature
                                 ancestor_array[0] = parent_feature
-                                print("parent_feature",parent_feature, "array_length",array_length, "current.feature", current.feature)
+                                #print("parent_feature",parent_feature, "array_length",array_length, "current.feature", current.feature)
                                 new_feature = isvaluenotinarray(current.feature, ancestor_array, array_length)
 
                             else:
-                                print("parent",parent)
+                                #print("parent",parent)
                                 new_feature = 0
                         
                             # if current.feature in ancestor_array:
@@ -634,9 +634,9 @@ cdef class FeatureSparseSplitter(BaseDenseSplitter):
                             sparsity_penalty = sparse_cost*new_feature
 
                             current_proxy_improvement = self.criterion.proxy_impurity_improvement() - sparsity_penalty
-                            print("parent id",parent,"current feature",current.feature,"new_feature",new_feature,"sparsity_penalty",sparsity_penalty,"current_proxy_improvement",current_proxy_improvement)
+                            #print("parent id",parent,"current feature",current.feature,"new_feature",new_feature,"sparsity_penalty",sparsity_penalty,"current_proxy_improvement",current_proxy_improvement)
                             if current_proxy_improvement > best_proxy_improvement:
-                                print("a better split with improvement", current_proxy_improvement,"current feature",current.feature)
+                                #print("a better split with improvement", current_proxy_improvement,"current feature",current.feature)
                                 best_proxy_improvement = current_proxy_improvement
                                 # sum of halves is used to avoid infinite value
                                 current.threshold = Xf[p - 1] / 2.0 + Xf[p] / 2.0
@@ -679,7 +679,7 @@ cdef class FeatureSparseSplitter(BaseDenseSplitter):
                sizeof(SIZE_t) * n_found_constants)
 
         # Return values
-        print("##best feature is", best.feature)
+        #print("##best feature is", best.feature)
         split[0] = best
         n_constant_features[0] = n_total_constants
         return 0
